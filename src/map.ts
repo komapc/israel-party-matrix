@@ -25,6 +25,8 @@ interface Extent {
   max: number;
   mean: number;
   n: number;
+  /** Distinct values, ascending. */
+  values: number[];
 }
 
 /** Where a set of issue scores falls on one axis; null when none of its issues are known. */
@@ -39,6 +41,7 @@ function extent(dim: Dimension, score: (aspect: string) => number | null): Exten
     max: Math.max(...values),
     mean: values.reduce((a, b) => a + b, 0) / values.length,
     n: values.length,
+    values: [...new Set(values)].sort((a, b) => a - b),
   };
 }
 
@@ -50,11 +53,117 @@ const SPAN = 2.5;
 const UNIT = (SIZE - 2 * PAD) / (2 * SPAN);
 const sx = (v: number) => PAD + (v + SPAN) * UNIT;
 const sy = (v: number) => SIZE - PAD - (v + SPAN) * UNIT;
+
 /**
- * Half-width of a region: the spread of the party's positions plus a margin, since every score is rounded to a
- * whole step (about ±0.5). A region built from a single issue gets a wider margin, as it is less certain.
+ * A party's region is the outline of a smooth "field": one bump per combination of its positions on the two axes,
+ * so it is round where the positions agree and stretches, or necks in, where they don't. Every score is rounded to
+ * a whole step (about ±0.5), so a single position still gets a margin around it; a region built from one issue gets
+ * a wider margin, as it is less certain.
  */
-const radius = (e: Extent) => ((e.max - e.min) / 2 + (e.n > 1 ? 0.35 : 0.55)) * UNIT;
+const margin = (e: Extent) => (e.n > 1 ? 0.35 : 0.55);
+/** The outline is drawn where the field reaches this level; a lone bump peaks at 1. */
+const LEVEL = 0.7;
+/** Steps between two distant positions get a lighter bump, so the region stays one piece with a thin neck. */
+const BRIDGE = 0.75;
+/** Grid step for tracing the outline, in score units. */
+const STEP = 0.04;
+
+/** Distinct values on one axis, with lighter bridging values filling gaps wider than one step. */
+function bumps(e: Extent): { v: number; w: number }[] {
+  const out: { v: number; w: number }[] = [];
+  e.values.forEach((v, i) => {
+    const prev = e.values[i - 1];
+    if (prev !== undefined) for (let b = prev + 1; b < v; b++) out.push({ v: b, w: BRIDGE });
+    out.push({ v, w: 1 });
+  });
+  return out;
+}
+
+/** Traces the outline of the region as an SVG path (in plot coordinates), with marching squares. */
+function outline(x: Extent, y: Extent): string {
+  // A bump's width is set so that, alone, it reaches LEVEL exactly `margin` away from its centre.
+  const k = Math.sqrt(2 * Math.log(1 / LEVEL));
+  const sxg = margin(x) / k;
+  const syg = margin(y) / k;
+  const bx = bumps(x);
+  const by = bumps(y);
+  const field = (u: number, v: number) => {
+    let f = 0;
+    for (const a of bx) for (const b of by) f += a.w * b.w * Math.exp(-((u - a.v) ** 2) / (2 * sxg * sxg) - ((v - b.v) ** 2) / (2 * syg * syg));
+    return f;
+  };
+  const x0 = x.values[0] - 4 * sxg;
+  const y0 = y.values[0] - 4 * syg;
+  const nx = Math.ceil((x.values[x.values.length - 1] + 4 * sxg - x0) / STEP) + 1;
+  const ny = Math.ceil((y.values[y.values.length - 1] + 4 * syg - y0) / STEP) + 1;
+  const f: number[][] = [];
+  for (let i = 0; i < nx; i++) {
+    f.push([]);
+    for (let j = 0; j < ny; j++) f[i].push(field(x0 + i * STEP, y0 + j * STEP));
+  }
+
+  // Edge crossing between two grid points, as a key-able point in score units.
+  const cross = (i0: number, j0: number, i1: number, j1: number): [number, number] => {
+    const a = f[i0][j0];
+    const b = f[i1][j1];
+    const t = (LEVEL - a) / (b - a);
+    return [x0 + (i0 + (i1 - i0) * t) * STEP, y0 + (j0 + (j1 - j0) * t) * STEP];
+  };
+  const segments: [number, number][][] = [];
+  for (let i = 0; i < nx - 1; i++) {
+    for (let j = 0; j < ny - 1; j++) {
+      const c = [f[i][j], f[i + 1][j], f[i + 1][j + 1], f[i][j + 1]].map((v) => v >= LEVEL);
+      const code = (c[0] ? 1 : 0) | (c[1] ? 2 : 0) | (c[2] ? 4 : 0) | (c[3] ? 8 : 0);
+      if (code === 0 || code === 15) continue;
+      const bottom = () => cross(i, j, i + 1, j);
+      const right = () => cross(i + 1, j, i + 1, j + 1);
+      const top = () => cross(i, j + 1, i + 1, j + 1);
+      const left = () => cross(i, j, i, j + 1);
+      const centreIn = (f[i][j] + f[i + 1][j] + f[i + 1][j + 1] + f[i][j + 1]) / 4 >= LEVEL;
+      const add = (a: [number, number], b: [number, number]) => segments.push([a, b]);
+      switch (code) {
+        case 1: case 14: add(left(), bottom()); break;
+        case 2: case 13: add(bottom(), right()); break;
+        case 3: case 12: add(left(), right()); break;
+        case 4: case 11: add(right(), top()); break;
+        case 6: case 9: add(bottom(), top()); break;
+        case 7: case 8: add(left(), top()); break;
+        case 5: if (centreIn) { add(left(), top()); add(bottom(), right()); } else { add(left(), bottom()); add(right(), top()); } break;
+        case 10: if (centreIn) { add(left(), bottom()); add(right(), top()); } else { add(left(), top()); add(bottom(), right()); } break;
+      }
+    }
+  }
+
+  // Chain the segments into closed loops.
+  const key = ([u, v]: [number, number]) => `${u.toFixed(5)},${v.toFixed(5)}`;
+  const ends = new Map<string, number[]>();
+  segments.forEach((s, n) => s.forEach((p) => ends.set(key(p), [...(ends.get(key(p)) ?? []), n])));
+  const used = new Set<number>();
+  const loops: string[] = [];
+  segments.forEach((first, n) => {
+    if (used.has(n)) return;
+    used.add(n);
+    const loop = [first[0], first[1]];
+    for (;;) {
+      const tail = loop[loop.length - 1];
+      const next = ends.get(key(tail))?.find((m) => !used.has(m));
+      if (next === undefined) break;
+      used.add(next);
+      const s = segments[next];
+      loop.push(key(s[0]) === key(tail) ? s[1] : s[0]);
+    }
+    loops.push(`M${loop.map(([u, v]) => `${sx(u).toFixed(1)} ${sy(v).toFixed(1)}`).join('L')}Z`);
+  });
+  return loops.join('');
+}
+
+/** Outlines are the same on every render, so they are traced once per party and axis pair. */
+const outlines = new Map<string, string>();
+function outlineOf(party: string, dx: Dimension, dy: Dimension, x: Extent, y: Extent): string {
+  const id = `${party}/${dx.id}/${dy.id}`;
+  if (!outlines.has(id)) outlines.set(id, outline(x, y));
+  return outlines.get(id)!;
+}
 
 interface Placed {
   party: Party;
@@ -128,8 +237,7 @@ function renderSvg(lang: Lang, dx: Dimension, dy: Dimension, placed: Placed[]): 
     party,
     cx: sx((x.min + x.max) / 2),
     cy: sy((y.min + y.max) / 2),
-    rx: radius(x),
-    ry: radius(y),
+    d: outlineOf(party.id, dx, dy, x, y),
     w: party.name[lang].length * 6.6 + 8,
     x,
     y,
@@ -144,7 +252,7 @@ function renderSvg(lang: Lang, dx: Dimension, dy: Dimension, placed: Placed[]): 
         <title>${esc(s.party.name[lang])} — ${blocOf(s.party).short[lang]}
 ${esc(dx.name[lang])}: ${fmt(s.x)}
 ${esc(dy.name[lang])}: ${fmt(s.y)}</title>
-        <ellipse cx="${s.cx}" cy="${s.cy}" rx="${s.rx}" ry="${s.ry}" />
+        <path d="${s.d}" />
       </g>`,
     )
     .join('');
