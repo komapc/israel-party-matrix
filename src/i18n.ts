@@ -130,12 +130,12 @@ export const ui = {
   quizIntro: {
     en: 'Mark how much you agree with each statement. Skip any you have no view on; mark the ones that matter most to you as important — they count double.',
     ru: 'Отметьте, насколько вы согласны с каждым утверждением. Пропускайте те, где нет мнения; самые важные для вас отметьте звёздочкой — они считаются вдвойне.',
-    uk: 'Позначте, наскільки ви згодні з кожним твердженням. Пропускайте ті, щодо яких не маєте думки; найважливіші для вас позначте зірочкою — вони рахуються подвійно.',
+    uk: 'Позначте, наскільки ви згодні з кожним твердженням. Пропускайте ті, щодо яких не маєте думки; найважливіші для вас позначте зірочкою — вони враховуються подвійно.',
     he: 'סמנו עד כמה אתם מסכימים עם כל קביעה. דלגו על מה שאין לכם עמדה לגביו; סמנו בכוכב את הנושאים החשובים לכם — הם נספרים כפול.',
     eo: 'Marku, kiom vi konsentas kun ĉiu aserto. Preterlasu tiujn, pri kiuj vi ne havas opinion; marku la plej gravajn per stelo — ili kalkuliĝas duoble.',
   },
   important: { en: 'Important to me', ru: 'Важно для меня', uk: 'Важливо для мене', he: 'חשוב לי', eo: 'Grava por mi' },
-  answered: { en: 'answered', ru: 'отвечено', uk: 'відповіли', he: 'נענו', eo: 'responditaj' },
+  answered: { en: 'answered', ru: 'отвечено', uk: 'питань із відповіддю', he: 'נענו', eo: 'responditaj' },
   quizResults: { en: 'Your closest parties', ru: 'Ближайшие к вам партии', uk: 'Найближчі до вас партії', he: 'המפלגות הקרובות אליכם', eo: 'Viaj plej proksimaj partioj' },
   quizNeedMore: {
     en: 'Answer at least 3 statements to see results.',
@@ -171,7 +171,7 @@ export const ui = {
   footAnalytics: {
     en: 'Visits are counted with Google Analytics.',
     ru: 'Посещения считаются через Google Analytics.',
-    uk: 'Відвідування рахуються через Google Analytics.',
+    uk: 'Відвідування підраховуються за допомогою Google Analytics.',
     he: 'הביקורים נספרים באמצעות Google Analytics.',
     eo: 'Vizitoj estas kalkulataj per Google Analytics.',
   },

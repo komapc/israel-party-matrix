@@ -53,7 +53,7 @@ export const subtitle = (lang: Lang) => fill(SUBTITLE[lang], { parties: parties.
 const INTRO: Text = {
   en: 'On {date} Israel elects its 26th Knesset. Here are the positions of {parties} parties on {issues} key issues — from a Palestinian state and Gaza to the Haredi draft and the cost of living. Tap a party or a cell for the explanation and sources; not sure whom to vote for? <a href="{quiz}">Take the quiz</a>.',
   ru: '{date} года Израиль выбирает 26-й Кнессет. Здесь собраны позиции {parties} партий по {issues} ключевым вопросам — от палестинского государства и Газы до призыва харедим и стоимости жизни. Нажмите на партию или ячейку, чтобы увидеть объяснение и источники; не знаете, за кого голосовать, — <a href="{quiz}">пройдите тест</a>.',
-  uk: '{date} року Ізраїль обирає 26-й Кнесет. Тут зібрано позиції {parties} партій щодо {issues} ключових питань — від палестинської держави й Гази до призову харедім і вартості життя. Натисніть на партію чи клітинку, щоб побачити пояснення та джерела; не знаєте, за кого голосувати, — <a href="{quiz}">пройдіть тест</a>.',
+  uk: '{date} року Ізраїль обирає 26-й Кнесет. Тут зібрано позиції {parties} партій щодо {issues} ключових питань — від палестинської держави й Гази до призову харедим і вартості життя. Натисніть на партію чи клітинку, щоб побачити пояснення та джерела; не знаєте, за кого голосувати, — <a href="{quiz}">пройдіть тест</a>.',
   he: 'ב־{date} ייבחרו חברי הכנסת ה־26. כאן מרוכזות העמדות של {parties} מפלגות ב־{issues} נושאים מרכזיים — ממדינה פלסטינית ועזה ועד גיוס חרדים ויוקר המחיה. לחצו על מפלגה או על משבצת כדי לראות הסבר ומקורות; לא בטוחים למי להצביע? <a href="{quiz}">עשו את מבחן ההתאמה</a>.',
   eo: 'La {date} Israelo elektas sian 26-an Kneseton. Ĉi tie estas la pozicioj de {parties} partioj pri {issues} ĉefaj temoj — de palestina ŝtato kaj Gazao ĝis la konskripcio de ĥaredoj kaj la vivkostoj. Tuŝu partion aŭ ĉelon por la klarigo kaj fontoj; ne certas, por kiu voĉdoni? <a href="{quiz}">Faru la kvizon</a>.',
 };
@@ -90,7 +90,7 @@ const QA: { q: Text; a: Text }[] = [
     q: {
       en: 'How does the election work?',
       ru: 'Как устроены выборы?',
-      uk: 'Як влаштовані вибори?',
+      uk: 'Як відбуваються вибори?',
       he: 'איך עובדת שיטת הבחירות?',
       eo: 'Kiel funkcias la elekto?',
     },
@@ -113,7 +113,7 @@ const QA: { q: Text; a: Text }[] = [
     a: {
       en: 'By the poll average as of {polls}, {n} lists pass comfortably: {likely}. Around the threshold: {borderline}.',
       ru: 'По среднему опросов на {polls} года барьер уверенно проходят {n} списков: {likely}. Около барьера: {borderline}.',
-      uk: 'За середнім опитувань на {polls} року бар’єр упевнено долають {n} списків: {likely}. Біля бар’єра: {borderline}.',
+      uk: 'За середнім значенням опитувань станом на {polls} року бар’єр упевнено долають {n} списків: {likely}. Біля бар’єра: {borderline}.',
       he: 'לפי ממוצע הסקרים נכון ל־{polls}, {n} רשימות עוברות בבטחה: {likely}. סביב אחוז החסימה: {borderline}.',
       eo: 'Laŭ la meznombro de enketoj je la {polls}, {n} listoj sekure superas la sojlon: {likely}. Ĉirkaŭ la sojlo: {borderline}.',
     },
@@ -122,7 +122,7 @@ const QA: { q: Text; a: Text }[] = [
     q: {
       en: 'What is the balance between the blocs?',
       ru: 'Каков расклад между блоками?',
-      uk: 'Який розклад між блоками?',
+      uk: 'Яке співвідношення сил між блоками?',
       he: 'מה מאזן הגושים?',
       eo: 'Kia estas la ekvilibro inter la blokoj?',
     },
@@ -145,7 +145,7 @@ const QA: { q: Text; a: Text }[] = [
     a: {
       en: 'Answer the {issues} questions of the <a href="{quiz}">quiz</a> and see which parties match you best. The <a href="{map}">political map</a> shows where the parties sit relative to each other, and the table above gives every party’s stance on every issue, with sources.',
       ru: 'Ответьте на {issues} вопросов <a href="{quiz}">теста</a> и посмотрите, с какими партиями совпадение выше. На <a href="{map}">политической карте</a> видно, где партии находятся относительно друг друга, а в таблице выше — позиция каждой партии по каждому вопросу с источниками.',
-      uk: 'Дайте відповідь на {issues} запитань <a href="{quiz}">тесту</a> й подивіться, з якими партіями збіг вищий. На <a href="{map}">політичній мапі</a> видно, де партії розташовані одна щодо одної, а в таблиці вище — позиція кожної партії щодо кожного питання з джерелами.',
+      uk: 'Дайте відповідь на {issues} запитань <a href="{quiz}">тесту</a> й подивіться, з якими партіями у вас найбільший збіг. На <a href="{map}">політичній мапі</a> видно, де партії розташовані одна щодо одної, а в таблиці вище — позиція кожної партії щодо кожного питання з джерелами.',
       he: 'ענו על {issues} השאלות ב<a href="{quiz}">מבחן ההתאמה</a> וראו עם אילו מפלגות ההתאמה הגבוהה ביותר. ב<a href="{map}">מפה הפוליטית</a> רואים איפה המפלגות ממוקמות זו ביחס לזו, ובטבלה למעלה — עמדת כל מפלגה בכל נושא, עם מקורות.',
       eo: 'Respondu la {issues} demandojn de la <a href="{quiz}">kvizo</a> kaj vidu, kiuj partioj plej kongruas kun vi. La <a href="{map}">politika mapo</a> montras, kie la partioj troviĝas unu rilate al la alia, kaj la supra tabelo donas la sintenon de ĉiu partio pri ĉiu temo, kun fontoj.',
     },
