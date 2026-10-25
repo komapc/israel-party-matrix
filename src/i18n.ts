@@ -122,6 +122,25 @@ export const ui = {
     he: 'התאמה = עד כמה תשובותיכם קרובות לעמדת המפלגה, בנושאים שבהם עמדתה ידועה. התשובות נשמרות רק בדפדפן הזה.',
     eo: 'Kongruo = kiom proksimaj viaj respondoj estas al la sinteno de ĉiu partio, pri la temoj kie ĝia pozicio estas konata. Viaj respondoj restas en ĉi tiu retumilo.',
   },
+  footAbout: {
+    en: 'An independent, non-partisan project. Not affiliated with any party or campaign.',
+    ru: 'Независимый внепартийный проект. Не связан ни с одной партией или кампанией.',
+    he: 'פרויקט עצמאי ובלתי מפלגתי. אינו קשור לשום מפלגה או קמפיין.',
+    eo: 'Sendependa, nepartia projekto. Ne ligita al iu ajn partio aŭ kampanjo.',
+  },
+  footViews: { en: 'Explore', ru: 'Разделы', he: 'ניווט', eo: 'Esplori' },
+  footProject: { en: 'Project', ru: 'Проект', he: 'הפרויקט', eo: 'Projekto' },
+  footSource: { en: 'Source code & data', ru: 'Код и данные', he: 'קוד ונתונים', eo: 'Fontkodo kaj datumoj' },
+  footReport: { en: 'Report an error', ru: 'Сообщить об ошибке', he: 'דיווח על טעות', eo: 'Raporti eraron' },
+  footMore: { en: 'More from lipu.dev', ru: 'Другие проекты lipu.dev', he: 'עוד ב־lipu.dev', eo: 'Pli ĉe lipu.dev' },
+  quizShare: { en: 'Copy link to my results', ru: 'Скопировать ссылку на мои ответы', he: 'העתקת קישור לתשובות שלי', eo: 'Kopii ligilon al miaj respondoj' },
+  copied: { en: 'Link copied', ru: 'Ссылка скопирована', he: 'הקישור הועתק', eo: 'Ligilo kopiita' },
+  footAnalytics: {
+    en: 'Visits are counted with Google Analytics.',
+    ru: 'Посещения считаются через Google Analytics.',
+    he: 'הביקורים נספרים באמצעות Google Analytics.',
+    eo: 'Vizitoj estas kalkulataj per Google Analytics.',
+  },
 } satisfies Record<string, Record<Lang, string | string[]>>;
 
 const isLang = (v: unknown): v is Lang => LANGS.includes(v as Lang);

@@ -5,6 +5,7 @@ import {
   blocOf,
   blocs,
   categories,
+  dimensions,
   esc,
   meta,
   parties,
@@ -14,8 +15,9 @@ import {
 } from './data';
 import { initAnalytics, track } from './analytics';
 import { LANGS, LANG_LABELS, LOCALES, initialLang, isRtl, saveLang, ui } from './i18n';
-import { mapState, renderMap, saveMapState } from './map';
-import { renderQuiz, resetQuiz, setAnswer, toggleImportant } from './quiz';
+import { renderMap } from './map';
+import { answers, loadAnswers, renderQuiz, resetQuiz, setAnswer, toggleImportant } from './quiz';
+import { type Route, VIEWS, decodeAnswers, encodeAnswers, formatRoute, parseRoute } from './route';
 import { loadCollapsed, saveCollapsed } from './state';
 import type { Aspect, Lang, Party, Position, Score, Tier } from './types';
 
@@ -30,7 +32,8 @@ const partiesByTier = new Map(
   ]),
 );
 
-let lang: Lang = initialLang();
+let route: Route = parseRoute(location.hash, initialLang());
+let lang: Lang = route.lang;
 // By default every issue category starts collapsed; party tiers stay open.
 const collapsed = loadCollapsed(categories.map((c) => `cat:${c.id}`));
 
@@ -313,32 +316,64 @@ function openParty(id: string): void {
     ${issues}`);
 }
 
-type View = 'matrix' | 'map' | 'quiz';
-const VIEWS: View[] = ['matrix', 'map', 'quiz'];
-const currentView = (): View => {
-  const v = location.hash.slice(1) as View;
-  return VIEWS.includes(v) ? v : 'matrix';
-};
+/** URL of another page, with any open card closed. */
+const link = (patch: Partial<Route>) =>
+  formatRoute({ ...route, party: undefined, issue: undefined, answers: undefined, ...patch });
+
+type View = Route['view'];
 
 function renderTabs(view: View): string {
   const label: Record<View, string> = { matrix: ui.tabMatrix[lang], map: ui.tabMap[lang], quiz: ui.tabQuiz[lang] };
   return `
     <nav class="tabs" aria-label="Views">
-      ${VIEWS.map((v) => `<a class="tab" href="#${v}" ${v === view ? 'aria-current="page"' : ''}>${label[v]}</a>`).join('')}
+      ${VIEWS.map((v) => `<a class="tab" href="${link({ view: v })}" ${v === view ? 'aria-current="page"' : ''}>${label[v]}</a>`).join('')}
     </nav>`;
 }
 
 function renderView(view: View): string {
-  if (view === 'map') return renderMap(lang);
-  if (view === 'quiz') return renderQuiz(lang);
+  if (view === 'map') return renderMap(lang, route, (x, y) => link({ x, y }));
+  if (view === 'quiz') return renderQuiz(lang, link({ view: 'map' }));
   return `${renderToolbar()}${renderMatrix()}`;
+}
+
+const REPO = 'https://github.com/komapc/israel-party-matrix';
+
+function renderFooter(): string {
+  const label: Record<View, string> = { matrix: ui.tabMatrix[lang], map: ui.tabMap[lang], quiz: ui.tabQuiz[lang] };
+  return `
+    <footer class="footer">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <b>${ui.title[lang]}</b>
+          <p>${ui.footAbout[lang]}</p>
+          <p>${ui.pollsAsOf[lang]} ${formatDate(meta.pollsAsOf)}</p>
+        </div>
+        <nav aria-label="${ui.footViews[lang]}">
+          <h3>${ui.footViews[lang]}</h3>
+          <ul>${VIEWS.map((v) => `<li><a href="${link({ view: v })}">${label[v]}</a></li>`).join('')}</ul>
+        </nav>
+        <nav aria-label="${ui.footProject[lang]}">
+          <h3>${ui.footProject[lang]}</h3>
+          <ul>
+            <li><a href="${REPO}" rel="noopener">${ui.footSource[lang]}</a></li>
+            <li><a href="${REPO}/issues/new" rel="noopener">${ui.footReport[lang]}</a></li>
+            <li><a href="https://lipu.dev/">${ui.footMore[lang]}</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__notes">
+        <p>${ui.footer[lang]}</p>
+        <p>${ui.minorLists[lang]}</p>
+        <p>${ui.footAnalytics[lang]}</p>
+      </div>
+    </footer>`;
 }
 
 function render(): void {
   document.documentElement.lang = lang;
   document.documentElement.dir = isRtl(lang) ? 'rtl' : 'ltr';
-  document.title = ui.title[lang];
-  const view = currentView();
+  document.title = pageTitle();
+  const view = route.view;
   const scrollLeft = document.querySelector('.matrix-wrap')?.scrollLeft ?? 0;
   document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     ${renderHeader()}
@@ -346,20 +381,66 @@ function render(): void {
     <main class="view view--${view}">
       ${renderView(view)}
     </main>
-    <footer class="footer">
-      <p>${ui.footer[lang]}</p>
-      <p>${ui.minorLists[lang]}</p>
-    </footer>
+    ${renderFooter()}
     <dialog id="details"></dialog>`;
   const wrap = document.querySelector('.matrix-wrap');
   if (wrap) wrap.scrollLeft = scrollLeft;
 }
 
-window.addEventListener('hashchange', () => {
+function pageTitle(): string {
+  const parts: string[] = [];
+  const party = route.party ?? route.issue?.split('/')[0];
+  if (party) parts.push(partyById.get(party)!.name[lang]);
+  if (route.issue) parts.push(aspectById.get(route.issue.split('/')[1])!.claim[lang]);
+  if (!party && route.view === 'map') {
+    const name = (id: string) => dimensions.find((d) => d.id === id)!.name[lang];
+    parts.push(`${ui.tabMap[lang]}: ${name(route.x)} × ${name(route.y)}`);
+  }
+  if (!party && route.view === 'quiz') parts.push(ui.tabQuiz[lang]);
+  return [...parts, ui.title[lang]].join(' — ');
+}
+
+/** Syncs the page with the URL: every distinct page (view, axes, open card, language) has its own address. */
+function apply(): void {
+  const prev = route;
+  route = parseRoute(location.hash, lang);
+  if (route.answers) {
+    loadAnswers(decodeAnswers(route.answers));
+    route = { ...route, answers: undefined };
+  }
+  const canonical = formatRoute(route);
+  if (location.hash !== canonical) history.replaceState(null, '', canonical);
+  const langChanged = lang !== route.lang;
+  lang = route.lang;
+  saveLang(lang);
   render();
-  window.scrollTo(0, 0);
-  track('select_view', { view: currentView() });
-});
+  if (prev.view !== route.view || prev.x !== route.x || prev.y !== route.y) window.scrollTo(0, 0);
+  const wrap = document.querySelector('.matrix-wrap');
+  if (langChanged && wrap) wrap.scrollLeft = 0; // scroll origin flips with text direction
+  if (route.party) openParty(route.party);
+  else if (route.issue) openDetails(route.issue);
+}
+
+function navigate(patch: Partial<Route>): void {
+  const url = formatRoute({ ...route, answers: undefined, ...patch });
+  if (url === location.hash) apply();
+  else location.hash = url;
+}
+
+window.addEventListener('hashchange', apply);
+
+// Closing a card drops it from the URL without adding a history entry.
+document.addEventListener(
+  'close',
+  (e) => {
+    const dialog = e.target as HTMLElement;
+    if (dialog.id !== 'details' || !dialog.isConnected || !(route.party || route.issue)) return;
+    route = { ...route, party: undefined, issue: undefined };
+    history.replaceState(null, '', formatRoute(route));
+    document.title = pageTitle();
+  },
+  true,
+);
 
 const allKeys = () => [...categories.map((c) => `cat:${c.id}`), ...tiers.map((t) => `tier:${t.id}`)];
 
@@ -368,11 +449,7 @@ document.addEventListener('click', (e) => {
 
   const langBtn = target.closest<HTMLButtonElement>('[data-lang]');
   if (langBtn) {
-    lang = langBtn.dataset.lang as Lang;
-    saveLang(lang);
-    render();
-    const wrap = document.querySelector('.matrix-wrap');
-    if (wrap) wrap.scrollLeft = 0; // scroll origin flips with text direction
+    navigate({ lang: langBtn.dataset.lang as Lang });
     track('select_language', { language: lang });
     return;
   }
@@ -380,14 +457,14 @@ document.addEventListener('click', (e) => {
   const partyBtn = target.closest<HTMLElement>('[data-party]');
   if (partyBtn) {
     e.preventDefault();
-    openParty(partyBtn.dataset.party!);
+    navigate({ party: partyBtn.dataset.party!, issue: undefined });
     track('open_party', { party: partyBtn.dataset.party! });
     return;
   }
 
   const cell = target.closest<HTMLElement>('[data-cell]');
   if (cell) {
-    openDetails(cell.dataset.cell!);
+    navigate({ issue: cell.dataset.cell!, party: undefined });
     track('open_cell', { cell: cell.dataset.cell! });
     return;
   }
@@ -406,11 +483,11 @@ document.addEventListener('click', (e) => {
     return;
   }
 
-  const preset = target.closest<HTMLElement>('[data-preset]');
-  if (preset) {
-    [mapState.x, mapState.y] = preset.dataset.preset!.split('|');
-    saveMapState();
-    render();
+  const share = target.closest<HTMLButtonElement>('[data-quiz-share]');
+  if (share) {
+    const url = `${location.origin}${location.pathname}${link({ view: 'quiz', answers: encodeAnswers(answers) })}`;
+    navigator.clipboard?.writeText(url).then(() => (share.textContent = ui.copied[lang]), () => prompt('', url));
+    track('share_quiz');
     return;
   }
 
@@ -442,36 +519,31 @@ document.addEventListener('click', (e) => {
 document.addEventListener('change', (e) => {
   const input = e.target as HTMLInputElement | HTMLSelectElement;
   if (input.dataset.axis === 'x' || input.dataset.axis === 'y') {
-    mapState[input.dataset.axis] = input.value;
+    navigate({ [input.dataset.axis]: input.value });
   } else if (input.dataset.mapTier) {
     const tier = input.dataset.mapTier as Tier;
-    mapState.tiers = (input as HTMLInputElement).checked
-      ? [...mapState.tiers, tier]
-      : mapState.tiers.filter((t) => t !== tier);
+    navigate({
+      show: (input as HTMLInputElement).checked ? [...route.show, tier] : route.show.filter((t) => t !== tier),
+    });
   } else if (input.dataset.important) {
     toggleImportant(input.dataset.important);
     render();
-    return;
-  } else {
-    return;
   }
-  saveMapState();
-  render();
 });
 
 document.addEventListener('keydown', (e) => {
   const region = (e.target as Element).closest?.<SVGElement>('g[data-party]');
   if (region && (e.key === 'Enter' || e.key === ' ')) {
     e.preventDefault();
-    openParty(region.dataset.party!);
+    navigate({ party: region.dataset.party!, issue: undefined });
     return;
   }
   const cell = (e.target as HTMLElement).closest?.<HTMLElement>('[data-cell]');
   if (cell && (e.key === 'Enter' || e.key === ' ')) {
     e.preventDefault();
-    openDetails(cell.dataset.cell!);
+    navigate({ issue: cell.dataset.cell!, party: undefined });
   }
 });
 
-render();
+apply();
 initAnalytics();

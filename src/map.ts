@@ -3,8 +3,6 @@ import { ui } from './i18n';
 import { answers, hasEnoughAnswers } from './quiz';
 import type { Dimension, Lang, Party, Tier } from './types';
 
-const STORAGE_KEY = 'matrix.map.v1';
-
 /** Ready-made axis pairs: [horizontal, vertical]. */
 export const PRESETS: [string, string][] = [
   ['economy', 'security'],
@@ -13,32 +11,14 @@ export const PRESETS: [string, string][] = [
   ['religion', 'judiciary'],
 ];
 
-interface MapState {
+export interface MapState {
   x: string;
   y: string;
-  tiers: Tier[];
+  show: Tier[];
 }
 
-export const mapState: MapState = load();
-
-function load(): MapState {
-  const fallback: MapState = { x: PRESETS[0][0], y: PRESETS[0][1], tiers: ['likely', 'borderline'] };
-  try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null') as MapState | null;
-    const valid = (id: string) => dimensions.some((d) => d.id === id);
-    return saved && valid(saved.x) && valid(saved.y) && Array.isArray(saved.tiers) ? saved : fallback;
-  } catch {
-    return fallback;
-  }
-}
-
-export function saveMapState(): void {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(mapState));
-  } catch {
-    // ignore
-  }
-}
+/** Builds the URL of the map with other axes. */
+type MapLink = (x: string, y: string) => string;
 
 interface Extent {
   min: number;
@@ -94,23 +74,23 @@ function placeLabels(items: { cx: number; cy: number; w: number }[]): number[] {
 
 const dimLabel = (d: Dimension, lang: Lang) => d.name[lang];
 
-function renderControls(lang: Lang): string {
+function renderControls(lang: Lang, state: MapState, link: MapLink): string {
   const presets = PRESETS.map(([x, y]) => {
     const dx = dimensions.find((d) => d.id === x)!;
     const dy = dimensions.find((d) => d.id === y)!;
-    const active = mapState.x === x && mapState.y === y;
-    return `<button type="button" class="chip" data-preset="${x}|${y}" aria-pressed="${active}">${dimLabel(dx, lang)} × ${dimLabel(dy, lang)}</button>`;
+    const active = state.x === x && state.y === y;
+    return `<a class="chip" href="${link(x, y)}" ${active ? 'aria-current="page"' : ''}>${dimLabel(dx, lang)} × ${dimLabel(dy, lang)}</a>`;
   }).join('');
   const select = (axis: 'x' | 'y') => `
     <label class="axis-select">${axis === 'x' ? ui.axisX[lang] : ui.axisY[lang]}
       <select data-axis="${axis}">
-        ${dimensions.map((d) => `<option value="${d.id}" ${mapState[axis] === d.id ? 'selected' : ''}>${dimLabel(d, lang)}</option>`).join('')}
+        ${dimensions.map((d) => `<option value="${d.id}" ${state[axis] === d.id ? 'selected' : ''}>${dimLabel(d, lang)}</option>`).join('')}
       </select>
     </label>`;
   const tierBoxes = tiers
     .map(
       (t) => `
-      <label class="check"><input type="checkbox" data-map-tier="${t.id}" ${mapState.tiers.includes(t.id) ? 'checked' : ''} />${t.name[lang]}</label>`,
+      <label class="check"><input type="checkbox" data-map-tier="${t.id}" ${state.show.includes(t.id) ? 'checked' : ''} />${t.name[lang]}</label>`,
     )
     .join('');
   return `
@@ -195,10 +175,10 @@ ${esc(dy.name[lang])}: ${fmt(s.y)}</title>
     </svg>`;
 }
 
-export function renderMap(lang: Lang): string {
-  const dx = dimensions.find((d) => d.id === mapState.x)!;
-  const dy = dimensions.find((d) => d.id === mapState.y)!;
-  const shown = parties.filter((p) => mapState.tiers.includes(p.tier));
+export function renderMap(lang: Lang, state: MapState, link: MapLink): string {
+  const dx = dimensions.find((d) => d.id === state.x)!;
+  const dy = dimensions.find((d) => d.id === state.y)!;
+  const shown = parties.filter((p) => state.show.includes(p.tier));
   const placed: Placed[] = [];
   const missing: Party[] = [];
   for (const party of shown) {
@@ -215,7 +195,7 @@ export function renderMap(lang: Lang): string {
   return `
     <div class="map">
       <p class="intro">${ui.mapIntro[lang]}</p>
-      ${renderControls(lang)}
+      ${renderControls(lang, state, link)}
       <div class="map-figure">
         ${renderSvg(lang, dx, dy, placed)}
         <div class="map-legend">

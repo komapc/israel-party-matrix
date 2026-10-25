@@ -34,3 +34,15 @@ Every position should cite at least one source.
 
 Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/deploy.yml`.
 Live at https://elections-2026.lipu.dev (`public/CNAME`; DNS: Cloudflare CNAME `elections-2026` → `komapc.github.io`, DNS only).
+
+## URLs
+
+Every page has its own address (hash routes, so they work on static hosting):
+
+| URL | Page |
+|---|---|
+| `#/ru/matrix` | Matrix in Russian |
+| `#/en/map/religion/security?show=likely` | Map with chosen axes and tier filter |
+| `#/he/matrix?party=raam` | Party card |
+| `#/eo/matrix?issue=raam.lgbt` | One party × issue cell |
+| `#/en/quiz?a=eB-c` | Quiz with shared answers (one letter per issue: a…e = −2…+2, uppercase = important) |
