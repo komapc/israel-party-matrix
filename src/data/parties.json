@@ -3,11 +3,19 @@
     "id": "yashar",
     "tier": "likely",
     "bloc": "anti",
+    "blocNote": {
+      "en": "Eisenkot vowed not to serve in a Netanyahu government, even under rotation (21 Oct 2026).",
+      "ru": "Айзенкот пообещал не входить в правительство Нетаньяху даже при ротации (21.10.2026)."
+    },
     "color": "#0e7c86",
     "name": {
       "en": "Yashar",
       "ru": "Яшар",
       "he": "ישר!"
+    },
+    "summary": {
+      "en": "New centrist party of former IDF chief of staff Gadi Eisenkot, campaigning on security, an equal draft and restoring trust in state institutions.",
+      "ru": "Новая центристская партия бывшего начальника Генштаба Гади Айзенкота: безопасность, равный призыв и восстановление доверия к госинститутам."
     },
     "leader": {
       "en": "Gadi Eisenkot",
@@ -27,11 +35,19 @@
     "id": "likud",
     "tier": "likely",
     "bloc": "pro",
+    "blocNote": {
+      "en": "Netanyahu's own party; heads the bloc.",
+      "ru": "Партия самого Нетаньяху, возглавляет блок."
+    },
     "color": "#1d4ed8",
     "name": {
       "en": "Likud",
       "ru": "Ликуд",
       "he": "הליכוד"
+    },
+    "summary": {
+      "en": "Israel's main right-wing party, led by Prime Minister Benjamin Netanyahu; runs jointly with Gideon Sa'ar's New Hope.",
+      "ru": "Главная правая партия Израиля во главе с премьер-министром Биньямином Нетаньяху; идёт единым списком с «Новой надеждой» Гидеона Саара."
     },
     "leader": {
       "en": "Benjamin Netanyahu",
@@ -54,10 +70,18 @@
     "id": "together",
     "tier": "likely",
     "bloc": "anti",
+    "blocNote": {
+      "en": "Bennett and Lapid run to replace Netanyahu; Bennett rejected serving under him.",
+      "ru": "Беннет и Лапид идут на смену Нетаньяху; Беннет отказался служить под его началом."
+    },
     "color": "#0891b2",
     "name": {
       "en": "Together",
       "ru": "Вместе"
+    },
+    "summary": {
+      "en": "Joint list of former PMs Naftali Bennett (Bennett 2026) and Yair Lapid (Yesh Atid): a centre-right/centrist alternative to Netanyahu.",
+      "ru": "Объединённый список экс-премьеров Нафтали Беннета («Беннет 2026») и Яира Лапида («Еш атид») — правоцентристская альтернатива Нетаньяху."
     },
     "leader": {
       "en": "Naftali Bennett",
@@ -80,11 +104,19 @@
     "id": "democrats",
     "tier": "likely",
     "bloc": "anti",
+    "blocNote": {
+      "en": "Left flank of the opposition; seeks an alternative government to Netanyahu's.",
+      "ru": "Левый фланг оппозиции; добивается альтернативного правительства без Нетаньяху."
+    },
     "color": "#dc2626",
     "name": {
       "en": "The Democrats",
       "ru": "Демократы",
       "he": "הדמוקרטים"
+    },
+    "summary": {
+      "en": "Merger of Labor and Meretz led by Yair Golan; the main Zionist left party, backing a two-state solution and liberal democracy.",
+      "ru": "Слияние «Аводы» и МЕРЕЦ во главе с Яиром Голаном; главная сионистская левая партия, за два государства и либеральную демократию."
     },
     "leader": {
       "en": "Yair Golan",
@@ -109,11 +141,19 @@
     "id": "joint-list",
     "tier": "likely",
     "bloc": "other",
+    "blocNote": {
+      "en": "Won't join coalitions on principle; offers outside support to a non-Netanyahu government.",
+      "ru": "Принципиально не входит в коалиции; готов поддержать извне правительство без Нетаньяху."
+    },
     "color": "#16a34a",
     "name": {
       "en": "Joint List",
       "ru": "Объединённый список",
       "he": "הרשימה המשותפת"
+    },
+    "summary": {
+      "en": "Alliance of Arab and Arab-Jewish parties Hadash, Ta'al and Balad, advocating full civic equality and an end to the occupation.",
+      "ru": "Союз арабских и арабо-еврейских партий ХАДАШ, ТААЛ и БАЛАД: полное гражданское равенство и прекращение оккупации."
     },
     "leader": {
       "en": "Yousef Jabareen",
@@ -137,11 +177,19 @@
     "id": "shas",
     "tier": "likely",
     "bloc": "pro",
+    "blocNote": {
+      "en": "Member of Netanyahu's government and bloc; conditions any coalition on a draft-exemption law.",
+      "ru": "Входила в правительство и блок Нетаньяху; условие для любой коалиции — закон об освобождении от призыва."
+    },
     "color": "#1e3a8a",
     "name": {
       "en": "Shas",
       "ru": "ШАС",
       "he": "ש״ס"
+    },
+    "summary": {
+      "en": "Sephardi-Mizrahi Haredi party led by Aryeh Deri, focused on religious services, Torah study and welfare for its constituency.",
+      "ru": "Сефардская ультраортодоксальная партия Арье Дери: религиозные службы, изучение Торы и социальная поддержка своего электората."
     },
     "leader": {
       "en": "Aryeh Deri",
@@ -161,11 +209,19 @@
     "id": "otzma",
     "tier": "likely",
     "bloc": "pro",
+    "blocNote": {
+      "en": "Sat in the outgoing Netanyahu government; counted in his bloc.",
+      "ru": "Входила в уходящее правительство Нетаньяху; считается частью его блока."
+    },
     "color": "#ca8a04",
     "name": {
       "en": "Otzma Yehudit",
       "ru": "Оцма Йехудит",
       "he": "עוצמה יהודית"
+    },
+    "summary": {
+      "en": "Far-right national-religious party of Itamar Ben-Gvir, campaigning on a hard line on security, settlement and law and order.",
+      "ru": "Ультраправая национально-религиозная партия Итамара Бен-Гвира: жёсткая линия в безопасности, поселения, «закон и порядок»."
     },
     "leader": {
       "en": "Itamar Ben-Gvir",
@@ -185,11 +241,19 @@
     "id": "utj",
     "tier": "likely",
     "bloc": "pro",
+    "blocNote": {
+      "en": "Left the coalition in 2025 but still counted in the Netanyahu bloc; Asher says UTJ 'belongs to no bloc'.",
+      "ru": "Вышла из коалиции в 2025, но по-прежнему считается в блоке Нетаньяху; Ашер говорит, что партия «вне блоков»."
+    },
     "color": "#334155",
     "name": {
       "en": "United Torah Judaism",
       "ru": "Яхадут ха-Тора",
       "he": "יהדות התורה"
+    },
+    "summary": {
+      "en": "Ashkenazi Haredi alliance of Degel HaTorah and Agudat Yisrael; its core demand is preserving yeshiva students' draft exemption.",
+      "ru": "Ашкеназский ультраортодоксальный союз «Дегель ха-Тора» и «Агудат Исраэль»; главное требование — сохранить освобождение ешиботников от призыва."
     },
     "leader": {
       "en": "Ya'akov Asher",
@@ -214,11 +278,19 @@
     "id": "yisrael-beiteinu",
     "tier": "likely",
     "bloc": "anti",
+    "blocNote": {
+      "en": "Lieberman ruled out a Netanyahu-led government; open to Likud under other leadership.",
+      "ru": "Либерман исключил правительство во главе с Нетаньяху; открыт для Ликуда с другим лидером."
+    },
     "color": "#2563eb",
     "name": {
       "en": "Yisrael Beiteinu",
       "ru": "Наш дом — Израиль",
       "he": "ישראל ביתנו"
+    },
+    "summary": {
+      "en": "Secular right-wing party of Avigdor Lieberman, rooted in the Russian-speaking community; hawkish on security, against Haredi privileges.",
+      "ru": "Светская правая партия Авигдора Либермана с опорой на русскоязычных избирателей: жёсткая в безопасности, против льгот харедим."
     },
     "leader": {
       "en": "Avigdor Lieberman",
@@ -237,11 +309,19 @@
     "id": "rzp",
     "tier": "likely",
     "bloc": "pro",
+    "blocNote": {
+      "en": "Sat in the outgoing Netanyahu government; surplus-vote deal with Likud.",
+      "ru": "Входила в уходящее правительство Нетаньяху; соглашение об излишках голосов с Ликудом."
+    },
     "color": "#ea580c",
     "name": {
       "en": "Religious Zionism–Zehut",
       "ru": "Религиозный сионизм–Зеут",
       "he": "הציונות הדתית"
+    },
+    "summary": {
+      "en": "Religious-Zionist party of Bezalel Smotrich, running with the libertarian Zehut party; pro-settlement and pro-annexation.",
+      "ru": "Религиозно-сионистская партия Бецалеля Смотрича, идёт вместе с либертарианской партией «Зеут»; за поселения и аннексию."
     },
     "leader": {
       "en": "Bezalel Smotrich",
@@ -265,11 +345,19 @@
     "id": "raam",
     "tier": "likely",
     "bloc": "anti",
+    "blocNote": {
+      "en": "Pitches itself as a partner for an Eisenkot-led government; no formal pledge against Netanyahu.",
+      "ru": "Предлагает себя в партнёры правительству Айзенкота; формального отказа от Нетаньяху нет."
+    },
     "color": "#15803d",
     "name": {
       "en": "Ra'am",
       "ru": "РААМ",
       "he": "רע״ם"
+    },
+    "summary": {
+      "en": "Arab party of Mansour Abbas, rooted in the Islamic Movement's southern branch (split in 2026); pragmatic, focused on Arab-community civil issues.",
+      "ru": "Арабская партия Мансура Аббаса, вышедшая из южной ветви Исламского движения (разрыв в 2026); прагматичная, сосредоточена на нуждах арабских граждан."
     },
     "leader": {
       "en": "Mansour Abbas",
@@ -291,10 +379,18 @@
     "id": "reservists",
     "tier": "borderline",
     "bloc": "other",
+    "blocNote": {
+      "en": "Seeks a government beyond both blocs; will back whoever brings most Zionist seats; hasn't ruled out Netanyahu.",
+      "ru": "За правительство вне блоков; поддержит того, у кого больше сионистских мандатов; Нетаньяху не исключает."
+    },
     "color": "#65a30d",
     "name": {
       "en": "Reservists–New Economic Party",
       "ru": "Резервисты–Новая экономическая партия"
+    },
+    "summary": {
+      "en": "List of reserve soldiers led by Yoaz Hendel, allied with the New Economic Party; Zionist right-of-centre, seeking a government beyond both blocs.",
+      "ru": "Список резервистов во главе с Йоазом Хенделем в союзе с Новой экономической партией; сионистский правый центр, за правительство вне блоков."
     },
     "leader": {
       "en": "Yoaz Hendel",
@@ -314,11 +410,19 @@
     "id": "amcha",
     "tier": "borderline",
     "bloc": "pro",
+    "blocNote": {
+      "en": "Winter: Netanyahu is 'the only one we will recommend'.",
+      "ru": "Винтер: Нетаньяху — «единственный, кого мы рекомендуем»."
+    },
     "color": "#7c3aed",
     "name": {
       "en": "Amcha Yisrael",
       "ru": "Амха Исраэль",
       "he": "עמך ישראל"
+    },
+    "summary": {
+      "en": "New right-wing party of former general Ofer Winter, combining national-religious values with security hawkishness.",
+      "ru": "Новая правая партия бывшего генерала Офера Винтера: национально-религиозные ценности и жёсткая линия в безопасности."
     },
     "leader": {
       "en": "Ofer Winter",
@@ -338,10 +442,18 @@
     "id": "haredi-public",
     "tier": "unlikely",
     "bloc": "other",
+    "blocNote": {
+      "en": "Refused Netanyahu's request to withdraw; no declared PM preference.",
+      "ru": "Отказалась сняться по просьбе Нетаньяху; кандидата в премьеры не назвала."
+    },
     "color": "#57534e",
     "name": {
       "en": "Haredi Public",
       "ru": "Харедимная общественность"
+    },
+    "summary": {
+      "en": "Small Haredi list led by Moti Leitner, challenging Shas and UTJ from within the ultra-Orthodox community.",
+      "ru": "Небольшой ультраортодоксальный список Моти Лейтнера, бросающий вызов ШАС и Яхадут ха-Тора внутри общины харедим."
     },
     "polls": {
       "avg": 0,
@@ -357,11 +469,19 @@
     "id": "noam",
     "tier": "unlikely",
     "bloc": "pro",
+    "blocNote": {
+      "en": "Quit the government in 2025 but campaigns to 'strengthen the right-wing bloc'.",
+      "ru": "Вышла из правительства в 2025, но призывает «укрепить правый блок»."
+    },
     "color": "#78716c",
     "name": {
       "en": "Noam",
       "ru": "Ноам",
       "he": "נעם"
+    },
+    "summary": {
+      "en": "Small far-right religious party of Avi Maoz, focused on opposing LGBTQ rights and Reform Judaism and on 'Jewish identity'.",
+      "ru": "Небольшая ультраправая религиозная партия Ави Маоза: против прав ЛГБТ и реформистского иудаизма, за «еврейскую идентичность»."
     },
     "leader": {
       "en": "Avi Maoz",
@@ -376,10 +496,18 @@
     "id": "tzomet",
     "tier": "unlikely",
     "bloc": "other",
+    "blocNote": {
+      "en": "No declared backing for any PM candidate found.",
+      "ru": "Заявлений о поддержке кандидата в премьеры не найдено."
+    },
     "color": "#a8a29e",
     "name": {
       "en": "Tzomet–Beit Yisrael",
       "ru": "Цомет–Бейт Исраэль"
+    },
+    "summary": {
+      "en": "Joint list of the secular-right Tzomet and Gadi Yevarkan's Beit Yisrael; Yevarkan left Likud in July 2026.",
+      "ru": "Объединённый список светской правой партии «Цомет» и «Бейт Исраэль» Гади Йеваркана, покинувшего Ликуд в июле 2026."
     },
     "leader": {
       "en": "Gadi Yevarkan",

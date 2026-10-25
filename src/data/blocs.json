@@ -1,5 +1,8 @@
 [
-  { "id": "pro", "name": { "en": "Netanyahu bloc", "ru": "Блок Нетаньяху" } },
-  { "id": "anti", "name": { "en": "Anti-Netanyahu bloc", "ru": "Против Нетаньяху" } },
-  { "id": "other", "name": { "en": "Neither / unclear", "ru": "Вне блоков" } }
+  { "id": "pro", "name": { "en": "Netanyahu bloc", "ru": "Блок Нетаньяху" },
+    "short": { "en": "Pro-Netanyahu", "ru": "За Нетаньяху" } },
+  { "id": "anti", "name": { "en": "Anti-Netanyahu bloc", "ru": "Против Нетаньяху" },
+    "short": { "en": "Anti-Netanyahu", "ru": "Против" } },
+  { "id": "other", "name": { "en": "Neither / unclear", "ru": "Вне блоков" },
+    "short": { "en": "Neither", "ru": "Вне блоков" } }
 ]

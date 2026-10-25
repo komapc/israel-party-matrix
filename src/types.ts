@@ -39,6 +39,8 @@ export type BlocId = 'pro' | 'anti' | 'other';
 export interface Bloc {
   id: BlocId;
   name: Localized;
+  /** Compact label for column headers. */
+  short: Localized;
 }
 
 export interface Party {
@@ -47,6 +49,7 @@ export interface Party {
   leader?: Localized;
   /** Component parties of a joint list. */
   members?: Localized;
+  summary?: Localized;
   tier: Tier;
   bloc: BlocId;
   blocNote?: Localized;

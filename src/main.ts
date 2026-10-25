@@ -70,10 +70,14 @@ function renderHeader(): string {
     </header>`;
 }
 
+/** Five-step position marker: ticks for -2..+2 with the party's score as a dot. */
+function track(score: number | null, wide = false): string {
+  if (score === null) return `<span class="track track--none${wide ? ' track--wide' : ''}">—</span>`;
+  const ticks = [-2, -1, 0, 1, 2].map((s) => `<i${s === score ? ' class="on"' : ''}></i>`).join('');
+  return `<span class="track${wide ? ' track--wide' : ''}" aria-label="${score > 0 ? '+' : ''}${score}">${ticks}</span>`;
+}
+
 function renderToolbar(): string {
-  const swatches = [-2, -1, 0, 1, 2]
-    .map((s) => `<span class="cell legend__swatch" data-score="${s}">${s > 0 ? '+' : ''}${s}</span>`)
-    .join('');
   return `
     <div class="toolbar">
       <dl class="facts">
@@ -81,7 +85,7 @@ function renderToolbar(): string {
         <div><dt>${ui.pollsAsOf[lang]}</dt><dd>${formatDate(meta.pollsAsOf)}</dd></div>
       </dl>
       ${renderBlocs()}
-      <div class="legend"><span>${ui.legend[lang]}</span>${swatches}</div>
+      <div class="legend">${track(1)}<span>${ui.legendHint[lang]}</span></div>
       <div class="bulk">
         <button type="button" class="btn" data-bulk="expand">${ui.expandAll[lang]}</button>
         <button type="button" class="btn" data-bulk="collapse">${ui.collapseAll[lang]}</button>
@@ -110,29 +114,27 @@ function renderPolls(p: Party): string {
   return `<span class="party__polls" title="${ui.pollTitle[lang]}">~${avg}${range}</span>`;
 }
 
+const blocOf = (p: Party) => blocs.find((b) => b.id === p.bloc)!;
+
 function renderPartyHead(p: Party): string {
-  const bloc = blocs.find((b) => b.id === p.bloc)!;
-  const tooltip = [p.leader?.[lang], p.members?.[lang], bloc.name[lang]].filter(Boolean).join(' · ');
   return `
-    <th scope="col" class="party party--${p.bloc}" style="--party:${p.color}" title="${esc(tooltip)}">
-      <span class="party__name">${esc(p.name[lang])}</span>
-      ${p.name.he ? `<span class="party__he" lang="he" dir="rtl">${esc(p.name.he)}</span>` : ''}
-      ${p.leader ? `<span class="party__leader">${esc(p.leader[lang])}</span>` : ''}
-      ${renderPolls(p)}
-      <span class="party__bloc"><i></i>${bloc.name[lang]}</span>
+    <th scope="col" class="party party--${p.bloc}">
+      <button type="button" class="party__btn" data-party="${p.id}" title="${esc(p.summary?.[lang] ?? '')}">
+        <span class="party__name">${esc(p.name[lang])}</span>
+        ${p.name.he ? `<span class="party__he" lang="he" dir="rtl">${esc(p.name.he)}</span>` : ''}
+        ${p.leader ? `<span class="party__leader">${esc(p.leader[lang])}</span>` : ''}
+        ${renderPolls(p)}
+        <span class="party__bloc"><i></i>${blocOf(p).short[lang]}</span>
+      </button>
     </th>`;
 }
 
 function renderCell(party: Party, aspect: Aspect): string {
   const pos = positionIndex.get(`${party.id}/${aspect.id}`);
-  if (!pos) return `<td class="cell cell--none" title="${ui.noPosition[lang]}">—</td>`;
-  if (pos.score === null) {
-    return `<td class="cell cell--none cell--scored" data-cell="${party.id}/${aspect.id}" tabindex="0" role="button" title="${esc(pos.note?.[lang] ?? ui.noPosition[lang])}">—</td>`;
-  }
-  const title = pos.note ? esc(pos.note[lang]) : '';
-  return `<td class="cell cell--scored" data-score="${pos.score}" data-cell="${party.id}/${aspect.id}" tabindex="0" role="button" title="${title}">${pos.score > 0 ? '+' : ''}${pos.score}</td>`;
+  if (!pos) return `<td class="cell" title="${ui.noPosition[lang]}">${track(null)}</td>`;
+  const title = esc(pos.note?.[lang] ?? ui.noPosition[lang]);
+  return `<td class="cell cell--link" data-cell="${party.id}/${aspect.id}" tabindex="0" role="button" title="${title}">${track(pos.score)}</td>`;
 }
-
 function renderMatrix(): string {
   const groups = visibleTiers();
   const colCount = 1 + groups.reduce((n, g) => n + (g.open ? g.parties.length : 1), 0);
@@ -213,33 +215,97 @@ function hostname(url: string): string {
   }
 }
 
+function sourceLinks(urls: string[] = []): string {
+  if (urls.length === 0) return '';
+  const items = urls
+    .map((u) => `<a class="src" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(hostname(u))}</a>`)
+    .join('');
+  return `<div class="srcs">${items}</div>`;
+}
+
+function scoreLabel(pos: Position, aspect: Aspect): string {
+  if (pos.score === null) return ui.noPosition[lang];
+  if (pos.score === 0) return ui.mixed[lang];
+  const pole = pos.score < 0 ? aspect.low[lang] : aspect.high[lang];
+  return Math.abs(pos.score) === 2 ? pole : `${ui.leans[lang]} ${pole.toLowerCase()}`;
+}
+
+function showDialog(html: string): void {
+  const dialog = document.querySelector<HTMLDialogElement>('#details')!;
+  dialog.innerHTML = `<form method="dialog" class="details">${html}</form>`;
+  dialog.showModal();
+  dialog.scrollTop = 0;
+}
+
+const closeButton = () =>
+  `<button class="details__close" value="close" aria-label="${ui.close[lang]}">×</button>`;
+
+function issueBlock(pos: Position, aspect: Aspect, heading: string): string {
+  return `
+    <div class="issue">
+      ${heading}
+      <div class="issue__scale">
+        <span>${aspect.low[lang]}</span>${track(pos.score, true)}<span>${aspect.high[lang]}</span>
+      </div>
+      <p class="issue__verdict">${scoreLabel(pos, aspect)}</p>
+      ${pos.note ? `<p class="issue__note">${esc(pos.note[lang])}</p>` : ''}
+      ${sourceLinks(pos.sources)}
+    </div>`;
+}
+
 function openDetails(key: string): void {
   const pos = positionIndex.get(key);
   if (!pos) return;
   const party = partyById.get(pos.party)!;
   const aspect = aspectById.get(pos.aspect)!;
-  const scoreLabel =
-    pos.score === null
-      ? ui.noPosition[lang]
-      : `${pos.score > 0 ? '+' : ''}${pos.score} · ${pos.score < 0 ? aspect.low[lang] : pos.score > 0 ? aspect.high[lang] : '↔'}`;
-  const sources = (pos.sources ?? [])
-    .map((u) => `<li><a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(hostname(u))}</a></li>`)
+  showDialog(`
+    <header class="details__head details__head--${party.bloc}">
+      <div>
+        <button type="button" class="details__party" data-party="${party.id}">${esc(party.name[lang])} →</button>
+        <h2>${aspect.name[lang]}</h2>
+      </div>
+      ${closeButton()}
+    </header>
+    ${issueBlock(pos, aspect, '')}`);
+}
+
+function openParty(id: string): void {
+  const p = partyById.get(id);
+  if (!p) return;
+  const issues = categories
+    .map((cat) => {
+      const rows = aspects
+        .filter((a) => a.category === cat.id)
+        .map((a) => {
+          const pos = positionIndex.get(`${p.id}/${a.id}`);
+          return pos ? issueBlock(pos, a, `<h4>${a.name[lang]}</h4>`) : '';
+        })
+        .join('');
+      return `<section><h3>${cat.name[lang]}</h3>${rows}</section>`;
+    })
     .join('');
-  const dialog = document.querySelector<HTMLDialogElement>('#details')!;
-  dialog.innerHTML = `
-    <form method="dialog" class="details">
-      <header class="details__head" style="--party:${party.color}">
-        <div>
-          <p class="details__party">${esc(party.name[lang])}</p>
-          <h2>${aspect.name[lang]}</h2>
-        </div>
-        <button class="details__close" value="close" aria-label="${ui.close[lang]}">×</button>
-      </header>
-      <p class="details__score cell" ${pos.score === null ? '' : `data-score="${pos.score}"`}>${scoreLabel}</p>
-      ${pos.note ? `<p class="details__note">${esc(pos.note[lang])}</p>` : ''}
-      ${sources ? `<h3>${ui.sources[lang]}</h3><ul class="details__sources">${sources}</ul>` : ''}
-    </form>`;
-  dialog.showModal();
+  const facts = [
+    p.leader && `<div><dt>${ui.leader[lang]}</dt><dd>${esc(p.leader[lang])}</dd></div>`,
+    p.members && `<div><dt>${ui.members[lang]}</dt><dd>${esc(p.members[lang])}</dd></div>`,
+    `<div><dt>${ui.seatsShort[lang]}</dt><dd>${renderPolls(p)}</dd></div>`,
+  ]
+    .filter(Boolean)
+    .join('');
+  showDialog(`
+    <header class="details__head details__head--${p.bloc}">
+      <div>
+        <h2>${esc(p.name[lang])}</h2>
+        ${p.name.he ? `<p class="details__he" lang="he" dir="rtl">${esc(p.name.he)}</p>` : ''}
+      </div>
+      ${closeButton()}
+    </header>
+    ${p.summary ? `<p class="details__summary">${esc(p.summary[lang])}</p>` : ''}
+    <dl class="details__facts">${facts}</dl>
+    <div class="details__bloc bloc-chip--${p.bloc}">
+      <p><i></i><b>${blocOf(p).name[lang]}</b>${p.blocNote ? ` — ${esc(p.blocNote[lang])}` : ''}</p>
+      ${sourceLinks(p.blocSources)}
+    </div>
+    ${issues}`);
 }
 
 function render(): void {
@@ -270,6 +336,13 @@ document.addEventListener('click', (e) => {
     lang = langBtn.dataset.lang as Lang;
     saveLang(lang);
     render();
+    return;
+  }
+
+  const partyBtn = target.closest<HTMLElement>('[data-party]');
+  if (partyBtn) {
+    e.preventDefault();
+    openParty(partyBtn.dataset.party!);
     return;
   }
 
