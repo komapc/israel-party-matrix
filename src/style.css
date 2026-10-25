@@ -14,8 +14,8 @@
   --bloc-anti: #eb6834;
   --bloc-other: #8a8984;
 
-  --tick: #d9d7d2;
-  --dot: #1f1f1d;
+  --yes: #1d7a3e;
+  --no: #b4352a;
 
   --tier-likely: #1d6b3a;
   --tier-borderline: #9a5b00;
@@ -40,8 +40,8 @@
     --bloc-pro: #3987e5;
     --bloc-anti: #d95926;
     --bloc-other: #8a8984;
-    --tick: #3a3a37;
-    --dot: #f0efec;
+    --yes: #5fbf7f;
+    --no: #ef7d6d;
     --tier-likely: #5fbf7f;
     --tier-borderline: #e0a640;
     color-scheme: dark;
@@ -61,8 +61,8 @@
   --bloc-pro: #3987e5;
   --bloc-anti: #d95926;
   --bloc-other: #8a8984;
-  --tick: #3a3a37;
-  --dot: #f0efec;
+  --yes: #5fbf7f;
+  --no: #ef7d6d;
   --tier-likely: #5fbf7f;
   --tier-borderline: #e0a640;
   color-scheme: dark;
@@ -178,8 +178,9 @@ h1 {
 
 .legend {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 6px 14px;
   color: var(--text-2);
   font-size: 13px;
 }
@@ -254,59 +255,28 @@ h1 {
 .party--other,
 .details__head--other { --bloc: var(--bloc-other); }
 
-/* Position track: five ticks, the party's position as a dot */
-.track {
+/* Stance marks: ✓ supports the row's claim, ✗ opposes, doubled when strong */
+.mark {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+}
+
+.mark--yes { color: var(--yes); }
+.mark--no { color: var(--no); }
+.mark--mixed,
+.mark--none { color: var(--muted); font-weight: 500; }
+
+.legend__item {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  position: relative;
-  vertical-align: middle;
+  gap: 4px;
+  white-space: nowrap;
 }
 
-.track::before {
-  content: '';
-  position: absolute;
-  left: 2px;
-  right: 2px;
-  height: 1px;
-  background: var(--tick);
-}
-
-.track i {
-  position: relative;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--tick);
-}
-
-.track i.on {
-  width: 12px;
-  height: 12px;
-  margin: 0 -3px;
-  background: var(--dot);
-  box-shadow: 0 0 0 2px var(--surface);
-}
-
-.track--wide {
-  gap: 0;
-  flex: 1;
-  justify-content: space-between;
-  min-width: 0;
-}
-
-.track--wide i.on {
-  width: 13px;
-  height: 13px;
-  margin: 0 -4px;
-}
-
-.track--none {
-  color: var(--muted);
-}
-
-.track--none::before {
-  display: none;
+.legend__item .mark {
+  font-size: 13px;
 }
 
 /* Matrix */
@@ -678,25 +648,8 @@ dialog::backdrop {
   border-bottom: 0;
 }
 
-.issue__scale {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.issue__scale > span:not(.track) {
-  flex: 0 0 30%;
-}
-
-.issue__scale > span:last-child {
-  text-align: end;
-}
-
 .issue__verdict {
-  margin: 8px 0 0;
+  margin: 4px 0 0;
   font-size: 13px;
   font-weight: 600;
 }
@@ -731,5 +684,4 @@ dialog::backdrop {
 @media (max-width: 600px) {
   #app { padding-top: 20px; }
   :root { --aspect-w: 160px; }
-  .issue__scale > span:not(.track) { flex-basis: 26%; }
 }

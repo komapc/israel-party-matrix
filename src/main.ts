@@ -70,11 +70,24 @@ function renderHeader(): string {
     </header>`;
 }
 
-/** Five-step position marker: ticks for -2..+2 with the party's score as a dot. */
-function track(score: number | null, wide = false): string {
-  if (score === null) return `<span class="track track--none${wide ? ' track--wide' : ''}">—</span>`;
-  const ticks = [-2, -1, 0, 1, 2].map((s) => `<i${s === score ? ' class="on"' : ''}></i>`).join('');
-  return `<span class="track${wide ? ' track--wide' : ''}" aria-label="${score > 0 ? '+' : ''}${score}">${ticks}</span>`;
+const MARKS: Record<number, { glyph: string; kind: string }> = {
+  2: { glyph: '✓✓', kind: 'yes' },
+  1: { glyph: '✓', kind: 'yes' },
+  0: { glyph: '~', kind: 'mixed' },
+  [-1]: { glyph: '✗', kind: 'no' },
+  [-2]: { glyph: '✗✗', kind: 'no' },
+};
+
+/** Stance on the aspect's claim: ✓ supports, ✗ opposes, doubled when strong. */
+function mark(score: number | null): string {
+  if (score === null) return `<span class="mark mark--none">—</span>`;
+  const m = MARKS[score];
+  return `<span class="mark mark--${m.kind}" aria-label="${stanceLabel(score)}">${m.glyph}</span>`;
+}
+
+function stanceLabel(score: number | null): string {
+  if (score === null) return ui.noPosition[lang];
+  return ui.stance[lang][score + 2];
 }
 
 function renderToolbar(): string {
@@ -85,7 +98,9 @@ function renderToolbar(): string {
         <div><dt>${ui.pollsAsOf[lang]}</dt><dd>${formatDate(meta.pollsAsOf)}</dd></div>
       </dl>
       ${renderBlocs()}
-      <div class="legend">${track(1)}<span>${ui.legendHint[lang]}</span></div>
+      <div class="legend">${[2, 1, 0, -1, -2]
+        .map((n) => `<span class="legend__item">${mark(n)} ${stanceLabel(n)}</span>`)
+        .join('')}</div>
       <div class="bulk">
         <button type="button" class="btn" data-bulk="expand">${ui.expandAll[lang]}</button>
         <button type="button" class="btn" data-bulk="collapse">${ui.collapseAll[lang]}</button>
@@ -131,9 +146,9 @@ function renderPartyHead(p: Party): string {
 
 function renderCell(party: Party, aspect: Aspect): string {
   const pos = positionIndex.get(`${party.id}/${aspect.id}`);
-  if (!pos) return `<td class="cell" title="${ui.noPosition[lang]}">${track(null)}</td>`;
+  if (!pos) return `<td class="cell" title="${ui.noPosition[lang]}">${mark(null)}</td>`;
   const title = esc(pos.note?.[lang] ?? ui.noPosition[lang]);
-  return `<td class="cell cell--link" data-cell="${party.id}/${aspect.id}" tabindex="0" role="button" title="${title}">${track(pos.score)}</td>`;
+  return `<td class="cell cell--link" data-cell="${party.id}/${aspect.id}" tabindex="0" role="button" title="${title}">${mark(pos.score)}</td>`;
 }
 function renderMatrix(): string {
   const groups = visibleTiers();
@@ -169,8 +184,7 @@ function renderMatrix(): string {
               (a) => `
           <tr>
             <th scope="row" class="aspect">
-              <span class="aspect__name">${a.name[lang]}</span>
-              <span class="aspect__poles">${a.low[lang]} ↔ ${a.high[lang]}</span>
+              <span class="aspect__name">${a.claim[lang]}</span>
             </th>
             ${groups
               .map((g) =>
@@ -223,13 +237,6 @@ function sourceLinks(urls: string[] = []): string {
   return `<div class="srcs">${items}</div>`;
 }
 
-function scoreLabel(pos: Position, aspect: Aspect): string {
-  if (pos.score === null) return ui.noPosition[lang];
-  if (pos.score === 0) return ui.mixed[lang];
-  const pole = pos.score < 0 ? aspect.low[lang] : aspect.high[lang];
-  return Math.abs(pos.score) === 2 ? pole : `${ui.leans[lang]} ${pole.toLowerCase()}`;
-}
-
 function showDialog(html: string): void {
   const dialog = document.querySelector<HTMLDialogElement>('#details')!;
   dialog.innerHTML = `<form method="dialog" class="details">${html}</form>`;
@@ -240,14 +247,11 @@ function showDialog(html: string): void {
 const closeButton = () =>
   `<button class="details__close" value="close" aria-label="${ui.close[lang]}">×</button>`;
 
-function issueBlock(pos: Position, aspect: Aspect, heading: string): string {
+function issueBlock(pos: Position, heading: string): string {
   return `
     <div class="issue">
       ${heading}
-      <div class="issue__scale">
-        <span>${aspect.low[lang]}</span>${track(pos.score, true)}<span>${aspect.high[lang]}</span>
-      </div>
-      <p class="issue__verdict">${scoreLabel(pos, aspect)}</p>
+      <p class="issue__verdict">${mark(pos.score)} ${stanceLabel(pos.score)}</p>
       ${pos.note ? `<p class="issue__note">${esc(pos.note[lang])}</p>` : ''}
       ${sourceLinks(pos.sources)}
     </div>`;
@@ -262,11 +266,11 @@ function openDetails(key: string): void {
     <header class="details__head details__head--${party.bloc}">
       <div>
         <button type="button" class="details__party" data-party="${party.id}">${esc(party.name[lang])} →</button>
-        <h2>${aspect.name[lang]}</h2>
+        <h2>${aspect.claim[lang]}</h2>
       </div>
       ${closeButton()}
     </header>
-    ${issueBlock(pos, aspect, '')}`);
+    ${issueBlock(pos, '')}`);
 }
 
 function openParty(id: string): void {
@@ -278,7 +282,7 @@ function openParty(id: string): void {
         .filter((a) => a.category === cat.id)
         .map((a) => {
           const pos = positionIndex.get(`${p.id}/${a.id}`);
-          return pos ? issueBlock(pos, a, `<h4>${a.name[lang]}</h4>`) : '';
+          return pos ? issueBlock(pos, `<h4>${a.claim[lang]}</h4>`) : '';
         })
         .join('');
       return `<section><h3>${cat.name[lang]}</h3>${rows}</section>`;

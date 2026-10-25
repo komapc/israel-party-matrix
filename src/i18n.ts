@@ -22,12 +22,10 @@ export const ui = {
   sources: { en: 'Sources', ru: 'Источники' },
   close: { en: 'Close', ru: 'Закрыть' },
   blocBasis: { en: 'Bloc', ru: 'Блок' },
-  legendHint: {
-    en: 'Position between the two poles named in each row',
-    ru: 'Позиция между двумя полюсами, указанными в строке',
+  stance: {
+    en: ['Strongly against', 'Against', 'Mixed', 'For', 'Strongly for'],
+    ru: ['Решительно против', 'Против', 'Неоднозначно', 'За', 'Решительно за'],
   },
-  mixed: { en: 'Mixed / centre', ru: 'Смешанная / центр' },
-  leans: { en: 'Leans:', ru: 'Склоняется:' },
   seatsShort: { en: 'Projected seats', ru: 'Прогноз мест' },
   leader: { en: 'Leader', ru: 'Лидер' },
   members: { en: 'Joint list', ru: 'Состав списка' },
@@ -50,7 +48,7 @@ export const ui = {
     en: 'Positions summarize public platforms, statements and voting records. Click a party for its profile, or a cell for the explanation and sources.',
     ru: 'Позиции — краткое изложение программ, заявлений и голосований. Нажмите на партию, чтобы открыть её карточку, или на ячейку — для пояснения и источников.',
   },
-} satisfies Record<string, Record<Lang, string>>;
+} satisfies Record<string, Record<Lang, string | string[]>>;
 
 export function initialLang(): Lang {
   try {
