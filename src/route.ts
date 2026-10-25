@@ -10,6 +10,7 @@ export const VIEWS: View[] = ['matrix', 'map', 'quiz'];
  *   /ru/                              matrix
  *   /he/map/religion/security/?show=likely
  *   /en/quiz/?a=eb-c                  quiz with shared answers
+ *   /ru/quiz/likud/?a=eb-c            shared quiz result (own preview card), same quiz underneath
  *   /ru/party/raam/                   party card (over the page it was opened from)
  *   /ru/party/raam/lgbt/              one party × issue cell
  */
@@ -28,6 +29,8 @@ export interface Route {
   issue?: string;
   /** Shared quiz answers, see `encodeAnswers`. */
   answers?: string;
+  /** Party at the top of a shared quiz result: /ru/quiz/likud/ */
+  result?: string;
 }
 
 export const DEFAULT_MAP = { x: 'economy', y: 'security', show: ['likely', 'borderline'] as Tier[] };
@@ -57,9 +60,11 @@ export function parseRoute(path: string, search: string, under: Route, hash = ''
   const party = params.get('party') ?? undefined;
   const issue = params.get('issue')?.replace('.', '/');
   const view = VIEWS.includes(parts[0] as View) ? (parts.shift() as View) : 'matrix';
+  const result = view === 'quiz' && partyById.has(parts[0]) ? parts[0] : undefined;
   return {
     lang,
     view,
+    result,
     x: view === 'map' && isDim(parts[0]) ? parts[0] : DEFAULT_MAP.x,
     y: view === 'map' && isDim(parts[1]) ? parts[1] : DEFAULT_MAP.y,
     show: params.has('show') ? show : DEFAULT_MAP.show,
@@ -72,7 +77,7 @@ export function parseRoute(path: string, search: string, under: Route, hash = ''
 /** Path of the page under any open card. */
 export function pagePath(r: Route): string {
   if (r.view === 'matrix') return `/${r.lang}/`;
-  if (r.view === 'quiz') return `/${r.lang}/quiz/`;
+  if (r.view === 'quiz') return r.result ? `/${r.lang}/quiz/${r.result}/` : `/${r.lang}/quiz/`;
   const show = tiers.map((t) => t.id).filter((t) => r.show.includes(t));
   const query = show.join() === DEFAULT_MAP.show.join() ? '' : `?show=${show.join(',')}`;
   return `/${r.lang}/map/${r.x}/${r.y}/${query}`;

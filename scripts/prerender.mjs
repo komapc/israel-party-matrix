@@ -17,6 +17,8 @@ const dims = (await data('dimensions')).map((d) => d.id);
 /** Page paths without the language prefix; each exists in every language. */
 const pages = ['/', '/quiz/', ...parties.map((p) => `/party/${p}/`)];
 for (const x of dims) for (const y of dims) if (x !== y) pages.push(`/map/${x}/${y}/`);
+/** Shared quiz results: rendered for their preview cards, left out of the sitemap (their canonical is the quiz). */
+const results = parties.map((p) => `/quiz/${p}/`);
 
 // Unknown paths (e.g. single issue cells) fall back to the app shell, which routes on the client.
 await copyFile(join(DIST, 'index.html'), join(DIST, '404.html'));
@@ -37,10 +39,10 @@ async function snapshot(url, file, page) {
 
 const urls = [];
 for (const lang of LANGS) {
-  for (const p of pages) {
+  for (const p of [...pages, ...results]) {
     const url = `/${lang}${p}`;
     await snapshot(url, join(DIST, url, 'index.html'), page);
-    urls.push(url);
+    if (pages.includes(p)) urls.push(url);
   }
 }
 // The bare root is the English matrix (its canonical points to /en/). A fresh page, so the language
@@ -72,4 +74,4 @@ ${pages.map(entry).join('\n')}
 </urlset>
 `,
 );
-console.log(`prerendered ${urls.length + 1} pages, sitemap with ${urls.length} urls`);
+console.log(`prerendered ${LANGS.length * (pages.length + results.length) + 1} pages, sitemap with ${urls.length} urls`);

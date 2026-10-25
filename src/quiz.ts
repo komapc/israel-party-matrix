@@ -1,4 +1,4 @@
-import { aspects, blocOf, categories, esc, parties, scoreOf } from './data';
+import { aspects, blocOf, categories, esc, parties, partyById, scoreOf } from './data';
 import { ui } from './i18n';
 import type { Answer, Lang, Party, Score } from './types';
 
@@ -25,11 +25,24 @@ function save(): void {
   }
 }
 
+export const isComplete = () => answers.size === aspects.length;
+
+/** Set when the last unanswered question gets its answer, so the result is announced once, not on every re-render. */
+let justCompleted = false;
+
+export function takeJustCompleted(): boolean {
+  const was = justCompleted;
+  justCompleted = false;
+  return was;
+}
+
 /** Clicking the selected answer again clears it. */
 export function setAnswer(aspect: string, score: Score): void {
+  const wasComplete = isComplete();
   const prev = answers.get(aspect);
   if (prev?.score === score) answers.delete(aspect);
   else answers.set(aspect, { score, important: prev?.important });
+  justCompleted = !wasComplete && isComplete();
   save();
 }
 
@@ -54,12 +67,14 @@ export function resetQuiz(): void {
 
 export const hasEnoughAnswers = () => answers.size >= MIN_ANSWERS;
 
-interface Match {
+export interface Match {
   party: Party;
   /** 0..1, weighted agreement over the issues both sides have a position on. */
   match: number;
   compared: number;
 }
+
+const thin = (m: { compared: number }) => (m.compared < MIN_ANSWERS ? 1 : 0);
 
 /** Agreement per issue is 1 - |you - party| / 4; important issues weigh double. */
 export function matches(): Match[] {
@@ -79,7 +94,8 @@ export function matches(): Match[] {
       return { party, match: weight ? sum / weight : 0, compared };
     })
     .filter((m) => m.compared > 0)
-    .sort((a, b) => b.match - a.match || b.compared - a.compared);
+    // A party with a known position on only one or two of your answers can't top the list on a lucky match.
+    .sort((a, b) => thin(a) - thin(b) || b.match - a.match || b.compared - a.compared);
 }
 
 function renderQuestion(aspectId: string, lang: Lang): string {
@@ -107,14 +123,42 @@ function renderQuestion(aspectId: string, lang: Lang): string {
     </li>`;
 }
 
+const pctOf = (m: Match) => Math.round(m.match * 100);
+
+/** The announcement once every question is answered: the closest party, large, and the two after it. */
+function renderHero(lang: Lang, ranked: Match[], mapHref: string): string {
+  const [top, ...rest] = ranked;
+  const next = rest
+    .slice(0, 2)
+    .map(
+      (m) =>
+        `<li><button type="button" class="hero__next-party result--${m.party.bloc}" data-party="${m.party.id}"><i></i>${esc(m.party.name[lang])} <b>${pctOf(m)}%</b></button></li>`,
+    )
+    .join('');
+  return `
+    <div class="hero hero--${top.party.bloc}">
+      <p class="hero__kicker">${ui.heroKicker[lang]}</p>
+      <p class="hero__lead">${ui.heroLead[lang]}</p>
+      <button type="button" class="hero__party" data-party="${top.party.id}">${esc(top.party.name[lang])}</button>
+      <p class="hero__pct">${pctOf(top)}%</p>
+      ${next ? `<p class="hero__next-label">${ui.heroNext[lang]}</p><ol class="hero__next">${next}</ol>` : ''}
+      <div class="hero__actions">
+        <button type="button" class="btn btn--primary" data-quiz-share>${ui.shareResult[lang]}</button>
+        <a class="btn" href="${mapHref}">${ui.quizOnMap[lang]}</a>
+      </div>
+    </div>`;
+}
+
 function renderResults(lang: Lang, mapHref: string): string {
   if (!hasEnoughAnswers()) return `<p class="results__empty">${ui.quizNeedMore[lang]}</p>`;
-  const rows = matches()
-    .map(({ party, match, compared }) => {
-      const pct = Math.round(match * 100);
+  const ranked = matches();
+  const rows = ranked
+    .map((m) => {
+      const { party, compared } = m;
+      const pct = pctOf(m);
       return `
         <li>
-          <button type="button" class="result result--${party.bloc}${compared < MIN_ANSWERS ? ' result--thin' : ''}" data-party="${party.id}" title="${blocOf(party).name[lang]}">
+          <button type="button" class="result result--${party.bloc}${thin(m) ? ' result--thin' : ''}" data-party="${party.id}" title="${blocOf(party).name[lang]}">
             <span class="result__name"><i></i>${esc(party.name[lang])}</span>
             <span class="result__pct">${pct}%</span>
             <span class="result__bar"><span style="inline-size:${pct}%"></span></span>
@@ -123,16 +167,28 @@ function renderResults(lang: Lang, mapHref: string): string {
         </li>`;
     })
     .join('');
+  const complete = isComplete() && ranked.length > 0;
   return `
+    ${complete ? renderHero(lang, ranked, mapHref) : ''}
     <ol class="results__list">${rows}</ol>
     <div class="results__actions">
-      <a class="btn btn--primary" href="${mapHref}">${ui.quizOnMap[lang]}</a>
-      <button type="button" class="btn" data-quiz-share>${ui.quizShare[lang]}</button>
+      ${complete ? '' : `<a class="btn btn--primary" href="${mapHref}">${ui.quizOnMap[lang]}</a>`}
+      ${complete ? '' : `<button type="button" class="btn" data-quiz-share>${ui.shareResult[lang]}</button>`}
       <button type="button" class="btn" data-quiz-reset>${ui.quizReset[lang]}</button>
     </div>`;
 }
 
-export function renderQuiz(lang: Lang, mapHref: string): string {
+/** Banner on a shared result link (/ru/quiz/likud/): whose result this is and a way to start afresh. */
+function renderShared(lang: Lang, result: string): string {
+  const party = partyById.get(result)!;
+  return `
+    <div class="shared shared--${party.bloc}">
+      <p>${ui.sharedResult[lang].replace('{party}', `<b>${esc(party.name[lang])}</b>`)}</p>
+      <button type="button" class="btn btn--primary" data-quiz-own>${ui.quizOwn[lang]}</button>
+    </div>`;
+}
+
+export function renderQuiz(lang: Lang, mapHref: string, result?: string): string {
   const sections = categories
     .map((c) => {
       const qs = aspects.filter((a) => a.category === c.id).map((a) => renderQuestion(a.id, lang));
@@ -142,6 +198,7 @@ export function renderQuiz(lang: Lang, mapHref: string): string {
   return `
     <div class="quiz">
       <div class="quiz__main">
+        ${result ? renderShared(lang, result) : ''}
         <p class="intro">${ui.quizIntro[lang]}</p>
         ${sections}
       </div>
