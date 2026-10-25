@@ -12,6 +12,7 @@ const SITE_NAME: Text = {
   en: 'Israel Election 2026: Party Positions',
   ru: 'Выборы в Израиле 2026: позиции партий',
   uk: 'Вибори в Ізраїлі 2026: позиції партій',
+  be: 'Выбары ў Ізраілі 2026: пазіцыі партый',
   he: 'בחירות 2026: עמדות המפלגות',
   eo: 'Israelaj elektoj 2026: pozicioj de la partioj',
 };
@@ -20,6 +21,7 @@ const MATRIX_TITLE: Text = {
   en: 'Israel Election 2026: Where the Parties Stand on Key Issues',
   ru: 'Выборы в Израиле 2026: позиции партий по ключевым вопросам',
   uk: 'Вибори в Ізраїлі 2026: позиції партій щодо ключових питань',
+  be: 'Выбары ў Ізраілі 2026: пазіцыі партый па ключавых пытаннях',
   he: 'בחירות 2026: עמדות המפלגות בנושאים המרכזיים — טבלת השוואה',
   eo: 'Israelaj elektoj 2026: kie la partioj staras pri la ĉefaj temoj',
 };
@@ -28,6 +30,7 @@ const MATRIX_DESC: Text = {
   en: 'Compare 16 parties running in the Knesset election on 27 October 2026 on 13 key issues: Palestinian state, settlements, Gaza, Haredi draft, judicial overhaul, cost of living and more — with sources, a political map and a quiz.',
   ru: 'Сравните позиции 16 партий на выборах в Кнессет 27 октября 2026 года по 13 ключевым вопросам: палестинское государство, поселения, Газа, призыв харедим, судебная реформа, стоимость жизни и другие — с источниками, политической картой и тестом.',
   uk: 'Порівняйте позиції 16 партій на виборах до Кнесету 27 жовтня 2026 року щодо 13 ключових питань: палестинська держава, поселення, Газа, призов харедим, судова реформа, вартість життя тощо — з джерелами, політичною мапою та тестом.',
+  be: 'Параўнайце пазіцыі 16 партый на выбарах у Кнэсет 27 кастрычніка 2026 года па 13 ключавых пытаннях: палестынская дзяржава, пасяленні, Газа, прызыў харэдым, судовая рэформа, кошт жыцця і іншыя — з крыніцамі, палітычнай картай і тэстам.',
   he: 'השוו בין עמדות 16 המפלגות המתמודדות בבחירות לכנסת ב־27 באוקטובר 2026 ב־13 נושאים: מדינה פלסטינית, התנחלויות, עזה, גיוס חרדים, הרפורמה המשפטית, יוקר המחיה ועוד — עם מקורות, מפה פוליטית ומבחן התאמה.',
   eo: 'Komparu 16 partiojn en la Kneseta elekto de la 27-a de oktobro 2026 pri 13 ĉefaj temoj: palestina ŝtato, kolonioj, Gazao, konskripcio de ĥaredoj, jura reformo, vivkostoj kaj pli — kun fontoj, politika mapo kaj kvizo.',
 };
@@ -36,6 +39,7 @@ const MAP_TITLE: Text = {
   en: 'Political map of Israeli parties 2026',
   ru: 'Политическая карта партий Израиля 2026',
   uk: 'Політична мапа партій Ізраїлю 2026',
+  be: 'Палітычная карта партый Ізраіля 2026',
   he: 'המפה הפוליטית של המפלגות בישראל 2026',
   eo: 'Politika mapo de israelaj partioj 2026',
 };
@@ -44,6 +48,7 @@ const MAP_DESC: Text = {
   en: 'Where Israeli parties sit on a two-dimensional political map ahead of the 27 October 2026 election. Choose the axes: economy, security, religion and state, civil liberties, courts.',
   ru: 'Где находятся израильские партии на двумерной политической карте перед выборами 27 октября 2026 года. Выбирайте оси: экономика, безопасность, религия и государство, гражданские свободы, суды.',
   uk: 'Де розташовані ізраїльські партії на двовимірній політичній мапі перед виборами 27 жовтня 2026 року. Обирайте осі: економіка, безпека, релігія і держава, громадянські свободи, суди.',
+  be: 'Дзе знаходзяцца ізраільскія партыі на двухмернай палітычнай карце перад выбарамі 27 кастрычніка 2026 года. Выбірайце восі: эканоміка, бяспека, рэлігія і дзяржава, грамадзянскія свабоды, суды.',
   he: 'היכן ממוקמות המפלגות בישראל על מפה פוליטית דו־ממדית לקראת הבחירות ב־27 באוקטובר 2026. בחרו צירים: כלכלה, ביטחון, דת ומדינה, זכויות האזרח, מערכת המשפט.',
   eo: 'Kie la israelaj partioj troviĝas sur dudimensia politika mapo antaŭ la elekto de la 27-a de oktobro 2026. Elektu la aksojn: ekonomio, sekureco, religio kaj ŝtato, civitanaj liberecoj, juĝejoj.',
 };
@@ -52,6 +57,7 @@ const QUIZ_TITLE: Text = {
   en: 'Which party should I vote for? Israel election 2026 quiz',
   ru: 'За кого голосовать? Тест: какая партия мне ближе — выборы в Израиле 2026',
   uk: 'За кого голосувати? Тест: яка партія мені ближча — вибори в Ізраїлі 2026',
+  be: 'За каго галасаваць? Тэст: якая партыя мне бліжэйшая — выбары ў Ізраілі 2026',
   he: 'למי להצביע? מבחן התאמה למפלגות — בחירות 2026',
   eo: 'Por kiu partio voĉdoni? Kvizo pri la israelaj elektoj 2026',
 };
@@ -60,6 +66,7 @@ const QUIZ_DESC: Text = {
   en: 'Answer 13 questions on the key issues and see which parties in the 27 October 2026 Knesset election are closest to your views.',
   ru: 'Ответьте на 13 вопросов по ключевым темам и узнайте, какие партии на выборах в Кнессет 27 октября 2026 года ближе всего к вашим взглядам.',
   uk: 'Дайте відповідь на 13 запитань із ключових тем і дізнайтеся, які партії на виборах до Кнесету 27 жовтня 2026 року найближчі до ваших поглядів.',
+  be: 'Адкажыце на 13 пытанняў па ключавых тэмах і даведайцеся, якія партыі на выбарах у Кнэсет 27 кастрычніка 2026 года найбліжэйшыя да вашых поглядаў.',
   he: 'ענו על 13 שאלות בנושאים המרכזיים וגלו אילו מפלגות בבחירות לכנסת ב־27 באוקטובר 2026 הכי קרובות לעמדותיכם.',
   eo: 'Respondu 13 demandojn pri la ĉefaj temoj kaj vidu, kiuj partioj en la Kneseta elekto de la 27-a de oktobro 2026 estas plej proksimaj al viaj vidpunktoj.',
 };
@@ -68,6 +75,7 @@ const PARTY_TITLE: Text = {
   en: '{party}: positions and platform — Israel election 2026',
   ru: '{party}: позиции и программа — выборы в Израиле 2026',
   uk: '{party}: позиції та програма — вибори в Ізраїлі 2026',
+  be: '{party}: пазіцыі і праграма — выбары ў Ізраілі 2026',
   he: '{party}: עמדות ומצע — בחירות 2026',
   eo: '{party}: pozicioj kaj programo — israelaj elektoj 2026',
 };
@@ -76,6 +84,7 @@ const KEYWORDS: Text = {
   en: 'Israel election 2026, Knesset election, Israeli parties, party positions, voting advice, which party to vote for, political compass Israel, Likud, Yashar, Eisenkot, Bennett, Netanyahu',
   ru: 'выборы в Израиле 2026, выборы в Кнессет, партии Израиля, позиции партий, за кого голосовать, тест какая партия мне подходит, политический компас, Ликуд, Яшар, Айзенкот, Беннет, Нетаньяху, Наш дом Израиль, Либерман',
   uk: 'вибори в Ізраїлі 2026, вибори до Кнесету, партії Ізраїлю, позиції партій, за кого голосувати, тест яка партія мені підходить, політичний компас, Лікуд, Яшар, Айзенкот, Беннет, Нетаньягу',
+  be: 'выбары ў Ізраілі 2026, выбары ў Кнэсет, партыі Ізраіля, пазіцыі партый, за каго галасаваць, тэст якая партыя мне падыходзіць, палітычны компас, Лікуд, Яшар, Айзенкот, Бэнет, Нетаньяху, ізраільскія выбары',
   he: 'בחירות 2026, בחירות לכנסת, מפלגות, עמדות המפלגות, למי להצביע, מבחן התאמה למפלגות, מצפן פוליטי, הליכוד, ישר, איזנקוט, בנט, נתניהו, מצעי המפלגות',
   eo: 'israelaj elektoj 2026, Kneseto, israelaj partioj, pozicioj de partioj, por kiu voĉdoni, politika kompaso, Likud, Netanjahu',
 };
