@@ -16,6 +16,10 @@ const EO_MONTHS = ['januaro', 'februaro', 'marto', 'aprilo', 'majo', 'junio', 'j
 const BE_MONTHS = ['студзеня', 'лютага', 'сакавіка', 'красавіка', 'мая', 'чэрвеня', 'ліпеня', 'жніўня', 'верасня', 'кастрычніка', 'лістапада', 'снежня'];
 
 /** A date like 27 October 2026, in the given language. */
+/** A share of the vote, e.g. "3,2%" in Russian. */
+export const formatPct = (lang: Lang, n: number) =>
+  `${new Intl.NumberFormat(lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(n)}%`;
+
 export function formatDateIn(lang: Lang, iso: string): string {
   if (lang === 'eo') {
     const [y, m, d] = iso.split('-').map(Number);
@@ -91,6 +95,25 @@ export const ui = {
   collapseAll: { en: 'Collapse all', ru: 'Свернуть всё', uk: 'Згорнути все', be: 'Згарнуць усё', he: 'כיווץ הכול', eo: 'Faldi ĉion' },
   partiesCount: { en: 'parties', ru: 'партий', uk: 'партій', be: 'партый', he: 'מפלגות', eo: 'partioj' },
   issuesCount: { en: 'issues', ru: 'вопросов', uk: 'питань', be: 'пытанняў', he: 'נושאים', eo: 'temoj' },
+  resultsAsOf: { en: 'Results as of', ru: 'Итоги на', uk: 'Підсумки на', be: 'Вынікі на', he: 'תוצאות נכון ל־', eo: 'Rezultoj je' },
+  resultsPrelim: { en: 'Preliminary results as of', ru: 'Предварительные итоги на', uk: 'Попередні підсумки на', be: 'Папярэднія вынікі на', he: 'תוצאות חלקיות נכון ל־', eo: 'Antaŭaj rezultoj je' },
+  resultTitle: {
+    en: 'Seats won (share of the vote)',
+    ru: 'Получено мест (доля голосов)',
+    uk: 'Отримано місць (частка голосів)',
+    be: 'Атрымана месцаў (доля галасоў)',
+    he: 'מנדטים שהתקבלו (אחוז מהקולות)',
+    eo: 'Gajnitaj seĝoj (parto de la voĉoj)',
+  },
+  seatsWon: { en: 'Seats won', ru: 'Получено мест', uk: 'Отримано місць', be: 'Атрымана месцаў', he: 'מנדטים', eo: 'Gajnitaj seĝoj' },
+  blocsResults: {
+    en: 'Blocs (seats won)',
+    ru: 'Блоки (места по итогам)',
+    uk: 'Блоки (місця за підсумками)',
+    be: 'Блокі (месцы па выніках)',
+    he: 'גושים (מנדטים בפועל)',
+    eo: 'Blokoj (gajnitaj seĝoj)',
+  },
   pollsAsOf: { en: 'Polls as of', ru: 'Опросы на', uk: 'Опитування на', be: 'Апытанні на', he: 'סקרים נכון ל־', eo: 'Enketoj ĝis' },
   election: { en: 'Election day', ru: 'Выборы', uk: 'Вибори', be: 'Выбары', he: 'יום הבחירות', eo: 'Balota tago' },
   minorLists: {

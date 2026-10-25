@@ -1,4 +1,4 @@
-import { aspectById, blocOf, dimensions, esc, parties, scoreOf, tiers } from './data';
+import { aspectById, blocOf, dimensions, esc, parties, scoreOf, seatsOf, tiers } from './data';
 import { ui } from './i18n';
 import { answers, hasEnoughAnswers } from './quiz';
 import type { Dimension, Lang, Party, Tier } from './types';
@@ -232,7 +232,7 @@ function renderSvg(lang: Lang, dx: Dimension, dy: Dimension, placed: Placed[]): 
     <text class="axis-name" transform="translate(${sx(-SPAN) - 52} ${sy(0)}) rotate(-90)" text-anchor="middle">${esc(dy.name[lang])}</text>`;
 
   // Larger parties are drawn first (underneath) and get first pick of label spots.
-  const ordered = [...placed].sort((a, b) => (b.party.polls?.avg ?? 0) - (a.party.polls?.avg ?? 0));
+  const ordered = [...placed].sort((a, b) => seatsOf(b.party) - seatsOf(a.party));
   const shapes = ordered.map(({ party, x, y }) => ({
     party,
     cx: sx((x.min + x.max) / 2),

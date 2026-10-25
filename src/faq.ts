@@ -1,5 +1,5 @@
-import { aspects, blocs, meta, parties } from './data';
-import { formatDateIn } from './i18n';
+import { aspects, blocs, counted, meta, parties, seatsOf } from './data';
+import { formatDateIn, formatPct } from './i18n';
 import type { Lang, Party } from './types';
 
 type Text = Record<Lang, string>;
@@ -76,7 +76,8 @@ const FAQ_TITLE: Text = {
   eo: 'Demandoj kaj respondoj',
 };
 
-const QA: { q: Text; a: Text }[] = [
+/** `counted` replaces the question or answer once election results are in. */
+const QA: { q: Text; a: Text; counted?: { q?: Text; a: Text } }[] = [
   {
     q: {
       en: 'When is the Knesset election?',
@@ -93,6 +94,24 @@ const QA: { q: Text; a: Text }[] = [
       be: 'Выбары ў 26-ы Кнэсет адбудуцца {date} года. Дзень выбараў — выхадны.',
       he: 'הבחירות לכנסת ה־26 ייערכו ב־{date}. יום הבחירות הוא יום שבתון.',
       eo: 'La elekto de la 26-a Kneseto okazos la {date}. La balotada tago estas libertago.',
+    },
+    counted: {
+      q: {
+        en: 'When was the Knesset election?',
+        ru: 'Когда прошли выборы в Кнессет?',
+        uk: 'Коли відбулися вибори до Кнесету?',
+        be: 'Калі адбыліся выбары ў Кнэсет?',
+        he: 'מתי התקיימו הבחירות לכנסת?',
+        eo: 'Kiam okazis la Kneseta elekto?',
+      },
+      a: {
+        en: 'The election to the 26th Knesset was held on {date}.',
+        ru: 'Выборы в 26-й Кнессет прошли {date} года.',
+        uk: 'Вибори до 26-го Кнесету відбулися {date} року.',
+        be: 'Выбары ў 26-ы Кнэсет адбыліся {date} года.',
+        he: 'הבחירות לכנסת ה־26 התקיימו ב־{date}.',
+        eo: 'La elekto de la 26-a Kneseto okazis la {date}.',
+      },
     },
   },
   {
@@ -130,6 +149,24 @@ const QA: { q: Text; a: Text }[] = [
       he: 'לפי ממוצע הסקרים נכון ל־{polls}, {n} רשימות עוברות בבטחה: {likely}. סביב אחוז החסימה: {borderline}.',
       eo: 'Laŭ la meznombro de enketoj je la {polls}, {n} listoj sekure superas la sojlon: {likely}. Ĉirkaŭ la sojlo: {borderline}.',
     },
+    counted: {
+      q: {
+        en: 'Which parties made it into the Knesset?',
+        ru: 'Какие партии прошли в Кнессет?',
+        uk: 'Які партії пройшли до Кнесету?',
+        be: 'Якія партыі прайшлі ў Кнэсет?',
+        he: 'אילו מפלגות נכנסו לכנסת?',
+        eo: 'Kiuj partioj eniris la Kneseton?',
+      },
+      a: {
+        en: '{results} {asOf}, {n} lists won seats: {likely}.{close}',
+        ru: '{results} {asOf} года места получили {n} списков: {likely}.{close}',
+        uk: '{results} {asOf} року місця отримали {n} списків: {likely}.{close}',
+        be: '{results} {asOf} года месцы атрымалі {n} спісаў: {likely}.{close}',
+        he: '{results}{asOf}, {n} רשימות זכו במנדטים: {likely}.{close}',
+        eo: '{results} la {asOf}, {n} listoj gajnis seĝojn: {likely}.{close}',
+      },
+    },
   },
   {
     q: {
@@ -147,6 +184,16 @@ const QA: { q: Text; a: Text }[] = [
       be: 'Месцы паводле апытанняў, калі лічыць толькі спісы, што праходзяць: {blocs}. Для большасці патрэбна 61 месца.',
       he: 'מנדטים בסקרים, בספירת הרשימות שעוברות בלבד: {blocs}. לרוב נדרשים 61 מנדטים.',
       eo: 'Seĝoj laŭ la enketoj, kalkulante nur la listojn, kiuj superas la sojlon: {blocs}. Por plimulto necesas 61 seĝoj.',
+    },
+    counted: {
+      a: {
+        en: 'Seats won: {blocs}. A majority takes 61.',
+        ru: 'Места по итогам выборов: {blocs}. Для большинства нужно 61 место.',
+        uk: 'Місця за підсумками виборів: {blocs}. Для більшості потрібно 61 місце.',
+        be: 'Месцы па выніках выбараў: {blocs}. Для большасці патрэбна 61 месца.',
+        he: 'מנדטים בפועל: {blocs}. לרוב נדרשים 61 מנדטים.',
+        eo: 'Gajnitaj seĝoj: {blocs}. Por plimulto necesas 61 seĝoj.',
+      },
     },
   },
   {
@@ -193,31 +240,55 @@ export interface FaqLinks {
   report: string;
 }
 
-const byPolls = (a: Party, b: Party) => (b.polls?.avg ?? 0) - (a.polls?.avg ?? 0);
+/** Lead-in of the results answer, before the date. */
+const RESULTS: Record<'final' | 'prelim', Text> = {
+  final: { en: 'By the official results of', ru: 'По официальным итогам на', uk: 'За офіційними підсумками станом на', be: 'Паводле афіцыйных вынікаў на', he: 'לפי התוצאות הרשמיות נכון ל־', eo: 'Laŭ la oficialaj rezultoj je' },
+  prelim: { en: 'By the preliminary results of', ru: 'По предварительным итогам на', uk: 'За попередніми підсумками станом на', be: 'Паводле папярэдніх вынікаў на', he: 'לפי התוצאות החלקיות נכון ל־', eo: 'Laŭ la antaŭaj rezultoj je' },
+};
+/** Mid-count sentence on lists still at the threshold. */
+const CLOSE: Text = {
+  en: ' Still around the threshold: {borderline}.',
+  ru: ' Пока на грани барьера: {borderline}.',
+  uk: ' Поки на межі бар’єра: {borderline}.',
+  be: ' Пакуль на мяжы бар’ера: {borderline}.',
+  he: ' עדיין על סף אחוז החסימה: {borderline}.',
+  eo: ' Ankoraŭ ĉe la sojlo: {borderline}.',
+};
+
+const bySeats = (a: Party, b: Party) => seatsOf(b) - seatsOf(a);
 const listed = (ps: Party[], lang: Lang) =>
   ps
-    .sort(byPolls)
-    .map((p) => `${p.name[lang]} (~${p.polls?.avg ?? 0})`)
+    .sort(bySeats)
+    // Mid-count, a list at the threshold has no seats yet: its share of the vote says more.
+    .map((p) => `${p.name[lang]} (${!counted ? `~${seatsOf(p)}` : seatsOf(p) || p.result?.pct === undefined ? seatsOf(p) : formatPct(lang, p.result.pct)})`)
     .join(', ');
 
 /** Questions with answers (HTML, links included), filled in from the data. */
 export function faqItems(lang: Lang, links: FaqLinks): { q: string; a: string }[] {
   const likely = parties.filter((p) => p.tier === 'likely');
-  const seats = (bloc: string) => likely.filter((p) => p.bloc === bloc).reduce((n, p) => n + (p.polls?.avg ?? 0), 0);
+  const borderline = listed(
+    parties.filter((p) => p.tier === 'borderline'),
+    lang,
+  );
+  const seats = (bloc: string) =>
+    (counted ? parties : likely).filter((p) => p.bloc === bloc).reduce((n, p) => n + seatsOf(p), 0);
   const vars = {
     date: day(lang, meta.electionDate),
     polls: day(lang, meta.pollsAsOf),
     n: likely.length,
     likely: listed(likely, lang),
-    borderline: listed(
-      parties.filter((p) => p.tier === 'borderline'),
-      lang,
-    ),
-    blocs: blocs.map((b) => `${b.name[lang]} — ~${seats(b.id)}`).join('; '),
+    borderline,
+    blocs: blocs.map((b) => `${b.name[lang]} — ${counted ? '' : '~'}${seats(b.id)}`).join('; '),
+    results: meta.results ? RESULTS[meta.results.final ? 'final' : 'prelim'][lang] : '',
+    asOf: meta.results ? day(lang, meta.results.asOf) : '',
+    close: borderline ? fill(CLOSE[lang], { borderline }) : '',
     issues: aspects.length,
     ...links,
   };
-  return QA.map(({ q, a }) => ({ q: q[lang], a: fill(a[lang], vars) }));
+  return QA.map(({ q, a, counted: c }) => {
+    const use = counted && c ? { q: c.q ?? q, a: c.a } : { q, a };
+    return { q: use.q[lang], a: fill(use.a[lang], vars) };
+  });
 }
 
 export function renderFaq(lang: Lang, links: FaqLinks): string {

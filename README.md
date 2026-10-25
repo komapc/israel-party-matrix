@@ -30,6 +30,17 @@ All content lives in `src/data/` as JSON; the schema is in `src/types.ts`.
 Scores describe *where* a party sits between the two poles, not whether that is good or bad.
 Every position should cite at least one source.
 
+### Election results
+
+Once votes are counted, switch the site from polls to results — no code changes:
+
+1. In `meta.json` add `"results": { "asOf": "2026-10-28", "final": false, "source": "<CEC results URL>" }`.
+2. In `parties.json` give every party `"result": { "seats": 24, "pct": 19.8 }` (`seats: 0` = below threshold).
+
+Tiers then follow the results (elected / not elected; while `final` is `false`, a list within 0.15 points of
+3.25% shows as "too close to call"), and seat counts, bloc totals, the "as of" line and the FAQ answers switch
+to results. Set `final: true` when the count is official.
+
 ## Deploy
 
 Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/deploy.yml`.
