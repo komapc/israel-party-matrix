@@ -171,16 +171,48 @@ interface Placed {
   y: Extent;
 }
 
-/** Nudges labels vertically until they stop overlapping, larger parties first. */
-function placeLabels(items: { cx: number; cy: number; w: number }[]): number[] {
-  const taken: { x0: number; x1: number; y: number }[] = [];
-  const offsets = [0, -15, 15, -30, 30, -45, 45, -60, 60];
-  return items.map(({ cx, cy, w }) => {
-    const x0 = cx - w / 2;
-    const x1 = cx + w / 2;
-    const dy = offsets.find((o) => !taken.some((t) => t.x0 < x1 && x0 < t.x1 && Math.abs(t.y - (cy + o)) < 14)) ?? 0;
-    taken.push({ x0, x1, y: cy + dy });
-    return cy + dy;
+/**
+ * Party label size in SVG units (kept in step with `.region-label` in style.css). On a phone the 640-unit map is
+ * shrunk to about half, so its labels are drawn larger there and long names wrap onto two lines.
+ */
+const LABEL = { regular: { size: 11.5, wrap: Infinity }, compact: { size: 19, wrap: 14 } };
+
+/** A name as one or two lines, broken at the space or dash nearest its middle. */
+function labelLines(name: string, wrap: number): string[] {
+  if (name.length <= wrap) return [name];
+  const breaks = [...name.matchAll(/ — |–| /g)];
+  if (breaks.length === 0) return [name];
+  const mid = name.length / 2;
+  const at = breaks.reduce((a, b) => (Math.abs(b.index - mid) < Math.abs(a.index - mid) ? b : a));
+  const sep = at[0];
+  // A dash stays at the end of the first line; spaces around it go.
+  return [name.slice(0, at.index) + sep.trimEnd(), name.slice(at.index + sep.length)];
+}
+
+type Box = { x0: number; x1: number; y0: number; y1: number };
+const overlap = (a: Box, b: Box) =>
+  Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0));
+
+/**
+ * Moves labels off one another, larger parties first: each takes the free spot nearest its region's centre; if
+ * none is free, the spot that overlaps least. Labels stay inside the plot.
+ */
+function placeLabels(items: { cx: number; cy: number; w: number; h: number }[], step: number): { x: number; y: number }[] {
+  const taken: Box[] = [];
+  const spots: [number, number][] = [];
+  for (let i = -4; i <= 4; i++) for (let k = -8; k <= 8; k++) spots.push([i * step * 1.5, k * step]);
+  spots.sort((a, b) => Math.hypot(a[0], a[1]) - Math.hypot(b[0], b[1]));
+  return items.map(({ cx, cy, w, h }) => {
+    const box = ([dx, dy]: [number, number]): Box => {
+      const x = Math.min(Math.max(cx + dx, PAD + w / 2), SIZE - PAD - w / 2);
+      const y = Math.min(Math.max(cy + dy, h / 2 + 4), sy(-SPAN) - h / 2);
+      return { x0: x - w / 2, x1: x + w / 2, y0: y - h / 2, y1: y + h / 2 };
+    };
+    const cost = (s: [number, number]) => taken.reduce((n, t) => n + overlap(t, box(s)), 0);
+    const best = spots.find((s) => cost(s) === 0) ?? spots.reduce((a, b) => (cost(b) < cost(a) ? b : a));
+    const b = box(best);
+    taken.push(b);
+    return { x: (b.x0 + b.x1) / 2, y: (b.y0 + b.y1) / 2 };
   });
 }
 
@@ -214,7 +246,9 @@ function renderControls(lang: Lang, state: MapState, link: MapLink): string {
     </div>`;
 }
 
-function renderSvg(lang: Lang, dx: Dimension, dy: Dimension, placed: Placed[]): string {
+function renderSvg(lang: Lang, dx: Dimension, dy: Dimension, placed: Placed[], compact: boolean): string {
+  const label = compact ? LABEL.compact : LABEL.regular;
+  const lineH = label.size * 1.15;
   const grid = [-2, -1, 0, 1, 2]
     .map(
       (v) => `
@@ -233,16 +267,22 @@ function renderSvg(lang: Lang, dx: Dimension, dy: Dimension, placed: Placed[]): 
 
   // Larger parties are drawn first (underneath) and get first pick of label spots.
   const ordered = [...placed].sort((a, b) => seatsOf(b.party) - seatsOf(a.party));
-  const shapes = ordered.map(({ party, x, y }) => ({
-    party,
-    cx: sx((x.min + x.max) / 2),
-    cy: sy((y.min + y.max) / 2),
-    d: outlineOf(party.id, dx, dy, x, y),
-    w: party.name[lang].length * 6.6 + 8,
-    x,
-    y,
-  }));
-  const labelYs = placeLabels(shapes);
+  const shapes = ordered.map(({ party, x, y }) => {
+    const lines = labelLines(party.name[lang], label.wrap);
+    return {
+      party,
+      cx: sx((x.min + x.max) / 2),
+      cy: sy((y.min + y.max) / 2),
+      d: outlineOf(party.id, dx, dy, x, y),
+      lines,
+      // Bold text runs about 0.6 of its size per character; the rest is a gap between labels.
+      w: Math.max(...lines.map((l) => l.length)) * label.size * 0.6 + label.size * 0.6,
+      h: lines.length * lineH + label.size * 0.3,
+      x,
+      y,
+    };
+  });
+  const spots = placeLabels(shapes, lineH);
 
   const fmt = (e: Extent) => (e.min === e.max ? e.min.toFixed(1) : `${e.min.toFixed(1)}…${e.max.toFixed(1)}`);
   const regions = shapes
@@ -258,8 +298,13 @@ ${esc(dy.name[lang])}: ${fmt(s.y)}</title>
     .join('');
   const labels = shapes
     .map(
-      (s, i) =>
-        `<text class="region-label" x="${s.cx}" y="${labelYs[i]}" dy="0.35em" text-anchor="middle">${esc(s.party.name[lang])}</text>`,
+      (s, i) => {
+        // Lines are centred as a block on the label's spot.
+        const { x, y } = spots[i];
+        const top = y - ((s.lines.length - 1) * lineH) / 2;
+        const tspans = s.lines.map((l, k) => `<tspan x="${x}" y="${top + k * lineH}" dy="0.35em">${esc(l)}</tspan>`).join('');
+        return `<text class="region-label" text-anchor="middle">${tspans}</text>`;
+      },
     )
     .join('');
 
@@ -278,7 +323,7 @@ ${esc(dy.name[lang])}: ${fmt(s.y)}</title>
   }
 
   return `
-    <svg class="map-svg" viewBox="0 0 ${SIZE} ${SIZE}" dir="ltr" role="img" aria-label="${esc(ui.tabMap[lang])}">
+    <svg class="map-svg${compact ? ' map-svg--compact' : ''}" viewBox="0 0 ${SIZE} ${SIZE}" dir="ltr" role="img" aria-label="${esc(ui.tabMap[lang])}">
       ${grid}${axes}
       <g class="regions">${regions}</g>
       ${me}
@@ -286,7 +331,8 @@ ${esc(dy.name[lang])}: ${fmt(s.y)}</title>
     </svg>`;
 }
 
-export function renderMap(lang: Lang, state: MapState, link: MapLink): string {
+/** `compact`: drawn for a phone-width screen, with larger, wrapped labels. */
+export function renderMap(lang: Lang, state: MapState, link: MapLink, compact = false): string {
   const dx = dimensions.find((d) => d.id === state.x)!;
   const dy = dimensions.find((d) => d.id === state.y)!;
   const shown = parties.filter((p) => state.show.includes(p.tier));
@@ -308,7 +354,7 @@ export function renderMap(lang: Lang, state: MapState, link: MapLink): string {
       <p class="intro">${ui.mapIntro[lang]}</p>
       ${renderControls(lang, state, link)}
       <div class="map-figure">
-        ${renderSvg(lang, dx, dy, placed)}
+        ${renderSvg(lang, dx, dy, placed, compact)}
         <div class="map-legend">
           ${['pro', 'anti', 'other']
             .map((b) => `<span class="bloc-chip bloc-chip--${b}"><i></i>${blocOf({ bloc: b } as Party).name[lang]}</span>`)

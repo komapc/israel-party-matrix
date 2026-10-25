@@ -352,7 +352,7 @@ function renderTabs(view: View): string {
 }
 
 function renderView(view: View): string {
-  if (view === 'map') return renderMap(lang, route, (x, y) => link({ x, y }));
+  if (view === 'map') return renderMap(lang, route, (x, y) => link({ x, y }), phone.matches);
   if (view === 'quiz') {
     const mapHref = link({ view: 'map' });
     const teaser = renderMapPreview(lang, route, (x, y) => link({ view: 'map', x, y }));
@@ -394,6 +394,9 @@ function renderFooter(): string {
       </div>
     </footer>`;
 }
+
+/** Same breakpoint as the phone layout in style.css. */
+const phone = window.matchMedia('(max-width: 600px)');
 
 function render(): void {
   document.documentElement.lang = lang;
@@ -455,6 +458,8 @@ function navigate(patch: Partial<Route>): void {
 }
 
 window.addEventListener('popstate', apply);
+// The map lays out its labels for the screen width, so crossing the phone breakpoint redraws it.
+phone.addEventListener('change', () => route.view === 'map' && render());
 window.addEventListener('resize', updateScrollCue);
 document.addEventListener('scroll', (e) => (e.target as Element).classList?.contains('matrix-wrap') && updateScrollCue(), true);
 
