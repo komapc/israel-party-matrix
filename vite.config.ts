@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 
-// Relative base so the build works from any static host path (e.g. GitHub Pages).
+// Served from the domain root (elections-2026.lipu.dev); pages live at nested paths like /ru/map/…
 export default defineConfig({
-  base: './',
+  base: '/',
 });

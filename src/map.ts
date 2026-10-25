@@ -50,8 +50,11 @@ const SPAN = 2.5;
 const UNIT = (SIZE - 2 * PAD) / (2 * SPAN);
 const sx = (v: number) => PAD + (v + SPAN) * UNIT;
 const sy = (v: number) => SIZE - PAD - (v + SPAN) * UNIT;
-/** Minimum half-width of a region; a region built from a single issue is padded more, as it is less certain. */
-const radius = (e: Extent) => ((e.max - e.min) / 2 + (e.n > 1 ? 0.18 : 0.38)) * UNIT;
+/**
+ * Half-width of a region: the spread of the party's positions plus a margin, since every score is rounded to a
+ * whole step (about ±0.5). A region built from a single issue gets a wider margin, as it is less certain.
+ */
+const radius = (e: Extent) => ((e.max - e.min) / 2 + (e.n > 1 ? 0.35 : 0.55)) * UNIT;
 
 interface Placed {
   party: Party;

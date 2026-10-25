@@ -5,7 +5,6 @@ import {
   blocOf,
   blocs,
   categories,
-  dimensions,
   esc,
   meta,
   parties,
@@ -17,7 +16,8 @@ import { initAnalytics, track } from './analytics';
 import { LANGS, LANG_LABELS, LOCALES, initialLang, isRtl, saveLang, ui } from './i18n';
 import { renderMap } from './map';
 import { answers, loadAnswers, renderQuiz, resetQuiz, setAnswer, toggleImportant } from './quiz';
-import { type Route, VIEWS, decodeAnswers, encodeAnswers, formatRoute, parseRoute } from './route';
+import { DEFAULT_MAP, type Route, VIEWS, decodeAnswers, encodeAnswers, formatRoute, parseRoute } from './route';
+import { updateHead } from './seo';
 import { loadCollapsed, saveCollapsed } from './state';
 import type { Aspect, Lang, Party, Position, Score, Tier } from './types';
 
@@ -32,7 +32,8 @@ const partiesByTier = new Map(
   ]),
 );
 
-let route: Route = parseRoute(location.hash, initialLang());
+const HOME: Route = { lang: initialLang(), view: 'matrix', ...DEFAULT_MAP };
+let route: Route = HOME;
 let lang: Lang = route.lang;
 // By default every issue category starts collapsed; party tiers stay open.
 const collapsed = loadCollapsed(categories.map((c) => `cat:${c.id}`));
@@ -372,7 +373,6 @@ function renderFooter(): string {
 function render(): void {
   document.documentElement.lang = lang;
   document.documentElement.dir = isRtl(lang) ? 'rtl' : 'ltr';
-  document.title = pageTitle();
   const view = route.view;
   const scrollLeft = document.querySelector('.matrix-wrap')?.scrollLeft ?? 0;
   document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
@@ -387,33 +387,23 @@ function render(): void {
   if (wrap) wrap.scrollLeft = scrollLeft;
 }
 
-function pageTitle(): string {
-  const parts: string[] = [];
-  const party = route.party ?? route.issue?.split('/')[0];
-  if (party) parts.push(partyById.get(party)!.name[lang]);
-  if (route.issue) parts.push(aspectById.get(route.issue.split('/')[1])!.claim[lang]);
-  if (!party && route.view === 'map') {
-    const name = (id: string) => dimensions.find((d) => d.id === id)!.name[lang];
-    parts.push(`${ui.tabMap[lang]}: ${name(route.x)} × ${name(route.y)}`);
-  }
-  if (!party && route.view === 'quiz') parts.push(ui.tabQuiz[lang]);
-  return [...parts, ui.title[lang]].join(' — ');
-}
-
 /** Syncs the page with the URL: every distinct page (view, axes, open card, language) has its own address. */
 function apply(): void {
   const prev = route;
-  route = parseRoute(location.hash, lang);
+  // A card opened by URL sits over the page that was showing; on first load that is the matrix.
+  const under = { ...prev, party: undefined, issue: undefined };
+  route = parseRoute(location.pathname, location.search, under, location.hash);
   if (route.answers) {
     loadAnswers(decodeAnswers(route.answers));
     route = { ...route, answers: undefined };
   }
   const canonical = formatRoute(route);
-  if (location.hash !== canonical) history.replaceState(null, '', canonical);
+  if (location.pathname + location.search !== canonical || location.hash) history.replaceState(null, '', canonical);
   const langChanged = lang !== route.lang;
   lang = route.lang;
   saveLang(lang);
   render();
+  updateHead(route, lang);
   if (prev.view !== route.view || prev.x !== route.x || prev.y !== route.y) window.scrollTo(0, 0);
   const wrap = document.querySelector('.matrix-wrap');
   if (langChanged && wrap) wrap.scrollLeft = 0; // scroll origin flips with text direction
@@ -421,13 +411,16 @@ function apply(): void {
   else if (route.issue) openDetails(route.issue);
 }
 
-function navigate(patch: Partial<Route>): void {
-  const url = formatRoute({ ...route, answers: undefined, ...patch });
-  if (url === location.hash) apply();
-  else location.hash = url;
+function go(url: string): void {
+  if (url !== location.pathname + location.search) history.pushState(null, '', url);
+  apply();
 }
 
-window.addEventListener('hashchange', apply);
+function navigate(patch: Partial<Route>): void {
+  go(formatRoute({ ...route, answers: undefined, ...patch }));
+}
+
+window.addEventListener('popstate', apply);
 
 // Closing a card drops it from the URL without adding a history entry.
 document.addEventListener(
@@ -437,7 +430,7 @@ document.addEventListener(
     if (dialog.id !== 'details' || !dialog.isConnected || !(route.party || route.issue)) return;
     route = { ...route, party: undefined, issue: undefined };
     history.replaceState(null, '', formatRoute(route));
-    document.title = pageTitle();
+    updateHead(route, lang);
   },
   true,
 );
@@ -446,6 +439,14 @@ const allKeys = () => [...categories.map((c) => `cat:${c.id}`), ...tiers.map((t)
 
 document.addEventListener('click', (e) => {
   const target = e.target as HTMLElement;
+
+  // Internal links switch pages without a reload.
+  const anchor = target.closest<HTMLAnchorElement>('a[href^="/"]');
+  if (anchor && !e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+    e.preventDefault();
+    go(anchor.getAttribute('href')!);
+    return;
+  }
 
   const langBtn = target.closest<HTMLButtonElement>('[data-lang]');
   if (langBtn) {
@@ -485,7 +486,7 @@ document.addEventListener('click', (e) => {
 
   const share = target.closest<HTMLButtonElement>('[data-quiz-share]');
   if (share) {
-    const url = `${location.origin}${location.pathname}${link({ view: 'quiz', answers: encodeAnswers(answers) })}`;
+    const url = `${location.origin}${link({ view: 'quiz', answers: encodeAnswers(answers) })}`;
     navigator.clipboard?.writeText(url).then(() => (share.textContent = ui.copied[lang]), () => prompt('', url));
     track('share_quiz');
     return;
