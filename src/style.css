@@ -969,15 +969,16 @@ dialog::backdrop {
   transition: opacity 0.15s;
 }
 
-.region ellipse {
+.region path {
   fill: var(--bloc);
   fill-opacity: 0.12;
   stroke: var(--bloc);
   stroke-width: 1.5;
+  stroke-linejoin: round;
 }
 
-.region:hover ellipse,
-.region:focus-visible ellipse {
+.region:hover path,
+.region:focus-visible path {
   fill-opacity: 0.3;
   stroke-width: 2.5;
 }
