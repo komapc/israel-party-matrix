@@ -1076,6 +1076,11 @@ dialog::backdrop {
 
 .question--answered {
   border-color: var(--border-strong);
+  box-shadow: inset 3px 0 0 var(--text);
+}
+
+[dir='rtl'] .question--answered {
+  box-shadow: inset -3px 0 0 var(--text);
 }
 
 .question__head h3 {
@@ -1137,10 +1142,28 @@ dialog::backdrop {
   border-color: var(--border-strong);
 }
 
+/* The chosen answer is filled in its stance color; the others in the same question step back. */
+.answer--yes { --stance: var(--yes); }
+.answer--no { --stance: var(--no); }
+.answer--mixed { --stance: var(--text-2); }
+
+.question--answered .answer[aria-pressed='false'] {
+  opacity: 0.55;
+}
+
+.question--answered .answer[aria-pressed='false']:hover {
+  opacity: 1;
+}
+
 .answer[aria-pressed='true'] {
-  border-color: var(--text);
-  box-shadow: inset 0 0 0 1px var(--text);
-  color: var(--text);
+  border-color: var(--stance);
+  background: var(--stance);
+  color: var(--surface);
+  font-weight: 600;
+}
+
+.answer[aria-pressed='true'] .answer__glyph {
+  color: inherit;
 }
 
 .important {
@@ -1235,11 +1258,12 @@ dialog::backdrop {
   overflow: hidden;
 }
 
+/* The bar is the match only; the bloc is the dot and its name below. */
 .result__bar span {
   display: block;
   height: 100%;
   border-radius: 3px;
-  background: var(--bloc);
+  background: var(--text-2);
 }
 
 .result__basis {
@@ -1271,8 +1295,13 @@ dialog::backdrop {
 }
 
 /* Fewer issues compared than the quiz minimum: shown, but de-emphasized. */
-.result--thin {
-  opacity: 0.55;
+.result--thin .result__name,
+.result--thin .result__pct {
+  color: var(--muted);
+}
+
+.result--thin .result__bar span {
+  background: var(--border-strong);
 }
 
 @media (max-width: 600px) {
@@ -1325,8 +1354,8 @@ dialog::backdrop {
   margin: 4px 0 16px;
   padding: 18px 16px 16px;
   border-radius: var(--radius);
-  background: color-mix(in srgb, var(--bloc) 10%, var(--surface));
-  border: 1px solid color-mix(in srgb, var(--bloc) 45%, var(--border));
+  background: var(--category-bg);
+  border: 1px solid var(--border-strong);
   text-align: center;
 }
 
@@ -1381,12 +1410,17 @@ dialog::backdrop {
   text-underline-offset: 4px;
 }
 
+.hero .bloc-chip {
+  margin-top: 8px;
+  font-size: 12.5px;
+}
+
 .hero__pct {
   margin: 2px 0 0;
   font-size: 40px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
-  color: var(--bloc);
+  color: var(--text);
   direction: ltr;
 }
 
@@ -1452,4 +1486,116 @@ dialog::backdrop {
   flex: 1 1 260px;
   margin: 0;
   line-height: 1.5;
+}
+
+/* Quiz: invitation to the map — a thumbnail with you among the parties */
+.map-teaser {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px;
+  padding: 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  text-align: start;
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.hero .map-teaser {
+  margin: 14px 0 0;
+}
+
+.map-teaser:hover {
+  border-color: var(--text);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.08);
+}
+
+.map-teaser__svg {
+  flex: 0 0 96px;
+  width: 96px;
+  height: 96px;
+  border-radius: 8px;
+  background: var(--category-bg);
+}
+
+.map-teaser__svg line {
+  stroke: var(--border-strong);
+  stroke-width: 1;
+}
+
+.map-teaser__parties circle {
+  fill: var(--bloc);
+  opacity: 0.75;
+}
+
+.map-teaser__me {
+  fill: var(--text);
+  stroke: var(--surface);
+  stroke-width: 2.5;
+}
+
+.map-teaser__pulse {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: teaser-pulse 1.8s ease-out infinite;
+}
+
+@keyframes teaser-pulse {
+  from {
+    opacity: 0.7;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-teaser__pulse {
+    display: none;
+  }
+}
+
+.map-teaser__text {
+  display: grid;
+  gap: 3px;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+
+.map-teaser__text b {
+  font-size: 14.5px;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.map-teaser__go {
+  margin-top: 2px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.map-teaser__arrow {
+  display: inline-block;
+  transition: transform 0.15s;
+}
+
+[dir='rtl'] .map-teaser__arrow {
+  transform: scaleX(-1);
+}
+
+.map-teaser:hover .map-teaser__arrow {
+  transform: translateX(3px);
+}
+
+[dir='rtl'] .map-teaser:hover .map-teaser__arrow {
+  transform: scaleX(-1) translateX(3px);
 }

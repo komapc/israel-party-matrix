@@ -165,6 +165,14 @@ export const ui = {
   quizCompared: { en: 'issues compared', ru: 'вопросов сравнено', uk: 'питань порівняно', be: 'пытанняў параўнана', he: 'נושאים הושוו', eo: 'temoj komparitaj' },
   quizReset: { en: 'Start over', ru: 'Начать заново', uk: 'Почати знову', be: 'Пачаць нанова', he: 'התחלה מחדש', eo: 'Rekomenci' },
   quizOnMap: { en: 'See yourself on the map', ru: 'Посмотреть себя на карте', uk: 'Побачити себе на мапі', be: 'Убачыць сябе на карце', he: 'הציגו אותי במפה', eo: 'Vidi min sur la mapo' },
+  mapTeaser: {
+    en: 'Where are you on the political map?',
+    ru: 'Где вы на политической карте?',
+    uk: 'Де ви на політичній мапі?',
+    be: 'Дзе вы на палітычнай карце?',
+    he: 'איפה אתם על המפה הפוליטית?',
+    eo: 'Kie vi estas sur la politika mapo?',
+  },
   quizNote: {
     en: 'Match = how close your answers are to each party’s stance, over the issues where the party has a known position. Your answers stay in this browser.',
     ru: 'Совпадение — насколько ваши ответы близки к позициям партии по вопросам, где её позиция известна. Ответы хранятся только в этом браузере.',

@@ -126,30 +126,31 @@ function renderQuestion(aspectId: string, lang: Lang): string {
 const pctOf = (m: Match) => Math.round(m.match * 100);
 
 /** The announcement once every question is answered: the closest party, large, and the two after it. */
-function renderHero(lang: Lang, ranked: Match[], mapHref: string): string {
+function renderHero(lang: Lang, ranked: Match[], onMap: string): string {
   const [top, ...rest] = ranked;
   const next = rest
     .slice(0, 2)
     .map(
       (m) =>
-        `<li><button type="button" class="hero__next-party result--${m.party.bloc}" data-party="${m.party.id}"><i></i>${esc(m.party.name[lang])} <b>${pctOf(m)}%</b></button></li>`,
+        `<li><button type="button" class="hero__next-party result--${m.party.bloc}" data-party="${m.party.id}" title="${blocOf(m.party).name[lang]}"><i></i>${esc(m.party.name[lang])} <b>${pctOf(m)}%</b></button></li>`,
     )
     .join('');
   return `
-    <div class="hero hero--${top.party.bloc}">
+    <div class="hero">
       <p class="hero__kicker">${ui.heroKicker[lang]}</p>
       <p class="hero__lead">${ui.heroLead[lang]}</p>
       <button type="button" class="hero__party" data-party="${top.party.id}">${esc(top.party.name[lang])}</button>
+      <span class="bloc-chip bloc-chip--${top.party.bloc}"><i></i>${blocOf(top.party).name[lang]}</span>
       <p class="hero__pct">${pctOf(top)}%</p>
       ${next ? `<p class="hero__next-label">${ui.heroNext[lang]}</p><ol class="hero__next">${next}</ol>` : ''}
       <div class="hero__actions">
         <button type="button" class="btn btn--primary" data-quiz-share>${ui.shareResult[lang]}</button>
-        <a class="btn" href="${mapHref}">${ui.quizOnMap[lang]}</a>
       </div>
+      ${onMap}
     </div>`;
 }
 
-function renderResults(lang: Lang, mapHref: string): string {
+function renderResults(lang: Lang, mapHref: string, mapTeaser: string | null): string {
   if (!hasEnoughAnswers()) return `<p class="results__empty">${ui.quizNeedMore[lang]}</p>`;
   const ranked = matches();
   const rows = ranked
@@ -158,21 +159,21 @@ function renderResults(lang: Lang, mapHref: string): string {
       const pct = pctOf(m);
       return `
         <li>
-          <button type="button" class="result result--${party.bloc}${thin(m) ? ' result--thin' : ''}" data-party="${party.id}" title="${blocOf(party).name[lang]}">
+          <button type="button" class="result result--${party.bloc}${thin(m) ? ' result--thin' : ''}" data-party="${party.id}">
             <span class="result__name"><i></i>${esc(party.name[lang])}</span>
             <span class="result__pct">${pct}%</span>
             <span class="result__bar"><span style="inline-size:${pct}%"></span></span>
-            <span class="result__basis">${compared} ${ui.quizCompared[lang]}</span>
+            <span class="result__basis">${blocOf(party).name[lang]} · ${compared} ${ui.quizCompared[lang]}</span>
           </button>
         </li>`;
     })
     .join('');
   const complete = isComplete() && ranked.length > 0;
+  const onMap = mapTeaser ?? `<a class="btn btn--primary" href="${mapHref}">${ui.quizOnMap[lang]}</a>`;
   return `
-    ${complete ? renderHero(lang, ranked, mapHref) : ''}
+    ${complete ? renderHero(lang, ranked, onMap) : onMap}
     <ol class="results__list">${rows}</ol>
     <div class="results__actions">
-      ${complete ? '' : `<a class="btn btn--primary" href="${mapHref}">${ui.quizOnMap[lang]}</a>`}
       ${complete ? '' : `<button type="button" class="btn" data-quiz-share>${ui.shareResult[lang]}</button>`}
       <button type="button" class="btn" data-quiz-reset>${ui.quizReset[lang]}</button>
     </div>`;
@@ -188,7 +189,8 @@ function renderShared(lang: Lang, result: string): string {
     </div>`;
 }
 
-export function renderQuiz(lang: Lang, mapHref: string, result?: string): string {
+/** `mapTeaser` is the map preview built by the map module, which itself reads the quiz answers. */
+export function renderQuiz(lang: Lang, mapHref: string, mapTeaser: string | null, result?: string): string {
   const sections = categories
     .map((c) => {
       const qs = aspects.filter((a) => a.category === c.id).map((a) => renderQuestion(a.id, lang));
@@ -205,7 +207,7 @@ export function renderQuiz(lang: Lang, mapHref: string, result?: string): string
       <aside class="results" aria-live="polite">
         <h2>${ui.quizResults[lang]}</h2>
         <p class="results__progress">${answers.size} / ${aspects.length} ${ui.answered[lang]}</p>
-        ${renderResults(lang, mapHref)}
+        ${renderResults(lang, mapHref, mapTeaser)}
         <p class="results__note">${ui.quizNote[lang]}</p>
       </aside>
     </div>`;

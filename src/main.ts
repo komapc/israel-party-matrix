@@ -15,7 +15,7 @@ import {
 import { initAnalytics, track } from './analytics';
 import { HEADINGS, intro, renderFaq, subtitle } from './faq';
 import { LANGS, LANG_LABELS, formatDateIn, initialLang, isRtl, saveLang, ui } from './i18n';
-import { renderMap } from './map';
+import { renderMap, renderMapPreview } from './map';
 import { answers, loadAnswers, matches, renderQuiz, resetQuiz, setAnswer, takeJustCompleted, toggleImportant } from './quiz';
 import { DEFAULT_MAP, type Route, VIEWS, decodeAnswers, encodeAnswers, formatRoute, parseRoute } from './route';
 import { updateHead } from './seo';
@@ -332,7 +332,11 @@ function renderTabs(view: View): string {
 
 function renderView(view: View): string {
   if (view === 'map') return renderMap(lang, route, (x, y) => link({ x, y }));
-  if (view === 'quiz') return renderQuiz(lang, link({ view: 'map' }), route.result);
+  if (view === 'quiz') {
+    const mapHref = link({ view: 'map' });
+    const teaser = renderMapPreview(lang, route, (x, y) => link({ view: 'map', x, y }));
+    return renderQuiz(lang, mapHref, teaser, route.result);
+  }
   const faqLinks = { quiz: link({ view: 'quiz' }), map: link({ view: 'map' }), report: `${REPO}/issues/new` };
   return `<p class="intro">${intro(lang, link({ view: 'quiz' }))}</p>${renderToolbar()}${renderMatrix()}${renderFaq(lang, faqLinks)}`;
 }
