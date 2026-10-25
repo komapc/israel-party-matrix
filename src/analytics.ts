@@ -1,5 +1,5 @@
 /** Google Analytics 4 measurement ID; empty disables tracking. */
-const GA_ID = '';
+const GA_ID = 'G-6E2LMSF9P7';
 
 type Gtag = (...args: unknown[]) => void;
 
