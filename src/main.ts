@@ -13,7 +13,8 @@ import {
   tiers,
 } from './data';
 import { initAnalytics, track } from './analytics';
-import { LANGS, LANG_LABELS, LOCALES, initialLang, isRtl, saveLang, ui } from './i18n';
+import { HEADINGS, intro, renderFaq, subtitle } from './faq';
+import { LANGS, LANG_LABELS, formatDateIn, initialLang, isRtl, saveLang, ui } from './i18n';
 import { renderMap } from './map';
 import { answers, loadAnswers, renderQuiz, resetQuiz, setAnswer, toggleImportant } from './quiz';
 import { DEFAULT_MAP, type Route, VIEWS, decodeAnswers, encodeAnswers, formatRoute, parseRoute } from './route';
@@ -41,26 +42,21 @@ const collapsed = loadCollapsed(categories.map((c) => `cat:${c.id}`));
 const chevron = (open: boolean) =>
   `<svg class="chevron${open ? ' chevron--open' : ''}" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
-// Browsers ship no Esperanto date data, so it is formatted by hand.
-const EO_MONTHS = ['januaro', 'februaro', 'marto', 'aprilo', 'majo', 'junio', 'julio', 'aŭgusto', 'septembro', 'oktobro', 'novembro', 'decembro'];
-
-function formatDate(iso: string): string {
-  if (lang === 'eo') {
-    const [y, m, d] = iso.split('-').map(Number);
-    return `${d}-a de ${EO_MONTHS[m - 1]} ${y}`;
-  }
-  return new Date(`${iso}T12:00:00`).toLocaleDateString(LOCALES[lang], {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
-}
+const formatDate = (iso: string) => formatDateIn(lang, iso);
 
 /** Column groups as currently displayed: an expanded tier contributes its parties, a collapsed one a single stub. */
 function visibleTiers() {
   return tiers
     .map((t) => ({ tier: t, parties: partiesByTier.get(t.id) ?? [], open: !collapsed.has(`tier:${t.id}`) }))
     .filter((g) => g.parties.length > 0);
+}
+
+/** The page's own heading: the party on a party page, else the view. */
+function heading(): string {
+  const id = route.party ?? route.issue?.split('/')[0];
+  const party = id && partyById.get(id);
+  if (party) return esc(HEADINGS.party[lang].replace('{party}', party.name[lang]));
+  return HEADINGS[route.view][lang];
 }
 
 function renderHeader(): string {
@@ -70,8 +66,8 @@ function renderHeader(): string {
   return `
     <header class="masthead">
       <div>
-        <h1>${ui.title[lang]}</h1>
-        <p class="subtitle">${ui.subtitle[lang]}</p>
+        <h1>${heading()}</h1>
+        <p class="subtitle">${subtitle(lang)}</p>
       </div>
       <div class="lang-switch" role="group" aria-label="Language">${buttons}</div>
     </header>`;
@@ -215,6 +211,8 @@ function renderMatrix(): string {
     .join('');
 
   return `
+    <p class="scroll-hint">${ui.scrollHint[lang]}</p>
+    <div class="matrix-box">
     <div class="matrix-wrap">
       <table class="matrix">
         <thead>
@@ -223,6 +221,7 @@ function renderMatrix(): string {
         </thead>
         ${body}
       </table>
+    </div>
     </div>`;
 }
 
@@ -334,7 +333,8 @@ function renderTabs(view: View): string {
 function renderView(view: View): string {
   if (view === 'map') return renderMap(lang, route, (x, y) => link({ x, y }));
   if (view === 'quiz') return renderQuiz(lang, link({ view: 'map' }));
-  return `${renderToolbar()}${renderMatrix()}`;
+  const faqLinks = { quiz: link({ view: 'quiz' }), map: link({ view: 'map' }), report: `${REPO}/issues/new` };
+  return `<p class="intro">${intro(lang, link({ view: 'quiz' }))}</p>${renderToolbar()}${renderMatrix()}${renderFaq(lang, faqLinks)}`;
 }
 
 const REPO = 'https://github.com/komapc/israel-party-matrix';
@@ -385,6 +385,15 @@ function render(): void {
     <dialog id="details"></dialog>`;
   const wrap = document.querySelector('.matrix-wrap');
   if (wrap) wrap.scrollLeft = scrollLeft;
+  updateScrollCue();
+}
+
+/** Fades the table's far edge while more parties are hidden past it (on phones most of them are). */
+function updateScrollCue(): void {
+  const wrap = document.querySelector('.matrix-wrap');
+  if (!wrap) return;
+  const hidden = wrap.scrollWidth - wrap.clientWidth - Math.abs(wrap.scrollLeft); // scrollLeft is negative in RTL
+  wrap.parentElement!.classList.toggle('matrix-box--more', hidden > 4);
 }
 
 /** Syncs the page with the URL: every distinct page (view, axes, open card, language) has its own address. */
@@ -421,6 +430,8 @@ function navigate(patch: Partial<Route>): void {
 }
 
 window.addEventListener('popstate', apply);
+window.addEventListener('resize', updateScrollCue);
+document.addEventListener('scroll', (e) => (e.target as Element).classList?.contains('matrix-wrap') && updateScrollCue(), true);
 
 // Closing a card drops it from the URL without adding a history entry.
 document.addEventListener(
