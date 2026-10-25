@@ -17,12 +17,31 @@ export interface Aspect {
   high: Localized;
 }
 
+/** Chance of crossing the 3.25% threshold, judged from recent polls. */
+export type Tier = 'likely' | 'borderline' | 'unlikely';
+
+export interface Tiers {
+  id: Tier;
+  name: Localized;
+  hint: Localized;
+}
+
+/** Seat projections across the polls listed in `meta.json`. 0 = below threshold. */
+export interface PollRange {
+  avg: number;
+  min: number;
+  max: number;
+}
+
 export interface Party {
   id: string;
-  name: Localized & { he: string };
+  name: Localized & { he?: string };
   leader?: Localized;
-  /** Seats in the current Knesset, if represented. */
-  seats?: number;
+  /** Component parties of a joint list. */
+  members?: Localized;
+  tier: Tier;
+  polls?: PollRange;
+  /** Display color for the column accent — not an official party color. */
   color: string;
 }
 
@@ -35,4 +54,10 @@ export interface Position {
   score: Score | null;
   note?: Localized;
   sources?: string[];
+}
+
+export interface Meta {
+  electionDate: string;
+  pollsAsOf: string;
+  pollSources: string[];
 }

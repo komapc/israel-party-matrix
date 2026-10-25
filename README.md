@@ -21,7 +21,9 @@ All content lives in `src/data/` as JSON; the schema is in `src/types.ts`.
 |---|---|
 | `categories.json` | Issue groups (security, state & religion, …) |
 | `aspects.json` | Issues. Each has a `low` and `high` pole; scores run -2 … +2 between them |
-| `parties.json` | Parties: names (en/ru/he), leader, seats, color |
+| `tiers.json` | Party groups by chance of crossing the 3.25% threshold |
+| `parties.json` | Lists on the ballot: names (en/ru/he), leader, member parties, tier, poll range |
+| `meta.json` | Election date, poll snapshot date, poll sources |
 | `positions.json` | One entry per party × issue: `score` (-2…2 or `null`), note, sources |
 
 Scores describe *where* a party sits between the two poles, not whether that is good or bad.

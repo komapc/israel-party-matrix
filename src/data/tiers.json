@@ -1,0 +1,11 @@
+[
+  { "id": "likely",
+    "name": { "en": "Expected to pass", "ru": "Пройдут" },
+    "hint": { "en": "Above the threshold in every recent poll", "ru": "Выше барьера во всех последних опросах" } },
+  { "id": "borderline",
+    "name": { "en": "Borderline", "ru": "Могут пройти" },
+    "hint": { "en": "Polling around the 3.25% threshold", "ru": "Около барьера 3,25%" } },
+  { "id": "unlikely",
+    "name": { "en": "Unlikely", "ru": "Остальные" },
+    "hint": { "en": "Below the threshold in polls, or not polled", "ru": "Ниже барьера или не включены в опросы" } }
+]

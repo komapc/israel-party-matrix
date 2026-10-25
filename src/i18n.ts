@@ -12,6 +12,22 @@ export const ui = {
   },
   aspect: { en: 'Issue', ru: 'Вопрос' },
   seats: { en: 'seats', ru: 'мест' },
+  pollTitle: {
+    en: 'Projected seats: poll average (range)',
+    ru: 'Прогноз мест: среднее по опросам (разброс)',
+  },
+  belowThreshold: { en: 'below threshold', ru: 'ниже барьера' },
+  notPolled: { en: 'not polled', ru: 'нет в опросах' },
+  expandAll: { en: 'Expand all', ru: 'Развернуть всё' },
+  collapseAll: { en: 'Collapse all', ru: 'Свернуть всё' },
+  partiesCount: { en: 'parties', ru: 'партий' },
+  issuesCount: { en: 'issues', ru: 'вопросов' },
+  pollsAsOf: { en: 'Polls as of', ru: 'Опросы на' },
+  election: { en: 'Election day', ru: 'Выборы' },
+  minorLists: {
+    en: 'About 20 more minor lists are on the ballot and not shown.',
+    ru: 'В бюллетене ещё около 20 малых списков — они не показаны.',
+  },
   noPosition: { en: 'No clear position', ru: 'Нет чёткой позиции' },
   empty: {
     en: 'Party data is coming soon.',
