@@ -987,6 +987,8 @@ dialog::backdrop {
 }
 
 .map-svg .pole {
+  /* Poles are anchored to the plot's left and right ends, which don't swap in Hebrew. */
+  direction: ltr;
   fill: var(--muted);
   font-size: 12px;
 }
@@ -1325,16 +1327,19 @@ dialog::backdrop {
   background: var(--border-strong);
 }
 
-@media (max-width: 600px) {
-  .map-svg .region-label,
-  .map-svg .pole {
-    font-size: 16px;
-  }
+/* Phone width: the map is drawn at about half size, so its text is set larger (labels: LABEL.compact in map.ts). */
+.map-svg--compact .region-label {
+  font-size: 19px;
+  stroke-width: 4px;
+}
 
-  .map-svg .axis-name,
-  .me text {
-    font-size: 17px;
-  }
+.map-svg--compact .pole {
+  font-size: 18px;
+}
+
+.map-svg--compact .axis-name,
+.map-svg--compact .me text {
+  font-size: 20px;
 }
 
 .faq {
