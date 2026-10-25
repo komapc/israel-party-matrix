@@ -319,3 +319,52 @@ export function renderMap(lang: Lang, state: MapState, link: MapLink): string {
       </div>
     </div>`;
 }
+
+/**
+ * A thumbnail of the map with every party as a dot and the quiz-taker as a large marker — the quiz's invitation to
+ * the full map. Uses the first ready-made axis pair your answers place you on; null if there is none yet.
+ */
+export function renderMapPreview(lang: Lang, state: MapState, link: MapLink): string | null {
+  if (!hasEnoughAnswers()) return null;
+  const mine = (aspect: string) => answers.get(aspect)?.score ?? null;
+  const pairs: [string, string][] = [[state.x, state.y], ...PRESETS];
+  const placed = pairs
+    .map(([x, y]) => {
+      const dx = dimensions.find((d) => d.id === x)!;
+      const dy = dimensions.find((d) => d.id === y)!;
+      const ex = extent(dx, mine);
+      const ey = extent(dy, mine);
+      return ex && ey ? { dx, dy, ex, ey } : null;
+    })
+    .find((p) => p !== null);
+  if (!placed) return null;
+  const { dx, dy, ex, ey } = placed;
+
+  const size = 120;
+  const px = (v: number) => size / 2 + (v / SPAN) * (size / 2);
+  const py = (v: number) => size / 2 - (v / SPAN) * (size / 2);
+  const dots = parties
+    .filter((p) => state.show.includes(p.tier))
+    .map((party) => {
+      const score = (aspect: string) => scoreOf(party.id, aspect);
+      const x = extent(dx, score);
+      const y = extent(dy, score);
+      return x && y ? `<circle class="region--${party.bloc}" cx="${px(x.mean)}" cy="${py(y.mean)}" r="5" />` : '';
+    })
+    .join('');
+  return `
+    <a class="map-teaser" href="${link(dx.id, dy.id)}">
+      <svg class="map-teaser__svg" viewBox="0 0 ${size} ${size}" dir="ltr" aria-hidden="true">
+        <line x1="${size / 2}" y1="0" x2="${size / 2}" y2="${size}" />
+        <line x1="0" y1="${size / 2}" x2="${size}" y2="${size / 2}" />
+        <g class="map-teaser__parties">${dots}</g>
+        <circle class="map-teaser__pulse" cx="${px(ex.mean)}" cy="${py(ey.mean)}" r="9" />
+        <circle class="map-teaser__me" cx="${px(ex.mean)}" cy="${py(ey.mean)}" r="7" />
+      </svg>
+      <span class="map-teaser__text">
+        <b>${ui.mapTeaser[lang]}</b>
+        <span>${esc(dx.name[lang])} × ${esc(dy.name[lang])}</span>
+        <span class="map-teaser__go">${ui.quizOnMap[lang]} <span class="map-teaser__arrow">→</span></span>
+      </span>
+    </a>`;
+}
