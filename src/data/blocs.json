@@ -5,13 +5,15 @@
       "en": "Netanyahu bloc",
       "ru": "Блок Нетаньяху",
       "he": "גוש נתניהו",
-      "eo": "Bloko de Netanjahu"
+      "eo": "Bloko de Netanjahu",
+      "uk": "Блок Нетаньягу"
     },
     "short": {
       "en": "Pro-Netanyahu",
       "ru": "За Нетаньяху",
       "he": "בעד נתניהו",
-      "eo": "Por Netanjahu"
+      "eo": "Por Netanjahu",
+      "uk": "За Нетаньягу"
     }
   },
   {
@@ -20,13 +22,15 @@
       "en": "Anti-Netanyahu bloc",
       "ru": "Против Нетаньяху",
       "he": "הגוש נגד נתניהו",
-      "eo": "Kontraŭ-Netanjahua bloko"
+      "eo": "Kontraŭ-Netanjahua bloko",
+      "uk": "Проти Нетаньягу"
     },
     "short": {
       "en": "Anti-Netanyahu",
       "ru": "Против",
       "he": "נגד נתניהו",
-      "eo": "Kontraŭ Netanjahu"
+      "eo": "Kontraŭ Netanjahu",
+      "uk": "Проти"
     }
   },
   {
@@ -35,13 +39,15 @@
       "en": "Neither / unclear",
       "ru": "Вне блоков",
       "he": "ללא גוש / לא מוגדר",
-      "eo": "Neniu / neklare"
+      "eo": "Neniu / neklare",
+      "uk": "Поза блоками"
     },
     "short": {
       "en": "Neither",
       "ru": "Вне блоков",
       "he": "ללא גוש",
-      "eo": "Neniu"
+      "eo": "Neniu",
+      "uk": "Поза блоками"
     }
   }
 ]

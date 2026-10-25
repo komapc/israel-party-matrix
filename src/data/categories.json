@@ -5,7 +5,8 @@
       "en": "Security & conflict",
       "ru": "Безопасность и конфликт",
       "he": "ביטחון וסכסוך",
-      "eo": "Sekureco kaj konflikto"
+      "eo": "Sekureco kaj konflikto",
+      "uk": "Безпека і конфлікт"
     }
   },
   {
@@ -14,7 +15,8 @@
       "en": "State & religion",
       "ru": "Государство и религия",
       "he": "דת ומדינה",
-      "eo": "Ŝtato kaj religio"
+      "eo": "Ŝtato kaj religio",
+      "uk": "Держава і релігія"
     }
   },
   {
@@ -23,7 +25,8 @@
       "en": "Governance",
       "ru": "Государственное устройство",
       "he": "משטר וממשל",
-      "eo": "Regado"
+      "eo": "Regado",
+      "uk": "Державний устрій"
     }
   },
   {
@@ -32,7 +35,8 @@
       "en": "Economy",
       "ru": "Экономика",
       "he": "כלכלה",
-      "eo": "Ekonomio"
+      "eo": "Ekonomio",
+      "uk": "Економіка"
     }
   },
   {
@@ -41,7 +45,8 @@
       "en": "Society",
       "ru": "Общество",
       "he": "חברה",
-      "eo": "Socio"
+      "eo": "Socio",
+      "uk": "Суспільство"
     }
   }
 ]

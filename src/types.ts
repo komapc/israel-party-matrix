@@ -1,4 +1,4 @@
-export type Lang = 'en' | 'ru' | 'he' | 'eo';
+export type Lang = 'en' | 'ru' | 'uk' | 'he' | 'eo';
 
 /** Text available in every UI language. */
 export type Localized = Record<Lang, string>;

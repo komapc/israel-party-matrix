@@ -1,6 +1,6 @@
 # Israeli Parties Matrix
 
-A multilingual (English / Russian / Hebrew / Esperanto) matrix of Israeli political parties vs key policy issues
+A multilingual (English / Russian / Ukrainian / Hebrew / Esperanto) matrix of Israeli political parties vs key policy issues
 (Palestinian–Israeli conflict, religion & state, governance, economy, society).
 
 ## Stack
@@ -10,7 +10,7 @@ Vite + vanilla TypeScript, no framework. Static build, deployable to any static 
 ```bash
 npm install
 npm run dev       # local dev server
-npm run build     # typecheck + production build into dist/
+npm run build     # typecheck + production build into dist/, then prerender every page (Playwright)
 ```
 
 ## Data
@@ -37,12 +37,16 @@ Live at https://elections-2026.lipu.dev (`public/CNAME`; DNS: Cloudflare CNAME `
 
 ## URLs
 
-Every page has its own address (hash routes, so they work on static hosting):
+Every page has its own path. `npm run build` prerenders each one (all languages) into static HTML with its own
+title, description, canonical, hreflang alternates and Open Graph tags, and writes `sitemap.xml`;
+`404.html` is the app shell for anything else (e.g. single cells), routed on the client.
 
 | URL | Page |
 |---|---|
-| `#/ru/matrix` | Matrix in Russian |
-| `#/en/map/religion/security?show=likely` | Map with chosen axes and tier filter |
-| `#/he/matrix?party=raam` | Party card |
-| `#/eo/matrix?issue=raam.lgbt` | One party × issue cell |
-| `#/en/quiz?a=eB-c` | Quiz with shared answers (one letter per issue: a…e = −2…+2, uppercase = important) |
+| `/ru/` | Matrix in Russian |
+| `/en/map/religion/security/?show=likely` | Map with chosen axes and tier filter |
+| `/he/party/raam/` | Party card |
+| `/eo/party/raam/lgbt/` | One party × issue cell |
+| `/uk/quiz/?a=eB-c` | Quiz with shared answers (one letter per issue: a…e = −2…+2, uppercase = important) |
+
+Old hash links (`#/ru/matrix?party=raam`) still work.

@@ -1,54 +1,176 @@
 [
   {
     "id": "economy",
-    "name": { "en": "Economy", "ru": "Экономика", "he": "כלכלה", "eo": "Ekonomio" },
-    "low": { "en": "Welfare state", "ru": "Социальное государство", "he": "מדינת רווחה", "eo": "Socia ŝtato" },
-    "high": { "en": "Free market", "ru": "Свободный рынок", "he": "שוק חופשי", "eo": "Libera merkato" },
+    "name": {
+      "en": "Economy",
+      "ru": "Экономика",
+      "he": "כלכלה",
+      "eo": "Ekonomio",
+      "uk": "Економіка"
+    },
+    "low": {
+      "en": "Welfare state",
+      "ru": "Социальное государство",
+      "he": "מדינת רווחה",
+      "eo": "Socia ŝtato",
+      "uk": "Соціальна держава"
+    },
+    "high": {
+      "en": "Free market",
+      "ru": "Свободный рынок",
+      "he": "שוק חופשי",
+      "eo": "Libera merkato",
+      "uk": "Вільний ринок"
+    },
     "items": [
-      { "aspect": "market", "sign": 1 },
-      { "aspect": "cost-of-living", "sign": -1 }
+      {
+        "aspect": "market",
+        "sign": 1
+      },
+      {
+        "aspect": "cost-of-living",
+        "sign": -1
+      }
     ]
   },
   {
     "id": "security",
-    "name": { "en": "Security & conflict", "ru": "Безопасность и конфликт", "he": "ביטחון וסכסוך", "eo": "Sekureco kaj konflikto" },
-    "low": { "en": "Dovish", "ru": "Голуби", "he": "יוני", "eo": "Kolomba" },
-    "high": { "en": "Hawkish", "ru": "Ястребы", "he": "ניצי", "eo": "Akcipitra" },
+    "name": {
+      "en": "Security & conflict",
+      "ru": "Безопасность и конфликт",
+      "he": "ביטחון וסכסוך",
+      "eo": "Sekureco kaj konflikto",
+      "uk": "Безпека і конфлікт"
+    },
+    "low": {
+      "en": "Dovish",
+      "ru": "Голуби",
+      "he": "יוני",
+      "eo": "Kolomba",
+      "uk": "Голуби"
+    },
+    "high": {
+      "en": "Hawkish",
+      "ru": "Ястребы",
+      "he": "ניצי",
+      "eo": "Akcipitra",
+      "uk": "Яструби"
+    },
     "items": [
-      { "aspect": "two-states", "sign": -1 },
-      { "aspect": "settlements", "sign": 1 },
-      { "aspect": "gaza", "sign": 1 }
+      {
+        "aspect": "two-states",
+        "sign": -1
+      },
+      {
+        "aspect": "settlements",
+        "sign": 1
+      },
+      {
+        "aspect": "gaza",
+        "sign": 1
+      }
     ]
   },
   {
     "id": "religion",
-    "name": { "en": "Religion & state", "ru": "Религия и государство", "he": "דת ומדינה", "eo": "Religio kaj ŝtato" },
-    "low": { "en": "Secular", "ru": "Светское", "he": "חילוני", "eo": "Laika" },
-    "high": { "en": "Religious", "ru": "Религиозное", "he": "דתי", "eo": "Religia" },
+    "name": {
+      "en": "Religion & state",
+      "ru": "Религия и государство",
+      "he": "דת ומדינה",
+      "eo": "Religio kaj ŝtato",
+      "uk": "Релігія і держава"
+    },
+    "low": {
+      "en": "Secular",
+      "ru": "Светское",
+      "he": "חילוני",
+      "eo": "Laika",
+      "uk": "Світське"
+    },
+    "high": {
+      "en": "Religious",
+      "ru": "Религиозное",
+      "he": "דתי",
+      "eo": "Religia",
+      "uk": "Релігійне"
+    },
     "items": [
-      { "aspect": "religion-state", "sign": 1 },
-      { "aspect": "civil-marriage", "sign": -1 },
-      { "aspect": "haredi-draft", "sign": -1 }
+      {
+        "aspect": "religion-state",
+        "sign": 1
+      },
+      {
+        "aspect": "civil-marriage",
+        "sign": -1
+      }
     ]
   },
   {
     "id": "liberal",
-    "name": { "en": "Civil liberties", "ru": "Гражданские свободы", "he": "זכויות האזרח", "eo": "Civitanaj liberecoj" },
-    "low": { "en": "Conservative", "ru": "Консервативно", "he": "שמרני", "eo": "Konservativa" },
-    "high": { "en": "Liberal", "ru": "Либерально", "he": "ליברלי", "eo": "Liberala" },
+    "name": {
+      "en": "Civil liberties",
+      "ru": "Гражданские свободы",
+      "he": "זכויות האזרח",
+      "eo": "Civitanaj liberecoj",
+      "uk": "Громадянські свободи"
+    },
+    "low": {
+      "en": "Conservative",
+      "ru": "Консервативно",
+      "he": "שמרני",
+      "eo": "Konservativa",
+      "uk": "Консервативно"
+    },
+    "high": {
+      "en": "Liberal",
+      "ru": "Либерально",
+      "he": "ליברלי",
+      "eo": "Liberala",
+      "uk": "Ліберально"
+    },
     "items": [
-      { "aspect": "lgbt", "sign": 1 },
-      { "aspect": "arab-citizens", "sign": 1 }
+      {
+        "aspect": "lgbt",
+        "sign": 1
+      },
+      {
+        "aspect": "arab-citizens",
+        "sign": 1
+      }
     ]
   },
   {
     "id": "judiciary",
-    "name": { "en": "Courts & government", "ru": "Суды и власть", "he": "מערכת המשפט והממשלה", "eo": "Juĝejoj kaj registaro" },
-    "low": { "en": "Independent courts", "ru": "Независимые суды", "he": "בתי משפט עצמאיים", "eo": "Sendependaj juĝejoj" },
-    "high": { "en": "Stronger government", "ru": "Сильнее правительство", "he": "חיזוק הממשלה", "eo": "Pli forta registaro" },
+    "name": {
+      "en": "Courts & government",
+      "ru": "Суды и власть",
+      "he": "מערכת המשפט והממשלה",
+      "eo": "Juĝejoj kaj registaro",
+      "uk": "Суди і влада"
+    },
+    "low": {
+      "en": "Independent courts",
+      "ru": "Независимые суды",
+      "he": "בתי משפט עצמאיים",
+      "eo": "Sendependaj juĝejoj",
+      "uk": "Незалежні суди"
+    },
+    "high": {
+      "en": "Stronger government",
+      "ru": "Сильнее правительство",
+      "he": "חיזוק הממשלה",
+      "eo": "Pli forta registaro",
+      "uk": "Сильніший уряд"
+    },
     "items": [
-      { "aspect": "judicial-reform", "sign": 1 },
-      { "aspect": "constitution", "sign": -1 }
+      {
+        "aspect": "judicial-reform",
+        "sign": 1
+      },
+      {
+        "aspect": "constitution",
+        "sign": -1
+      }
     ]
   }
 ]
