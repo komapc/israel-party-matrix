@@ -22,6 +22,15 @@ export const ui = {
   sources: { en: 'Sources', ru: 'Источники' },
   close: { en: 'Close', ru: 'Закрыть' },
   blocBasis: { en: 'Bloc', ru: 'Блок' },
+  legendHint: {
+    en: 'Position between the two poles named in each row',
+    ru: 'Позиция между двумя полюсами, указанными в строке',
+  },
+  mixed: { en: 'Mixed / centre', ru: 'Смешанная / центр' },
+  leans: { en: 'Leans:', ru: 'Склоняется:' },
+  seatsShort: { en: 'Projected seats', ru: 'Прогноз мест' },
+  leader: { en: 'Leader', ru: 'Лидер' },
+  members: { en: 'Joint list', ru: 'Состав списка' },
   expandAll: { en: 'Expand all', ru: 'Развернуть всё' },
   collapseAll: { en: 'Collapse all', ru: 'Свернуть всё' },
   partiesCount: { en: 'parties', ru: 'партий' },
@@ -37,10 +46,9 @@ export const ui = {
     en: 'Party data is coming soon.',
     ru: 'Данные о партиях скоро появятся.',
   },
-  legend: { en: 'Scale', ru: 'Шкала' },
   footer: {
-    en: 'Positions summarize public platforms, statements and voting records. Click a cell for the explanation and sources.',
-    ru: 'Позиции — краткое изложение программ, заявлений и голосований. Нажмите на ячейку, чтобы увидеть пояснение и источники.',
+    en: 'Positions summarize public platforms, statements and voting records. Click a party for its profile, or a cell for the explanation and sources.',
+    ru: 'Позиции — краткое изложение программ, заявлений и голосований. Нажмите на партию, чтобы открыть её карточку, или на ячейку — для пояснения и источников.',
   },
 } satisfies Record<string, Record<Lang, string>>;
 
