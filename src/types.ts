@@ -78,3 +78,18 @@ export interface Meta {
   pollsAsOf: string;
   pollSources: string[];
 }
+
+/** A map axis: the signed mean of several issue scores, from `low` (-2) to `high` (+2). */
+export interface Dimension {
+  id: string;
+  name: Localized;
+  low: Localized;
+  high: Localized;
+  items: { aspect: string; sign: 1 | -1 }[];
+}
+
+/** A quiz answer: stance on the aspect's claim, optionally marked as important. */
+export interface Answer {
+  score: Score;
+  important?: boolean;
+}

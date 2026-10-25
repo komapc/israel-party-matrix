@@ -1,27 +1,24 @@
 import './style.css';
-import aspectsData from './data/aspects.json';
-import blocsData from './data/blocs.json';
-import categoriesData from './data/categories.json';
-import metaData from './data/meta.json';
-import partiesData from './data/parties.json';
-import positionsData from './data/positions.json';
-import tiersData from './data/tiers.json';
+import {
+  aspectById,
+  aspects,
+  blocOf,
+  blocs,
+  categories,
+  esc,
+  meta,
+  parties,
+  partyById,
+  positionIndex,
+  tiers,
+} from './data';
 import { initAnalytics, track } from './analytics';
 import { LANGS, LANG_LABELS, LOCALES, initialLang, isRtl, saveLang, ui } from './i18n';
+import { mapState, renderMap, saveMapState } from './map';
+import { renderQuiz, resetQuiz, setAnswer, toggleImportant } from './quiz';
 import { loadCollapsed, saveCollapsed } from './state';
-import type { Aspect, Bloc, Category, Lang, Meta, Party, Position, Tiers } from './types';
+import type { Aspect, Lang, Party, Position, Score, Tier } from './types';
 
-const aspects = aspectsData as Aspect[];
-const categories = categoriesData as Category[];
-const parties = partiesData as Party[];
-const positions = positionsData as Position[];
-const tiers = tiersData as Tiers[];
-const meta = metaData as Meta;
-const blocs = blocsData as Bloc[];
-
-const positionIndex = new Map(positions.map((p) => [`${p.party}/${p.aspect}`, p]));
-const partyById = new Map(parties.map((p) => [p.id, p]));
-const aspectById = new Map(aspects.map((a) => [a.id, a]));
 const blocOrder = (p: Party) => blocs.findIndex((b) => b.id === p.bloc);
 /** Within a tier, cluster parties by bloc, then by projected seats. */
 const partiesByTier = new Map(
@@ -36,8 +33,6 @@ const partiesByTier = new Map(
 let lang: Lang = initialLang();
 // By default every issue category starts collapsed; party tiers stay open.
 const collapsed = loadCollapsed(categories.map((c) => `cat:${c.id}`));
-
-const esc = (s: string) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
 const chevron = (open: boolean) =>
   `<svg class="chevron${open ? ' chevron--open' : ''}" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -136,8 +131,6 @@ function renderPolls(p: Party): string {
   const range = min === max ? '' : ` <span class="party__range">(${min}–${max})</span>`;
   return `<span class="party__polls" title="${ui.pollTitle[lang]}">~${avg}${range}</span>`;
 }
-
-const blocOf = (p: Party) => blocs.find((b) => b.id === p.bloc)!;
 
 function renderPartyHead(p: Party): string {
   return `
@@ -320,24 +313,53 @@ function openParty(id: string): void {
     ${issues}`);
 }
 
+type View = 'matrix' | 'map' | 'quiz';
+const VIEWS: View[] = ['matrix', 'map', 'quiz'];
+const currentView = (): View => {
+  const v = location.hash.slice(1) as View;
+  return VIEWS.includes(v) ? v : 'matrix';
+};
+
+function renderTabs(view: View): string {
+  const label: Record<View, string> = { matrix: ui.tabMatrix[lang], map: ui.tabMap[lang], quiz: ui.tabQuiz[lang] };
+  return `
+    <nav class="tabs" aria-label="Views">
+      ${VIEWS.map((v) => `<a class="tab" href="#${v}" ${v === view ? 'aria-current="page"' : ''}>${label[v]}</a>`).join('')}
+    </nav>`;
+}
+
+function renderView(view: View): string {
+  if (view === 'map') return renderMap(lang);
+  if (view === 'quiz') return renderQuiz(lang);
+  return `${renderToolbar()}${renderMatrix()}`;
+}
+
 function render(): void {
   document.documentElement.lang = lang;
   document.documentElement.dir = isRtl(lang) ? 'rtl' : 'ltr';
   document.title = ui.title[lang];
+  const view = currentView();
   const scrollLeft = document.querySelector('.matrix-wrap')?.scrollLeft ?? 0;
   document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     ${renderHeader()}
-    <main>
-      ${renderToolbar()}
-      ${renderMatrix()}
+    ${renderTabs(view)}
+    <main class="view view--${view}">
+      ${renderView(view)}
     </main>
     <footer class="footer">
       <p>${ui.footer[lang]}</p>
       <p>${ui.minorLists[lang]}</p>
     </footer>
     <dialog id="details"></dialog>`;
-  document.querySelector('.matrix-wrap')!.scrollLeft = scrollLeft;
+  const wrap = document.querySelector('.matrix-wrap');
+  if (wrap) wrap.scrollLeft = scrollLeft;
 }
+
+window.addEventListener('hashchange', () => {
+  render();
+  window.scrollTo(0, 0);
+  track('select_view', { view: currentView() });
+});
 
 const allKeys = () => [...categories.map((c) => `cat:${c.id}`), ...tiers.map((t) => `tier:${t.id}`)];
 
@@ -349,7 +371,8 @@ document.addEventListener('click', (e) => {
     lang = langBtn.dataset.lang as Lang;
     saveLang(lang);
     render();
-    document.querySelector('.matrix-wrap')!.scrollLeft = 0; // scroll origin flips with text direction
+    const wrap = document.querySelector('.matrix-wrap');
+    if (wrap) wrap.scrollLeft = 0; // scroll origin flips with text direction
     track('select_language', { language: lang });
     return;
   }
@@ -366,6 +389,28 @@ document.addEventListener('click', (e) => {
   if (cell) {
     openDetails(cell.dataset.cell!);
     track('open_cell', { cell: cell.dataset.cell! });
+    return;
+  }
+
+  const answer = target.closest<HTMLElement>('[data-answer]');
+  if (answer) {
+    const [aspect, score] = answer.dataset.answer!.split(':');
+    setAnswer(aspect, Number(score) as Score);
+    render();
+    return;
+  }
+
+  if (target.closest('[data-quiz-reset]')) {
+    resetQuiz();
+    render();
+    return;
+  }
+
+  const preset = target.closest<HTMLElement>('[data-preset]');
+  if (preset) {
+    [mapState.x, mapState.y] = preset.dataset.preset!.split('|');
+    saveMapState();
+    render();
     return;
   }
 
@@ -394,7 +439,33 @@ document.addEventListener('click', (e) => {
   }
 });
 
+document.addEventListener('change', (e) => {
+  const input = e.target as HTMLInputElement | HTMLSelectElement;
+  if (input.dataset.axis === 'x' || input.dataset.axis === 'y') {
+    mapState[input.dataset.axis] = input.value;
+  } else if (input.dataset.mapTier) {
+    const tier = input.dataset.mapTier as Tier;
+    mapState.tiers = (input as HTMLInputElement).checked
+      ? [...mapState.tiers, tier]
+      : mapState.tiers.filter((t) => t !== tier);
+  } else if (input.dataset.important) {
+    toggleImportant(input.dataset.important);
+    render();
+    return;
+  } else {
+    return;
+  }
+  saveMapState();
+  render();
+});
+
 document.addEventListener('keydown', (e) => {
+  const region = (e.target as Element).closest?.<SVGElement>('g[data-party]');
+  if (region && (e.key === 'Enter' || e.key === ' ')) {
+    e.preventDefault();
+    openParty(region.dataset.party!);
+    return;
+  }
   const cell = (e.target as HTMLElement).closest?.<HTMLElement>('[data-cell]');
   if (cell && (e.key === 'Enter' || e.key === ' ')) {
     e.preventDefault();
