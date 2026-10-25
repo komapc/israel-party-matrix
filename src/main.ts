@@ -16,7 +16,7 @@ import { initAnalytics, track } from './analytics';
 import { HEADINGS, intro, renderFaq, subtitle } from './faq';
 import { LANGS, LANG_LABELS, formatDateIn, initialLang, isRtl, saveLang, ui } from './i18n';
 import { renderMap } from './map';
-import { answers, loadAnswers, renderQuiz, resetQuiz, setAnswer, toggleImportant } from './quiz';
+import { answers, loadAnswers, matches, renderQuiz, resetQuiz, setAnswer, takeJustCompleted, toggleImportant } from './quiz';
 import { DEFAULT_MAP, type Route, VIEWS, decodeAnswers, encodeAnswers, formatRoute, parseRoute } from './route';
 import { updateHead } from './seo';
 import { loadCollapsed, saveCollapsed } from './state';
@@ -318,7 +318,7 @@ function openParty(id: string): void {
 
 /** URL of another page, with any open card closed. */
 const link = (patch: Partial<Route>) =>
-  formatRoute({ ...route, party: undefined, issue: undefined, answers: undefined, ...patch });
+  formatRoute({ ...route, party: undefined, issue: undefined, answers: undefined, result: undefined, ...patch });
 
 type View = Route['view'];
 
@@ -332,7 +332,7 @@ function renderTabs(view: View): string {
 
 function renderView(view: View): string {
   if (view === 'map') return renderMap(lang, route, (x, y) => link({ x, y }));
-  if (view === 'quiz') return renderQuiz(lang, link({ view: 'map' }));
+  if (view === 'quiz') return renderQuiz(lang, link({ view: 'map' }), route.result);
   const faqLinks = { quiz: link({ view: 'quiz' }), map: link({ view: 'map' }), report: `${REPO}/issues/new` };
   return `<p class="intro">${intro(lang, link({ view: 'quiz' }))}</p>${renderToolbar()}${renderMatrix()}${renderFaq(lang, faqLinks)}`;
 }
@@ -486,6 +486,20 @@ document.addEventListener('click', (e) => {
     const [aspect, score] = answer.dataset.answer!.split(':');
     setAnswer(aspect, Number(score) as Score);
     render();
+    if (takeJustCompleted()) {
+      // Every question answered: announce the result, and bring it into view (on phones it sits below the questions).
+      const hero = document.querySelector<HTMLElement>('.hero');
+      hero?.classList.add('hero--celebrate');
+      hero?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      track('quiz_complete', { party: matches()[0]?.party.id ?? '' });
+    }
+    return;
+  }
+
+  if (target.closest('[data-quiz-own]')) {
+    resetQuiz();
+    navigate({ result: undefined });
+    window.scrollTo(0, 0);
     return;
   }
 
@@ -497,9 +511,20 @@ document.addEventListener('click', (e) => {
 
   const share = target.closest<HTMLButtonElement>('[data-quiz-share]');
   if (share) {
-    const url = `${location.origin}${link({ view: 'quiz', answers: encodeAnswers(answers) })}`;
-    navigator.clipboard?.writeText(url).then(() => (share.textContent = ui.copied[lang]), () => prompt('', url));
-    track('share_quiz');
+    // The link opens a result page with its own preview card for the top party; the answers ride along.
+    const top = matches()[0];
+    const url = `${location.origin}${link({ view: 'quiz', result: top?.party.id, answers: encodeAnswers(answers) })}`;
+    const text = top
+      ? ui.shareText[lang].replace('{party}', top.party.name[lang]).replace('{pct}', String(Math.round(top.match * 100)))
+      : '';
+    if (navigator.share) {
+      navigator.share({ title: document.title, text, url }).catch(() => {});
+    } else {
+      navigator.clipboard
+        ?.writeText(`${text} ${url}`.trim())
+        .then(() => (share.textContent = ui.copied[lang]), () => prompt('', url));
+    }
+    track('share_quiz', { party: top?.party.id ?? '' });
     return;
   }
 

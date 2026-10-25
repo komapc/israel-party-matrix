@@ -71,6 +71,15 @@ const QUIZ_DESC: Text = {
   eo: 'Respondu 13 demandojn pri la ĉefaj temoj kaj vidu, kiuj partioj en la Kneseta elekto de la 27-a de oktobro 2026 estas plej proksimaj al viaj vidpunktoj.',
 };
 
+const RESULT_TITLE: Text = {
+  en: 'Quiz result: closest party — {party} | Israel election 2026',
+  ru: 'Результат теста: ближе всего — {party} | выборы в Израиле 2026',
+  uk: 'Результат тесту: найближча — {party} | вибори в Ізраїлі 2026',
+  be: 'Вынік тэсту: найбліжэйшая — {party} | выбары ў Ізраілі 2026',
+  he: 'תוצאת מבחן ההתאמה: הכי קרובה — {party} | בחירות 2026',
+  eo: 'Kviza rezulto: plej proksima — {party} | israelaj elektoj 2026',
+};
+
 const PARTY_TITLE: Text = {
   en: '{party}: positions and platform — Israel election 2026',
   ru: '{party}: позиции и программа — выборы в Израиле 2026',
@@ -135,6 +144,9 @@ export function pageMeta(route: Route, lang: Lang): { title: string; description
     const name = (id: string) => dimensions.find((d) => d.id === id)!.name[lang];
     return { title: `${MAP_TITLE[lang]}: ${name(route.x)} × ${name(route.y)}`, description: MAP_DESC[lang] };
   }
+  if (route.view === 'quiz' && route.result) {
+    return { title: RESULT_TITLE[lang].replace('{party}', partyById.get(route.result)!.name[lang]), description: QUIZ_DESC[lang] };
+  }
   if (route.view === 'quiz') return { title: QUIZ_TITLE[lang], description: QUIZ_DESC[lang] };
   return { title: MATRIX_TITLE[lang], description: MATRIX_DESC[lang] };
 }
@@ -142,8 +154,10 @@ export function pageMeta(route: Route, lang: Lang): { title: string; description
 /** Keeps <head> in step with the page: title, description, canonical, language alternates, social cards, JSON-LD. */
 export function updateHead(route: Route, lang: Lang): void {
   const { title, description } = pageMeta(route, lang);
-  const clean = { ...route, answers: undefined };
+  // A shared quiz result is the quiz page with a preview card of its own; search engines should index the quiz.
+  const clean = { ...route, answers: undefined, result: undefined };
   const url = SITE + formatRoute(clean);
+  const shared = SITE + formatRoute({ ...route, answers: undefined });
   document.title = title;
   setMeta('name', 'description', description);
   setMeta('name', 'keywords', KEYWORDS[lang]);
@@ -154,9 +168,9 @@ export function updateHead(route: Route, lang: Lang): void {
   setMeta('property', 'og:site_name', SITE_NAME[lang]);
   setMeta('property', 'og:title', title);
   setMeta('property', 'og:description', description);
-  setMeta('property', 'og:url', url);
+  setMeta('property', 'og:url', shared);
   setMeta('property', 'og:locale', LOCALES[lang].replace('-', '_'));
-  setMeta('property', 'og:image', `${SITE}/og.png`);
+  setMeta('property', 'og:image', route.view === 'quiz' && route.result ? `${SITE}/og/${route.result}.png` : `${SITE}/og.png`);
   setMeta('property', 'og:image:width', '1200');
   setMeta('property', 'og:image:height', '630');
   setMeta('name', 'twitter:card', 'summary_large_image');
