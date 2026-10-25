@@ -27,7 +27,7 @@ const MATRIX_TITLE: Text = {
 const MATRIX_DESC: Text = {
   en: 'Compare 16 parties running in the Knesset election on 27 October 2026 on 13 key issues: Palestinian state, settlements, Gaza, Haredi draft, judicial overhaul, cost of living and more — with sources, a political map and a quiz.',
   ru: 'Сравните позиции 16 партий на выборах в Кнессет 27 октября 2026 года по 13 ключевым вопросам: палестинское государство, поселения, Газа, призыв харедим, судебная реформа, стоимость жизни и другие — с источниками, политической картой и тестом.',
-  uk: 'Порівняйте позиції 16 партій на виборах до Кнесету 27 жовтня 2026 року щодо 13 ключових питань: палестинська держава, поселення, Газа, призов харедім, судова реформа, вартість життя тощо — з джерелами, політичною мапою та тестом.',
+  uk: 'Порівняйте позиції 16 партій на виборах до Кнесету 27 жовтня 2026 року щодо 13 ключових питань: палестинська держава, поселення, Газа, призов харедим, судова реформа, вартість життя тощо — з джерелами, політичною мапою та тестом.',
   he: 'השוו בין עמדות 16 המפלגות המתמודדות בבחירות לכנסת ב־27 באוקטובר 2026 ב־13 נושאים: מדינה פלסטינית, התנחלויות, עזה, גיוס חרדים, הרפורמה המשפטית, יוקר המחיה ועוד — עם מקורות, מפה פוליטית ומבחן התאמה.',
   eo: 'Komparu 16 partiojn en la Kneseta elekto de la 27-a de oktobro 2026 pri 13 ĉefaj temoj: palestina ŝtato, kolonioj, Gazao, konskripcio de ĥaredoj, jura reformo, vivkostoj kaj pli — kun fontoj, politika mapo kaj kvizo.',
 };
