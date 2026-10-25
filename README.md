@@ -33,3 +33,4 @@ Every position should cite at least one source.
 ## Deploy
 
 Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/deploy.yml`.
+Live at https://elections-2026.lipu.dev (`public/CNAME`; DNS: Cloudflare CNAME `elections-2026` → `komapc.github.io`, DNS only).
