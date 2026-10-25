@@ -3,7 +3,7 @@ import { formatDateIn } from './i18n';
 import type { Lang, Party } from './types';
 
 type Text = Record<Lang, string>;
-// Russian and Ukrainian dates end in "г." / "р."; the sentences spell out "года" / "року" themselves.
+// Russian, Ukrainian and Belarusian dates end in "г." / "р."; the sentences spell out "года" / "року" themselves.
 const day = (lang: Lang, iso: string) => formatDateIn(lang, iso).replace(/\s?(г|р)\.$/, '');
 const fill = (s: string, vars: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? ''));
