@@ -4,19 +4,27 @@
     "category": "security",
     "name": {
       "en": "Palestinian state",
-      "ru": "Палестинское государство"
+      "ru": "Палестинское государство",
+      "he": "מדינה פלסטינית",
+      "eo": "Palestina ŝtato"
     },
     "claim": {
       "en": "Palestinian state",
-      "ru": "Палестинское государство"
+      "ru": "Палестинское государство",
+      "he": "מדינה פלסטינית",
+      "eo": "Palestina ŝtato"
     },
     "low": {
       "en": "Opposes",
-      "ru": "Против"
+      "ru": "Против",
+      "he": "מתנגדת",
+      "eo": "Kontraŭas"
     },
     "high": {
       "en": "Supports",
-      "ru": "За"
+      "ru": "За",
+      "he": "תומכת",
+      "eo": "Subtenas"
     }
   },
   {
@@ -24,19 +32,27 @@
     "category": "security",
     "name": {
       "en": "West Bank settlements",
-      "ru": "Поселения на Западном берегу"
+      "ru": "Поселения на Западном берегу",
+      "he": "ההתנחלויות ביהודה ושומרון",
+      "eo": "Kolonioj en Cisjordanio"
     },
     "claim": {
       "en": "Expanding settlements / annexation",
-      "ru": "Расширение поселений / аннексия"
+      "ru": "Расширение поселений / аннексия",
+      "he": "הרחבת ההתנחלויות / סיפוח",
+      "eo": "Vastigo de kolonioj / aneksado"
     },
     "low": {
       "en": "Freeze / evacuate",
-      "ru": "Заморозка / эвакуация"
+      "ru": "Заморозка / эвакуация",
+      "he": "הקפאה / פינוי",
+      "eo": "Frostigi / evakui"
     },
     "high": {
       "en": "Expand / annex",
-      "ru": "Расширение / аннексия"
+      "ru": "Расширение / аннексия",
+      "he": "הרחבה / סיפוח",
+      "eo": "Vastigi / aneksi"
     }
   },
   {
@@ -44,19 +60,27 @@
     "category": "security",
     "name": {
       "en": "Gaza policy",
-      "ru": "Политика в отношении Газы"
+      "ru": "Политика в отношении Газы",
+      "he": "המדיניות בעזה",
+      "eo": "Politiko pri Gazao"
     },
     "claim": {
       "en": "Military control of Gaza",
-      "ru": "Военный контроль над Газой"
+      "ru": "Военный контроль над Газой",
+      "he": "שליטה צבאית בעזה",
+      "eo": "Milita kontrolo de Gazao"
     },
     "low": {
       "en": "Negotiated settlement",
-      "ru": "Переговорное урегулирование"
+      "ru": "Переговорное урегулирование",
+      "he": "הסדר במשא ומתן",
+      "eo": "Intertraktita solvo"
     },
     "high": {
       "en": "Military control",
-      "ru": "Военный контроль"
+      "ru": "Военный контроль",
+      "he": "שליטה צבאית",
+      "eo": "Milita kontrolo"
     }
   },
   {
@@ -64,19 +88,27 @@
     "category": "state",
     "name": {
       "en": "Haredi conscription",
-      "ru": "Призыв харедим"
+      "ru": "Призыв харедим",
+      "he": "גיוס חרדים",
+      "eo": "Konskripcio de ĥaredoj"
     },
     "claim": {
       "en": "Drafting Haredim (universal service)",
-      "ru": "Призыв харедим (всеобщая служба)"
+      "ru": "Призыв харедим (всеобщая служба)",
+      "he": "גיוס חרדים (שירות לכולם)",
+      "eo": "Konskripcio de ĥaredoj (universala servo)"
     },
     "low": {
       "en": "Keep exemptions",
-      "ru": "Сохранить освобождение"
+      "ru": "Сохранить освобождение",
+      "he": "שימור הפטורים",
+      "eo": "Konservi esceptojn"
     },
     "high": {
       "en": "Universal draft",
-      "ru": "Всеобщий призыв"
+      "ru": "Всеобщий призыв",
+      "he": "גיוס לכולם",
+      "eo": "Universala konskripcio"
     }
   },
   {
@@ -84,19 +116,27 @@
     "category": "state",
     "name": {
       "en": "Religion in public life",
-      "ru": "Религия в общественной жизни"
+      "ru": "Религия в общественной жизни",
+      "he": "דת במרחב הציבורי",
+      "eo": "Religio en la publika vivo"
     },
     "claim": {
       "en": "Religious law in public life",
-      "ru": "Религиозный закон в общественной жизни"
+      "ru": "Религиозный закон в общественной жизни",
+      "he": "הלכה במרחב הציבורי",
+      "eo": "Religia leĝo en la publika vivo"
     },
     "low": {
       "en": "Secular",
-      "ru": "Светскость"
+      "ru": "Светскость",
+      "he": "חילוני",
+      "eo": "Laika"
     },
     "high": {
       "en": "Religious law",
-      "ru": "Религиозный закон"
+      "ru": "Религиозный закон",
+      "he": "הלכה",
+      "eo": "Religia leĝo"
     }
   },
   {
@@ -104,19 +144,27 @@
     "category": "state",
     "name": {
       "en": "Civil marriage",
-      "ru": "Гражданский брак"
+      "ru": "Гражданский брак",
+      "he": "נישואים אזרחיים",
+      "eo": "Civila geedziĝo"
     },
     "claim": {
       "en": "Civil marriage",
-      "ru": "Гражданский брак"
+      "ru": "Гражданский брак",
+      "he": "נישואים אזרחיים",
+      "eo": "Civila geedziĝo"
     },
     "low": {
       "en": "Opposes",
-      "ru": "Против"
+      "ru": "Против",
+      "he": "מתנגדת",
+      "eo": "Kontraŭas"
     },
     "high": {
       "en": "Supports",
-      "ru": "За"
+      "ru": "За",
+      "he": "תומכת",
+      "eo": "Subtenas"
     }
   },
   {
@@ -124,19 +172,27 @@
     "category": "governance",
     "name": {
       "en": "Judicial overhaul",
-      "ru": "Судебная реформа"
+      "ru": "Судебная реформа",
+      "he": "הרפורמה המשפטית",
+      "eo": "Jura reformo"
     },
     "claim": {
       "en": "Judicial overhaul",
-      "ru": "Судебная реформа"
+      "ru": "Судебная реформа",
+      "he": "הרפורמה המשפטית",
+      "eo": "Jura reformo"
     },
     "low": {
       "en": "Opposes",
-      "ru": "Против"
+      "ru": "Против",
+      "he": "מתנגדת",
+      "eo": "Kontraŭas"
     },
     "high": {
       "en": "Supports",
-      "ru": "За"
+      "ru": "За",
+      "he": "תומכת",
+      "eo": "Subtenas"
     }
   },
   {
@@ -144,19 +200,27 @@
     "category": "governance",
     "name": {
       "en": "Written constitution",
-      "ru": "Писаная конституция"
+      "ru": "Писаная конституция",
+      "he": "חוקה כתובה",
+      "eo": "Skribita konstitucio"
     },
     "claim": {
       "en": "Written constitution",
-      "ru": "Писаная конституция"
+      "ru": "Писаная конституция",
+      "he": "חוקה כתובה",
+      "eo": "Skribita konstitucio"
     },
     "low": {
       "en": "Opposes",
-      "ru": "Против"
+      "ru": "Против",
+      "he": "מתנגדת",
+      "eo": "Kontraŭas"
     },
     "high": {
       "en": "Supports",
-      "ru": "За"
+      "ru": "За",
+      "he": "תומכת",
+      "eo": "Subtenas"
     }
   },
   {
@@ -164,19 +228,27 @@
     "category": "economy",
     "name": {
       "en": "Economic model",
-      "ru": "Экономическая модель"
+      "ru": "Экономическая модель",
+      "he": "המודל הכלכלי",
+      "eo": "Ekonomia modelo"
     },
     "claim": {
       "en": "Free-market economy",
-      "ru": "Свободный рынок"
+      "ru": "Свободный рынок",
+      "he": "כלכלת שוק חופשי",
+      "eo": "Libermerkata ekonomio"
     },
     "low": {
       "en": "Welfare state",
-      "ru": "Социальное государство"
+      "ru": "Социальное государство",
+      "he": "מדינת רווחה",
+      "eo": "Socialsubtena ŝtato"
     },
     "high": {
       "en": "Free market",
-      "ru": "Свободный рынок"
+      "ru": "Свободный рынок",
+      "he": "שוק חופשי",
+      "eo": "Libera merkato"
     }
   },
   {
@@ -184,19 +256,27 @@
     "category": "economy",
     "name": {
       "en": "Cost of living & housing",
-      "ru": "Стоимость жизни и жильё"
+      "ru": "Стоимость жизни и жильё",
+      "he": "יוקר המחיה והדיור",
+      "eo": "Vivkostoj kaj loĝado"
     },
     "claim": {
       "en": "State intervention on prices & housing",
-      "ru": "Госвмешательство в цены и жильё"
+      "ru": "Госвмешательство в цены и жильё",
+      "he": "התערבות המדינה במחירים ובדיור",
+      "eo": "Ŝtata interveno pri prezoj kaj loĝado"
     },
     "low": {
       "en": "Market solutions",
-      "ru": "Рыночные решения"
+      "ru": "Рыночные решения",
+      "he": "פתרונות שוק",
+      "eo": "Merkataj solvoj"
     },
     "high": {
       "en": "State intervention",
-      "ru": "Госвмешательство"
+      "ru": "Госвмешательство",
+      "he": "התערבות המדינה",
+      "eo": "Ŝtata interveno"
     }
   },
   {
@@ -204,19 +284,27 @@
     "category": "society",
     "name": {
       "en": "LGBTQ rights",
-      "ru": "Права ЛГБТ"
+      "ru": "Права ЛГБТ",
+      "he": "זכויות להט\"ב",
+      "eo": "GLATQ-rajtoj"
     },
     "claim": {
       "en": "LGBTQ rights",
-      "ru": "Права ЛГБТ"
+      "ru": "Права ЛГБТ",
+      "he": "זכויות להט\"ב",
+      "eo": "GLATQ-rajtoj"
     },
     "low": {
       "en": "Opposes",
-      "ru": "Против"
+      "ru": "Против",
+      "he": "מתנגדת",
+      "eo": "Kontraŭas"
     },
     "high": {
       "en": "Supports",
-      "ru": "За"
+      "ru": "За",
+      "he": "תומכת",
+      "eo": "Subtenas"
     }
   },
   {
@@ -224,19 +312,27 @@
     "category": "society",
     "name": {
       "en": "Arab citizens' equality",
-      "ru": "Равенство арабских граждан"
+      "ru": "Равенство арабских граждан",
+      "he": "שוויון לאזרחים הערבים",
+      "eo": "Egaleco de arabaj civitanoj"
     },
     "claim": {
       "en": "Full civic equality for Arab citizens",
-      "ru": "Полное гражданское равенство арабских граждан"
+      "ru": "Полное гражданское равенство арабских граждан",
+      "he": "שוויון אזרחי מלא לאזרחים הערבים",
+      "eo": "Plena civitana egaleco por arabaj civitanoj"
     },
     "low": {
       "en": "Nation-state priority",
-      "ru": "Приоритет еврейского государства"
+      "ru": "Приоритет еврейского государства",
+      "he": "עדיפות למדינת הלאום",
+      "eo": "Prioritato de nacia ŝtato"
     },
     "high": {
       "en": "Full civic equality",
-      "ru": "Полное гражданское равенство"
+      "ru": "Полное гражданское равенство",
+      "he": "שוויון אזרחי מלא",
+      "eo": "Plena civitana egaleco"
     }
   },
   {
@@ -244,19 +340,27 @@
     "category": "society",
     "name": {
       "en": "Aliyah & Law of Return",
-      "ru": "Алия и Закон о возвращении"
+      "ru": "Алия и Закон о возвращении",
+      "he": "עלייה וחוק השבות",
+      "eo": "Alija kaj Leĝo pri Reveno"
     },
     "claim": {
       "en": "Keeping the Law of Return as is",
-      "ru": "Сохранение Закона о возвращении"
+      "ru": "Сохранение Закона о возвращении",
+      "he": "שימור חוק השבות כפי שהוא",
+      "eo": "Konservi la Leĝon pri Reveno senŝanĝa"
     },
     "low": {
       "en": "Restrict eligibility",
-      "ru": "Сузить право"
+      "ru": "Сузить право",
+      "he": "צמצום הזכאות",
+      "eo": "Limigi rajtecon"
     },
     "high": {
       "en": "Keep / broaden",
-      "ru": "Сохранить / расширить"
+      "ru": "Сохранить / расширить",
+      "he": "שימור / הרחבה",
+      "eo": "Konservi / larĝigi"
     }
   }
 ]

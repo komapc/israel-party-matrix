@@ -1,6 +1,6 @@
 # Israeli Parties Matrix
 
-A bilingual (English / Russian) matrix of Israeli political parties vs key policy issues
+A multilingual (English / Russian / Hebrew / Esperanto) matrix of Israeli political parties vs key policy issues
 (Palestinian–Israeli conflict, religion & state, governance, economy, society).
 
 ## Stack

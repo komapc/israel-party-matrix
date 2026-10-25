@@ -22,7 +22,7 @@
   --tier-h: 40px;
   --aspect-w: 220px;
   --radius: 10px;
-  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font: 'Inter', 'Noto Sans Hebrew', system-ui, -apple-system, 'Segoe UI', sans-serif;
   color-scheme: light;
 }
 
@@ -215,7 +215,7 @@ h1 {
 
 .blocs__label {
   color: var(--text-2);
-  margin-right: 4px;
+  margin-inline-end: 4px;
 }
 
 .bloc-chip {
@@ -229,7 +229,7 @@ h1 {
 }
 
 .bloc-chip b {
-  margin-left: 6px;
+  margin-inline-start: 6px;
   font-variant-numeric: tabular-nums;
 }
 
@@ -240,7 +240,7 @@ h1 {
   flex-shrink: 0;
   width: 8px;
   height: 8px;
-  margin-right: 6px;
+  margin-inline-end: 6px;
   border-radius: 50%;
   background: var(--bloc);
 }
@@ -319,12 +319,12 @@ h1 {
 .corner,
 .aspect {
   position: sticky;
-  left: 0;
+  inset-inline-start: 0;
   z-index: 1;
   background: var(--surface);
   text-align: start;
   min-width: var(--aspect-w);
-  border-right: 1px solid var(--border);
+  border-inline-end: 1px solid var(--border);
 }
 
 .matrix thead .corner {
@@ -340,12 +340,12 @@ h1 {
 .tier {
   padding: 0 !important;
   text-align: start !important;
-  border-left: 1px solid var(--border);
+  border-inline-start: 1px solid var(--border);
 }
 
 .tier .toggle {
   position: sticky;
-  left: calc(var(--aspect-w) + 4px);
+  inset-inline-start: calc(var(--aspect-w) + 4px);
   padding: 0 10px;
   height: var(--tier-h);
 }
@@ -460,7 +460,7 @@ h1 {
 
 .category .toggle {
   position: sticky;
-  left: 12px;
+  inset-inline-start: 12px;
 }
 
 .cell {
@@ -547,8 +547,8 @@ dialog::backdrop {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  padding-left: 12px;
-  border-left: 4px solid var(--bloc);
+  padding-inline-start: 12px;
+  border-inline-start: 4px solid var(--bloc);
 }
 
 .details h2 {
@@ -616,7 +616,7 @@ dialog::backdrop {
 }
 
 .details__bloc i {
-  margin-right: 8px;
+  margin-inline-end: 8px;
   vertical-align: 1px;
 }
 
@@ -684,4 +684,9 @@ dialog::backdrop {
 @media (max-width: 600px) {
   #app { padding-top: 20px; }
   :root { --aspect-w: 160px; }
+}
+
+/* Right-to-left (Hebrew): closed chevrons point toward the reading direction. */
+[dir='rtl'] .chevron:not(.chevron--open) {
+  transform: scaleX(-1);
 }

@@ -6,7 +6,8 @@ import metaData from './data/meta.json';
 import partiesData from './data/parties.json';
 import positionsData from './data/positions.json';
 import tiersData from './data/tiers.json';
-import { LANGS, initialLang, saveLang, ui } from './i18n';
+import { initAnalytics, track } from './analytics';
+import { LANGS, LANG_LABELS, LOCALES, initialLang, isRtl, saveLang, ui } from './i18n';
 import { loadCollapsed, saveCollapsed } from './state';
 import type { Aspect, Bloc, Category, Lang, Meta, Party, Position, Tiers } from './types';
 
@@ -41,8 +42,15 @@ const esc = (s: string) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`)
 const chevron = (open: boolean) =>
   `<svg class="chevron${open ? ' chevron--open' : ''}" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
+// Browsers ship no Esperanto date data, so it is formatted by hand.
+const EO_MONTHS = ['januaro', 'februaro', 'marto', 'aprilo', 'majo', 'junio', 'julio', 'aŭgusto', 'septembro', 'oktobro', 'novembro', 'decembro'];
+
 function formatDate(iso: string): string {
-  return new Date(`${iso}T12:00:00`).toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'en-GB', {
+  if (lang === 'eo') {
+    const [y, m, d] = iso.split('-').map(Number);
+    return `${d}-a de ${EO_MONTHS[m - 1]} ${y}`;
+  }
+  return new Date(`${iso}T12:00:00`).toLocaleDateString(LOCALES[lang], {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -58,7 +66,7 @@ function visibleTiers() {
 
 function renderHeader(): string {
   const buttons = LANGS.map(
-    (l) => `<button type="button" data-lang="${l}" aria-pressed="${l === lang}">${l.toUpperCase()}</button>`,
+    (l) => `<button type="button" data-lang="${l}" lang="${l}" aria-pressed="${l === lang}">${LANG_LABELS[l]}</button>`,
   ).join('');
   return `
     <header class="masthead">
@@ -136,7 +144,7 @@ function renderPartyHead(p: Party): string {
     <th scope="col" class="party party--${p.bloc}">
       <button type="button" class="party__btn" data-party="${p.id}" title="${esc(p.summary?.[lang] ?? '')}">
         <span class="party__name">${esc(p.name[lang])}</span>
-        ${p.name.he ? `<span class="party__he" lang="he" dir="rtl">${esc(p.name.he)}</span>` : ''}
+        ${lang !== 'he' ? `<span class="party__he" lang="he" dir="rtl">${esc(p.name.he)}</span>` : ''}
         ${p.leader ? `<span class="party__leader">${esc(p.leader[lang])}</span>` : ''}
         ${renderPolls(p)}
         <span class="party__bloc"><i></i>${blocOf(p).short[lang]}</span>
@@ -299,7 +307,7 @@ function openParty(id: string): void {
     <header class="details__head details__head--${p.bloc}">
       <div>
         <h2>${esc(p.name[lang])}</h2>
-        ${p.name.he ? `<p class="details__he" lang="he" dir="rtl">${esc(p.name.he)}</p>` : ''}
+        ${lang !== 'he' ? `<p class="details__he" lang="he" dir="rtl">${esc(p.name.he)}</p>` : ''}
       </div>
       ${closeButton()}
     </header>
@@ -314,6 +322,7 @@ function openParty(id: string): void {
 
 function render(): void {
   document.documentElement.lang = lang;
+  document.documentElement.dir = isRtl(lang) ? 'rtl' : 'ltr';
   document.title = ui.title[lang];
   const scrollLeft = document.querySelector('.matrix-wrap')?.scrollLeft ?? 0;
   document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
@@ -340,6 +349,8 @@ document.addEventListener('click', (e) => {
     lang = langBtn.dataset.lang as Lang;
     saveLang(lang);
     render();
+    document.querySelector('.matrix-wrap')!.scrollLeft = 0; // scroll origin flips with text direction
+    track('select_language', { language: lang });
     return;
   }
 
@@ -347,12 +358,14 @@ document.addEventListener('click', (e) => {
   if (partyBtn) {
     e.preventDefault();
     openParty(partyBtn.dataset.party!);
+    track('open_party', { party: partyBtn.dataset.party! });
     return;
   }
 
   const cell = target.closest<HTMLElement>('[data-cell]');
   if (cell) {
     openDetails(cell.dataset.cell!);
+    track('open_cell', { cell: cell.dataset.cell! });
     return;
   }
 
@@ -390,3 +403,4 @@ document.addEventListener('keydown', (e) => {
 });
 
 render();
+initAnalytics();

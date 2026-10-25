@@ -1,4 +1,4 @@
-export type Lang = 'en' | 'ru';
+export type Lang = 'en' | 'ru' | 'he' | 'eo';
 
 /** Text available in every UI language. */
 export type Localized = Record<Lang, string>;
@@ -47,7 +47,8 @@ export interface Bloc {
 
 export interface Party {
   id: string;
-  name: Localized & { he?: string };
+  /** `he` is the official Hebrew name. */
+  name: Localized;
   leader?: Localized;
   /** Component parties of a joint list. */
   members?: Localized;

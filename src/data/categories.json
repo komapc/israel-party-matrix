@@ -1,7 +1,47 @@
 [
-  { "id": "security", "name": { "en": "Security & conflict", "ru": "Безопасность и конфликт" } },
-  { "id": "state", "name": { "en": "State & religion", "ru": "Государство и религия" } },
-  { "id": "governance", "name": { "en": "Governance", "ru": "Государственное устройство" } },
-  { "id": "economy", "name": { "en": "Economy", "ru": "Экономика" } },
-  { "id": "society", "name": { "en": "Society", "ru": "Общество" } }
+  {
+    "id": "security",
+    "name": {
+      "en": "Security & conflict",
+      "ru": "Безопасность и конфликт",
+      "he": "ביטחון וסכסוך",
+      "eo": "Sekureco kaj konflikto"
+    }
+  },
+  {
+    "id": "state",
+    "name": {
+      "en": "State & religion",
+      "ru": "Государство и религия",
+      "he": "דת ומדינה",
+      "eo": "Ŝtato kaj religio"
+    }
+  },
+  {
+    "id": "governance",
+    "name": {
+      "en": "Governance",
+      "ru": "Государственное устройство",
+      "he": "משטר וממשל",
+      "eo": "Regado"
+    }
+  },
+  {
+    "id": "economy",
+    "name": {
+      "en": "Economy",
+      "ru": "Экономика",
+      "he": "כלכלה",
+      "eo": "Ekonomio"
+    }
+  },
+  {
+    "id": "society",
+    "name": {
+      "en": "Society",
+      "ru": "Общество",
+      "he": "חברה",
+      "eo": "Socio"
+    }
+  }
 ]
