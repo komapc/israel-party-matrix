@@ -33,6 +33,14 @@ export interface PollRange {
   max: number;
 }
 
+/** Stance toward a Netanyahu-led government. */
+export type BlocId = 'pro' | 'anti' | 'other';
+
+export interface Bloc {
+  id: BlocId;
+  name: Localized;
+}
+
 export interface Party {
   id: string;
   name: Localized & { he?: string };
@@ -40,6 +48,9 @@ export interface Party {
   /** Component parties of a joint list. */
   members?: Localized;
   tier: Tier;
+  bloc: BlocId;
+  blocNote?: Localized;
+  blocSources?: string[];
   polls?: PollRange;
   /** Display color for the column accent — not an official party color. */
   color: string;

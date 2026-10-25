@@ -18,6 +18,10 @@ export const ui = {
   },
   belowThreshold: { en: 'below threshold', ru: 'ниже барьера' },
   notPolled: { en: 'not polled', ru: 'нет в опросах' },
+  blocs: { en: 'Blocs (seats in polls)', ru: 'Блоки (места по опросам)' },
+  sources: { en: 'Sources', ru: 'Источники' },
+  close: { en: 'Close', ru: 'Закрыть' },
+  blocBasis: { en: 'Bloc', ru: 'Блок' },
   expandAll: { en: 'Expand all', ru: 'Развернуть всё' },
   collapseAll: { en: 'Collapse all', ru: 'Свернуть всё' },
   partiesCount: { en: 'parties', ru: 'партий' },
@@ -35,8 +39,8 @@ export const ui = {
   },
   legend: { en: 'Scale', ru: 'Шкала' },
   footer: {
-    en: 'Positions are summaries of public platforms and voting records. Each cell links to its sources.',
-    ru: 'Позиции — краткое изложение публичных программ и голосований. У каждой ячейки есть источники.',
+    en: 'Positions summarize public platforms, statements and voting records. Click a cell for the explanation and sources.',
+    ru: 'Позиции — краткое изложение программ, заявлений и голосований. Нажмите на ячейку, чтобы увидеть пояснение и источники.',
   },
 } satisfies Record<string, Record<Lang, string>>;
 

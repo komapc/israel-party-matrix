@@ -1,1 +1,2422 @@
-[]
+[
+  {
+    "party": "yashar",
+    "aspect": "two-states",
+    "score": -2,
+    "note": {
+      "en": "Eisenkot: \"The two-state solution is a grave mistake\" (Israel Hayom, Aug 2026).",
+      "ru": "Айзенкот: «Решение о двух государствах — серьёзная ошибка» (Israel Hayom, авг. 2026)."
+    },
+    "sources": [
+      "https://jns.org/feature/israels-political-parties-explained-yashar"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "settlements",
+    "score": -1,
+    "note": {
+      "en": "Opposes advancing E1 construction over diplomatic costs; criticizes settler violence. No annexation plank.",
+      "ru": "Против продвижения застройки E1 из-за дипломатической цены; критикует насилие поселенцев. Аннексию не предлагает."
+    },
+    "sources": [
+      "https://jns.org/feature/israels-political-parties-explained-yashar"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "gaza",
+    "score": 0,
+    "note": {
+      "en": "Pledges to end Hamas rule within 18 months, via the Trump plan or military action against its armed wing.",
+      "ru": "Обещает покончить с властью ХАМАС за 18 месяцев — через план Трампа или военным путём."
+    },
+    "sources": [
+      "https://www.canberratimes.com.au/story/9369553/israeli-pms-rival-vows-to-crush-hamas-in-18-months/",
+      "https://www.ilfoglio.it/en/world/2026/10/17/news/eisenkot-places-the-future-of-gaza-at-the-centre-of-the-election-campaign--410869"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "haredi-draft",
+    "score": 2,
+    "note": {
+      "en": "National service for all incl. Haredim and Arabs; Torah deferments capped at 3% of a cohort; penalties for evasion.",
+      "ru": "Нацслужба для всех, включая харедим и арабов; отсрочки для учёбы — не более 3% призыва; наказание за уклонение."
+    },
+    "sources": [
+      "https://jns.org/feature/israels-political-parties-explained-yashar",
+      "https://www.jfeed.com/news-israel/tmfetw"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "religion-state",
+    "score": -1,
+    "note": {
+      "en": "Promotes \"inclusive Judaism\"; reported to back civil marriage and Shabbat public transport.",
+      "ru": "Продвигает «инклюзивный иудаизм»; по сообщениям, поддерживает гражданский брак и транспорт в шаббат."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Yashar_(political_party)",
+      "https://www.jfeed.com/news-israel/tmfetw"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "civil-marriage",
+    "score": 1,
+    "note": {
+      "en": "Reported to support civil marriage; no detailed published plan found.",
+      "ru": "По сообщениям, поддерживает гражданский брак; подробного плана не найдено."
+    },
+    "sources": [
+      "https://www.jfeed.com/news-israel/tmfetw"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "judicial-reform",
+    "score": -2,
+    "note": {
+      "en": "Would repeal the judicial selection law, opposes an override clause; wants Basic Laws on judiciary and legislation.",
+      "ru": "Отменит закон о выборе судей, против преодоления решений БАГАЦ; предлагает Основные законы о суде и законодательстве."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkcjtk1cme"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "constitution",
+    "score": 2,
+    "note": {
+      "en": "Seeks \"broad agreement on a constitution\", plus PM term limits and a cap on ministers.",
+      "ru": "Добивается «широкого согласия о конституции», ограничения сроков премьера и числа министров."
+    },
+    "sources": [
+      "https://jns.org/feature/israels-political-parties-explained-yashar",
+      "https://www.jfeed.com/news-israel/tmfetw"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "market",
+    "score": 0,
+    "note": {
+      "en": "Mixed: remove import barriers and monopolies, alongside public investment in infrastructure and the periphery.",
+      "ru": "Смешанная: снятие импортных барьеров и монополий плюс госинвестиции в инфраструктуру и периферию."
+    },
+    "sources": [
+      "https://jns.org/feature/israels-political-parties-explained-yashar",
+      "https://en.wikipedia.org/wiki/Yashar_(political_party)"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "cost-of-living",
+    "score": 0,
+    "note": {
+      "en": "Combines competition and parallel imports with state incentives for reservists and public investment.",
+      "ru": "Сочетает конкуренцию и параллельный импорт с госльготами резервистам и госинвестициями."
+    },
+    "sources": [
+      "https://jns.org/feature/israels-political-parties-explained-yashar",
+      "https://en.wikipedia.org/wiki/Yashar_(political_party)"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "lgbt",
+    "score": 1,
+    "note": {
+      "en": "Eisenkot pledged to advance equality legislation at a July LGBTQ rights conference.",
+      "ru": "Айзенкот на июльской конференции по правам ЛГБТ обещал продвигать законы о равенстве."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/bjvkbbsfmx"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "arab-citizens",
+    "score": 0,
+    "note": {
+      "en": "Declaration of Independence values, national service for Arabs, crime plan for Arab towns; rules out Ra'am as is.",
+      "ru": "Ценности Декларации независимости, нацслужба для арабов, план против преступности; Раам в нынешнем виде исключён."
+    },
+    "sources": [
+      "https://jns.org/feature/israels-political-parties-explained-yashar",
+      "https://en.wikipedia.org/wiki/Yashar_(political_party)"
+    ]
+  },
+  {
+    "party": "yashar",
+    "aspect": "immigration",
+    "score": 2,
+    "note": {
+      "en": "Commits to preserving the Law of Return including the grandchild clause; aliyah target of 1M in 10 years.",
+      "ru": "Обязуется сохранить Закон о возвращении с «пунктом о внуках»; цель — 1 млн репатриантов за 10 лет."
+    },
+    "sources": [
+      "https://jpost.com/israel-news/politics-and-diplomacy/article-905241",
+      "https://en.wikipedia.org/wiki/Yashar_(political_party)"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "two-states",
+    "score": -2,
+    "note": {
+      "en": "Netanyahu vowed in Aug 2026 to block any Palestinian state in Gaza or the West Bank while he is PM.",
+      "ru": "В августе 2026 Нетаньяху пообещал не допустить палестинского государства в Газе или на Западном берегу, пока он премьер."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://en.yenisafak.com/world/netanyahu-vows-to-block-palestinian-state-as-polls-show-shortfall-3722219"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "settlements",
+    "score": 1,
+    "note": {
+      "en": "Supports settlement and continued security control; annexation (sovereignty) not an active 2026 pledge, though MKs push it.",
+      "ru": "Поддерживает поселения и контроль безопасности; аннексия не является активным обещанием 2026 г., хотя депутаты её продвигают."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://americanisraelite.com/israeli-elections-2026-meet-the-parliament-mk-avichay-buaron/"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "gaza",
+    "score": 1,
+    "note": {
+      "en": "Backs freedom of military action; withdrawal tied to Hamas disarmament; accepts Trump plan in principle, no PA role.",
+      "ru": "За свободу военных действий; отход — после разоружения ХАМАС; в целом принимает план Трампа, без роли ПНА."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://americanisraelite.com/israeli-elections-2026-meet-the-parliament-mk-avichay-buaron/"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "haredi-draft",
+    "score": -1,
+    "note": {
+      "en": "Advanced the Bismuth bill keeping deferments for full-time yeshiva students with limited sanctions (record).",
+      "ru": "Продвигала законопроект Бисмута, сохраняющий отсрочки для учащихся ешив при ограниченных санкциях (по практике)."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/mk-bismuth-elected-to-head-key-defense-panel-push-through-haredi-draft-exemption-law/",
+      "https://en.idi.org.il/articles/61994"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "religion-state",
+    "score": 0,
+    "note": {
+      "en": "Traditionally supports the religion-state status quo; aims to keep Israel a Jewish state.",
+      "ru": "Традиционно поддерживает статус-кво в отношениях религии и государства; стремится сохранить еврейский характер государства."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Likud",
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "civil-marriage",
+    "score": -1,
+    "note": {
+      "en": "Bound by coalition understandings with Haredi partners not to advance civil marriage; Ohana broke ranks on a failed bill (record).",
+      "ru": "Связана коалиционными договорённостями с харедим не продвигать гражданский брак; Охана поддержал провалившийся законопроект."
+    },
+    "sources": [
+      "https://www.metroweekly.com/?p=251678"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "judicial-reform",
+    "score": 2,
+    "note": {
+      "en": "Led the overhaul; Levin vows to complete it; new judicial-selection law takes effect in the next Knesset.",
+      "ru": "Инициатор реформы; Левин обещает её завершить; новый закон о выборе судей вступит в силу в следующем Кнессете."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkcjtk1cme",
+      "https://www.timesofisrael.com/likuds-judicial-reform-plan-seeks-to-end-rule-by-judges-and-manacle-the-ag/"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "No 2026 position; older platform mentions entrenching rule-of-law principles, but no active push.",
+      "ru": "Позиции на 2026 г. нет; старая программа упоминает закрепление принципов верховенства права, но без активных шагов."
+    }
+  },
+  {
+    "party": "likud",
+    "aspect": "market",
+    "score": 1,
+    "note": {
+      "en": "Broadly free-market orientation (tax cuts, privatization), mixed with populist welfare measures.",
+      "ru": "В целом рыночная ориентация (снижение налогов, приватизация) с элементами популистских социальных мер."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://en.wikipedia.org/wiki/Likud"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "cost-of-living",
+    "score": null,
+    "note": {
+      "en": "No clear 2026 cost-of-living program found; Likud declined campaign questionnaires.",
+      "ru": "Чёткой программы по стоимости жизни на 2026 г. не найдено; Ликуд отказался отвечать на анкеты."
+    }
+  },
+  {
+    "party": "likud",
+    "aspect": "lgbt",
+    "score": 0,
+    "note": {
+      "en": "Mixed: openly gay Speaker Ohana, Likud Pride wing; PM voted against gay surrogacy in 2018 under coalition pressure.",
+      "ru": "Неоднозначно: открытый гей спикер Охана, ЛГБТ-крыло партии; в 2018 премьер голосовал против суррогатного материнства для геев."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Amir_Ohana",
+      "https://www.timesofisrael.com/caving-to-ultra-orthodox-netanyahu-about-faces-on-gay-surrogacy-rights/"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "arab-citizens",
+    "score": -1,
+    "note": {
+      "en": "Passed the 2018 Nation-State Law defining Israel as the Jewish people's nation-state; has fielded Arab candidates.",
+      "ru": "Приняла Закон о национальном государстве 2018 г.; при этом выдвигала арабских кандидатов."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Likud"
+    ]
+  },
+  {
+    "party": "likud",
+    "aspect": "immigration",
+    "score": 1,
+    "note": {
+      "en": "Opposed abolishing the Law of Return's grandchild clause in 2022 coalition talks, citing Diaspora ties.",
+      "ru": "В 2022 г. на коалиционных переговорах выступила против отмены «пункта о внуках» в Законе о возвращении."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/likud-said-to-oppose-demand-to-abolish-grandchild-clause-in-law-of-return/"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "two-states",
+    "score": -1,
+    "note": {
+      "en": "Bennett opposes a Palestinian state; Lapid rules it out \"in the coming years\" but backs two states long-term.",
+      "ru": "Беннет против палестинского государства; Лапид исключает его «в ближайшие годы», но за два государства в будущем."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-together"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "settlements",
+    "score": 1,
+    "note": {
+      "en": "Bennett: sovereignty over Area C, autonomy in A/B; authorized settlement on state land, against illegal outposts.",
+      "ru": "Беннет: суверенитет над зоной C, автономия в A/B; легальные поселения на госземле, против незаконных форпостов."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-together"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "gaza",
+    "score": 1,
+    "note": {
+      "en": "Strike Hamas rearmament, then issue a disarmament ultimatum; expand regional alliances and normalization.",
+      "ru": "Удары по перевооружению ХАМАС, затем ультиматум о разоружении; расширение региональных союзов."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-together"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "haredi-draft",
+    "score": 2,
+    "note": {
+      "en": "Mandatory service for all; \"not one shekel\" for draft dodgers, cutting yeshiva and childcare subsidies.",
+      "ru": "Обязательная служба для всех; «ни шекеля» уклонистам — отмена пособий ешивам и субсидий на детсады."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-together",
+      "https://en.wikipedia.org/wiki/Together_(Israel)"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "religion-state",
+    "score": -1,
+    "note": {
+      "en": "Local choice on Shabbat transit, kashrut certification competition, civil unions; softer than full separation.",
+      "ru": "Местное решение о транспорте в шаббат, конкуренция в кашруте, гражданские союзы; мягче полного отделения."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-together",
+      "https://en.wikipedia.org/wiki/Together_(Israel)"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "civil-marriage",
+    "score": 1,
+    "note": {
+      "en": "Proposes civil-union registration with marriage-equivalent rights; avoids the term \"civil marriage\".",
+      "ru": "Предлагает регистрацию гражданского союза с правами как у брака; термин «гражданский брак» не использует."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-together",
+      "https://www.ynetnews.com/article/bjvkbbsfmx"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "judicial-reform",
+    "score": -2,
+    "note": {
+      "en": "Would repeal the new judicial selection law; settle Basic Laws and judicial review by broad consensus.",
+      "ru": "Отменит новый закон о выборе судей; статус Основных законов и судебный контроль — по широкому согласию."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkcjtk1cme",
+      "https://www.jns.org/feature/israels-political-parties-explained-together"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "constitution",
+    "score": 2,
+    "note": {
+      "en": "Proposes a constitution grounded in the Declaration of Independence; 8-year PM term limit.",
+      "ru": "Предлагает конституцию на основе Декларации независимости; лимит премьерства — 8 лет."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-together",
+      "https://www.ynetnews.com/article/hkcjtk1cme"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "market",
+    "score": 1,
+    "note": {
+      "en": "Self-described economic liberalism: deregulation, breaking monopolies, cutting coalition funds.",
+      "ru": "Самоопределение — экономический либерализм: дерегуляция, слом монополий, сокращение коалиционных денег."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Together_(Israel)",
+      "https://www.jns.org/feature/israels-political-parties-explained-together"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "cost-of-living",
+    "score": 0,
+    "note": {
+      "en": "Cut food prices 30% via competition and tariff cuts, plus a NIS 1M home discount for reservists.",
+      "ru": "Снижение цен на продукты на 30% через конкуренцию и пошлины, плюс скидка 1 млн шекелей на жильё резервистам."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-together",
+      "https://en.wikipedia.org/wiki/Together_(Israel)"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "lgbt",
+    "score": 1,
+    "note": {
+      "en": "Civil partnership open to all; Bennett backs letting anyone start a family in Israel; same-sex marriage stance unclear.",
+      "ru": "Гражданское партнёрство для всех; Беннет за право любого создать семью; позиция по однополым бракам неясна."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/bjvkbbsfmx"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "arab-citizens",
+    "score": null,
+    "note": {
+      "en": "No clear civic-equality platform found; rules out coalition with Arab parties; Negev crime plan.",
+      "ru": "Чёткой платформы о равенстве не найдено; исключает коалицию с арабскими партиями; план против преступности в Негеве."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Together_(Israel)",
+      "https://www.jns.org/feature/israels-political-parties-explained-together"
+    ]
+  },
+  {
+    "party": "together",
+    "aspect": "immigration",
+    "score": null,
+    "note": {
+      "en": "No 2026 statement on the Law of Return or grandchild clause found.",
+      "ru": "Заявлений 2026 года о Законе о возвращении и «пункте о внуках» не найдено."
+    }
+  },
+  {
+    "party": "democrats",
+    "aspect": "two-states",
+    "score": 2,
+    "note": {
+      "en": "Supports a two-state solution; Golan backs a two-state outcome and opposes the West Bank occupation.",
+      "ru": "Поддерживает решение «два государства»; Голан выступает против оккупации Западного берега."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/The_Democrats_(Israel)",
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "settlements",
+    "score": -2,
+    "note": {
+      "en": "Opposes annexation; pledges to evacuate illegal outposts and farms and curb settler violence.",
+      "ru": "Против аннексии; обещает эвакуировать незаконные форпосты и фермы и пресечь насилие поселенцев."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://www.ynetnews.com/article/ry380wgrzg",
+      "https://www.israelnationalnews.com/news/430503"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "gaza",
+    "score": -2,
+    "note": {
+      "en": "Opposes occupying/settling Gaza; wants Hamas replaced by a technocratic Palestinian body under international oversight.",
+      "ru": "Против оккупации и заселения Газы; за технократическую палестинскую администрацию под международным контролем."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/The_Democrats_(Israel)",
+      "https://www.jns.org/feature/israels-political-parties-explained-the-democrats"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "haredi-draft",
+    "score": 2,
+    "note": {
+      "en": "Duty to serve for all citizens in an equal national framework; end benefits for those evading service.",
+      "ru": "Обязанность служить для всех граждан на равных; отмена льгот для уклоняющихся."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/sjph72wyzx"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "religion-state",
+    "score": -2,
+    "note": {
+      "en": "Golan seeks to end religious coercion: Shabbat transit and businesses, egalitarian Western Wall prayer.",
+      "ru": "Голан за прекращение религиозного принуждения: транспорт и бизнес в шаббат, эгалитарная молитва у Стены Плача."
+    },
+    "sources": [
+      "https://www.israelnationalnews.com/news/434714"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "civil-marriage",
+    "score": 2,
+    "note": {
+      "en": "Civil marriage in Israel is one of Golan's two central priorities.",
+      "ru": "Гражданский брак в Израиле — один из двух главных приоритетов Голана."
+    },
+    "sources": [
+      "https://www.israelnationalnews.com/news/434714"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "judicial-reform",
+    "score": -2,
+    "note": {
+      "en": "Pledges to repeal the judicial overhaul legislation and restore checks on government power.",
+      "ru": "Обещает отменить законы судебной реформы и восстановить сдержки власти."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/ry380wgrzg",
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://en.wikipedia.org/wiki/The_Democrats_(Israel)"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "constitution",
+    "score": 1,
+    "note": {
+      "en": "Calls for a comprehensive constitutional definition of separation of powers; no full draft constitution.",
+      "ru": "Призывает к всеобъемлющему конституционному определению разделения властей; без полного проекта конституции."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkcjtk1cme"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "market",
+    "score": -2,
+    "note": {
+      "en": "Social-democratic: welfare state, stronger unions, opposes privatizing health and education.",
+      "ru": "Социал-демократы: социальное государство, сильные профсоюзы, против приватизации медицины и образования."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/The_Democrats_(Israel)"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "cost-of-living",
+    "score": 1,
+    "note": {
+      "en": "Platform backs affordable housing within a welfare-state model; no detailed 2026 housing plan found.",
+      "ru": "Программа за доступное жильё в рамках социального государства; подробного плана на 2026 г. не найдено."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/The_Democrats_(Israel)"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "lgbt",
+    "score": 2,
+    "note": {
+      "en": "Golan campaigned on LGBTQ rights in Pride Month; some LGBTQ members criticized handling of an Arab candidate.",
+      "ru": "Голан в месяц прайда выступал за права ЛГБТ; часть ЛГБТ-членов критиковала партию из-за кандидатки-арабки."
+    },
+    "sources": [
+      "https://www.israelnationalnews.com/news/429864"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "arab-citizens",
+    "score": 2,
+    "note": {
+      "en": "Seeks to repeal the Nation-State Basic Law as discriminatory toward non-Jews; has Arab candidates.",
+      "ru": "Добивается отмены Основного закона о национальном государстве как дискриминационного; есть кандидаты-арабы."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/The_Democrats_(Israel)"
+    ]
+  },
+  {
+    "party": "democrats",
+    "aspect": "immigration",
+    "score": null,
+    "note": {
+      "en": "No clear public 2026 position on the Law of Return or the grandchild clause found.",
+      "ru": "Чёткой позиции по Закону о возвращении и «пункту о внуках» в кампании 2026 г. не найдено."
+    }
+  },
+  {
+    "party": "joint-list",
+    "aspect": "two-states",
+    "score": 2,
+    "note": {
+      "en": "Backs ending the occupation and a Palestinian state; Hadash/Ta'al favor two states, Balad stresses 'state of all citizens'.",
+      "ru": "За конец оккупации и палестинское государство; ХАДАШ/ТААЛ — два государства, БАЛАД — «государство всех граждан»."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "http://ecfr.eu/special/mapping_palestinian_politics/hadash"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "settlements",
+    "score": -2,
+    "note": {
+      "en": "Opposes settlement expansion and calls for ending the occupation of territories taken in 1967.",
+      "ru": "Против расширения поселений; призывает прекратить оккупацию территорий, занятых в 1967 г."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "http://ecfr.eu/special/mapping_palestinian_politics/hadash"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "gaza",
+    "score": -2,
+    "note": {
+      "en": "Opposes the Gaza war; calls for ending the occupation and wars.",
+      "ru": "Против войны в Газе; призывает к прекращению оккупации и войн."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://www.ynetnews.com/article/sjph72wyzx"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "haredi-draft",
+    "score": -2,
+    "note": {
+      "en": "Opposes any compulsory enlistment, incl. Haredim; no sanctions on those who don't enlist.",
+      "ru": "Против любой обязательной службы, включая харедим; против санкций для не служащих."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/sjph72wyzx"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "religion-state",
+    "score": -1,
+    "note": {
+      "en": "Components largely secular (Hadash communist, Balad/Ta'al nationalist); no specific 2026 plank found.",
+      "ru": "Компоненты в основном светские (ХАДАШ — коммунисты, БАЛАД/ТААЛ — националисты); конкретного пункта 2026 г. нет."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Joint_List"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "civil-marriage",
+    "score": 1,
+    "note": {
+      "en": "Record: Hadash MKs voted for the 2012 Meretz civil marriage bill; no joint 2026 position found.",
+      "ru": "По прошлым голосованиям: депутаты ХАДАШ поддержали законопроект МЕРЕЦ о гражданском браке (2012); общей позиции на 2026 год нет."
+    },
+    "sources": [
+      "https://thepinknews.com/2012/05/16/israeli-parliament-rejects-gay-and-inter-faith-civil-marriage-bill/"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "judicial-reform",
+    "score": -2,
+    "note": {
+      "en": "Wants strong checks and balances and independent courts; leaders backed anti-overhaul protests.",
+      "ru": "За сильные сдержки и противовесы и независимые суды; лидеры поддерживали протесты против реформы."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkcjtk1cme"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "No clear public position on a written constitution found for the 2026 list.",
+      "ru": "Чёткой позиции по писаной конституции у списка в 2026 г. не найдено."
+    }
+  },
+  {
+    "party": "joint-list",
+    "aspect": "market",
+    "score": -2,
+    "note": {
+      "en": "Led by Hadash, an Arab-Jewish communist party focused on social justice.",
+      "ru": "Во главе — ХАДАШ, арабско-еврейская коммунистическая партия с упором на социальную справедливость."
+    },
+    "sources": [
+      "http://ecfr.eu/special/mapping_palestinian_politics/hadash",
+      "https://en.wikipedia.org/wiki/Joint_List"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "cost-of-living",
+    "score": 1,
+    "note": {
+      "en": "Socialist orientation implies state-led solutions; no detailed 2026 cost-of-living plan found.",
+      "ru": "Социалистическая ориентация предполагает госрешения; подробного плана 2026 г. не найдено."
+    },
+    "sources": [
+      "http://ecfr.eu/special/mapping_palestinian_politics/hadash"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "lgbt",
+    "score": 0,
+    "note": {
+      "en": "Mixed: Hadash's Odeh backed the 2020 conversion-therapy ban; other Arab factions were opposed or reserved.",
+      "ru": "Неоднозначно: Уде (ХАДАШ) поддержал запрет конверсионной терапии в 2020 г.; другие фракции против или сдержанны."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/homosexuality-almost-nonexistent-in-arab-society-joint-list-mk-says/"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "arab-citizens",
+    "score": 2,
+    "note": {
+      "en": "Core platform: full national and civic equality for Arab citizens; seeks a shared Jewish-Arab society.",
+      "ru": "Ядро программы: полное национальное и гражданское равенство арабов; общее еврейско-арабское общество."
+    },
+    "sources": [
+      "http://ecfr.eu/special/mapping_palestinian_politics/hadash",
+      "https://www.aljazeera.com/news/2018/6/5/knesset-disqualifies-bill-seeking-equal-status-for-jews-and-arabs"
+    ]
+  },
+  {
+    "party": "joint-list",
+    "aspect": "immigration",
+    "score": -2,
+    "note": {
+      "en": "Seeks to repeal the Law of Return in favor of equal citizenship (Balad 2018 bill, Hadash MK 2020).",
+      "ru": "Добивается отмены Закона о возвращении ради равного гражданства (законопроект БАЛАД 2018, депутат ХАДАШ 2020)."
+    },
+    "sources": [
+      "https://www.jns.org/israel-news/time-to-abolish-the-law-of-return-says-joint-list-mk",
+      "https://www.aljazeera.com/news/2018/6/5/knesset-disqualifies-bill-seeking-equal-status-for-jews-and-arabs"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "two-states",
+    "score": -2,
+    "note": {
+      "en": "Opposes; once dovish, now hawkish. Opposes dividing Jerusalem; in coalition that backed 2024 Knesset resolution against a Palestinian state",
+      "ru": "Против; когда-то умеренная, ныне ястребиная. Против раздела Иерусалима; была в коалиции, принявшей резолюцию 2024 г. против палестинского государства"
+    },
+    "sources": [
+      "https://en.idi.org.il/israeli-elections-and-parties/parties/shas/",
+      "https://en.wikipedia.org/wiki/Shas",
+      "https://www.aljazeera.com/amp/news/2024/7/18/israels-knesset-votes-to-reject-palestinian-statehood"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "settlements",
+    "score": 1,
+    "note": {
+      "en": "Opposes any settlement freeze; backs 'united Jerusalem'; said it would vote for the July 2025 non-binding sovereignty motion",
+      "ru": "Против любой заморозки поселений; за «единый Иерусалим»; заявила о поддержке необязывающей резолюции о суверенитете (июль 2025)"
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Shas",
+      "https://www.jns.org/knesset-expected-to-pass-declaration-for-judea-samaria-sovereignty/"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "gaza",
+    "score": 0,
+    "note": {
+      "en": "Deri backed the 2025 hostage/ceasefire deal but conditions any arrangement on Hamas not ruling Gaza and on demilitarization",
+      "ru": "Дери поддержал сделку 2025 г. о заложниках и прекращении огня, но требует, чтобы ХАМАС не правил Газой и сектор был демилитаризован"
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/0i5aqe1m7",
+      "https://www.timesofisrael.com/liveblog_entry/shas-chair-deri-says-israel-willing-to-pay-heavy-price-for-hostage-deal-but-only-if-hamas-leaders-exiled-gaza-demilitarized/"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "haredi-draft",
+    "score": -2,
+    "note": {
+      "en": "Won't join any government without a law enshrining yeshiva-student exemptions (Deri, Oct 2026)",
+      "ru": "Не войдёт ни в одно правительство без закона, закрепляющего освобождение учащихся ешив (Дери, окт. 2026)"
+    },
+    "sources": [
+      "https://www.timesofisrael.com/deri-says-like-utj-shas-wont-join-next-government-without-a-draft-exemption-law/",
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "religion-state",
+    "score": 2,
+    "note": {
+      "en": "Seeks greater influence of halakha (Jewish religious law) in Israeli public life",
+      "ru": "Стремится к усилению влияния галахи (еврейского религиозного закона) в общественной жизни Израиля"
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Shas",
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "civil-marriage",
+    "score": -2,
+    "note": {
+      "en": "Long-standing opposition to civil marriage; opposed the 2013 civil-union bill (record, no new 2026 statement found)",
+      "ru": "Давно выступает против гражданского брака; против законопроекта о гражданских союзах 2013 г. (по прошлым позициям)"
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/3312396",
+      "https://jta.org/?p=434495"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "judicial-reform",
+    "score": 1,
+    "note": {
+      "en": "Coalition partner in the overhaul; reported (2024) to back further bills only after a draft-exemption law passes",
+      "ru": "Партнёр по коалиции в продвижении реформы; по данным 2024 г., поддержит новые законы лишь после закона об освобождении от призыва"
+    },
+    "sources": [
+      "https://www.jns.org/they-left-us-no-choice-levin-says-on-reboot-of-judicial-reform-drive"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "No clear public position on a written constitution found",
+      "ru": "Чёткой публичной позиции по писаной конституции не найдено"
+    }
+  },
+  {
+    "party": "shas",
+    "aspect": "market",
+    "score": -1,
+    "note": {
+      "en": "Social-justice and welfare orientation; opposes cuts to state support for Haredi and poorer families; fiscally centre-left",
+      "ru": "Ориентация на социальную справедливость; против сокращения господдержки харедимных и бедных семей; в экономике левоцентристская"
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Shas",
+      "https://en.idi.org.il/israeli-elections-and-parties/parties/shas/"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "cost-of-living",
+    "score": 1,
+    "note": {
+      "en": "Signature demand: zero VAT on basic foods; has also pushed a higher minimum wage (record from earlier campaigns)",
+      "ru": "Главное требование — нулевой НДС на базовые продукты; также добивалась повышения минимальной зарплаты (по прошлым кампаниям)"
+    },
+    "sources": [
+      "https://www.israelnationalnews.com/news/188377"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "lgbt",
+    "score": -2,
+    "note": {
+      "en": "Opposes public expression of homosexuality, while condemning violence against gay people",
+      "ru": "Против публичного выражения гомосексуальности, при этом осуждает насилие против геев"
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Shas"
+    ]
+  },
+  {
+    "party": "shas",
+    "aspect": "arab-citizens",
+    "score": null,
+    "note": {
+      "en": "No clear stated position found in sources reviewed",
+      "ru": "Чёткой позиции в изученных источниках не найдено"
+    }
+  },
+  {
+    "party": "shas",
+    "aspect": "immigration",
+    "score": -2,
+    "note": {
+      "en": "Asked in 2022 coalition talks to scrap the Law of Return grandchild clause; not a prominent 2026 plank",
+      "ru": "На коалиционных переговорах 2022 г. требовала отменить «пункт о внуках» Закона о возвращении; в 2026 г. не в центре кампании"
+    },
+    "sources": [
+      "https://www.timesofisrael.com/likud-said-to-oppose-demand-to-abolish-grandchild-clause-in-law-of-return/"
+    ]
+  },
+  {
+    "party": "otzma",
+    "aspect": "two-states",
+    "score": -2,
+    "note": {
+      "en": "Opposes a Palestinian state; calls to cancel the Oslo Accords.",
+      "ru": "Против палестинского государства; призывает отменить соглашения Осло."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Otzma_Yehudit"
+    ]
+  },
+  {
+    "party": "otzma",
+    "aspect": "settlements",
+    "score": 2,
+    "note": {
+      "en": "Backs Israeli sovereignty over the West Bank and expanded settlement; opposes construction freezes.",
+      "ru": "За израильский суверенитет над Западным берегом и расширение поселений; против заморозки строительства."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://en.wikipedia.org/wiki/Otzma_Yehudit"
+    ]
+  },
+  {
+    "party": "otzma",
+    "aspect": "gaza",
+    "score": 2,
+    "note": {
+      "en": "Backs Israeli military control, Jewish resettlement and a 'voluntary emigration' plan for Gazans as coalition demand.",
+      "ru": "За военный контроль, возвращение еврейских поселений и план «добровольной эмиграции» из Газы как условие коалиции."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://www.ynetnews.com/article/bjb2wk8dzl"
+    ]
+  },
+  {
+    "party": "otzma",
+    "aspect": "haredi-draft",
+    "score": 0,
+    "note": {
+      "en": "Favors voluntary Haredi tracks (police, Border Police); Ben-Gvir says coercion won't help.",
+      "ru": "За добровольные треки для харедим (полиция, МАГАВ); Бен-Гвир считает, что принуждение не поможет."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/sjph72wyzx",
+      "https://www.timesofisrael.com/liveblog_entry/ben-gvir-on-haredi-draft-i-dont-think-coercion-will-help/"
+    ]
+  },
+  {
+    "party": "otzma",
+    "aspect": "religion-state",
+    "score": 1,
+    "note": {
+      "en": "Orthodox party seeking more Jewish identity in public life; wants only Orthodox conversions recognized.",
+      "ru": "Ортодоксальная партия за усиление еврейской идентичности в общественной жизни; за признание лишь ортодоксального гиюра."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://timesofisrael.com/ben-gvir-calls-for-revoking-state-recognition-of-reform-conversions/"
+    ]
+  },
+  {
+    "party": "otzma",
+    "aspect": "civil-marriage",
+    "score": null,
+    "note": {
+      "en": "No clear public position found on civil marriage.",
+      "ru": "Чёткой публичной позиции по гражданскому браку не найдено."
+    }
+  },
+  {
+    "party": "otzma",
+    "aspect": "judicial-reform",
+    "score": 2,
+    "note": {
+      "en": "Threatened in 2023 to quit if the overhaul was paused; calls judiciary a central 2026 campaign theme.",
+      "ru": "В 2023 г. грозила выйти из коалиции при заморозке реформы; называет судебную тему центральной в кампании 2026."
+    },
+    "sources": [
+      "https://www.jns.org/ben-gvir-threatens-to-bolt-coalition-if-judicial-reforms-paused/",
+      "https://www.ynetnews.com/article/hkcjtk1cme"
+    ]
+  },
+  {
+    "party": "otzma",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "No clear public position on a written constitution.",
+      "ru": "Нет чёткой публичной позиции по писаной конституции."
+    }
+  },
+  {
+    "party": "otzma",
+    "aspect": "market",
+    "score": 0,
+    "note": {
+      "en": "'Jewish capitalism': less bureaucracy and infrastructure plus aid to weaker groups, elderly and disabled.",
+      "ru": "«Еврейский капитализм»: меньше бюрократии, инфраструктура и помощь слабым слоям, пожилым и инвалидам."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Otzma_Yehudit"
+    ]
+  },
+  {
+    "party": "otzma",
+    "aspect": "cost-of-living",
+    "score": null,
+    "note": {
+      "en": "No clear cost-of-living program found.",
+      "ru": "Чёткой программы по стоимости жизни не найдено."
+    }
+  },
+  {
+    "party": "otzma",
+    "aspect": "lgbt",
+    "score": -1,
+    "note": {
+      "en": "Ben-Gvir calls gays 'brothers' but opposes Pride marches; formerly joined anti-Pride protests.",
+      "ru": "Бен-Гвир называет геев «братьями», но против гей-парадов; ранее участвовал в протестах против них."
+    },
+    "sources": [
+      "https://www.israelhayom.com/2021/06/27/ben-gvir-homosexuals-are-my-brothers-lesbians-are-my-sisters"
+    ]
+  },
+  {
+    "party": "otzma",
+    "aspect": "arab-citizens",
+    "score": -2,
+    "note": {
+      "en": "Advocates deporting 'disloyal' Arabs and an authority to encourage their emigration.",
+      "ru": "Выступает за выдворение «нелояльных» арабов и создание ведомства по поощрению их эмиграции."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Otzma_Yehudit",
+      "https://www.ynetnews.com/article/bjb2wk8dzl"
+    ]
+  },
+  {
+    "party": "otzma",
+    "aspect": "immigration",
+    "score": -2,
+    "note": {
+      "en": "Demanded abolishing the Law of Return's grandchild clause in 2022 coalition talks.",
+      "ru": "На коалиционных переговорах 2022 г. требовала отменить «пункт о внуках» в Законе о возвращении."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/likud-said-to-oppose-demand-to-abolish-grandchild-clause-in-law-of-return/"
+    ]
+  },
+  {
+    "party": "utj",
+    "aspect": "two-states",
+    "score": -1,
+    "note": {
+      "en": "No party-specific platform found; was in the coalition that backed the 2024 Knesset resolution against a Palestinian state",
+      "ru": "Отдельной платформы не найдено; входила в коалицию, поддержавшую резолюцию Кнессета 2024 г. против палестинского государства"
+    },
+    "sources": [
+      "https://www.aljazeera.com/amp/news/2024/7/18/israels-knesset-votes-to-reject-palestinian-statehood"
+    ]
+  },
+  {
+    "party": "utj",
+    "aspect": "settlements",
+    "score": 0,
+    "note": {
+      "en": "No uniform party position on settlement expansion; some MKs were expected to back the 2025 sovereignty motion",
+      "ru": "Единой позиции по расширению поселений нет; часть депутатов, по данным СМИ, должна была поддержать резолюцию 2025 г."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/United_Torah_Judaism",
+      "https://www.jns.org/knesset-expected-to-pass-declaration-for-judea-samaria-sovereignty/"
+    ]
+  },
+  {
+    "party": "utj",
+    "aspect": "gaza",
+    "score": null,
+    "note": {
+      "en": "No clear party position on Gaza policy found",
+      "ru": "Чёткой позиции партии по Газе не найдено"
+    }
+  },
+  {
+    "party": "utj",
+    "aspect": "haredi-draft",
+    "score": -2,
+    "note": {
+      "en": "Won't join a government that does not pass a law regulating yeshiva students' exemption (Asher, Oct 2026)",
+      "ru": "Не войдёт в правительство, не принявшее закон об освобождении учащихся ешив (Ашер, окт. 2026)"
+    },
+    "sources": [
+      "https://www.timesofisrael.com/deri-says-like-utj-shas-wont-join-next-government-without-a-draft-exemption-law/",
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism"
+    ]
+  },
+  {
+    "party": "utj",
+    "aspect": "religion-state",
+    "score": 2,
+    "note": {
+      "en": "Defends the Orthodox religious status quo in public life; decisions guided by rabbinic councils",
+      "ru": "Защищает ортодоксальный религиозный статус-кво в общественной жизни; решения принимают раввинские советы"
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/United_Torah_Judaism",
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "utj",
+    "aspect": "civil-marriage",
+    "score": -2,
+    "note": {
+      "en": "Opposes civil marriage and even civil unions; opposed the 2013 civil-union bill (record)",
+      "ru": "Против гражданского брака и даже гражданских союзов; выступила против законопроекта 2013 г. (по прошлым позициям)"
+    },
+    "sources": [
+      "https://jta.org/?p=434495"
+    ]
+  },
+  {
+    "party": "utj",
+    "aspect": "judicial-reform",
+    "score": 1,
+    "note": {
+      "en": "Coalition partner in the overhaul; reported (2024) to back further bills only after a draft-exemption law passes",
+      "ru": "Партнёр по коалиции в продвижении реформы; по данным 2024 г., поддержит новые законы лишь после закона об освобождении от призыва"
+    },
+    "sources": [
+      "https://www.jns.org/they-left-us-no-choice-levin-says-on-reboot-of-judicial-reform-drive"
+    ]
+  },
+  {
+    "party": "utj",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "No clear public position on a written constitution found",
+      "ru": "Чёткой публичной позиции по писаной конституции не найдено"
+    }
+  },
+  {
+    "party": "utj",
+    "aspect": "market",
+    "score": -1,
+    "note": {
+      "en": "Described as economically centre-left / social-democratic; seeks state support for Haredi families and institutions",
+      "ru": "Считается левоцентристской / социал-демократической в экономике; добивается господдержки харедимных семей и учреждений"
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/United_Torah_Judaism",
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "utj",
+    "aspect": "cost-of-living",
+    "score": null,
+    "note": {
+      "en": "No specific cost-of-living platform found",
+      "ru": "Конкретной программы по стоимости жизни не найдено"
+    }
+  },
+  {
+    "party": "utj",
+    "aspect": "lgbt",
+    "score": -2,
+    "note": {
+      "en": "Led opposition to extending surrogacy to gay men (2018); MKs protested gay MK Ohana's swearing-in (record)",
+      "ru": "Возглавляла противодействие расширению суррогатного материнства на геев (2018); депутаты протестовали при присяге Оханы (по прошлым позициям)"
+    },
+    "sources": [
+      "https://www.pressreader.com/israel/jerusalem-post/20180123/281621010756809",
+      "https://stljewishlight.org/world-news/knesset-rejects-bill-that-would-allow-same-sex-couples-to-have-children-through-surrogates",
+      "https://www.ynetnews.com/article/4745539"
+    ]
+  },
+  {
+    "party": "utj",
+    "aspect": "arab-citizens",
+    "score": null,
+    "note": {
+      "en": "No clear stated position found in sources reviewed",
+      "ru": "Чёткой позиции в изученных источниках не найдено"
+    }
+  },
+  {
+    "party": "utj",
+    "aspect": "immigration",
+    "score": -2,
+    "note": {
+      "en": "Demanded repeal of the Law of Return grandchild clause in 2022 coalition talks; not a prominent 2026 plank",
+      "ru": "На коалиционных переговорах 2022 г. требовала отменить «пункт о внуках»; в 2026 г. не в центре кампании"
+    },
+    "sources": [
+      "https://www.timesofisrael.com/likud-said-to-oppose-demand-to-abolish-grandchild-clause-in-law-of-return/",
+      "https://www.theyeshivaworld.com/?p=2150062"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "two-states",
+    "score": -2,
+    "note": {
+      "en": "Liberman plan aims \"to prevent the establishment of a Palestinian state\": dismantle PA, cancel Oslo.",
+      "ru": "План Либермана — «не допустить создания палестинского государства»: роспуск ПА, отмена Осло."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkr11zoksmg"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "settlements",
+    "score": 1,
+    "note": {
+      "en": "Israeli sovereignty over Area C; Areas A/B under an Israeli-Jordanian arrangement.",
+      "ru": "Израильский суверенитет над зоной C; зоны A/B — по израильско-иорданской схеме."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu",
+      "https://www.jpost.com/israel-news/politics-and-diplomacy/article-909408"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "gaza",
+    "score": 1,
+    "note": {
+      "en": "Eliminate Hamas military and civil rule, then hand administration to an outside actor.",
+      "ru": "Уничтожить военную и гражданскую власть ХАМАС, затем передать управление внешней стороне."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "haredi-draft",
+    "score": 2,
+    "note": {
+      "en": "Universal military or civil service, no exemptions; evaders lose benefits, public jobs, travel and voting rights.",
+      "ru": "Всеобщая военная или гражданская служба без исключений; уклонисты теряют пособия, госработу, выезд и голос."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu",
+      "https://www.jfeed.com/news-israel/tmfetw"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "religion-state",
+    "score": -2,
+    "note": {
+      "en": "Seeks separation of religion and state: civil marriage, local Shabbat transit, kosher competition.",
+      "ru": "Требует отделения религии от государства: гражданский брак, транспорт в шаббат, конкуренция в кашруте."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu",
+      "https://www.jfeed.com/news-israel/tmfetw"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "civil-marriage",
+    "score": 2,
+    "note": {
+      "en": "Platform includes civil marriage and divorce.",
+      "ru": "Платформа включает гражданский брак и развод."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu",
+      "https://www.ynetnews.com/article/bjvkbbsfmx"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "judicial-reform",
+    "score": -1,
+    "note": {
+      "en": "Liberman rejects reviving the overhaul; says the needed reform is a constitution and constitutional court.",
+      "ru": "Либерман против возобновления реформы; нужна, по его словам, конституция и конституционный суд."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/liveblog_entry/liberman-rejects-calls-to-revive-judicial-overhaul-now-is-not-the-time-for-jewish-wars/"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "constitution",
+    "score": 2,
+    "note": {
+      "en": "Proposes a written constitution put to a referendum; amendments would need 80 MKs.",
+      "ru": "Предлагает писаную конституцию с референдумом; поправки — голосами 80 депутатов."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkcjtk1cme",
+      "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "market",
+    "score": 1,
+    "note": {
+      "en": "Cut regulation, expand import competition, challenge monopolies; Liberman cites his 2021 budget surplus.",
+      "ru": "Меньше регулирования, больше импорта, борьба с монополиями; Либерман ссылается на профицит 2021 г."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "cost-of-living",
+    "score": 0,
+    "note": {
+      "en": "Competition measures plus more subsidized housing, work-linked childcare aid, higher benefits for poor pensioners.",
+      "ru": "Конкуренция плюс больше субсидируемого жилья, помощь с детсадами работающим, рост пособий бедным пенсионерам."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "lgbt",
+    "score": null,
+    "note": {
+      "en": "No clear stated position found; civil-marriage plank does not mention same-sex couples.",
+      "ru": "Чёткой позиции не найдено; пункт о гражданском браке не упоминает однополые пары."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/bjvkbbsfmx"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "arab-citizens",
+    "score": -1,
+    "note": {
+      "en": "Requires service from Arab citizens, rules out Arab parties; record of \"no citizenship without loyalty\" (2009).",
+      "ru": "Требует службы от арабских граждан, исключает арабские партии; лозунг 2009 г. «нет гражданства без лояльности»."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu",
+      "https://www.aljazeera.com/news/2009/5/31/israel-loyalty-law-rejected"
+    ]
+  },
+  {
+    "party": "yisrael-beiteinu",
+    "aspect": "immigration",
+    "score": 2,
+    "note": {
+      "en": "Record: fought efforts to cancel the grandchild clause (MK Sova, 2025); party base of FSU immigrants.",
+      "ru": "По опыту: боролась против отмены «пункта о внуках» (депутат Сова, 2025); опора на выходцев из СССР."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/bill-to-limit-law-of-return-shot-down-despite-support-from-ultra-orthodox-mks/",
+      "https://www.jewishpress.com/news/israel/the-knesset/report-likud-vows-no-changes-to-law-of-return/2022/12/13"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "two-states",
+    "score": -2,
+    "note": {
+      "en": "Seeks to prevent Palestinian statehood; partner Zehut also rejects it.",
+      "ru": "Стремится не допустить палестинского государства; партнёр «Зеут» также против."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "settlements",
+    "score": 2,
+    "note": {
+      "en": "Presses to apply Israeli sovereignty to the West Bank and expand settlements.",
+      "ru": "Добивается применения израильского суверенитета к Западному берегу и расширения поселений."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "gaza",
+    "score": 2,
+    "note": {
+      "en": "Smotrich (2026): Israel will conquer Gaza and build settlements there; Zehut backs sovereignty over Gaza.",
+      "ru": "Смотрич (2026): Израиль завоюет Газу и построит там поселения; «Зеут» — за суверенитет над Газой."
+    },
+    "sources": [
+      "https://www.israelhayom.com/2026/02/23/smotrich-we-will-conquer-gaza-and-build-jewish-settlements-there",
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "haredi-draft",
+    "score": 1,
+    "note": {
+      "en": "Supports gradual expansion of Haredi service with some sanctions, but opposes coercive mass enlistment.",
+      "ru": "За постепенное расширение призыва харедим с санкциями, но против принудительного массового призыва."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://www.timesofisrael.com/liveblog_entry/smotrich-indicates-support-for-targeted-sanctions-against-haredi-draft-dodgers/",
+      "https://www.ynetnews.com/article/sjph72wyzx"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "religion-state",
+    "score": 1,
+    "note": {
+      "en": "Seeks a greater role for Jewish law and values in public life; partner Zehut is not explicitly religious.",
+      "ru": "За большую роль еврейского закона и ценностей в общественной жизни; партнёр «Зеут» не является религиозной партией."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://www.ynetnews.com/article/5519474"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "civil-marriage",
+    "score": null,
+    "note": {
+      "en": "No clear joint-list position found; RZP's Orthodox base vs. libertarian partner Zehut.",
+      "ru": "Чёткой позиции списка не найдено: ортодоксальная база РС и либертарианский партнёр «Зеут»."
+    }
+  },
+  {
+    "party": "rzp",
+    "aspect": "judicial-reform",
+    "score": 2,
+    "note": {
+      "en": "Smotrich: 'the election is about the judicial system'; its judicial plan is a condition for joining a coalition.",
+      "ru": "Смотрич: «выборы — о судебной системе»; его судебный план — условие вступления в коалицию."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkcjtk1cme"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "No clear position on a written constitution.",
+      "ru": "Нет чёткой позиции по писаной конституции."
+    }
+  },
+  {
+    "party": "rzp",
+    "aspect": "market",
+    "score": 1,
+    "note": {
+      "en": "Smotrich stresses free-market reforms; Zehut advocates free markets and less regulation.",
+      "ru": "Смотрич делает упор на рыночные реформы; «Зеут» — за свободный рынок и меньше регулирования."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "cost-of-living",
+    "score": -1,
+    "note": {
+      "en": "Smotrich emphasizes free-market reforms (competition, deregulation) to lower the cost of living.",
+      "ru": "Смотрич делает ставку на рыночные реформы (конкуренция, дерегулирование) для снижения стоимости жизни."
+    },
+    "sources": [
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "lgbt",
+    "score": -2,
+    "note": {
+      "en": "Opposes recognizing same-sex marriage on religious grounds; Smotrich has called himself a 'proud homophobe'.",
+      "ru": "Против признания однополых браков по религиозным причинам; Смотрич называл себя «гордым гомофобом»."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Religious_Zionist_Party",
+      "https://m.jpost.com/israel-elections/bayit-yehudi-candidate-im-a-proud-homophobe-391843"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "arab-citizens",
+    "score": -2,
+    "note": {
+      "en": "Smotrich has called for banning current Arab parties and expelling those rejecting Jewish sovereignty.",
+      "ru": "Смотрич призывал запретить нынешние арабские партии и выдворять не признающих еврейский суверенитет."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/smotrich-calls-for-ban-on-arab-parties-says-arab-citizens-could-commit-massacres/",
+      "https://www.israelhayom.com/2021/04/08/religious-zionist-party-chief-vows-to-expel-arabs-who-fail-to-recognize-israel-as-jewish"
+    ]
+  },
+  {
+    "party": "rzp",
+    "aspect": "immigration",
+    "score": -2,
+    "note": {
+      "en": "Demanded abolishing the grandchild clause in 2022 talks; Smotrich has tabled such a bill.",
+      "ru": "Требовала отменить «пункт о внуках» в 2022 г.; Смотрич вносил такой законопроект."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/likud-said-to-oppose-demand-to-abolish-grandchild-clause-in-law-of-return/",
+      "https://jpost.com/israel-news/article-721896"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "two-states",
+    "score": 2,
+    "note": {
+      "en": "Supports a Palestinian state in West Bank and Gaza with East Jerusalem; Abbas urges recognizing Palestine.",
+      "ru": "За палестинское государство на Западном берегу и в Газе со столицей в Вост. Иерусалиме; Аббас за его признание."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/United_Arab_List",
+      "https://www.i24news.tv/en/news/israel/politics/artc-abbas-brings-palestinian-statehood-into-election-pitch-drawing-eisenkot-netanyahu-rebukes",
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "settlements",
+    "score": -1,
+    "note": {
+      "en": "Abbas calls for 'an end to the occupation' but rarely addresses settlements specifically.",
+      "ru": "Аббас призывает «покончить с оккупацией», но редко говорит конкретно о поселениях."
+    },
+    "sources": [
+      "https://www.i24news.tv/en/news/israel/politics/artc-abbas-brings-palestinian-statehood-into-election-pitch-drawing-eisenkot-netanyahu-rebukes",
+      "https://www.clickondetroit.com/news/world/2026/10/16/israels-arab-led-parties-could-decide-the-election-if-anyone-would-partner-with-them/"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "gaza",
+    "score": null,
+    "note": {
+      "en": "Abbas condemned Oct. 7 but rarely speaks about the Gaza war; no clear policy position found.",
+      "ru": "Аббас осудил 7 октября, но редко говорит о войне в Газе; чёткой позиции не найдено."
+    },
+    "sources": [
+      "https://www.clickondetroit.com/news/world/2026/10/16/israels-arab-led-parties-could-decide-the-election-if-anyone-would-partner-with-them/"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "haredi-draft",
+    "score": null,
+    "note": {
+      "en": "No stated 2026 position; 3 MKs backed a 2022 draft law with Haredi targets; opposes compulsory service for Arabs.",
+      "ru": "Позиции на 2026 г. нет; 3 депутата поддержали закон 2022 г. с квотами призыва харедим; против обязательной службы арабов."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/sjph72wyzx"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "religion-state",
+    "score": null,
+    "note": {
+      "en": "Socially conservative Muslim party (left Islamic Movement July 2026); no stance on Jewish religion-state issues.",
+      "ru": "Консервативная мусульманская партия (вышла из Исламского движения в 07.2026); позиции по иудаизму и государству нет."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/United_Arab_List"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "civil-marriage",
+    "score": null,
+    "note": {
+      "en": "No clear public position on civil marriage found.",
+      "ru": "Чёткой публичной позиции по гражданскому браку не найдено."
+    }
+  },
+  {
+    "party": "raam",
+    "aspect": "judicial-reform",
+    "score": -1,
+    "note": {
+      "en": "In 2023 opposed scrapping reasonableness and shifting power to government; open to changing judge selection.",
+      "ru": "В 2023 г. против отмены принципа разумности и передачи власти правительству; открыт к изменению отбора судей."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkcjtk1cme"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "No clear public position on a written constitution found.",
+      "ru": "Чёткой публичной позиции по писаной конституции не найдено."
+    }
+  },
+  {
+    "party": "raam",
+    "aspect": "market",
+    "score": null,
+    "note": {
+      "en": "Focuses on state budgets for Arab towns rather than a general economic doctrine.",
+      "ru": "Сосредоточен на госбюджетах для арабских городов, а не на общей экономической доктрине."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/United_Arab_List",
+      "https://en.globes.co.il/en/article-1001374021"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "cost-of-living",
+    "score": 1,
+    "note": {
+      "en": "Seeks state budgets for Arab housing and planning, Bedouin village recognition (2021 coalition deal).",
+      "ru": "Добивается госбюджетов на жильё и планирование в арабских городах, признания бедуинских деревень (2021)."
+    },
+    "sources": [
+      "https://en.globes.co.il/en/article-1001374021",
+      "https://en.wikipedia.org/wiki/United_Arab_List",
+      "https://www.ynetnews.com/article/bjtzpun2mx"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "lgbt",
+    "score": -2,
+    "note": {
+      "en": "Record: Ra'am MKs opposed the 2020 conversion-therapy ban, calling same-sex relations unnatural.",
+      "ru": "По прошлому: депутаты РААМ выступили против запрета конверсионной терапии (2020), назвав однополые связи неестественными."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/homosexuality-almost-nonexistent-in-arab-society-joint-list-mk-says/",
+      "https://en.wikipedia.org/wiki/United_Arab_List"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "arab-citizens",
+    "score": 2,
+    "note": {
+      "en": "Centers on crime, housing and budgets for Arab citizens; accepts Israel's Jewish character as a reality.",
+      "ru": "В центре — преступность, жильё и бюджеты для арабов; принимает еврейский характер Израиля как реальность."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/United_Arab_List",
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://www.clickondetroit.com/news/world/2026/10/16/israels-arab-led-parties-could-decide-the-election-if-anyone-would-partner-with-them/"
+    ]
+  },
+  {
+    "party": "raam",
+    "aspect": "immigration",
+    "score": null,
+    "note": {
+      "en": "No clear public position on the Law of Return found.",
+      "ru": "Чёткой публичной позиции по Закону о возвращении не найдено."
+    }
+  },
+  {
+    "party": "reservists",
+    "aspect": "two-states",
+    "score": -2,
+    "note": {
+      "en": "Opposes a Palestinian state; Hendel calls the conflict a \"clash of civilizations\".",
+      "ru": "Против палестинского государства; Хендель называет конфликт «столкновением цивилизаций»."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party",
+      "https://en.wikipedia.org/wiki/The_Reservists_(political_party)"
+    ]
+  },
+  {
+    "party": "reservists",
+    "aspect": "settlements",
+    "score": 1,
+    "note": {
+      "en": "Supports strengthening Jewish settlement in Judea and Samaria; annexation not specified.",
+      "ru": "За укрепление еврейских поселений в Иудее и Самарии; об аннексии не говорится."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party"
+    ]
+  },
+  {
+    "party": "reservists",
+    "aspect": "gaza",
+    "score": 1,
+    "note": {
+      "en": "Israeli control of perimeter and Philadelphi, military freedom of action, voluntary-emigration agency.",
+      "ru": "Контроль периметра и Филадельфийского коридора, свобода действий ЦАХАЛ, агентство добровольной эмиграции."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party"
+    ]
+  },
+  {
+    "party": "reservists",
+    "aspect": "haredi-draft",
+    "score": 2,
+    "note": {
+      "en": "Service for all from 18; evaders lose benefits, vote, licence and travel; NEP exempts ~2,000 elite scholars.",
+      "ru": "Служба для всех с 18 лет; уклонисты теряют пособия, голос, права и выезд; партия Зелехи освобождает ~2000 знатоков Торы."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party",
+      "https://en.wikipedia.org/wiki/The_Reservists_(political_party)"
+    ]
+  },
+  {
+    "party": "reservists",
+    "aspect": "religion-state",
+    "score": null,
+    "note": {
+      "en": "No clear position; NEP proposes opening kashrut certification to competing rabbis.",
+      "ru": "Чёткой позиции нет; партия Зелехи предлагает конкуренцию раввинов в выдаче кашрута."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party"
+    ]
+  },
+  {
+    "party": "reservists",
+    "aspect": "civil-marriage",
+    "score": null,
+    "note": {
+      "en": "No stated position found.",
+      "ru": "Позиции не найдено."
+    }
+  },
+  {
+    "party": "reservists",
+    "aspect": "judicial-reform",
+    "score": 0,
+    "note": {
+      "en": "Reform by broad consensus; opposed original Levin plan; backs 72+ MK override, narrower reasonableness.",
+      "ru": "Реформа по широкому согласию; против исходного плана Левина; за преодоление голосами 72+ депутатов и сужение «разумности»."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkcjtk1cme",
+      "https://en.wikipedia.org/wiki/The_Reservists_(political_party)"
+    ]
+  },
+  {
+    "party": "reservists",
+    "aspect": "constitution",
+    "score": 1,
+    "note": {
+      "en": "Supports a Basic Law on legislation and inter-branch relations within a broader constitutional framework.",
+      "ru": "За Основной закон о законодательстве и отношениях ветвей власти в рамках конституционной системы."
+    },
+    "sources": [
+      "https://www.ynetnews.com/article/hkcjtk1cme",
+      "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party"
+    ]
+  },
+  {
+    "party": "reservists",
+    "aspect": "market",
+    "score": 1,
+    "note": {
+      "en": "NEP: abolish food tariffs, cut VAT to 12% and taxes, close ministries; also a partly state-funded bank.",
+      "ru": "Партия Зелехи: отмена пошлин на еду, НДС до 12%, снижение налогов, закрытие министерств; также банк с госучастием."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party"
+    ]
+  },
+  {
+    "party": "reservists",
+    "aspect": "cost-of-living",
+    "score": -1,
+    "note": {
+      "en": "Tackles living costs via import liberalization, anti-monopoly action and tax cuts; housing aid for those who serve.",
+      "ru": "Борьба с дороговизной через импорт, антимонопольные меры и налоги; помощь с жильём отслужившим."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party"
+    ]
+  },
+  {
+    "party": "reservists",
+    "aspect": "lgbt",
+    "score": null,
+    "note": {
+      "en": "No stated position found.",
+      "ru": "Позиции не найдено."
+    }
+  },
+  {
+    "party": "reservists",
+    "aspect": "arab-citizens",
+    "score": null,
+    "note": {
+      "en": "No clear position beyond requiring service from Arab citizens; rejects a government dependent on Arab parties.",
+      "ru": "Чёткой позиции нет, кроме обязательной службы для арабов; против правительства, зависящего от арабских партий."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party"
+    ]
+  },
+  {
+    "party": "reservists",
+    "aspect": "immigration",
+    "score": null,
+    "note": {
+      "en": "No Law of Return position found; immigrant absorption is a listed goal.",
+      "ru": "Позиции по Закону о возвращении нет; абсорбция репатриантов — одна из заявленных целей."
+    }
+  },
+  {
+    "party": "amcha",
+    "aspect": "two-states",
+    "score": -2,
+    "note": {
+      "en": "Opposes a Palestinian state; Winter: \"There is no Palestinian nation.\"",
+      "ru": "Против палестинского государства; Винтер: «Палестинского народа не существует»."
+    },
+    "sources": [
+      "https://en.idi.org.il/israeli-elections-and-parties/parties/amcha-yisrael/",
+      "https://jewishinsider.com/2026/10/amcha-yisrael-leader-ofer-winter-israeli-elections/"
+    ]
+  },
+  {
+    "party": "amcha",
+    "aspect": "settlements",
+    "score": 2,
+    "note": {
+      "en": "Supports expanding settlement and extending Israeli sovereignty to Areas B and C.",
+      "ru": "За расширение поселений и распространение суверенитета на зоны B и C."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-parties-explained-amcha-yisrael"
+    ]
+  },
+  {
+    "party": "amcha",
+    "aspect": "gaza",
+    "score": 2,
+    "note": {
+      "en": "Destroy Hamas, keep Israeli security control, facilitate voluntary emigration of Gazans.",
+      "ru": "Уничтожить ХАМАС, сохранить контроль безопасности, содействовать добровольной эмиграции жителей Газы."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-parties-explained-amcha-yisrael",
+      "https://jewishinsider.com/2026/10/amcha-yisrael-leader-ofer-winter-israeli-elections/",
+      "https://en.idi.org.il/israeli-elections-and-parties/parties/amcha-yisrael/"
+    ]
+  },
+  {
+    "party": "amcha",
+    "aspect": "haredi-draft",
+    "score": 1,
+    "note": {
+      "en": "Supports Haredi enlistment via a Basic Law, but caps recognized Torah students at 25% of each cohort.",
+      "ru": "За призыв харедим через Основной закон, но квота учащихся ешив — до 25% призыва."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-parties-explained-amcha-yisrael",
+      "https://en.idi.org.il/israeli-elections-and-parties/parties/amcha-yisrael/"
+    ]
+  },
+  {
+    "party": "amcha",
+    "aspect": "religion-state",
+    "score": null,
+    "note": {
+      "en": "No stated position found.",
+      "ru": "Позиции не найдено."
+    }
+  },
+  {
+    "party": "amcha",
+    "aspect": "civil-marriage",
+    "score": null,
+    "note": {
+      "en": "No stated position found.",
+      "ru": "Позиции не найдено."
+    }
+  },
+  {
+    "party": "amcha",
+    "aspect": "judicial-reform",
+    "score": 1,
+    "note": {
+      "en": "Supports judicial reform: drop Bar reps from selection panel, appellate tier over High Court, narrower reasonableness.",
+      "ru": "За судебную реформу: без адвокатуры в комиссии, инстанция над БАГАЦ, сужение «разумности»."
+    },
+    "sources": [
+      "https://en.idi.org.il/israeli-elections-and-parties/parties/amcha-yisrael/",
+      "https://www.ynetnews.com/article/hkcjtk1cme"
+    ]
+  },
+  {
+    "party": "amcha",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "No stated position found.",
+      "ru": "Позиции не найдено."
+    }
+  },
+  {
+    "party": "amcha",
+    "aspect": "market",
+    "score": 1,
+    "note": {
+      "en": "Break up monopolies, remove import barriers, reduce business bureaucracy.",
+      "ru": "Слом монополий, снятие импортных барьеров, меньше бюрократии для бизнеса."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-parties-explained-amcha-yisrael"
+    ]
+  },
+  {
+    "party": "amcha",
+    "aspect": "cost-of-living",
+    "score": -1,
+    "note": {
+      "en": "Competition-led: monopolies, imports, bureaucracy; housing via urban renewal in the periphery.",
+      "ru": "Через конкуренцию: монополии, импорт, бюрократия; жильё — обновление городов на периферии."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-parties-explained-amcha-yisrael"
+    ]
+  },
+  {
+    "party": "amcha",
+    "aspect": "lgbt",
+    "score": null,
+    "note": {
+      "en": "No stated position found.",
+      "ru": "Позиции не найдено."
+    }
+  },
+  {
+    "party": "amcha",
+    "aspect": "arab-citizens",
+    "score": null,
+    "note": {
+      "en": "No stated policy; Arab Christian Yoseph Haddad is No. 2; won't sit with Arab parties.",
+      "ru": "Политики не заявлено; араб-христианин Йосеф Хаддад — №2; не сядет с арабскими партиями."
+    },
+    "sources": [
+      "https://jewishinsider.com/2026/10/amcha-yisrael-leader-ofer-winter-israeli-elections/",
+      "https://www.timesofisrael.com/liveblog-october-04-2026/"
+    ]
+  },
+  {
+    "party": "amcha",
+    "aspect": "immigration",
+    "score": null,
+    "note": {
+      "en": "No stated position found.",
+      "ru": "Позиции не найдено."
+    }
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "two-states",
+    "score": null,
+    "note": {
+      "en": "Platform does not address this issue",
+      "ru": "Платформа не касается этого вопроса"
+    }
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "settlements",
+    "score": null,
+    "note": {
+      "en": "Platform does not address this issue",
+      "ru": "Платформа не касается этого вопроса"
+    }
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "gaza",
+    "score": null,
+    "note": {
+      "en": "Platform does not address this issue",
+      "ru": "Платформа не касается этого вопроса"
+    }
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "haredi-draft",
+    "score": 1,
+    "note": {
+      "en": "Those fully devoted to Torah keep a study track; all other Haredi youth should serve in some capacity",
+      "ru": "Полностью посвятившие себя Торе сохраняют путь учёбы; остальная харедимная молодёжь должна так или иначе служить"
+    },
+    "sources": [
+      "https://hatzibur-haharedi.org/en/platform",
+      "https://jpost.com/israel-election-2026/article-908761"
+    ]
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "religion-state",
+    "score": null,
+    "note": {
+      "en": "Platform does not address this issue",
+      "ru": "Платформа не касается этого вопроса"
+    }
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "civil-marriage",
+    "score": null,
+    "note": {
+      "en": "Platform does not address this issue",
+      "ru": "Платформа не касается этого вопроса"
+    }
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "judicial-reform",
+    "score": null,
+    "note": {
+      "en": "Platform does not address this issue",
+      "ru": "Платформа не касается этого вопроса"
+    }
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "Platform does not address this issue",
+      "ru": "Платформа не касается этого вопроса"
+    }
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "market",
+    "score": 1,
+    "note": {
+      "en": "Platform: free market, competition, low taxes, efficient government; calls itself 'on the economic right'",
+      "ru": "Платформа: свободный рынок, конкуренция, низкие налоги, эффективное государство; называет себя «экономически правой»"
+    },
+    "sources": [
+      "https://hatzibur-haharedi.org/en/platform"
+    ]
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "cost-of-living",
+    "score": -1,
+    "note": {
+      "en": "Seeks lower living costs mainly through competition and lower taxes",
+      "ru": "Стремится снизить стоимость жизни в основном через конкуренцию и снижение налогов"
+    },
+    "sources": [
+      "https://hatzibur-haharedi.org/en/platform"
+    ]
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "lgbt",
+    "score": null,
+    "note": {
+      "en": "Platform does not address this issue",
+      "ru": "Платформа не касается этого вопроса"
+    }
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "arab-citizens",
+    "score": null,
+    "note": {
+      "en": "Platform does not address this issue",
+      "ru": "Платформа не касается этого вопроса"
+    }
+  },
+  {
+    "party": "haredi-public",
+    "aspect": "immigration",
+    "score": null,
+    "note": {
+      "en": "Platform backs every Jew's right to aliyah and integration aid, but says nothing on Law of Return eligibility scope",
+      "ru": "Платформа поддерживает право каждого еврея на репатриацию и помощь в абсорбции, но не касается рамок Закона о возвращении"
+    },
+    "sources": [
+      "https://hatzibur-haharedi.org/en/platform"
+    ]
+  },
+  {
+    "party": "noam",
+    "aspect": "two-states",
+    "score": null,
+    "note": {
+      "en": "No explicit 2026 statement on Palestinian statehood found.",
+      "ru": "Явного заявления 2026 г. о палестинском государстве не найдено."
+    }
+  },
+  {
+    "party": "noam",
+    "aspect": "settlements",
+    "score": 1,
+    "note": {
+      "en": "Supports expanding Jewish settlements in the West Bank; no detailed annexation platform found.",
+      "ru": "Поддерживает расширение еврейских поселений на Западном берегу; детальной программы аннексии не найдено."
+    },
+    "sources": [
+      "https://jpost.com/israel-news/politics-and-diplomacy/article-904171"
+    ]
+  },
+  {
+    "party": "noam",
+    "aspect": "gaza",
+    "score": null,
+    "note": {
+      "en": "No clear public position on Gaza policy found.",
+      "ru": "Чёткой позиции по Газе не найдено."
+    }
+  },
+  {
+    "party": "noam",
+    "aspect": "haredi-draft",
+    "score": null,
+    "note": {
+      "en": "No clear public position on Haredi conscription found.",
+      "ru": "Чёткой позиции по призыву харедим не найдено."
+    }
+  },
+  {
+    "party": "noam",
+    "aspect": "religion-state",
+    "score": 2,
+    "note": {
+      "en": "Seeks more authority for the Chief Rabbinate (a 'fourth branch'), stricter Sabbath rules.",
+      "ru": "Хочет больше полномочий для Главного раввината («четвёртая ветвь власти») и более строгих правил шаббата."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Noam_(political_party)"
+    ]
+  },
+  {
+    "party": "noam",
+    "aspect": "civil-marriage",
+    "score": -2,
+    "note": {
+      "en": "Wants a stronger Chief Rabbinate role over personal status, implying no civil marriage; opposes same-sex marriage.",
+      "ru": "Хочет усилить роль Главного раввината в вопросах личного статуса, что исключает гражданский брак; против однополых браков."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Noam_(political_party)"
+    ]
+  },
+  {
+    "party": "noam",
+    "aspect": "judicial-reform",
+    "score": 2,
+    "note": {
+      "en": "Lists passing the judicial reform as one of its main goals (2026 campaign).",
+      "ru": "Называет принятие судебной реформы одной из главных целей (кампания 2026)."
+    },
+    "sources": [
+      "https://jpost.com/israel-news/politics-and-diplomacy/article-904171"
+    ]
+  },
+  {
+    "party": "noam",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "No clear position on a written constitution.",
+      "ru": "Нет чёткой позиции по писаной конституции."
+    }
+  },
+  {
+    "party": "noam",
+    "aspect": "market",
+    "score": null,
+    "note": {
+      "en": "No clear economic platform found.",
+      "ru": "Чёткой экономической программы не найдено."
+    }
+  },
+  {
+    "party": "noam",
+    "aspect": "cost-of-living",
+    "score": null,
+    "note": {
+      "en": "No clear cost-of-living program found.",
+      "ru": "Чёткой программы по стоимости жизни не найдено."
+    }
+  },
+  {
+    "party": "noam",
+    "aspect": "lgbt",
+    "score": -2,
+    "note": {
+      "en": "Opposing LGBTQ rights and same-sex marriage is the party's core stated agenda.",
+      "ru": "Борьба против прав ЛГБТ и однополых браков — главная заявленная повестка партии."
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Noam_(political_party)",
+      "https://jpost.com/israel-news/politics-and-diplomacy/article-904171"
+    ]
+  },
+  {
+    "party": "noam",
+    "aspect": "arab-citizens",
+    "score": null,
+    "note": {
+      "en": "No clear position on Arab citizens' equality found.",
+      "ru": "Чёткой позиции по равенству арабских граждан не найдено."
+    }
+  },
+  {
+    "party": "noam",
+    "aspect": "immigration",
+    "score": -2,
+    "note": {
+      "en": "Maoz submitted a bill to repeal the Law of Return's grandchild clause.",
+      "ru": "Маоз внёс законопроект об отмене «пункта о внуках» в Законе о возвращении."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/bill-to-limit-law-of-return-shot-down-despite-support-from-ultra-orthodox-mks/"
+    ]
+  },
+  {
+    "party": "tzomet",
+    "aspect": "two-states",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "settlements",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "gaza",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "haredi-draft",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "religion-state",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "civil-marriage",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "judicial-reform",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "constitution",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "market",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "cost-of-living",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "lgbt",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "arab-citizens",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  },
+  {
+    "party": "tzomet",
+    "aspect": "immigration",
+    "score": null,
+    "note": {
+      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
+      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
+    }
+  }
+]

@@ -1,71 +1,393 @@
 [
-  { "id": "yashar", "tier": "likely", "color": "#0e7c86",
-    "name": { "en": "Yashar", "ru": "Яшар", "he": "ישר!" },
-    "leader": { "en": "Gadi Eisenkot", "ru": "Гади Айзенкот" },
-    "polls": { "avg": 22, "min": 20, "max": 23 } },
-  { "id": "likud", "tier": "likely", "color": "#1d4ed8",
-    "name": { "en": "Likud", "ru": "Ликуд", "he": "הליכוד" },
-    "leader": { "en": "Benjamin Netanyahu", "ru": "Биньямин Нетаньяху" },
-    "members": { "en": "Likud, New Hope", "ru": "Ликуд, «Новая надежда»" },
-    "polls": { "avg": 22, "min": 19, "max": 30 } },
-  { "id": "together", "tier": "likely", "color": "#0891b2",
-    "name": { "en": "Together", "ru": "Вместе" },
-    "leader": { "en": "Naftali Bennett", "ru": "Нафтали Беннет" },
-    "members": { "en": "Bennett 2026, Yesh Atid", "ru": "«Беннет 2026», «Еш атид»" },
-    "polls": { "avg": 13, "min": 11, "max": 15 } },
-  { "id": "democrats", "tier": "likely", "color": "#dc2626",
-    "name": { "en": "The Democrats", "ru": "Демократы", "he": "הדמוקרטים" },
-    "leader": { "en": "Yair Golan", "ru": "Яир Голан" },
-    "members": { "en": "Labor, Meretz", "ru": "«Авода», МЕРЕЦ" },
-    "polls": { "avg": 9, "min": 8, "max": 10 } },
-  { "id": "joint-list", "tier": "likely", "color": "#16a34a",
-    "name": { "en": "Joint List", "ru": "Объединённый список", "he": "הרשימה המשותפת" },
-    "leader": { "en": "Yousef Jabareen", "ru": "Юсеф Джабарин" },
-    "members": { "en": "Hadash, Ta'al, Balad", "ru": "ХАДАШ, ТААЛ, БАЛАД" },
-    "polls": { "avg": 9, "min": 8, "max": 9 } },
-  { "id": "shas", "tier": "likely", "color": "#1e3a8a",
-    "name": { "en": "Shas", "ru": "ШАС", "he": "ש״ס" },
-    "leader": { "en": "Aryeh Deri", "ru": "Арье Дери" },
-    "polls": { "avg": 8, "min": 7, "max": 9 } },
-  { "id": "otzma", "tier": "likely", "color": "#ca8a04",
-    "name": { "en": "Otzma Yehudit", "ru": "Оцма Йехудит", "he": "עוצמה יהודית" },
-    "leader": { "en": "Itamar Ben-Gvir", "ru": "Итамар Бен-Гвир" },
-    "polls": { "avg": 8, "min": 7, "max": 8 } },
-  { "id": "utj", "tier": "likely", "color": "#334155",
-    "name": { "en": "United Torah Judaism", "ru": "Яхадут ха-Тора", "he": "יהדות התורה" },
-    "leader": { "en": "Ya'akov Asher", "ru": "Яаков Ашер" },
-    "members": { "en": "Degel HaTorah, Agudat Yisrael", "ru": "«Дегель ха-Тора», «Агудат Исраэль»" },
-    "polls": { "avg": 8, "min": 7, "max": 8 } },
-  { "id": "yisrael-beiteinu", "tier": "likely", "color": "#2563eb",
-    "name": { "en": "Yisrael Beiteinu", "ru": "Наш дом — Израиль", "he": "ישראל ביתנו" },
-    "leader": { "en": "Avigdor Lieberman", "ru": "Авигдор Либерман" },
-    "polls": { "avg": 8, "min": 5, "max": 9 } },
-  { "id": "rzp", "tier": "likely", "color": "#ea580c",
-    "name": { "en": "Religious Zionism–Zehut", "ru": "Религиозный сионизм–Зеут", "he": "הציונות הדתית" },
-    "leader": { "en": "Bezalel Smotrich", "ru": "Бецалель Смотрич" },
-    "members": { "en": "Religious Zionist Party, Zehut", "ru": "«Религиозный сионизм», «Зеут»" },
-    "polls": { "avg": 7, "min": 6, "max": 8 } },
-  { "id": "raam", "tier": "likely", "color": "#15803d",
-    "name": { "en": "Ra'am", "ru": "РААМ", "he": "רע״ם" },
-    "leader": { "en": "Mansour Abbas", "ru": "Мансур Аббас" },
-    "polls": { "avg": 5, "min": 5, "max": 6 } },
-
-  { "id": "reservists", "tier": "borderline", "color": "#65a30d",
-    "name": { "en": "Reservists–New Economic Party", "ru": "Резервисты–Новая экономическая партия" },
-    "leader": { "en": "Yoaz Hendel", "ru": "Йоаз Хендель" },
-    "polls": { "avg": 3, "min": 0, "max": 4 } },
-  { "id": "amcha", "tier": "borderline", "color": "#7c3aed",
-    "name": { "en": "Amcha Yisrael", "ru": "Амха Исраэль", "he": "עמך ישראל" },
-    "leader": { "en": "Ofer Winter", "ru": "Офер Винтер" },
-    "polls": { "avg": 1, "min": 0, "max": 4 } },
-
-  { "id": "haredi-public", "tier": "unlikely", "color": "#57534e",
-    "name": { "en": "Haredi Public", "ru": "Харедимная общественность" },
-    "polls": { "avg": 0, "min": 0, "max": 0 } },
-  { "id": "noam", "tier": "unlikely", "color": "#78716c",
-    "name": { "en": "Noam", "ru": "Ноам", "he": "נעם" },
-    "leader": { "en": "Avi Maoz", "ru": "Ави Маоз" } },
-  { "id": "tzomet", "tier": "unlikely", "color": "#a8a29e",
-    "name": { "en": "Tzomet–Beit Yisrael", "ru": "Цомет–Бейт Исраэль" },
-    "leader": { "en": "Gadi Yevarkan", "ru": "Гади Йеваркан" } }
+  {
+    "id": "yashar",
+    "tier": "likely",
+    "bloc": "anti",
+    "color": "#0e7c86",
+    "name": {
+      "en": "Yashar",
+      "ru": "Яшар",
+      "he": "ישר!"
+    },
+    "leader": {
+      "en": "Gadi Eisenkot",
+      "ru": "Гади Айзенкот"
+    },
+    "polls": {
+      "avg": 22,
+      "min": 20,
+      "max": 23
+    },
+    "blocSources": [
+      "https://www.timesofisrael.com/liveblog_entry/eisenkot-vows-not-to-serve-in-a-netanyahu-government-even-under-rotation-deal/",
+      "https://jns.org/news/israel-news/eisenkot-rules-out-serving-under-netanyahu-even-in-rotation-deal"
+    ]
+  },
+  {
+    "id": "likud",
+    "tier": "likely",
+    "bloc": "pro",
+    "color": "#1d4ed8",
+    "name": {
+      "en": "Likud",
+      "ru": "Ликуд",
+      "he": "הליכוד"
+    },
+    "leader": {
+      "en": "Benjamin Netanyahu",
+      "ru": "Биньямин Нетаньяху"
+    },
+    "members": {
+      "en": "Likud, New Hope",
+      "ru": "Ликуд, «Новая надежда»"
+    },
+    "polls": {
+      "avg": 22,
+      "min": 19,
+      "max": 30
+    },
+    "blocSources": [
+      "https://israelpolicyforum.org/wp-content/uploads/2026/10/Israels-Political-Parties-October-Update.pdf"
+    ]
+  },
+  {
+    "id": "together",
+    "tier": "likely",
+    "bloc": "anti",
+    "color": "#0891b2",
+    "name": {
+      "en": "Together",
+      "ru": "Вместе"
+    },
+    "leader": {
+      "en": "Naftali Bennett",
+      "ru": "Нафтали Беннет"
+    },
+    "members": {
+      "en": "Bennett 2026, Yesh Atid",
+      "ru": "«Беннет 2026», «Еш атид»"
+    },
+    "polls": {
+      "avg": 13,
+      "min": 11,
+      "max": 15
+    },
+    "blocSources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-together"
+    ]
+  },
+  {
+    "id": "democrats",
+    "tier": "likely",
+    "bloc": "anti",
+    "color": "#dc2626",
+    "name": {
+      "en": "The Democrats",
+      "ru": "Демократы",
+      "he": "הדמוקרטים"
+    },
+    "leader": {
+      "en": "Yair Golan",
+      "ru": "Яир Голан"
+    },
+    "members": {
+      "en": "Labor, Meretz",
+      "ru": "«Авода», МЕРЕЦ"
+    },
+    "polls": {
+      "avg": 9,
+      "min": 8,
+      "max": 10
+    },
+    "blocSources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-democrats",
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://www.timesofisrael.com/liveblog_entry/no-ideology-no-love-for-the-country-yair-golan-assails-government-over-haredi-conscription-law/"
+    ]
+  },
+  {
+    "id": "joint-list",
+    "tier": "likely",
+    "bloc": "other",
+    "color": "#16a34a",
+    "name": {
+      "en": "Joint List",
+      "ru": "Объединённый список",
+      "he": "הרשימה המשותפת"
+    },
+    "leader": {
+      "en": "Yousef Jabareen",
+      "ru": "Юсеф Джабарин"
+    },
+    "members": {
+      "en": "Hadash, Ta'al, Balad",
+      "ru": "ХАДАШ, ТААЛ, БАЛАД"
+    },
+    "polls": {
+      "avg": 9,
+      "min": 8,
+      "max": 9
+    },
+    "blocSources": [
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://en.wikipedia.org/wiki/Joint_List"
+    ]
+  },
+  {
+    "id": "shas",
+    "tier": "likely",
+    "bloc": "pro",
+    "color": "#1e3a8a",
+    "name": {
+      "en": "Shas",
+      "ru": "ШАС",
+      "he": "ש״ס"
+    },
+    "leader": {
+      "en": "Aryeh Deri",
+      "ru": "Арье Дери"
+    },
+    "polls": {
+      "avg": 8,
+      "min": 7,
+      "max": 9
+    },
+    "blocSources": [
+      "https://en.wikipedia.org/wiki/2026_Israeli_legislative_election",
+      "https://www.timesofisrael.com/deri-says-like-utj-shas-wont-join-next-government-without-a-draft-exemption-law/"
+    ]
+  },
+  {
+    "id": "otzma",
+    "tier": "likely",
+    "bloc": "pro",
+    "color": "#ca8a04",
+    "name": {
+      "en": "Otzma Yehudit",
+      "ru": "Оцма Йехудит",
+      "he": "עוצמה יהודית"
+    },
+    "leader": {
+      "en": "Itamar Ben-Gvir",
+      "ru": "Итамар Бен-Гвир"
+    },
+    "polls": {
+      "avg": 8,
+      "min": 7,
+      "max": 8
+    },
+    "blocSources": [
+      "https://israelpolicyforum.org/wp-content/uploads/2026/10/Israels-Political-Parties-October-Update.pdf",
+      "https://israelpolicyforum.org/onetwenty/"
+    ]
+  },
+  {
+    "id": "utj",
+    "tier": "likely",
+    "bloc": "pro",
+    "color": "#334155",
+    "name": {
+      "en": "United Torah Judaism",
+      "ru": "Яхадут ха-Тора",
+      "he": "יהדות התורה"
+    },
+    "leader": {
+      "en": "Ya'akov Asher",
+      "ru": "Яаков Ашер"
+    },
+    "members": {
+      "en": "Degel HaTorah, Agudat Yisrael",
+      "ru": "«Дегель ха-Тора», «Агудат Исраэль»"
+    },
+    "polls": {
+      "avg": 8,
+      "min": 7,
+      "max": 8
+    },
+    "blocSources": [
+      "https://en.wikipedia.org/wiki/2026_Israeli_legislative_election",
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://www.timesofisrael.com/deri-says-like-utj-shas-wont-join-next-government-without-a-draft-exemption-law/"
+    ]
+  },
+  {
+    "id": "yisrael-beiteinu",
+    "tier": "likely",
+    "bloc": "anti",
+    "color": "#2563eb",
+    "name": {
+      "en": "Yisrael Beiteinu",
+      "ru": "Наш дом — Израиль",
+      "he": "ישראל ביתנו"
+    },
+    "leader": {
+      "en": "Avigdor Lieberman",
+      "ru": "Авигдор Либерман"
+    },
+    "polls": {
+      "avg": 8,
+      "min": 5,
+      "max": 9
+    },
+    "blocSources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu"
+    ]
+  },
+  {
+    "id": "rzp",
+    "tier": "likely",
+    "bloc": "pro",
+    "color": "#ea580c",
+    "name": {
+      "en": "Religious Zionism–Zehut",
+      "ru": "Религиозный сионизм–Зеут",
+      "he": "הציונות הדתית"
+    },
+    "leader": {
+      "en": "Bezalel Smotrich",
+      "ru": "Бецалель Смотрич"
+    },
+    "members": {
+      "en": "Religious Zionist Party, Zehut",
+      "ru": "«Религиозный сионизм», «Зеут»"
+    },
+    "polls": {
+      "avg": 7,
+      "min": 6,
+      "max": 8
+    },
+    "blocSources": [
+      "https://israelpolicyforum.org/wp-content/uploads/2026/10/Israels-Political-Parties-October-Update.pdf",
+      "https://en.wikipedia.org/wiki/2026_Israeli_legislative_election"
+    ]
+  },
+  {
+    "id": "raam",
+    "tier": "likely",
+    "bloc": "anti",
+    "color": "#15803d",
+    "name": {
+      "en": "Ra'am",
+      "ru": "РААМ",
+      "he": "רע״ם"
+    },
+    "leader": {
+      "en": "Mansour Abbas",
+      "ru": "Мансур Аббас"
+    },
+    "polls": {
+      "avg": 5,
+      "min": 5,
+      "max": 6
+    },
+    "blocSources": [
+      "https://en.wikipedia.org/wiki/United_Arab_List",
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://www.i24news.tv/en/news/israel/politics/artc-abbas-brings-palestinian-statehood-into-election-pitch-drawing-eisenkot-netanyahu-rebukes",
+      "https://www.clickondetroit.com/news/world/2026/10/16/israels-arab-led-parties-could-decide-the-election-if-anyone-would-partner-with-them/"
+    ]
+  },
+  {
+    "id": "reservists",
+    "tier": "borderline",
+    "bloc": "other",
+    "color": "#65a30d",
+    "name": {
+      "en": "Reservists–New Economic Party",
+      "ru": "Резервисты–Новая экономическая партия"
+    },
+    "leader": {
+      "en": "Yoaz Hendel",
+      "ru": "Йоаз Хендель"
+    },
+    "polls": {
+      "avg": 3,
+      "min": 0,
+      "max": 4
+    },
+    "blocSources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party",
+      "https://en.wikipedia.org/wiki/The_Reservists_(political_party)"
+    ]
+  },
+  {
+    "id": "amcha",
+    "tier": "borderline",
+    "bloc": "pro",
+    "color": "#7c3aed",
+    "name": {
+      "en": "Amcha Yisrael",
+      "ru": "Амха Исраэль",
+      "he": "עמך ישראל"
+    },
+    "leader": {
+      "en": "Ofer Winter",
+      "ru": "Офер Винтер"
+    },
+    "polls": {
+      "avg": 1,
+      "min": 0,
+      "max": 4
+    },
+    "blocSources": [
+      "https://jewishinsider.com/2026/10/amcha-yisrael-leader-ofer-winter-israeli-elections/",
+      "https://jpost.com/israel-election-2026/article-906571"
+    ]
+  },
+  {
+    "id": "haredi-public",
+    "tier": "unlikely",
+    "bloc": "other",
+    "color": "#57534e",
+    "name": {
+      "en": "Haredi Public",
+      "ru": "Харедимная общественность"
+    },
+    "polls": {
+      "avg": 0,
+      "min": 0,
+      "max": 0
+    },
+    "blocSources": [
+      "https://www.timesofisrael.com/liveblog_entry/charedi-public-party-leader-leitner-refuses-to-quit-election-race-despite-pressure-from-netanyahu/",
+      "https://jpost.com/israel-election-2026/article-908761"
+    ]
+  },
+  {
+    "id": "noam",
+    "tier": "unlikely",
+    "bloc": "pro",
+    "color": "#78716c",
+    "name": {
+      "en": "Noam",
+      "ru": "Ноам",
+      "he": "נעם"
+    },
+    "leader": {
+      "en": "Avi Maoz",
+      "ru": "Ави Маоз"
+    },
+    "blocSources": [
+      "https://israelpolicyforum.org/wp-content/uploads/2026/10/Israels-Political-Parties-October-Update.pdf",
+      "https://jpost.com/israel-news/politics-and-diplomacy/article-904171"
+    ]
+  },
+  {
+    "id": "tzomet",
+    "tier": "unlikely",
+    "bloc": "other",
+    "color": "#a8a29e",
+    "name": {
+      "en": "Tzomet–Beit Yisrael",
+      "ru": "Цомет–Бейт Исраэль"
+    },
+    "leader": {
+      "en": "Gadi Yevarkan",
+      "ru": "Гади Йеваркан"
+    },
+    "blocSources": [
+      "https://www.idi.org.il/media/32335/צומת-בית-ישראל.pdf",
+      "https://en.wikipedia.org/wiki/Gadi_Yevarkan"
+    ]
+  }
 ]

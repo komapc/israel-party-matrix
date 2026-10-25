@@ -23,8 +23,13 @@ All content lives in `src/data/` as JSON; the schema is in `src/types.ts`.
 | `aspects.json` | Issues. Each has a `low` and `high` pole; scores run -2 … +2 between them |
 | `tiers.json` | Party groups by chance of crossing the 3.25% threshold |
 | `parties.json` | Lists on the ballot: names (en/ru/he), leader, member parties, tier, poll range |
+| `blocs.json` | Stance toward a Netanyahu-led government (pro / anti / other) |
 | `meta.json` | Election date, poll snapshot date, poll sources |
 | `positions.json` | One entry per party × issue: `score` (-2…2 or `null`), note, sources |
 
 Scores describe *where* a party sits between the two poles, not whether that is good or bad.
 Every position should cite at least one source.
+
+## Deploy
+
+Pushing to `main` builds and deploys to GitHub Pages via `.github/workflows/deploy.yml`.
