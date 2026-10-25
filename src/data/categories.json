@@ -1,0 +1,7 @@
+[
+  { "id": "security", "name": { "en": "Security & conflict", "ru": "Безопасность и конфликт" } },
+  { "id": "state", "name": { "en": "State & religion", "ru": "Государство и религия" } },
+  { "id": "governance", "name": { "en": "Governance", "ru": "Государственное устройство" } },
+  { "id": "economy", "name": { "en": "Economy", "ru": "Экономика" } },
+  { "id": "society", "name": { "en": "Society", "ru": "Общество" } }
+]
