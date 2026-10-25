@@ -33,7 +33,8 @@ const partiesByTier = new Map(
 );
 
 let lang: Lang = initialLang();
-const collapsed = loadCollapsed();
+// By default every issue category starts collapsed; party tiers stay open.
+const collapsed = loadCollapsed(categories.map((c) => `cat:${c.id}`));
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 

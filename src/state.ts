@@ -1,14 +1,14 @@
-const KEY = 'matrix.collapsed';
+const KEY = 'matrix.collapsed.v2';
 
 /** Ids of collapsed sections (categories as `cat:<id>`, party tiers as `tier:<id>`). */
-export function loadCollapsed(): Set<string> {
+export function loadCollapsed(defaults: string[]): Set<string> {
   try {
     const raw = localStorage.getItem(KEY);
     if (raw) return new Set(JSON.parse(raw) as string[]);
   } catch {
     // storage unavailable or corrupt — start fresh
   }
-  return new Set();
+  return new Set(defaults);
 }
 
 export function saveCollapsed(set: Set<string>): void {
