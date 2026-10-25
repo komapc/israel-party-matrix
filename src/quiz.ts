@@ -40,6 +40,13 @@ export function toggleImportant(aspect: string): void {
   save();
 }
 
+/** Replaces all answers, e.g. with ones from a shared link. */
+export function loadAnswers(next: Map<string, Answer>): void {
+  answers.clear();
+  next.forEach((v, k) => answers.set(k, v));
+  save();
+}
+
 export function resetQuiz(): void {
   answers.clear();
   save();
@@ -88,8 +95,9 @@ function renderQuestion(aspectId: string, lang: Lang): string {
   return `
     <li class="question${ans ? ' question--answered' : ''}">
       <div class="question__head">
-        <h3>${a.claim[lang]}</h3>
-        <p class="question__poles">${a.low[lang]} ↔ ${a.high[lang]}</p>
+        <p class="question__topic">${a.name[lang]}</p>
+        <h3>${a.question?.[lang] ?? a.claim[lang]}</h3>
+        ${a.context ? `<p class="question__context">${a.context[lang]}</p>` : ''}
       </div>
       <div class="answers" role="group" aria-label="${esc(a.claim[lang])}">${buttons}</div>
       <label class="important${ans ? '' : ' important--off'}">
@@ -99,7 +107,7 @@ function renderQuestion(aspectId: string, lang: Lang): string {
     </li>`;
 }
 
-function renderResults(lang: Lang): string {
+function renderResults(lang: Lang, mapHref: string): string {
   if (!hasEnoughAnswers()) return `<p class="results__empty">${ui.quizNeedMore[lang]}</p>`;
   const rows = matches()
     .map(({ party, match, compared }) => {
@@ -118,12 +126,13 @@ function renderResults(lang: Lang): string {
   return `
     <ol class="results__list">${rows}</ol>
     <div class="results__actions">
-      <a class="btn btn--primary" href="#map" data-show-me>${ui.quizOnMap[lang]}</a>
+      <a class="btn btn--primary" href="${mapHref}">${ui.quizOnMap[lang]}</a>
+      <button type="button" class="btn" data-quiz-share>${ui.quizShare[lang]}</button>
       <button type="button" class="btn" data-quiz-reset>${ui.quizReset[lang]}</button>
     </div>`;
 }
 
-export function renderQuiz(lang: Lang): string {
+export function renderQuiz(lang: Lang, mapHref: string): string {
   const sections = categories
     .map((c) => {
       const qs = aspects.filter((a) => a.category === c.id).map((a) => renderQuestion(a.id, lang));
@@ -139,7 +148,7 @@ export function renderQuiz(lang: Lang): string {
       <aside class="results" aria-live="polite">
         <h2>${ui.quizResults[lang]}</h2>
         <p class="results__progress">${answers.size} / ${aspects.length} ${ui.answered[lang]}</p>
-        ${renderResults(lang)}
+        ${renderResults(lang, mapHref)}
         <p class="results__note">${ui.quizNote[lang]}</p>
       </aside>
     </div>`;

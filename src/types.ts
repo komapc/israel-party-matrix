@@ -15,6 +15,10 @@ export interface Aspect {
   name: Localized;
   /** The `high` pole phrased as a proposition: ✓ = party supports it. */
   claim: Localized;
+  /** Full neutral statement for the quiz. */
+  question?: Localized;
+  /** What is at stake and the main arguments on each side. */
+  context?: Localized;
   low: Localized;
   high: Localized;
 }
