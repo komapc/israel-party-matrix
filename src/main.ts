@@ -5,16 +5,18 @@ import {
   blocOf,
   blocs,
   categories,
+  counted,
   esc,
   meta,
   parties,
   partyById,
   positionIndex,
+  seatsOf,
   tiers,
 } from './data';
 import { initAnalytics, track } from './analytics';
 import { HEADINGS, intro, renderFaq, subtitle } from './faq';
-import { LANGS, LANG_LABELS, formatDateIn, initialLang, isRtl, saveLang, ui } from './i18n';
+import { LANGS, LANG_LABELS, formatDateIn, formatPct, initialLang, isRtl, saveLang, ui } from './i18n';
 import { renderMap, renderMapPreview } from './map';
 import { answers, loadAnswers, matches, renderQuiz, resetQuiz, setAnswer, takeJustCompleted, toggleImportant } from './quiz';
 import { DEFAULT_MAP, type Route, VIEWS, decodeAnswers, encodeAnswers, formatRoute, parseRoute } from './route';
@@ -29,7 +31,7 @@ const partiesByTier = new Map(
     t.id,
     parties
       .filter((p) => p.tier === t.id)
-      .sort((a, b) => blocOrder(a) - blocOrder(b) || (b.polls?.avg ?? 0) - (a.polls?.avg ?? 0)),
+      .sort((a, b) => blocOrder(a) - blocOrder(b) || seatsOf(b) - seatsOf(a)),
   ]),
 );
 
@@ -98,7 +100,11 @@ function renderToolbar(): string {
     <div class="toolbar">
       <dl class="facts">
         <div><dt>${ui.election[lang]}</dt><dd>${formatDate(meta.electionDate)}</dd></div>
-        <div><dt>${ui.pollsAsOf[lang]}</dt><dd>${formatDate(meta.pollsAsOf)}</dd></div>
+        <div><dt>${dataAsOf()}</dt><dd>${
+          meta.results
+            ? `<a href="${esc(meta.results.source)}" target="_blank" rel="noopener noreferrer">${formatDate(meta.results.asOf)}</a>`
+            : formatDate(meta.pollsAsOf)
+        }</dd></div>
       </dl>
       ${renderBlocs()}
       <div class="legend">${[2, 1, 0, -1, -2]
@@ -111,20 +117,35 @@ function renderToolbar(): string {
     </div>`;
 }
 
-/** Seat totals per bloc, counting only parties expected to pass. */
+/** "Polls as of" or, once counted, "(Preliminary) results as of". */
+function dataAsOf(): string {
+  if (!meta.results) return ui.pollsAsOf[lang];
+  return meta.results.final ? ui.resultsAsOf[lang] : ui.resultsPrelim[lang];
+}
+
+/** Seat totals per bloc, counting only parties expected to pass (or, once counted, that won seats). */
 function renderBlocs(): string {
   const chips = blocs
     .map((b) => {
       const seats = parties
-        .filter((p) => p.bloc === b.id && p.tier === 'likely')
-        .reduce((n, p) => n + (p.polls?.avg ?? 0), 0);
-      return `<span class="bloc-chip bloc-chip--${b.id}"><i></i>${b.name[lang]} <b>~${seats}</b></span>`;
+        .filter((p) => p.bloc === b.id && (counted || p.tier === 'likely'))
+        .reduce((n, p) => n + seatsOf(p), 0);
+      return `<span class="bloc-chip bloc-chip--${b.id}"><i></i>${b.name[lang]} <b>${counted ? '' : '~'}${seats}</b></span>`;
     })
     .join('');
-  return `<div class="blocs"><span class="blocs__label">${ui.blocs[lang]}</span>${chips}</div>`;
+  return `<div class="blocs"><span class="blocs__label">${counted ? ui.blocsResults[lang] : ui.blocs[lang]}</span>${chips}</div>`;
 }
 
 function renderPolls(p: Party): string {
+  if (counted) {
+    const { seats = 0, pct } = p.result ?? {};
+    const share = pct === undefined ? '' : ` <span class="party__range">(${formatPct(lang, pct)})</span>`;
+    // Mid-count, a list right at the threshold is neither in nor out yet.
+    if (seats === 0 && p.tier === 'borderline' && pct !== undefined)
+      return `<span class="party__polls" title="${ui.resultTitle[lang]}">${formatPct(lang, pct)}</span>`;
+    if (seats === 0) return `<span class="party__polls party__polls--none">${ui.belowThreshold[lang]}${share}</span>`;
+    return `<span class="party__polls" title="${ui.resultTitle[lang]}">${seats}${share}</span>`;
+  }
   if (!p.polls) return `<span class="party__polls party__polls--none">${ui.notPolled[lang]}</span>`;
   const { avg, min, max } = p.polls;
   if (max === 0) return `<span class="party__polls party__polls--none">${ui.belowThreshold[lang]}</span>`;
@@ -295,7 +316,7 @@ function openParty(id: string): void {
   const facts = [
     p.leader && `<div><dt>${ui.leader[lang]}</dt><dd>${esc(p.leader[lang])}</dd></div>`,
     p.members && `<div><dt>${ui.members[lang]}</dt><dd>${esc(p.members[lang])}</dd></div>`,
-    `<div><dt>${ui.seatsShort[lang]}</dt><dd>${renderPolls(p)}</dd></div>`,
+    `<div><dt>${counted ? ui.seatsWon[lang] : ui.seatsShort[lang]}</dt><dd>${renderPolls(p)}</dd></div>`,
   ]
     .filter(Boolean)
     .join('');
@@ -351,7 +372,7 @@ function renderFooter(): string {
         <div class="footer__brand">
           <b>${ui.title[lang]}</b>
           <p>${ui.footAbout[lang]}</p>
-          <p>${ui.pollsAsOf[lang]} ${formatDate(meta.pollsAsOf)}</p>
+          <p>${dataAsOf()} ${formatDate(meta.results?.asOf ?? meta.pollsAsOf)}</p>
         </div>
         <nav aria-label="${ui.footViews[lang]}">
           <h3>${ui.footViews[lang]}</h3>

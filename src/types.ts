@@ -30,6 +30,8 @@ export interface Tiers {
   id: Tier;
   name: Localized;
   hint: Localized;
+  /** Name and hint once results are in (`meta.results`). */
+  results: { name: Localized; hint: Localized };
 }
 
 /** Seat projections across the polls listed in `meta.json`. 0 = below threshold. */
@@ -62,6 +64,8 @@ export interface Party {
   blocNote?: Localized;
   blocSources?: string[];
   polls?: PollRange;
+  /** Seats won (0 = below threshold); used instead of `polls` once `meta.results` is set. */
+  result?: { seats: number; pct?: number };
   /** Display color for the column accent — not an official party color. */
   color: string;
 }
@@ -81,6 +85,13 @@ export interface Meta {
   electionDate: string;
   pollsAsOf: string;
   pollSources: string[];
+  /** Set once votes are counted: the site then shows each party's `result` instead of its polls. */
+  results?: {
+    asOf: string;
+    /** false while the count (soldiers' and other double-envelope votes) is still going on. */
+    final: boolean;
+    source: string;
+  };
 }
 
 /** A map axis: the signed mean of several issue scores, from `low` (-2) to `high` (+2). */
