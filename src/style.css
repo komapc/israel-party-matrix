@@ -415,6 +415,8 @@ h1 {
 
 .party__polls {
   display: inline-block;
+  direction: ltr; /* keeps "~8" from turning into "8~" in Hebrew */
+  unicode-bidi: isolate;
   margin-top: 6px;
   padding: 1px 8px;
   border-radius: 999px;
@@ -745,9 +747,77 @@ dialog::backdrop {
   border-color: var(--accent);
 }
 
+/* Fade over the far edge while more parties are scrolled out of view. */
+.matrix-box {
+  position: relative;
+}
+
+.matrix-box::after {
+  content: '';
+  position: absolute;
+  inset-block: 1px;
+  inset-inline-end: 1px;
+  width: 48px;
+  border-start-end-radius: var(--radius);
+  border-end-end-radius: var(--radius);
+  background: linear-gradient(to left, var(--surface), transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+[dir='rtl'] .matrix-box::after {
+  background: linear-gradient(to right, var(--surface), transparent);
+}
+
+.matrix-box--more::after {
+  opacity: 1;
+}
+
+.scroll-hint {
+  display: none;
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--text-2);
+}
+
 @media (max-width: 600px) {
   #app { padding-top: 20px; }
-  :root { --aspect-w: 160px; }
+  :root { --aspect-w: 112px; }
+
+  .masthead {
+    flex-direction: column-reverse;
+    gap: 14px;
+  }
+
+  .lang-switch {
+    align-self: flex-end;
+  }
+
+  .scroll-hint {
+    display: block;
+  }
+
+  /* Narrow party columns so several fit on screen; leader and Hebrew name stay in the party card. */
+  .party {
+    min-width: 84px;
+  }
+
+  .party__he,
+  .party__leader,
+  .party__bloc,
+  .party__range {
+    display: none;
+  }
+
+  .party__name {
+    font-size: 13px;
+  }
+
+  .matrix th,
+  .matrix td {
+    padding: 8px 6px;
+  }
 }
 
 /* Right-to-left (Hebrew): closed chevrons point toward the reading direction. */
@@ -1199,4 +1269,37 @@ dialog::backdrop {
   .me text {
     font-size: 17px;
   }
+}
+
+.faq {
+  margin-top: 48px;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+.faq h2 {
+  font-size: 1.25rem;
+  margin: 0 0 16px;
+}
+
+.faq__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 20px 32px;
+}
+
+.faq h3 {
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+
+.faq p {
+  margin: 0;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+.intro a,
+.faq a {
+  color: var(--accent);
 }

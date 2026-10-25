@@ -1,4 +1,5 @@
 import { aspectById, dimensions, meta, partyById, positionIndex } from './data';
+import { faqItems } from './faq';
 import { LANGS, LOCALES, ui } from './i18n';
 import { type Route, formatRoute, pagePath } from './route';
 import type { Lang } from './types';
@@ -158,6 +159,20 @@ export function updateHead(route: Route, lang: Lang): void {
     ld.type = 'application/ld+json';
     document.head.append(ld);
   }
+  const page = (view: Route['view']) => SITE + pagePath({ ...clean, view });
+  const faq =
+    route.view === 'matrix' && !route.party && !route.issue
+      ? [
+          {
+            '@type': 'FAQPage',
+            mainEntity: faqItems(lang, {
+              quiz: page('quiz'),
+              map: page('map'),
+              report: 'https://github.com/komapc/israel-party-matrix/issues/new',
+            }).map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+          },
+        ]
+      : [];
   ld.textContent = JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -180,6 +195,7 @@ export function updateHead(route: Route, lang: Lang): void {
         isAccessibleForFree: true,
         creator: { '@type': 'Person', name: 'Mark Kahn', url: 'https://lipu.dev/' },
       },
+      ...faq,
     ],
   });
 }

@@ -11,6 +11,18 @@ export const LOCALES: Record<Lang, string> = { en: 'en-GB', ru: 'ru-RU', uk: 'uk
 
 export const isRtl = (lang: Lang) => lang === 'he';
 
+// Browsers ship no Esperanto date names.
+const EO_MONTHS = ['januaro', 'februaro', 'marto', 'aprilo', 'majo', 'junio', 'julio', 'aŭgusto', 'septembro', 'oktobro', 'novembro', 'decembro'];
+
+/** A date like 27 October 2026, in the given language. */
+export function formatDateIn(lang: Lang, iso: string): string {
+  if (lang === 'eo') {
+    const [y, m, d] = iso.split('-').map(Number);
+    return `${d}-a de ${EO_MONTHS[m - 1]} ${y}`;
+  }
+  return new Date(`${iso}T12:00:00`).toLocaleDateString(LOCALES[lang], { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
 export const ui = {
   title: {
     en: 'Israeli Parties Matrix',
@@ -57,6 +69,13 @@ export const ui = {
   seatsShort: { en: 'Projected seats', ru: 'Прогноз мест', uk: 'Прогноз місць', he: 'מנדטים צפויים', eo: 'Antaŭviditaj seĝoj' },
   leader: { en: 'Leader', ru: 'Лидер', uk: 'Лідер', he: 'יו"ר', eo: 'Gvidanto' },
   members: { en: 'Joint list', ru: 'Состав списка', uk: 'Склад списку', he: 'הרכב הרשימה', eo: 'Komuna listo' },
+  scrollHint: {
+    en: 'Swipe the table sideways to see all parties →',
+    ru: 'Листайте таблицу вбок, чтобы увидеть все партии →',
+    uk: 'Гортайте таблицю вбік, щоб побачити всі партії →',
+    he: 'גללו את הטבלה הצידה כדי לראות את כל המפלגות ←',
+    eo: 'Ŝovu la tabelon flanken por vidi ĉiujn partiojn →',
+  },
   expandAll: { en: 'Expand all', ru: 'Развернуть всё', uk: 'Розгорнути все', he: 'הרחבת הכול', eo: 'Malfaldi ĉion' },
   collapseAll: { en: 'Collapse all', ru: 'Свернуть всё', uk: 'Згорнути все', he: 'כיווץ הכול', eo: 'Faldi ĉion' },
   partiesCount: { en: 'parties', ru: 'партий', uk: 'партій', he: 'מפלגות', eo: 'partioj' },
