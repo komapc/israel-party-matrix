@@ -1,11 +1,47 @@
 [
-  { "id": "likely",
-    "name": { "en": "Expected to pass", "ru": "Пройдут" },
-    "hint": { "en": "Above the threshold in every recent poll", "ru": "Выше барьера во всех последних опросах" } },
-  { "id": "borderline",
-    "name": { "en": "Borderline", "ru": "Могут пройти" },
-    "hint": { "en": "Polling around the 3.25% threshold", "ru": "Около барьера 3,25%" } },
-  { "id": "unlikely",
-    "name": { "en": "Unlikely", "ru": "Остальные" },
-    "hint": { "en": "Below the threshold in polls, or not polled", "ru": "Ниже барьера или не включены в опросы" } }
+  {
+    "id": "likely",
+    "name": {
+      "en": "Expected to pass",
+      "ru": "Пройдут",
+      "he": "צפויות לעבור",
+      "eo": "Atendata eniri"
+    },
+    "hint": {
+      "en": "Above the threshold in every recent poll",
+      "ru": "Выше барьера во всех последних опросах",
+      "he": "מעל אחוז החסימה בכל הסקרים האחרונים",
+      "eo": "Super la sojlo en ĉiu lastatempa enketo"
+    }
+  },
+  {
+    "id": "borderline",
+    "name": {
+      "en": "Borderline",
+      "ru": "Могут пройти",
+      "he": "על הגבול",
+      "eo": "Ĉe la limo"
+    },
+    "hint": {
+      "en": "Polling around the 3.25% threshold",
+      "ru": "Около барьера 3,25%",
+      "he": "בסקרים סביב אחוז החסימה (3.25%)",
+      "eo": "Ĉirkaŭ la sojlo de 3,25% en enketoj"
+    }
+  },
+  {
+    "id": "unlikely",
+    "name": {
+      "en": "Unlikely",
+      "ru": "Остальные",
+      "he": "לא צפויות לעבור",
+      "eo": "Malverŝajne"
+    },
+    "hint": {
+      "en": "Below the threshold in polls, or not polled",
+      "ru": "Ниже барьера или не включены в опросы",
+      "he": "מתחת לאחוז החסימה בסקרים, או שלא נסקרו",
+      "eo": "Sub la sojlo en enketoj, aŭ ne enketita"
+    }
+  }
 ]
