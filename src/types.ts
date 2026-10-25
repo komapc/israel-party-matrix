@@ -13,6 +13,8 @@ export interface Aspect {
   id: string;
   category: string;
   name: Localized;
+  /** The `high` pole phrased as a proposition: ✓ = party supports it. */
+  claim: Localized;
   low: Localized;
   high: Localized;
 }

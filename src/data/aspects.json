@@ -1,41 +1,262 @@
 [
-  { "id": "two-states", "category": "security",
-    "name": { "en": "Palestinian state", "ru": "Палестинское государство" },
-    "low": { "en": "Opposes", "ru": "Против" }, "high": { "en": "Supports", "ru": "За" } },
-  { "id": "settlements", "category": "security",
-    "name": { "en": "West Bank settlements", "ru": "Поселения на Западном берегу" },
-    "low": { "en": "Freeze / evacuate", "ru": "Заморозка / эвакуация" }, "high": { "en": "Expand / annex", "ru": "Расширение / аннексия" } },
-  { "id": "gaza", "category": "security",
-    "name": { "en": "Gaza policy", "ru": "Политика в отношении Газы" },
-    "low": { "en": "Negotiated settlement", "ru": "Переговорное урегулирование" }, "high": { "en": "Military control", "ru": "Военный контроль" } },
-  { "id": "haredi-draft", "category": "state",
-    "name": { "en": "Haredi conscription", "ru": "Призыв харедим" },
-    "low": { "en": "Keep exemptions", "ru": "Сохранить освобождение" }, "high": { "en": "Universal draft", "ru": "Всеобщий призыв" } },
-  { "id": "religion-state", "category": "state",
-    "name": { "en": "Religion in public life", "ru": "Религия в общественной жизни" },
-    "low": { "en": "Secular", "ru": "Светскость" }, "high": { "en": "Religious law", "ru": "Религиозный закон" } },
-  { "id": "civil-marriage", "category": "state",
-    "name": { "en": "Civil marriage", "ru": "Гражданский брак" },
-    "low": { "en": "Opposes", "ru": "Против" }, "high": { "en": "Supports", "ru": "За" } },
-  { "id": "judicial-reform", "category": "governance",
-    "name": { "en": "Judicial overhaul", "ru": "Судебная реформа" },
-    "low": { "en": "Opposes", "ru": "Против" }, "high": { "en": "Supports", "ru": "За" } },
-  { "id": "constitution", "category": "governance",
-    "name": { "en": "Written constitution", "ru": "Писаная конституция" },
-    "low": { "en": "Opposes", "ru": "Против" }, "high": { "en": "Supports", "ru": "За" } },
-  { "id": "market", "category": "economy",
-    "name": { "en": "Economic model", "ru": "Экономическая модель" },
-    "low": { "en": "Welfare state", "ru": "Социальное государство" }, "high": { "en": "Free market", "ru": "Свободный рынок" } },
-  { "id": "cost-of-living", "category": "economy",
-    "name": { "en": "Cost of living & housing", "ru": "Стоимость жизни и жильё" },
-    "low": { "en": "Market solutions", "ru": "Рыночные решения" }, "high": { "en": "State intervention", "ru": "Госвмешательство" } },
-  { "id": "lgbt", "category": "society",
-    "name": { "en": "LGBTQ rights", "ru": "Права ЛГБТ" },
-    "low": { "en": "Opposes", "ru": "Против" }, "high": { "en": "Supports", "ru": "За" } },
-  { "id": "arab-citizens", "category": "society",
-    "name": { "en": "Arab citizens' equality", "ru": "Равенство арабских граждан" },
-    "low": { "en": "Nation-state priority", "ru": "Приоритет еврейского государства" }, "high": { "en": "Full civic equality", "ru": "Полное гражданское равенство" } },
-  { "id": "immigration", "category": "society",
-    "name": { "en": "Aliyah & Law of Return", "ru": "Алия и Закон о возвращении" },
-    "low": { "en": "Restrict eligibility", "ru": "Сузить право" }, "high": { "en": "Keep / broaden", "ru": "Сохранить / расширить" } }
+  {
+    "id": "two-states",
+    "category": "security",
+    "name": {
+      "en": "Palestinian state",
+      "ru": "Палестинское государство"
+    },
+    "claim": {
+      "en": "Palestinian state",
+      "ru": "Палестинское государство"
+    },
+    "low": {
+      "en": "Opposes",
+      "ru": "Против"
+    },
+    "high": {
+      "en": "Supports",
+      "ru": "За"
+    }
+  },
+  {
+    "id": "settlements",
+    "category": "security",
+    "name": {
+      "en": "West Bank settlements",
+      "ru": "Поселения на Западном берегу"
+    },
+    "claim": {
+      "en": "Expanding settlements / annexation",
+      "ru": "Расширение поселений / аннексия"
+    },
+    "low": {
+      "en": "Freeze / evacuate",
+      "ru": "Заморозка / эвакуация"
+    },
+    "high": {
+      "en": "Expand / annex",
+      "ru": "Расширение / аннексия"
+    }
+  },
+  {
+    "id": "gaza",
+    "category": "security",
+    "name": {
+      "en": "Gaza policy",
+      "ru": "Политика в отношении Газы"
+    },
+    "claim": {
+      "en": "Military control of Gaza",
+      "ru": "Военный контроль над Газой"
+    },
+    "low": {
+      "en": "Negotiated settlement",
+      "ru": "Переговорное урегулирование"
+    },
+    "high": {
+      "en": "Military control",
+      "ru": "Военный контроль"
+    }
+  },
+  {
+    "id": "haredi-draft",
+    "category": "state",
+    "name": {
+      "en": "Haredi conscription",
+      "ru": "Призыв харедим"
+    },
+    "claim": {
+      "en": "Drafting Haredim (universal service)",
+      "ru": "Призыв харедим (всеобщая служба)"
+    },
+    "low": {
+      "en": "Keep exemptions",
+      "ru": "Сохранить освобождение"
+    },
+    "high": {
+      "en": "Universal draft",
+      "ru": "Всеобщий призыв"
+    }
+  },
+  {
+    "id": "religion-state",
+    "category": "state",
+    "name": {
+      "en": "Religion in public life",
+      "ru": "Религия в общественной жизни"
+    },
+    "claim": {
+      "en": "Religious law in public life",
+      "ru": "Религиозный закон в общественной жизни"
+    },
+    "low": {
+      "en": "Secular",
+      "ru": "Светскость"
+    },
+    "high": {
+      "en": "Religious law",
+      "ru": "Религиозный закон"
+    }
+  },
+  {
+    "id": "civil-marriage",
+    "category": "state",
+    "name": {
+      "en": "Civil marriage",
+      "ru": "Гражданский брак"
+    },
+    "claim": {
+      "en": "Civil marriage",
+      "ru": "Гражданский брак"
+    },
+    "low": {
+      "en": "Opposes",
+      "ru": "Против"
+    },
+    "high": {
+      "en": "Supports",
+      "ru": "За"
+    }
+  },
+  {
+    "id": "judicial-reform",
+    "category": "governance",
+    "name": {
+      "en": "Judicial overhaul",
+      "ru": "Судебная реформа"
+    },
+    "claim": {
+      "en": "Judicial overhaul",
+      "ru": "Судебная реформа"
+    },
+    "low": {
+      "en": "Opposes",
+      "ru": "Против"
+    },
+    "high": {
+      "en": "Supports",
+      "ru": "За"
+    }
+  },
+  {
+    "id": "constitution",
+    "category": "governance",
+    "name": {
+      "en": "Written constitution",
+      "ru": "Писаная конституция"
+    },
+    "claim": {
+      "en": "Written constitution",
+      "ru": "Писаная конституция"
+    },
+    "low": {
+      "en": "Opposes",
+      "ru": "Против"
+    },
+    "high": {
+      "en": "Supports",
+      "ru": "За"
+    }
+  },
+  {
+    "id": "market",
+    "category": "economy",
+    "name": {
+      "en": "Economic model",
+      "ru": "Экономическая модель"
+    },
+    "claim": {
+      "en": "Free-market economy",
+      "ru": "Свободный рынок"
+    },
+    "low": {
+      "en": "Welfare state",
+      "ru": "Социальное государство"
+    },
+    "high": {
+      "en": "Free market",
+      "ru": "Свободный рынок"
+    }
+  },
+  {
+    "id": "cost-of-living",
+    "category": "economy",
+    "name": {
+      "en": "Cost of living & housing",
+      "ru": "Стоимость жизни и жильё"
+    },
+    "claim": {
+      "en": "State intervention on prices & housing",
+      "ru": "Госвмешательство в цены и жильё"
+    },
+    "low": {
+      "en": "Market solutions",
+      "ru": "Рыночные решения"
+    },
+    "high": {
+      "en": "State intervention",
+      "ru": "Госвмешательство"
+    }
+  },
+  {
+    "id": "lgbt",
+    "category": "society",
+    "name": {
+      "en": "LGBTQ rights",
+      "ru": "Права ЛГБТ"
+    },
+    "claim": {
+      "en": "LGBTQ rights",
+      "ru": "Права ЛГБТ"
+    },
+    "low": {
+      "en": "Opposes",
+      "ru": "Против"
+    },
+    "high": {
+      "en": "Supports",
+      "ru": "За"
+    }
+  },
+  {
+    "id": "arab-citizens",
+    "category": "society",
+    "name": {
+      "en": "Arab citizens' equality",
+      "ru": "Равенство арабских граждан"
+    },
+    "claim": {
+      "en": "Full civic equality for Arab citizens",
+      "ru": "Полное гражданское равенство арабских граждан"
+    },
+    "low": {
+      "en": "Nation-state priority",
+      "ru": "Приоритет еврейского государства"
+    },
+    "high": {
+      "en": "Full civic equality",
+      "ru": "Полное гражданское равенство"
+    }
+  },
+  {
+    "id": "immigration",
+    "category": "society",
+    "name": {
+      "en": "Aliyah & Law of Return",
+      "ru": "Алия и Закон о возвращении"
+    },
+    "claim": {
+      "en": "Keeping the Law of Return as is",
+      "ru": "Сохранение Закона о возвращении"
+    },
+    "low": {
+      "en": "Restrict eligibility",
+      "ru": "Сузить право"
+    },
+    "high": {
+      "en": "Keep / broaden",
+      "ru": "Сохранить / расширить"
+    }
+  }
 ]
