@@ -29,7 +29,11 @@
     "blocSources": [
       "https://www.timesofisrael.com/liveblog_entry/eisenkot-vows-not-to-serve-in-a-netanyahu-government-even-under-rotation-deal/",
       "https://jns.org/news/israel-news/eisenkot-rules-out-serving-under-netanyahu-even-in-rotation-deal"
-    ]
+    ],
+    "members": {
+      "en": "Yashar, Zionist Home",
+      "ru": "«Яшар», «Сионистский дом»"
+    }
   },
   {
     "id": "likud",
@@ -46,16 +50,16 @@
       "he": "הליכוד"
     },
     "summary": {
-      "en": "Israel's main right-wing party, led by Prime Minister Benjamin Netanyahu; runs jointly with Gideon Sa'ar's New Hope.",
-      "ru": "Главная правая партия Израиля во главе с премьер-министром Биньямином Нетаньяху; идёт единым списком с «Новой надеждой» Гидеона Саара."
+      "en": "Israel's main right-wing party, led by Prime Minister Benjamin Netanyahu; Gideon Sa'ar's New Hope merged into it in 2025.",
+      "ru": "Главная правая партия Израиля во главе с премьер-министром Биньямином Нетаньяху; в 2025 г. в неё влилась «Новая надежда» Гидеона Саара."
     },
     "leader": {
       "en": "Benjamin Netanyahu",
       "ru": "Биньямин Нетаньяху"
     },
     "members": {
-      "en": "Likud, New Hope",
-      "ru": "Ликуд, «Новая надежда»"
+      "en": "Likud (incl. merged New Hope)",
+      "ru": "Ликуд (включая влившуюся «Новую надежду»)"
     },
     "polls": {
       "avg": 22,
@@ -178,8 +182,8 @@
     "tier": "likely",
     "bloc": "pro",
     "blocNote": {
-      "en": "Member of Netanyahu's government and bloc; conditions any coalition on a draft-exemption law.",
-      "ru": "Входила в правительство и блок Нетаньяху; условие для любой коалиции — закон об освобождении от призыва."
+      "en": "Close Likud ally; left government posts in 2025-26 over the draft, but Deri wants a broad Netanyahu-led government.",
+      "ru": "Близкий союзник Ликуда; оставила посты в 2025–26 из-за призыва, но Дери хочет широкое правительство во главе с Нетаньяху."
     },
     "color": "#1e3a8a",
     "name": {
@@ -242,8 +246,8 @@
     "tier": "likely",
     "bloc": "pro",
     "blocNote": {
-      "en": "Left the coalition in 2025 but still counted in the Netanyahu bloc; Asher says UTJ 'belongs to no bloc'.",
-      "ru": "Вышла из коалиции в 2025, но по-прежнему считается в блоке Нетаньяху; Ашер говорит, что партия «вне блоков»."
+      "en": "Quit the coalition in 2025; Asher: UTJ 'belongs to no bloc', open to Eisenkot; Agudat's Porush rejects him. Polls count it pro.",
+      "ru": "Вышла из коалиции в 2025; Ашер: партия «вне блоков», открыт к Айзенкоту; Поруш («Агудат») против. В опросах — блок Нетаньяху."
     },
     "color": "#334155",
     "name": {
@@ -344,10 +348,10 @@
   {
     "id": "raam",
     "tier": "likely",
-    "bloc": "anti",
+    "bloc": "other",
     "blocNote": {
-      "en": "Pitches itself as a partner for an Eisenkot-led government; no formal pledge against Netanyahu.",
-      "ru": "Предлагает себя в партнёры правительству Айзенкота; формального отказа от Нетаньяху нет."
+      "en": "Non-aligned: urges a 'government of change' to replace Netanyahu and offers to partner Eisenkot, who rules out Arab parties.",
+      "ru": "Вне блоков: призывает к «правительству перемен» вместо Нетаньяху и предлагает партнёрство Айзенкоту, который отвергает арабские партии."
     },
     "color": "#15803d",
     "name": {
@@ -356,8 +360,8 @@
       "he": "רע״ם"
     },
     "summary": {
-      "en": "Arab party of Mansour Abbas, rooted in the Islamic Movement's southern branch (split in 2026); pragmatic, focused on Arab-community civil issues.",
-      "ru": "Арабская партия Мансура Аббаса, вышедшая из южной ветви Исламского движения (разрыв в 2026); прагматичная, сосредоточена на нуждах арабских граждан."
+      "en": "Arab party of Mansour Abbas, long the political arm of the Islamic Movement's southern branch; split from it in July 2026 to become a civic party. Ex-Yesh Atid MK Yoav Segalovitz is No. 2.",
+      "ru": "Арабская партия Мансура Аббаса, долго бывшая политическим крылом южной ветви Исламского движения; в июле 2026 отделилась от него и стала гражданской партией. №2 — экс-депутат «Еш Атид» Йоав Сегалович."
     },
     "leader": {
       "en": "Mansour Abbas",
@@ -369,10 +373,9 @@
       "max": 6
     },
     "blocSources": [
-      "https://en.wikipedia.org/wiki/United_Arab_List",
       "https://israelpolicyforum.org/onetwenty/",
-      "https://www.i24news.tv/en/news/israel/politics/artc-abbas-brings-palestinian-statehood-into-election-pitch-drawing-eisenkot-netanyahu-rebukes",
-      "https://www.clickondetroit.com/news/world/2026/10/16/israels-arab-led-parties-could-decide-the-election-if-anyone-would-partner-with-them/"
+      "https://www.timesofisrael.com/turnout-among-israels-arab-voters-could-make-or-break-hopes-to-unseat-netanyahu/",
+      "https://www.i24news.tv/en/news/israel/politics/artc-abbas-brings-palestinian-statehood-into-election-pitch-drawing-eisenkot-netanyahu-rebukes"
     ]
   },
   {
@@ -411,8 +414,8 @@
     "tier": "borderline",
     "bloc": "pro",
     "blocNote": {
-      "en": "Winter: Netanyahu is 'the only one we will recommend'.",
-      "ru": "Винтер: Нетаньяху — «единственный, кого мы рекомендуем»."
+      "en": "Winter pledged Netanyahu is 'the only one we will recommend'; on 21 Oct said that may have been a mistake, but stays in the right-wing camp.",
+      "ru": "Винтер обещал, что Нетаньяху — «единственный, кого мы рекомендуем»; 21 окт. сказал, что это могло быть ошибкой, но остаётся в правом лагере."
     },
     "color": "#7c3aed",
     "name": {
@@ -421,8 +424,8 @@
       "he": "עמך ישראל"
     },
     "summary": {
-      "en": "New right-wing party of former general Ofer Winter, combining national-religious values with security hawkishness.",
-      "ru": "Новая правая партия бывшего генерала Офера Винтера: национально-религиозные ценности и жёсткая линия в безопасности."
+      "en": "New right-wing party of former general Ofer Winter: security hawkishness, Jewish identity and socially conservative values; No. 2 is Arab activist Yoseph Haddad.",
+      "ru": "Новая правая партия бывшего генерала Офера Винтера: жёсткая линия в безопасности, еврейская идентичность и консервативные ценности; №2 — арабский активист Йосеф Хаддад."
     },
     "leader": {
       "en": "Ofer Winter",
@@ -443,8 +446,8 @@
     "tier": "unlikely",
     "bloc": "other",
     "blocNote": {
-      "en": "Refused Netanyahu's request to withdraw; no declared PM preference.",
-      "ru": "Отказалась сняться по просьбе Нетаньяху; кандидата в премьеры не назвала."
+      "en": "Refused Netanyahu's requests to quit; No. 4 Ziva Glanz prefers Netanyahu, rabbinic chair backs a unity government with Eisenkot.",
+      "ru": "Отказалась сняться по просьбе Нетаньяху; №4 Зива Гланц за Нетаньяху, глава раввинского совета — за единство с Айзенкотом."
     },
     "color": "#57534e",
     "name": {
@@ -463,7 +466,11 @@
     "blocSources": [
       "https://www.timesofisrael.com/liveblog_entry/charedi-public-party-leader-leitner-refuses-to-quit-election-race-despite-pressure-from-netanyahu/",
       "https://jpost.com/israel-election-2026/article-908761"
-    ]
+    ],
+    "leader": {
+      "en": "Moti Leitner",
+      "ru": "Моти Лейтнер"
+    }
   },
   {
     "id": "noam",
@@ -497,8 +504,8 @@
     "tier": "unlikely",
     "bloc": "other",
     "blocNote": {
-      "en": "No declared backing for any PM candidate found.",
-      "ru": "Заявлений о поддержке кандидата в премьеры не найдено."
+      "en": "Calls itself the 'third camp on the right'; no declared PM backing; talks to join Netanyahu allies fell through.",
+      "ru": "Называет себя «третьим лагерем в правом блоке»; кандидата в премьеры не назвала; переговоры с союзниками Нетаньяху сорвались."
     },
     "color": "#a8a29e",
     "name": {
@@ -515,7 +522,8 @@
     },
     "blocSources": [
       "https://www.idi.org.il/media/32335/צומת-בית-ישראל.pdf",
-      "https://en.wikipedia.org/wiki/Gadi_Yevarkan"
+      "https://www.c14.co.il/article/1668858",
+      "https://www.timesofisrael.com/everything-you-need-to-know-tois-guide-to-the-37-parties-that-israelis-can-finally-choose-from/"
     ]
   }
 ]
