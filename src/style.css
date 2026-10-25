@@ -842,8 +842,10 @@ dialog::backdrop {
   display: flex;
   gap: 4px;
   margin: 0 0 20px;
-  border-bottom: 1px solid var(--border);
+  /* An inset line instead of a border: tabs can't overhang it, so the row never scrolls vertically. */
+  box-shadow: inset 0 -1px var(--border);
   overflow-x: auto;
+  scrollbar-width: none;
 }
 
 .tab {
@@ -854,7 +856,6 @@ dialog::backdrop {
   font-size: 14px;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
 }
 
 .tab:hover {
@@ -1166,6 +1167,8 @@ dialog::backdrop {
   padding: 16px;
   max-height: calc(100vh - 32px);
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 
 .results h2 {
