@@ -155,12 +155,12 @@
     "aspect": "immigration",
     "score": 2,
     "note": {
-      "en": "Commits to preserving the Law of Return including the grandchild clause; aliyah target of 1M in 10 years.",
-      "ru": "Обязуется сохранить Закон о возвращении с «пунктом о внуках»; цель — 1 млн репатриантов за 10 лет."
+      "en": "Commits to preserving the Law of Return incl. the grandchild clause; aims for 2 million olim by 2048 (Aug 2026).",
+      "ru": "Обещает сохранить Закон о возвращении, включая «пункт о внуках»; цель — 2 млн репатриантов к 2048 году (авг. 2026)."
     },
     "sources": [
       "https://jpost.com/israel-news/politics-and-diplomacy/article-905241",
-      "https://en.wikipedia.org/wiki/Yashar_(political_party)"
+      "https://jpost.com/aliyah/article-905720"
     ]
   },
   {
@@ -233,8 +233,8 @@
     "aspect": "civil-marriage",
     "score": -1,
     "note": {
-      "en": "Bound by coalition understandings with Haredi partners not to advance civil marriage; Ohana broke ranks on a failed bill (record).",
-      "ru": "Связана коалиционными договорённостями с харедим не продвигать гражданский брак; Охана поддержал провалившийся законопроект."
+      "en": "Coalition defeated a Dec 2025 civil-partnership bill under status-quo deals with Haredim; Speaker Ohana voted for it.",
+      "ru": "Коалиция провалила законопроект о гражданском партнёрстве (дек. 2025) из-за договорённостей с харедим; спикер Охана голосовал «за»."
     },
     "sources": [
       "https://www.metroweekly.com/?p=251678"
@@ -245,11 +245,12 @@
     "aspect": "judicial-reform",
     "score": 2,
     "note": {
-      "en": "Led the overhaul; Levin vows to complete it; new judicial-selection law takes effect in the next Knesset.",
-      "ru": "Инициатор реформы; Левин обещает её завершить; новый закон о выборе судей вступит в силу в следующем Кнессете."
+      "en": "Led the 2023 overhaul; ToI expects it to keep advancing it if re-elected. No published 2026 platform.",
+      "ru": "Возглавил реформу 2023 г.; по оценке ToI, продолжит её при переизбрании. Платформу 2026 г. не публиковал."
     },
     "sources": [
-      "https://www.ynetnews.com/article/hkcjtk1cme",
+      "https://www.timesofisrael.com/everything-you-need-to-know-tois-guide-to-the-37-parties-that-israelis-can-finally-choose-from/",
+      "https://israelpolicyforum.org/onetwenty/",
       "https://www.timesofisrael.com/likuds-judicial-reform-plan-seeks-to-end-rule-by-judges-and-manacle-the-ag/"
     ]
   },
@@ -500,13 +501,13 @@
     "aspect": "settlements",
     "score": -2,
     "note": {
-      "en": "Opposes annexation; pledges to evacuate illegal outposts and farms and curb settler violence.",
-      "ru": "Против аннексии; обещает эвакуировать незаконные форпосты и фермы и пресечь насилие поселенцев."
+      "en": "Opposes annexation; pledges to dismantle illegal and newly approved outposts and curb settler violence.",
+      "ru": "Против аннексии; обещает снести незаконные и недавно утверждённые форпосты и пресечь насилие поселенцев."
     },
     "sources": [
-      "https://israelpolicyforum.org/onetwenty/",
+      "https://www.jns.org/feature/israels-political-parties-explained-the-democrats",
       "https://www.ynetnews.com/article/ry380wgrzg",
-      "https://www.israelnationalnews.com/news/430503"
+      "https://israelpolicyforum.org/onetwenty/"
     ]
   },
   {
@@ -589,22 +590,24 @@
     "aspect": "market",
     "score": -2,
     "note": {
-      "en": "Social-democratic: welfare state, stronger unions, opposes privatizing health and education.",
-      "ru": "Социал-демократы: социальное государство, сильные профсоюзы, против приватизации медицины и образования."
+      "en": "Social-democratic: bigger state role, shorter work week, stronger unions, anti-monopoly; against privatizing health/education.",
+      "ru": "Социал-демократы: больше роли государства, короче рабочая неделя, сильнее профсоюзы; против приватизации медицины и образования."
     },
     "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-democrats",
       "https://en.wikipedia.org/wiki/The_Democrats_(Israel)"
     ]
   },
   {
     "party": "democrats",
     "aspect": "cost-of-living",
-    "score": 1,
+    "score": 2,
     "note": {
-      "en": "Platform backs affordable housing within a welfare-state model; no detailed 2026 housing plan found.",
-      "ru": "Программа за доступное жильё в рамках социального государства; подробного плана на 2026 г. не найдено."
+      "en": "Proposes expanded public housing and childcare and putting more products under price supervision.",
+      "ru": "Предлагает расширить государственное жильё и детские сады и ввести госконтроль цен на большее число товаров."
     },
     "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-democrats",
       "https://en.wikipedia.org/wiki/The_Democrats_(Israel)"
     ]
   },
@@ -613,11 +616,12 @@
     "aspect": "lgbt",
     "score": 2,
     "note": {
-      "en": "Golan campaigned on LGBTQ rights in Pride Month; some LGBTQ members criticized handling of an Arab candidate.",
-      "ru": "Голан в месяц прайда выступал за права ЛГБТ; часть ЛГБТ-членов критиковала партию из-за кандидатки-арабки."
+      "en": "Pledges full legal equality: civil marriage for all couples, equal adoption and surrogacy, conversion-therapy ban.",
+      "ru": "Полное правовое равенство: гражданский брак для всех пар, равное усыновление и суррогатное материнство, запрет конверсионной терапии."
     },
     "sources": [
-      "https://www.israelnationalnews.com/news/429864"
+      "https://www.ynetnews.com/article/bjvkbbsfmx",
+      "https://www.jns.org/feature/israels-political-parties-explained-the-democrats"
     ]
   },
   {
@@ -625,10 +629,11 @@
     "aspect": "arab-citizens",
     "score": 2,
     "note": {
-      "en": "Seeks to repeal the Nation-State Basic Law as discriminatory toward non-Jews; has Arab candidates.",
-      "ru": "Добивается отмены Основного закона о национальном государстве как дискриминационного; есть кандидаты-арабы."
+      "en": "Would amend/repeal the Nation-State Law as discriminatory; Golan backs Ra'am in government: \"Jewish-Arab partnership is positive\".",
+      "ru": "За изменение Закона о национальном государстве как дискриминационного; Голан за Раам в правительстве."
     },
     "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-the-democrats",
       "https://en.wikipedia.org/wiki/The_Democrats_(Israel)"
     ]
   },
@@ -709,8 +714,8 @@
     "aspect": "civil-marriage",
     "score": 1,
     "note": {
-      "en": "Record: Hadash MKs voted for the 2012 Meretz civil marriage bill; no joint 2026 position found.",
-      "ru": "По прошлым голосованиям: депутаты ХАДАШ поддержали законопроект МЕРЕЦ о гражданском браке (2012); общей позиции на 2026 год нет."
+      "en": "Record: left-wing and Arab MKs backed a 2012 Meretz civil-marriage bill; no 2026 list-level position found.",
+      "ru": "Прошлое: левые и арабские депутаты поддержали законопроект МЕРЕЦ о гражданском браке (2012); позиции списка на 2026 нет."
     },
     "sources": [
       "https://thepinknews.com/2012/05/16/israeli-parliament-rejects-gay-and-inter-faith-civil-marriage-bill/"
@@ -721,8 +726,8 @@
     "aspect": "judicial-reform",
     "score": -2,
     "note": {
-      "en": "Wants strong checks and balances and independent courts; leaders backed anti-overhaul protests.",
-      "ru": "За сильные сдержки и противовесы и независимые суды; лидеры поддерживали протесты против реформы."
+      "en": "Wants strong checks and balances, a judicial selection system that keeps courts independent, and courts protecting all citizens' rights.",
+      "ru": "За сильную систему сдержек и противовесов, независимый порядок назначения судей и защиту судом прав всех граждан."
     },
     "sources": [
       "https://www.ynetnews.com/article/hkcjtk1cme"
@@ -767,11 +772,11 @@
     "aspect": "lgbt",
     "score": 0,
     "note": {
-      "en": "Mixed: Hadash's Odeh backed the 2020 conversion-therapy ban; other Arab factions were opposed or reserved.",
-      "ru": "Неоднозначно: Уде (ХАДАШ) поддержал запрет конверсионной терапии в 2020 г.; другие фракции против или сдержанны."
+      "en": "Mixed record: in 2020 three Hadash MKs backed the conversion-therapy ban; Ta'al and Balad MKs did not vote.",
+      "ru": "Неоднозначно: в 2020 трое депутатов ХАДАШ поддержали запрет конверсионной терапии; ТААЛ и БАЛАД не голосовали."
     },
     "sources": [
-      "https://www.timesofisrael.com/homosexuality-almost-nonexistent-in-arab-society-joint-list-mk-says/"
+      "https://themedialine.org/by-region/arabs-in-israel-split-over-homosexuality/print"
     ]
   },
   {
@@ -792,12 +797,12 @@
     "aspect": "immigration",
     "score": -2,
     "note": {
-      "en": "Seeks to repeal the Law of Return in favor of equal citizenship (Balad 2018 bill, Hadash MK 2020).",
-      "ru": "Добивается отмены Закона о возвращении ради равного гражданства (законопроект БАЛАД 2018, депутат ХАДАШ 2020)."
+      "en": "Record: Balad's 2018 'state of all citizens' bill would cancel the Law of Return; Hadash MK Touma-Sliman (2020) called it unnecessary.",
+      "ru": "Прошлое: законопроект БАЛАД 2018 г. о «государстве всех граждан» отменял Закон о возвращении; Тума-Слиман (ХАДАШ, 2020): он не нужен."
     },
     "sources": [
-      "https://www.jns.org/israel-news/time-to-abolish-the-law-of-return-says-joint-list-mk",
-      "https://www.aljazeera.com/news/2018/6/5/knesset-disqualifies-bill-seeking-equal-status-for-jews-and-arabs"
+      "https://jewishpress.com/knesset-disqualifies-arab-bill-rejecting-israel-as-a-jewish-state/",
+      "https://www.jns.org/israel-news/time-to-abolish-the-law-of-return-says-joint-list-mk"
     ]
   },
   {
@@ -805,13 +810,12 @@
     "aspect": "two-states",
     "score": -2,
     "note": {
-      "en": "Opposes; once dovish, now hawkish. Opposes dividing Jerusalem; in coalition that backed 2024 Knesset resolution against a Palestinian state",
-      "ru": "Против; когда-то умеренная, ныне ястребиная. Против раздела Иерусалима; была в коалиции, принявшей резолюцию 2024 г. против палестинского государства"
+      "en": "\"Shas opposes Palestinian statehood\" (JNS, Oct 2026); co-sponsored the 2024 Knesset resolution against a Palestinian state.",
+      "ru": "«ШАС против палестинского государства» (JNS, окт. 2026); соавтор резолюции Кнессета 2024 г. против палестинского государства."
     },
     "sources": [
-      "https://en.idi.org.il/israeli-elections-and-parties/parties/shas/",
-      "https://en.wikipedia.org/wiki/Shas",
-      "https://www.aljazeera.com/amp/news/2024/7/18/israels-knesset-votes-to-reject-palestinian-statehood"
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism",
+      "https://www.jns.org/knesset-votes-68-9-for-resolution-against-a-palestinian-state/"
     ]
   },
   {
@@ -819,11 +823,11 @@
     "aspect": "settlements",
     "score": 1,
     "note": {
-      "en": "Opposes any settlement freeze; backs 'united Jerusalem'; said it would vote for the July 2025 non-binding sovereignty motion",
-      "ru": "Против любой заморозки поселений; за «единый Иерусалим»; заявила о поддержке необязывающей резолюции о суверенитете (июль 2025)"
+      "en": "Has backed settlement expansion in Judea and Samaria (JNS, Oct 2026); voted for the July 2025 non-binding sovereignty motion.",
+      "ru": "Поддерживает расширение поселений в Иудее и Самарии (JNS, окт. 2026); голосовала за декларацию о суверенитете в июле 2025."
     },
     "sources": [
-      "https://en.wikipedia.org/wiki/Shas",
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism",
       "https://www.jns.org/knesset-expected-to-pass-declaration-for-judea-samaria-sovereignty/"
     ]
   },
@@ -832,12 +836,12 @@
     "aspect": "gaza",
     "score": 0,
     "note": {
-      "en": "Deri backed the 2025 hostage/ceasefire deal but conditions any arrangement on Hamas not ruling Gaza and on demilitarization",
-      "ru": "Дери поддержал сделку 2025 г. о заложниках и прекращении огня, но требует, чтобы ХАМАС не правил Газой и сектор был демилитаризован"
+      "en": "Deri backs dismantling Hamas but also negotiated ceasefires and hostage deals, conditioned on Hamas not ruling Gaza.",
+      "ru": "Дери за разгром ХАМАСа, но и за переговорные перемирия и сделки по заложникам — при условии, что ХАМАС не правит Газой."
     },
     "sources": [
-      "https://www.ynetnews.com/article/0i5aqe1m7",
-      "https://www.timesofisrael.com/liveblog_entry/shas-chair-deri-says-israel-willing-to-pay-heavy-price-for-hostage-deal-but-only-if-hamas-leaders-exiled-gaza-demilitarized/"
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism",
+      "https://www.ynetnews.com/article/0i5aqe1m7"
     ]
   },
   {
@@ -871,12 +875,12 @@
     "aspect": "civil-marriage",
     "score": -2,
     "note": {
-      "en": "Long-standing opposition to civil marriage; opposed the 2013 civil-union bill (record, no new 2026 statement found)",
-      "ru": "Давно выступает против гражданского брака; против законопроекта о гражданских союзах 2013 г. (по прошлым позициям)"
+      "en": "Firmly opposes civil marriage; seeks to preserve Orthodox authority over marriage (ToI, JNS, Oct 2026).",
+      "ru": "Решительно против гражданского брака; за сохранение ортодоксальной монополии на браки (ToI, JNS, окт. 2026)."
     },
     "sources": [
-      "https://www.ynetnews.com/article/3312396",
-      "https://jta.org/?p=434495"
+      "https://www.timesofisrael.com/everything-you-need-to-know-tois-guide-to-the-37-parties-that-israelis-can-finally-choose-from/",
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism"
     ]
   },
   {
@@ -884,10 +888,11 @@
     "aspect": "judicial-reform",
     "score": 1,
     "note": {
-      "en": "Coalition partner in the overhaul; reported (2024) to back further bills only after a draft-exemption law passes",
-      "ru": "Партнёр по коалиции в продвижении реформы; по данным 2024 г., поддержит новые законы лишь после закона об освобождении от призыва"
+      "en": "Backed limits on the High Court's power to overturn laws (JNS, Oct 2026); its draft-law demand takes priority.",
+      "ru": "Поддерживает ограничение права Верховного суда отменять законы (JNS, окт. 2026); приоритет — закон о призыве."
     },
     "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism",
       "https://www.jns.org/they-left-us-no-choice-levin-says-on-reboot-of-judicial-reform-drive"
     ]
   },
@@ -918,10 +923,11 @@
     "aspect": "cost-of-living",
     "score": 1,
     "note": {
-      "en": "Signature demand: zero VAT on basic foods; has also pushed a higher minimum wage (record from earlier campaigns)",
-      "ru": "Главное требование — нулевой НДС на базовые продукты; также добивалась повышения минимальной зарплаты (по прошлым кампаниям)"
+      "en": "Pushes food aid, childcare and housing subsidies; made food vouchers a 2025 budget condition. Long sought 0% VAT on basics.",
+      "ru": "Добивается продуктовой помощи, субсидий на детсады и жильё; продуктовые талоны — условие бюджета 2025. Давно требует 0% НДС."
     },
     "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism",
       "https://www.israelnationalnews.com/news/188377"
     ]
   },
@@ -930,11 +936,12 @@
     "aspect": "lgbt",
     "score": -2,
     "note": {
-      "en": "Opposes public expression of homosexuality, while condemning violence against gay people",
-      "ru": "Против публичного выражения гомосексуальности, при этом осуждает насилие против геев"
+      "en": "Firmly opposes LGBTQ rights (ToI, 2026); condemned Speaker Ohana's Dec 2025 vote for a civil-partnership bill.",
+      "ru": "Решительно против прав ЛГБТ (ToI, 2026); осудила голос спикера Оханы за закон о партнёрстве (дек. 2025)."
     },
     "sources": [
-      "https://en.wikipedia.org/wiki/Shas"
+      "https://www.timesofisrael.com/everything-you-need-to-know-tois-guide-to-the-37-parties-that-israelis-can-finally-choose-from/",
+      "https://www.metroweekly.com/?p=251678"
     ]
   },
   {
@@ -1036,10 +1043,11 @@
     "aspect": "judicial-reform",
     "score": 2,
     "note": {
-      "en": "Threatened in 2023 to quit if the overhaul was paused; calls judiciary a central 2026 campaign theme.",
-      "ru": "В 2023 г. грозила выйти из коалиции при заморозке реформы; называет судебную тему центральной в кампании 2026."
+      "en": "Backs a 61-MK override of High Court rulings; threatened in 2023 to quit if the overhaul was paused.",
+      "ru": "За преодоление решений Верховного суда 61 голосом; в 2023 г. грозила выйти из коалиции при паузе реформы."
     },
     "sources": [
+      "https://www.timesofisrael.com/everything-you-need-to-know-tois-guide-to-the-37-parties-that-israelis-can-finally-choose-from/",
       "https://www.jns.org/ben-gvir-threatens-to-bolt-coalition-if-judicial-reforms-paused/",
       "https://www.ynetnews.com/article/hkcjtk1cme"
     ]
@@ -1091,12 +1099,13 @@
     "aspect": "arab-citizens",
     "score": -2,
     "note": {
-      "en": "Advocates deporting 'disloyal' Arabs and an authority to encourage their emigration.",
-      "ru": "Выступает за выдворение «нелояльных» арабов и создание ведомства по поощрению их эмиграции."
+      "en": "Kahanist party; Ben-Gvir sought an authority to encourage emigration of 'disloyal' Arabs (never advanced).",
+      "ru": "Кахановская партия; Бен-Гвир добивался органа для поощрения эмиграции «нелояльных» арабов (не реализовано)."
     },
     "sources": [
-      "https://en.wikipedia.org/wiki/Otzma_Yehudit",
-      "https://www.ynetnews.com/article/bjb2wk8dzl"
+      "https://www.ynetnews.com/article/bjb2wk8dzl",
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://en.wikipedia.org/wiki/Otzma_Yehudit"
     ]
   },
   {
@@ -1116,11 +1125,12 @@
     "aspect": "two-states",
     "score": -1,
     "note": {
-      "en": "No party-specific platform found; was in the coalition that backed the 2024 Knesset resolution against a Palestinian state",
-      "ru": "Отдельной платформы не найдено; входила в коалицию, поддержавшую резолюцию Кнессета 2024 г. против палестинского государства"
+      "en": "Gives no definitive view on the conflict (ToI, 2026) but co-sponsored the 2024 Knesset resolution against a Palestinian state.",
+      "ru": "Не формулирует чёткой позиции по конфликту (ToI, 2026), но была соавтором резолюции Кнессета 2024 г. против палестинского государства."
     },
     "sources": [
-      "https://www.aljazeera.com/amp/news/2024/7/18/israels-knesset-votes-to-reject-palestinian-statehood"
+      "https://www.timesofisrael.com/everything-you-need-to-know-tois-guide-to-the-37-parties-that-israelis-can-finally-choose-from/",
+      "https://www.jns.org/knesset-votes-68-9-for-resolution-against-a-palestinian-state/"
     ]
   },
   {
@@ -1128,22 +1138,25 @@
     "aspect": "settlements",
     "score": 0,
     "note": {
-      "en": "No uniform party position on settlement expansion; some MKs were expected to back the 2025 sovereignty motion",
-      "ru": "Единой позиции по расширению поселений нет; часть депутатов, по данным СМИ, должна была поддержать резолюцию 2025 г."
+      "en": "No unified territorial platform: Agudat's Goldknopf backs sovereignty and Gaza resettlement; Degel's Gafni opposed it.",
+      "ru": "Единой позиции нет: Гольдкнопф («Агудат») за суверенитет и поселения в Газе, Гафни («Дегель») против."
     },
     "sources": [
-      "https://en.wikipedia.org/wiki/United_Torah_Judaism",
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism",
       "https://www.jns.org/knesset-expected-to-pass-declaration-for-judea-samaria-sovereignty/"
     ]
   },
   {
     "party": "utj",
     "aspect": "gaza",
-    "score": null,
+    "score": 0,
     "note": {
-      "en": "No clear party position on Gaza policy found",
-      "ru": "Чёткой позиции партии по Газе не найдено"
-    }
+      "en": "Split: Goldknopf (Agudat) advocates sovereignty and resettling Gaza; Gafni (Degel) opposed resettling it (JNS, Oct 2026).",
+      "ru": "Раскол: Гольдкнопф («Агудат») за суверенитет и заселение Газы; Гафни («Дегель») был против (JNS, окт. 2026)."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism"
+    ]
   },
   {
     "party": "utj",
@@ -1176,10 +1189,11 @@
     "aspect": "civil-marriage",
     "score": -2,
     "note": {
-      "en": "Opposes civil marriage and even civil unions; opposed the 2013 civil-union bill (record)",
-      "ru": "Против гражданского брака и даже гражданских союзов; выступила против законопроекта 2013 г. (по прошлым позициям)"
+      "en": "Opposes civil marriage; seeks to keep Orthodox authority over marriage and conversion (JNS, Oct 2026).",
+      "ru": "Против гражданского брака; за сохранение ортодоксальной монополии на браки и гиюр (JNS, окт. 2026)."
     },
     "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism",
       "https://jta.org/?p=434495"
     ]
   },
@@ -1188,10 +1202,11 @@
     "aspect": "judicial-reform",
     "score": 1,
     "note": {
-      "en": "Coalition partner in the overhaul; reported (2024) to back further bills only after a draft-exemption law passes",
-      "ru": "Партнёр по коалиции в продвижении реформы; по данным 2024 г., поддержит новые законы лишь после закона об освобождении от призыва"
+      "en": "Backed limits on the High Court's power to overturn laws (JNS, Oct 2026); draft law is its overriding demand.",
+      "ru": "Поддерживает ограничение права Верховного суда отменять законы (JNS, окт. 2026); главное требование — закон о призыве."
     },
     "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism",
       "https://www.jns.org/they-left-us-no-choice-levin-says-on-reboot-of-judicial-reform-drive"
     ]
   },
@@ -1220,24 +1235,27 @@
   {
     "party": "utj",
     "aspect": "cost-of-living",
-    "score": null,
+    "score": 1,
     "note": {
-      "en": "No specific cost-of-living platform found",
-      "ru": "Конкретной программы по стоимости жизни не найдено"
-    }
+      "en": "Seeks expanded housing for Haredi communities, childcare subsidies and family assistance (JNS, Oct 2026).",
+      "ru": "Добивается строительства жилья для харедим, субсидий на детсады и помощи семьям (JNS, окт. 2026)."
+    },
+    "sources": [
+      "https://www.jns.org/feature/israels-political-parties-explained-shas-and-united-torah-judaism"
+    ]
   },
   {
     "party": "utj",
     "aspect": "lgbt",
     "score": -2,
     "note": {
-      "en": "Led opposition to extending surrogacy to gay men (2018); MKs protested gay MK Ohana's swearing-in (record)",
-      "ru": "Возглавляла противодействие расширению суррогатного материнства на геев (2018); депутаты протестовали при присяге Оханы (по прошлым позициям)"
+      "en": "Led opposition to gay surrogacy (2018); Goldknopf and Degel condemned Speaker Ohana's Dec 2025 civil-partnership vote.",
+      "ru": "Возглавляла борьбу против суррогатного материнства для геев (2018); Гольдкнопф и «Дегель» осудили голос Оханы (дек. 2025)."
     },
     "sources": [
+      "https://www.metroweekly.com/?p=251678",
       "https://www.pressreader.com/israel/jerusalem-post/20180123/281621010756809",
-      "https://stljewishlight.org/world-news/knesset-rejects-bill-that-would-allow-same-sex-couples-to-have-children-through-surrogates",
-      "https://www.ynetnews.com/article/4745539"
+      "https://stljewishlight.org/world-news/knesset-rejects-bill-that-would-allow-same-sex-couples-to-have-children-through-surrogates"
     ]
   },
   {
@@ -1343,11 +1361,12 @@
     "aspect": "judicial-reform",
     "score": -1,
     "note": {
-      "en": "Liberman rejects reviving the overhaul; says the needed reform is a constitution and constitutional court.",
-      "ru": "Либерман против возобновления реформы; нужна, по его словам, конституция и конституционный суд."
+      "en": "Liberman rejected reviving the overhaul (2024); 2026 platform offers a referendum-backed constitution, silent on the selection law.",
+      "ru": "Либерман против возобновления реформы (2024); программа 2026 г. — конституция через референдум, без позиции по закону о выборе судей."
     },
     "sources": [
-      "https://www.timesofisrael.com/liveblog_entry/liberman-rejects-calls-to-revive-judicial-overhaul-now-is-not-the-time-for-jewish-wars/"
+      "https://www.timesofisrael.com/liveblog_entry/liberman-rejects-calls-to-revive-judicial-overhaul-now-is-not-the-time-for-jewish-wars/",
+      "https://www.ynetnews.com/article/hkcjtk1cme"
     ]
   },
   {
@@ -1405,11 +1424,12 @@
     "score": -1,
     "note": {
       "en": "Requires service from Arab citizens, rules out Arab parties; record of \"no citizenship without loyalty\" (2009).",
-      "ru": "Требует службы от арабских граждан, исключает арабские партии; лозунг 2009 г. «нет гражданства без лояльности»."
+      "ru": "Требует службы от арабских граждан, исключает арабские партии; лозунг «нет гражданства без лояльности» (2009)."
     },
     "sources": [
       "https://www.jns.org/feature/israels-political-parties-explained-yisrael-beiteinu",
-      "https://www.aljazeera.com/news/2009/5/31/israel-loyalty-law-rejected"
+      "https://www.aljazeera.com/news/2009/5/31/israel-loyalty-law-rejected",
+      "https://www.ynetnews.com/article/3723908"
     ]
   },
   {
@@ -1417,12 +1437,11 @@
     "aspect": "immigration",
     "score": 2,
     "note": {
-      "en": "Record: fought efforts to cancel the grandchild clause (MK Sova, 2025); party base of FSU immigrants.",
-      "ru": "По опыту: боролась против отмены «пункта о внуках» (депутат Сова, 2025); опора на выходцев из СССР."
+      "en": "Record: MK Sova fought a 2025 bill to limit the grandchild clause; party base of FSU immigrants. No 2026 platform plank found.",
+      "ru": "По прошлым действиям: депутат Сова в 2025 г. выступил против ограничения «пункта о внуках»; база — выходцы из СССР."
     },
     "sources": [
-      "https://www.timesofisrael.com/bill-to-limit-law-of-return-shot-down-despite-support-from-ultra-orthodox-mks/",
-      "https://www.jewishpress.com/news/israel/the-knesset/report-likud-vows-no-changes-to-law-of-return/2022/12/13"
+      "https://www.timesofisrael.com/bill-to-limit-law-of-return-shot-down-despite-support-from-ultra-orthodox-mks/"
     ]
   },
   {
@@ -1454,26 +1473,27 @@
     "aspect": "gaza",
     "score": 2,
     "note": {
-      "en": "Smotrich (2026): Israel will conquer Gaza and build settlements there; Zehut backs sovereignty over Gaza.",
-      "ru": "Смотрич (2026): Израиль завоюет Газу и построит там поселения; «Зеут» — за суверенитет над Газой."
+      "en": "Smotrich (2026) calls to conquer and settle Gaza and expand Israel's borders; Feiglin says Gaza should be emptied.",
+      "ru": "Смотрич (2026) призывает завоевать и заселить Газу и расширить границы; Фейглин — что Газу надо освободить от жителей."
     },
     "sources": [
       "https://www.israelhayom.com/2026/02/23/smotrich-we-will-conquer-gaza-and-build-jewish-settlements-there",
-      "https://israelpolicyforum.org/onetwenty/"
+      "https://www.timesofisrael.com/liveblog_entry/smotrich-reiterates-call-to-establish-settlements-inside-gaza/",
+      "https://www.timesofisrael.com/everything-you-need-to-know-tois-guide-to-the-37-parties-that-israelis-can-finally-choose-from/"
     ]
   },
   {
     "party": "rzp",
     "aspect": "haredi-draft",
-    "score": 1,
+    "score": 0,
     "note": {
-      "en": "Supports gradual expansion of Haredi service with some sanctions, but opposes coercive mass enlistment.",
-      "ru": "За постепенное расширение призыва харедим с санкциями, но против принудительного массового призыва."
+      "en": "Says Haredim should serve 'through consensus', but Smotrich backed the July 2026 law freezing draft-evader arrests.",
+      "ru": "Говорит, что харедим должны служить «через консенсус», но Смотрич поддержал закон июля 2026 о запрете арестов уклонистов."
     },
     "sources": [
-      "https://israelpolicyforum.org/onetwenty/",
-      "https://www.timesofisrael.com/liveblog_entry/smotrich-indicates-support-for-targeted-sanctions-against-haredi-draft-dodgers/",
-      "https://www.ynetnews.com/article/sjph72wyzx"
+      "https://cyprus-mail.com/2026/08/07/israels-smotrich-fights-for-political-survival-over-military-draft-row",
+      "https://www.timesofisrael.com/everything-you-need-to-know-tois-guide-to-the-37-parties-that-israelis-can-finally-choose-from/",
+      "https://israelpolicyforum.org/onetwenty/"
     ]
   },
   {
@@ -1574,8 +1594,8 @@
     "aspect": "immigration",
     "score": -2,
     "note": {
-      "en": "Demanded abolishing the grandchild clause in 2022 talks; Smotrich has tabled such a bill.",
-      "ru": "Требовала отменить «пункт о внуках» в 2022 г.; Смотрич вносил такой законопроект."
+      "en": "Smotrich and Haredi parties demanded abolishing the grandchild clause in 2022 coalition talks (record).",
+      "ru": "Смотрич и харедимные партии требовали отменить «пункт о внуках» на коалиционных переговорах 2022 г."
     },
     "sources": [
       "https://www.timesofisrael.com/likud-said-to-oppose-demand-to-abolish-grandchild-clause-in-law-of-return/",
@@ -1587,13 +1607,13 @@
     "aspect": "two-states",
     "score": 2,
     "note": {
-      "en": "Supports a Palestinian state in West Bank and Gaza with East Jerusalem; Abbas urges recognizing Palestine.",
-      "ru": "За палестинское государство на Западном берегу и в Газе со столицей в Вост. Иерусалиме; Аббас за его признание."
+      "en": "Backs a Palestinian state; Abbas at 2026 party conference: 'The State of Palestine exists', calls for ending the occupation.",
+      "ru": "За палестинское государство; Аббас на съезде партии в 2026: «Государство Палестина существует», призывает покончить с оккупацией."
     },
     "sources": [
-      "https://en.wikipedia.org/wiki/United_Arab_List",
       "https://www.i24news.tv/en/news/israel/politics/artc-abbas-brings-palestinian-statehood-into-election-pitch-drawing-eisenkot-netanyahu-rebukes",
-      "https://israelpolicyforum.org/onetwenty/"
+      "https://israelpolicyforum.org/onetwenty/",
+      "https://en.wikipedia.org/wiki/United_Arab_List"
     ]
   },
   {
@@ -1612,12 +1632,13 @@
   {
     "party": "raam",
     "aspect": "gaza",
-    "score": null,
+    "score": -1,
     "note": {
-      "en": "Abbas condemned Oct. 7 but rarely speaks about the Gaza war; no clear policy position found.",
-      "ru": "Аббас осудил 7 октября, но редко говорит о войне в Газе; чёткой позиции не найдено."
+      "en": "Abbas (Jan 2025): Ra'am would be a 'safety net' for any government that agrees a hostage deal and ends the war.",
+      "ru": "Аббас (янв. 2025): РААМ станет «страховочной сеткой» для любого правительства, которое заключит сделку по заложникам и завершит войну."
     },
     "sources": [
+      "https://www.jpost.com/breaking-news/article-837137",
       "https://www.clickondetroit.com/news/world/2026/10/16/israels-arab-led-parties-could-decide-the-election-if-anyone-would-partner-with-them/"
     ]
   },
@@ -1659,8 +1680,8 @@
     "aspect": "judicial-reform",
     "score": -1,
     "note": {
-      "en": "In 2023 opposed scrapping reasonableness and shifting power to government; open to changing judge selection.",
-      "ru": "В 2023 г. против отмены принципа разумности и передачи власти правительству; открыт к изменению отбора судей."
+      "en": "Declined to give a 2026 position; in 2023 voted against ending reasonableness; open to changing judicial selection.",
+      "ru": "Позицию на 2026 не назвала; в 2023 голосовала против отмены «разумности»; готова менять порядок выбора судей."
     },
     "sources": [
       "https://www.ynetnews.com/article/hkcjtk1cme"
@@ -1707,12 +1728,13 @@
     "aspect": "lgbt",
     "score": -2,
     "note": {
-      "en": "Record: Ra'am MKs opposed the 2020 conversion-therapy ban, calling same-sex relations unnatural.",
-      "ru": "По прошлому: депутаты РААМ выступили против запрета конверсионной терапии (2020), назвав однополые связи неестественными."
+      "en": "Record: all four Ra'am MKs voted against the 2020 conversion-therapy ban; MK Walid Taha said gays 'almost nonexistent' in Arab society.",
+      "ru": "Прошлое: все четыре депутата РААМ голосовали против запрета конверсионной терапии (2020); Валид Таха: геев в арабском обществе «почти нет»."
     },
     "sources": [
+      "https://themedialine.org/by-region/arabs-in-israel-split-over-homosexuality/print",
       "https://www.timesofisrael.com/homosexuality-almost-nonexistent-in-arab-society-joint-list-mk-says/",
-      "https://en.wikipedia.org/wiki/United_Arab_List"
+      "https://www.timesofisrael.com/liveblog_entry/joint-lists-abbas-said-to-warn-about-arab-alliances-future-after-some-mks-vote-to-bar-conversion-therapy/"
     ]
   },
   {
@@ -1791,12 +1813,13 @@
   {
     "party": "reservists",
     "aspect": "religion-state",
-    "score": null,
+    "score": -1,
     "note": {
-      "en": "No clear position; NEP proposes opening kashrut certification to competing rabbis.",
-      "ru": "Чёткой позиции нет; партия Зелехи предлагает конкуренцию раввинов в выдаче кашрута."
+      "en": "Listed as favoring separation of religion and state; NEP would open kashrut certification to competing rabbis.",
+      "ru": "Указывается как сторонник отделения религии от государства; НЭП откроет кашрутную сертификацию для конкурирующих раввинов."
     },
     "sources": [
+      "https://israelpolicyforum.org/onetwenty/",
       "https://www.jns.org/feature/israels-political-parties-explained-the-reservists-and-the-new-economic-party"
     ]
   },
@@ -2169,21 +2192,27 @@
   {
     "party": "noam",
     "aspect": "two-states",
-    "score": null,
+    "score": -2,
     "note": {
-      "en": "No explicit 2026 statement on Palestinian statehood found.",
-      "ru": "Явного заявления 2026 г. о палестинском государстве не найдено."
-    }
+      "en": "Maoz accused Trump of 'advancing a Palestinian terror state' and sponsored a West Bank sovereignty bill (2025 record).",
+      "ru": "Маоз обвинил Трампа в «продвижении палестинского террористического государства» и внёс законопроект о суверенитете (2025)."
+    },
+    "sources": [
+      "https://www.timesofisrael.com/liveblog-november-15-2025/",
+      "https://www.timesofisrael.com/liveblog_entry/rebelling-against-pm-mks-pass-preliminary-reading-of-west-bank-annexation-bill/"
+    ]
   },
   {
     "party": "noam",
     "aspect": "settlements",
-    "score": 1,
+    "score": 2,
     "note": {
-      "en": "Supports expanding Jewish settlements in the West Bank; no detailed annexation platform found.",
-      "ru": "Поддерживает расширение еврейских поселений на Западном берегу; детальной программы аннексии не найдено."
+      "en": "Opposes evacuating any settlement; Maoz's bill to apply sovereignty to Judea and Samaria passed a preliminary reading (Oct 2025).",
+      "ru": "Против эвакуации поселений; законопроект Маоза о суверенитете над Иудеей и Самарией прошёл предварительное чтение (окт. 2025)."
     },
     "sources": [
+      "https://www.noamlisrael.org.il/chabad/",
+      "https://www.timesofisrael.com/liveblog_entry/rebelling-against-pm-mks-pass-preliminary-reading-of-west-bank-annexation-bill/",
       "https://jpost.com/israel-news/politics-and-diplomacy/article-904171"
     ]
   },
@@ -2199,21 +2228,25 @@
   {
     "party": "noam",
     "aspect": "haredi-draft",
-    "score": null,
+    "score": -1,
     "note": {
-      "en": "No clear public position on Haredi conscription found.",
-      "ru": "Чёткой позиции по призыву харедим не найдено."
-    }
+      "en": "Site: 'opposes forced conscription of yeshiva students'; backs adapted service only for those who enlist with rabbis' approval.",
+      "ru": "Сайт партии: «против принудительного призыва учащихся йешив»; за особые условия лишь для идущих служить добровольно."
+    },
+    "sources": [
+      "https://www.noamlisrael.org.il/chabad/"
+    ]
   },
   {
     "party": "noam",
     "aspect": "religion-state",
     "score": 2,
     "note": {
-      "en": "Seeks more authority for the Chief Rabbinate (a 'fourth branch'), stricter Sabbath rules.",
-      "ru": "Хочет больше полномочий для Главного раввината («четвёртая ветвь власти») и более строгих правил шаббата."
+      "en": "2026 site: strengthen the Chief Rabbinate, Shabbat as public rest day, legislation on kashrut and conversion 'from a Jewish view'.",
+      "ru": "Сайт 2026: усилить главный раввинат, шаббат как день отдыха в публичном пространстве, законы о кашруте и гиюре «по-еврейски»."
     },
     "sources": [
+      "https://www.noamlisrael.org.il/",
       "https://en.wikipedia.org/wiki/Noam_(political_party)"
     ]
   },
@@ -2234,10 +2267,11 @@
     "aspect": "judicial-reform",
     "score": 2,
     "note": {
-      "en": "Lists passing the judicial reform as one of its main goals (2026 campaign).",
-      "ru": "Называет принятие судебной реформы одной из главных целей (кампания 2026)."
+      "en": "Platform: override clause to curb the High Court, split the Attorney General's role, political 'trust appointments'.",
+      "ru": "Программа: «пункт о преодолении» против БАГАЦа, разделение должности юрсоветника, «назначения доверия» министров."
     },
     "sources": [
+      "https://www.noamlisrael.org.il/",
       "https://jpost.com/israel-news/politics-and-diplomacy/article-904171"
     ]
   },
@@ -2295,11 +2329,12 @@
     "aspect": "immigration",
     "score": -2,
     "note": {
-      "en": "Maoz submitted a bill to repeal the Law of Return's grandchild clause.",
-      "ru": "Маоз внёс законопроект об отмене «пункта о внуках» в Законе о возвращении."
+      "en": "Maoz's 2025 bill to repeal the grandchild clause failed 18-54; Noam wants 'Jew' defined by halacha in the population registry.",
+      "ru": "Законопроект Маоза об отмене «пункта о внуках» провален 18–54 (2025); «Ноам» хочет определять еврея в регистре по галахе."
     },
     "sources": [
-      "https://www.timesofisrael.com/bill-to-limit-law-of-return-shot-down-despite-support-from-ultra-orthodox-mks/"
+      "https://www.timesofisrael.com/bill-to-limit-law-of-return-shot-down-despite-support-from-ultra-orthodox-mks/",
+      "https://www.noamlisrael.org.il/chabad/"
     ]
   },
   {
@@ -2307,116 +2342,168 @@
     "aspect": "two-states",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Joint platform (universal service, cost of living, periphery, agriculture) does not address this.",
+      "ru": "Совместная программа (всеобщая служба, стоимость жизни, периферия, сельское хозяйство) этого не касается."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.walla.co.il/news/israel/3866697"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "settlements",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Pledges to 'strengthen settlement and agriculture', not specifying the West Bank or annexation.",
+      "ru": "Обещает «укрепить поселенчество и сельское хозяйство», не уточняя Западный берег или аннексию."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.c14.co.il/article/1668858"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "gaza",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Joint platform (universal service, cost of living, periphery, agriculture) does not address this.",
+      "ru": "Совместная программа (всеобщая служба, стоимость жизни, периферия, сельское хозяйство) этого не касается."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.walla.co.il/news/israel/3866697"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "haredi-draft",
-    "score": null,
+    "score": 2,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Yevarkan: 'service duty for every citizen' tops the platform (IDF, police, health, education); sanctions for non-servers.",
+      "ru": "Йеваркан: во главе программы — «обязательная служба для каждого гражданина» (ЦАХАЛ, полиция, медицина); санкции для уклонистов."
+    },
+    "sources": [
+      "https://www.walla.co.il/news/israel/3866697",
+      "https://www.be106.net/207/156556"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "religion-state",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Joint platform (universal service, cost of living, periphery, agriculture) does not address this.",
+      "ru": "Совместная программа (всеобщая служба, стоимость жизни, периферия, сельское хозяйство) этого не касается."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.walla.co.il/news/israel/3866697"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "civil-marriage",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Joint platform (universal service, cost of living, periphery, agriculture) does not address this.",
+      "ru": "Совместная программа (всеобщая служба, стоимость жизни, периферия, сельское хозяйство) этого не касается."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.walla.co.il/news/israel/3866697"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "judicial-reform",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Joint platform (universal service, cost of living, periphery, agriculture) does not address this.",
+      "ru": "Совместная программа (всеобщая служба, стоимость жизни, периферия, сельское хозяйство) этого не касается."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.walla.co.il/news/israel/3866697"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "constitution",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Joint platform (universal service, cost of living, periphery, agriculture) does not address this.",
+      "ru": "Совместная программа (всеобщая служба, стоимость жизни, периферия, сельское хозяйство) этого не касается."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.walla.co.il/news/israel/3866697"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "market",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Joint platform (universal service, cost of living, periphery, agriculture) does not address this.",
+      "ru": "Совместная программа (всеобщая служба, стоимость жизни, периферия, сельское хозяйство) этого не касается."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.walla.co.il/news/israel/3866697"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "cost-of-living",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Pledges to lower the cost of living and boost food security; no specific tools (market or state) named.",
+      "ru": "Обещает снизить стоимость жизни и укрепить продовольственную безопасность; инструменты не названы."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.c14.co.il/article/1668858"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "lgbt",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Joint platform (universal service, cost of living, periphery, agriculture) does not address this.",
+      "ru": "Совместная программа (всеобщая служба, стоимость жизни, периферия, сельское хозяйство) этого не касается."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.walla.co.il/news/israel/3866697"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "arab-citizens",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Joint platform (universal service, cost of living, periphery, agriculture) does not address this.",
+      "ru": "Совместная программа (всеобщая служба, стоимость жизни, периферия, сельское хозяйство) этого не касается."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.walla.co.il/news/israel/3866697"
+    ]
   },
   {
     "party": "tzomet",
     "aspect": "immigration",
     "score": null,
     "note": {
-      "en": "No 2026 platform found for the Tzomet–Beit Yisrael list",
-      "ru": "Платформа списка «Цомет–Бейт Исраэль» на 2026 г. не найдена"
-    }
+      "en": "Joint platform (universal service, cost of living, periphery, agriculture) does not address this.",
+      "ru": "Совместная программа (всеобщая служба, стоимость жизни, периферия, сельское хозяйство) этого не касается."
+    },
+    "sources": [
+      "https://www.be106.net/207/156556",
+      "https://www.walla.co.il/news/israel/3866697"
+    ]
   }
 ]
