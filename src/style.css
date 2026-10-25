@@ -867,6 +867,27 @@ dialog::backdrop {
   border-bottom-color: var(--text);
 }
 
+/* On a phone the three tabs share the row equally and wrap their labels, so none is cut off. */
+@media (max-width: 600px) {
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    overflow: visible;
+  }
+
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 6px;
+    font-size: 13.5px;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
 .intro {
   color: var(--text-2);
   max-width: 70ch;
