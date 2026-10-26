@@ -1122,10 +1122,24 @@ dialog::backdrop {
 }
 
 .question__context {
-  margin: 6px 0 12px;
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 12px;
   color: var(--text-2);
   font-size: 13px;
   line-height: 1.5;
+}
+
+.question__context dt {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.question__context dd {
+  margin: 0;
 }
 
 .answers {
