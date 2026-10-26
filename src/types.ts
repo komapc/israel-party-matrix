@@ -17,8 +17,12 @@ export interface Aspect {
   claim: Localized;
   /** Full neutral statement for the quiz. */
   question?: Localized;
-  /** What is at stake and the main arguments on each side. */
+  /** Background: the current situation and what is at stake. */
   context?: Localized;
+  /** Main arguments for the statement as worded (the `high` pole). */
+  pro?: Localized;
+  /** Main arguments against it. */
+  con?: Localized;
   low: Localized;
   high: Localized;
 }

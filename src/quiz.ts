@@ -1,6 +1,6 @@
 import { aspects, blocOf, categories, esc, parties, partyById, scoreOf } from './data';
 import { ui } from './i18n';
-import type { Answer, Lang, Party, Score } from './types';
+import type { Answer, Aspect, Lang, Localized, Party, Score } from './types';
 
 const STORAGE_KEY = 'matrix.quiz.v1';
 const MIN_ANSWERS = 3;
@@ -98,6 +98,18 @@ export function matches(): Match[] {
     .sort((a, b) => thin(a) - thin(b) || b.match - a.match || b.compared - a.compared);
 }
 
+/** Background, then the case for and against the statement, each under its own small heading. */
+function renderExplanation(a: Aspect, lang: Lang): string {
+  const parts = [
+    [ui.aboutNow, a.context],
+    [ui.argsFor, a.pro],
+    [ui.argsAgainst, a.con],
+  ].filter((p): p is [Localized, Localized] => p[1] !== undefined);
+  if (!parts.length) return '';
+  const items = parts.map(([label, text]) => `<div><dt>${label[lang]}</dt><dd>${text[lang]}</dd></div>`).join('');
+  return `<dl class="question__context">${items}</dl>`;
+}
+
 function renderQuestion(aspectId: string, lang: Lang): string {
   const a = aspects.find((x) => x.id === aspectId)!;
   const ans = answers.get(a.id);
@@ -113,7 +125,7 @@ function renderQuestion(aspectId: string, lang: Lang): string {
       <div class="question__head">
         <p class="question__topic">${a.name[lang]}</p>
         <h3>${a.question?.[lang] ?? a.claim[lang]}</h3>
-        ${a.context ? `<p class="question__context">${a.context[lang]}</p>` : ''}
+        ${renderExplanation(a, lang)}
       </div>
       <div class="answers" role="group" aria-label="${esc(a.claim[lang])}">${buttons}</div>
       <label class="important${ans ? '' : ' important--off'}">
