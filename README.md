@@ -32,6 +32,9 @@ Every position should cite at least one source.
 
 ### Election results
 
+`meta.json` → `resultsSource` is the Central Elections Committee's results page; the toolbar links to it
+("Official results") without copying any numbers.
+
 Once votes are counted, switch the site from polls to results — no code changes:
 
 1. In `meta.json` add `"results": { "asOf": "2026-10-28", "final": false, "source": "<CEC results URL>" }`.

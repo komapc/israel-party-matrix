@@ -89,6 +89,8 @@ export interface Meta {
   electionDate: string;
   pollsAsOf: string;
   pollSources: string[];
+  /** The Central Elections Committee's official results page (linked from the toolbar). */
+  resultsSource?: string;
   /** Set once votes are counted: the site then shows each party's `result` instead of its polls. */
   results?: {
     asOf: string;

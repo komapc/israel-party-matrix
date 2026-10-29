@@ -104,7 +104,7 @@ function renderToolbar(): string {
           meta.results
             ? `<a href="${esc(meta.results.source)}" target="_blank" rel="noopener noreferrer">${formatDate(meta.results.asOf)}</a>`
             : formatDate(meta.pollsAsOf)
-        }</dd></div>
+        }</dd></div>${officialResults()}
       </dl>
       ${renderBlocs()}
       <div class="legend">${[2, 1, 0, -1, -2]
@@ -115,6 +115,14 @@ function renderToolbar(): string {
         <button type="button" class="btn" data-bulk="collapse">${ui.collapseAll[lang]}</button>
       </div>
     </div>`;
+}
+
+/** Link to the Central Elections Committee's own results page, in Hebrew or English (no numbers are copied here). */
+function officialResults(): string {
+  const url = meta.results?.source ?? meta.resultsSource;
+  if (!url) return '';
+  const href = url.includes('?') ? url : `${url}?lang=${lang === 'he' ? 'he' : 'en'}`;
+  return `<div><dt>${ui.officialResults[lang]}</dt><dd><a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${ui.cec[lang]} ↗</a></dd></div>`;
 }
 
 /** "Polls as of" or, once counted, "(Preliminary) results as of". */
