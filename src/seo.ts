@@ -54,12 +54,12 @@ const MAP_DESC: Text = {
 };
 
 const QUIZ_TITLE: Text = {
-  en: 'Which party should I vote for? Israel election 2026 quiz',
-  ru: 'За кого голосовать? Тест: какая партия мне ближе — выборы в Израиле 2026',
-  uk: 'За кого голосувати? Тест: яка партія мені ближча — вибори в Ізраїлі 2026',
-  be: 'За каго галасаваць? Тэст: якая партыя мне бліжэйшая — выбары ў Ізраілі 2026',
-  he: 'למי להצביע? מבחן התאמה למפלגות — בחירות 2026',
-  eo: 'Por kiu partio voĉdoni? Kvizo pri la israelaj elektoj 2026',
+  en: 'Which party matches your views? Israel election 2026 quiz',
+  ru: 'Какая партия вам ближе? Тест на совпадение взглядов — выборы в Израиле 2026',
+  uk: 'Яка партія вам ближча? Тест на збіг поглядів — вибори в Ізраїлі 2026',
+  be: 'Якая партыя вам бліжэйшая? Тэст на супадзенне поглядаў — выбары ў Ізраілі 2026',
+  he: 'איזו מפלגה קרובה לעמדות שלכם? מבחן התאמה למפלגות — בחירות 2026',
+  eo: 'Kiu partio kongruas kun viaj vidpunktoj? Kvizo pri la israelaj elektoj 2026',
 };
 
 const QUIZ_DESC: Text = {

@@ -27,12 +27,12 @@ export const HEADINGS: Record<'matrix' | 'map' | 'quiz' | 'party', Text> = {
     eo: 'Politika mapo de israelaj partioj',
   },
   quiz: {
-    en: 'Which party should I vote for? Quiz',
-    ru: 'За кого голосовать? Тест на совпадение с партиями',
-    uk: 'За кого голосувати? Тест на збіг із партіями',
-    be: 'За каго галасаваць? Тэст на супадзенне з партыямі',
-    he: 'למי להצביע? מבחן התאמה למפלגות',
-    eo: 'Por kiu voĉdoni? Kvizo',
+    en: 'Which party matches your views? Quiz',
+    ru: 'Какая партия вам ближе? Тест на совпадение с партиями',
+    uk: 'Яка партія вам ближча? Тест на збіг із партіями',
+    be: 'Якая партыя вам бліжэйшая? Тэст на супадзенне з партыямі',
+    he: 'איזו מפלגה קרובה אליכם? מבחן התאמה למפלגות',
+    eo: 'Kiu partio kongruas kun vi? Kvizo',
   },
   party: {
     en: '{party}: positions in the 2026 election',
@@ -180,12 +180,12 @@ const QA: { q: Text; a: Text; counted?: { q?: Text; a: Text } }[] = [
   },
   {
     q: {
-      en: 'How do I decide whom to vote for?',
-      ru: 'Как понять, за кого голосовать?',
-      uk: 'Як зрозуміти, за кого голосувати?',
-      be: 'Як зразумець, за каго галасаваць?',
-      he: 'איך להחליט למי להצביע?',
-      eo: 'Kiel decidi, por kiu voĉdoni?',
+      en: 'How do I find which party matches my views?',
+      ru: 'Как понять, какая партия мне ближе?',
+      uk: 'Як зрозуміти, яка партія мені ближча?',
+      be: 'Як зразумець, якая партыя мне бліжэйшая?',
+      he: 'איך לדעת איזו מפלגה קרובה אליי?',
+      eo: 'Kiel scii, kiu partio plej kongruas kun mi?',
     },
     a: {
       en: 'Answer the {issues} questions of the <a href="{quiz}">quiz</a> and see which parties match you best. The <a href="{map}">political map</a> shows where the parties sit relative to each other, and the table above gives every party’s stance on every issue, with sources.',
