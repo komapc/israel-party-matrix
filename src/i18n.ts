@@ -95,6 +95,8 @@ export const ui = {
   collapseAll: { en: 'Collapse all', ru: 'Свернуть всё', uk: 'Згорнути все', be: 'Згарнуць усё', he: 'כיווץ הכול', eo: 'Faldi ĉion' },
   partiesCount: { en: 'parties', ru: 'партий', uk: 'партій', be: 'партый', he: 'מפלגות', eo: 'partioj' },
   issuesCount: { en: 'issues', ru: 'вопросов', uk: 'питань', be: 'пытанняў', he: 'נושאים', eo: 'temoj' },
+  officialResults: { en: 'Official results', ru: 'Официальные итоги', uk: 'Офіційні підсумки', be: 'Афіцыйныя вынікі', he: 'תוצאות רשמיות', eo: 'Oficialaj rezultoj' },
+  cec: { en: 'Central Elections Committee', ru: 'Центральная избирательная комиссия', uk: 'Центральна виборча комісія', be: 'Цэнтральная выбарчая камісія', he: 'ועדת הבחירות המרכזית', eo: 'Centra Balota Komitato' },
   resultsAsOf: { en: 'Results as of', ru: 'Итоги на', uk: 'Підсумки на', be: 'Вынікі на', he: 'תוצאות נכון ל־', eo: 'Rezultoj je' },
   resultsPrelim: { en: 'Preliminary results as of', ru: 'Предварительные итоги на', uk: 'Попередні підсумки на', be: 'Папярэднія вынікі на', he: 'תוצאות חלקיות נכון ל־', eo: 'Antaŭaj rezultoj je' },
   resultTitle: {

@@ -18,21 +18,21 @@ const SITE_NAME: Text = {
 };
 
 const MATRIX_TITLE: Text = {
-  en: 'Israel Election 2026: Where the Parties Stand on Key Issues',
-  ru: 'Выборы в Израиле 2026: позиции партий по ключевым вопросам',
-  uk: 'Вибори в Ізраїлі 2026: позиції партій щодо ключових питань',
-  be: 'Выбары ў Ізраілі 2026: пазіцыі партый па ключавых пытаннях',
-  he: 'בחירות 2026: עמדות המפלגות בנושאים המרכזיים — טבלת השוואה',
-  eo: 'Israelaj elektoj 2026: kie la partioj staras pri la ĉefaj temoj',
+  en: 'Israel Election 2026 (27 Oct): How the Parties Compare on 13 Issues',
+  ru: 'Выборы в Израиле 2026 (27 октября): позиции партий по 13 ключевым вопросам',
+  uk: 'Вибори в Ізраїлі 2026 (27 жовтня): позиції партій щодо 13 ключових питань',
+  be: 'Выбары ў Ізраілі 2026 (27 кастрычніка): пазіцыі партый па 13 ключавых пытаннях',
+  he: 'בחירות 2026 (27 באוקטובר): עמדות המפלגות ב־13 נושאים מרכזיים',
+  eo: 'Israelaj elektoj 2026 (27-a de oktobro): la partioj pri 13 ĉefaj temoj',
 };
 
 const MATRIX_DESC: Text = {
-  en: 'Compare 16 parties running in the Knesset election on 27 October 2026 on 13 key issues: Palestinian state, settlements, Gaza, Haredi draft, judicial overhaul, cost of living and more — with sources, a political map and a quiz.',
-  ru: 'Сравните позиции 16 партий на выборах в Кнессет 27 октября 2026 года по 13 ключевым вопросам: палестинское государство, поселения, Газа, призыв харедим, судебная реформа, стоимость жизни и другие — с источниками, политической картой и тестом.',
-  uk: 'Порівняйте позиції 16 партій на виборах до Кнесету 27 жовтня 2026 року щодо 13 ключових питань: палестинська держава, поселення, Газа, призов харедим, судова реформа, вартість життя тощо — з джерелами, політичною мапою та тестом.',
-  be: 'Параўнайце пазіцыі 16 партый на выбарах у Кнэсет 27 кастрычніка 2026 года па 13 ключавых пытаннях: палестынская дзяржава, пасяленні, Газа, прызыў харэдым, судовая рэформа, кошт жыцця і іншыя — з крыніцамі, палітычнай картай і тэстам.',
-  he: 'השוו בין עמדות 16 המפלגות המתמודדות בבחירות לכנסת ב־27 באוקטובר 2026 ב־13 נושאים: מדינה פלסטינית, התנחלויות, עזה, גיוס חרדים, הרפורמה המשפטית, יוקר המחיה ועוד — עם מקורות, מפה פוליטית ומבחן התאמה.',
-  eo: 'Komparu 16 partiojn en la Kneseta elekto de la 27-a de oktobro 2026 pri 13 ĉefaj temoj: palestina ŝtato, kolonioj, Gazao, konskripcio de ĥaredoj, jura reformo, vivkostoj kaj pli — kun fontoj, politika mapo kaj kvizo.',
+  en: 'How 16 parties in the 27 October 2026 Knesset election compare on 13 key issues — Palestinian state, Gaza, Haredi draft, courts, cost of living — with sources, a political map, a quiz and a link to the official results.',
+  ru: 'Позиции 16 партий на выборах в Кнессет 27 октября 2026 года по 13 ключевым вопросам: палестинское государство, Газа, призыв харедим, судебная реформа, стоимость жизни — с источниками, политической картой, тестом и ссылкой на официальные итоги.',
+  uk: 'Позиції 16 партій на виборах до Кнесету 27 жовтня 2026 року щодо 13 ключових питань: палестинська держава, Газа, призов харедим, судова реформа, вартість життя — з джерелами, політичною мапою, тестом і посиланням на офіційні підсумки.',
+  be: 'Пазіцыі 16 партый на выбарах у Кнэсет 27 кастрычніка 2026 года па 13 ключавых пытаннях: палестынская дзяржава, Газа, прызыў харэдым, судовая рэформа, кошт жыцця — з крыніцамі, палітычнай картай, тэстам і спасылкай на афіцыйныя вынікі.',
+  he: 'עמדות 16 מפלגות שהתמודדו בבחירות לכנסת ב־27 באוקטובר 2026 ב־13 נושאים: מדינה פלסטינית, עזה, גיוס חרדים, הרפורמה המשפטית, יוקר המחיה — עם מקורות, מפה פוליטית, מבחן התאמה וקישור לתוצאות הרשמיות.',
+  eo: 'Kiel 16 partioj de la Kneseta elekto de la 27-a de oktobro 2026 komparas pri 13 ĉefaj temoj: palestina ŝtato, Gazao, konskripcio de ĥaredoj, jura reformo, vivkostoj — kun fontoj, politika mapo, kvizo kaj ligilo al la oficialaj rezultoj.',
 };
 
 const MAP_TITLE: Text = {
@@ -45,12 +45,12 @@ const MAP_TITLE: Text = {
 };
 
 const MAP_DESC: Text = {
-  en: 'Where Israeli parties sit on a two-dimensional political map ahead of the 27 October 2026 election. Choose the axes: economy, security, religion and state, civil liberties, courts.',
-  ru: 'Где находятся израильские партии на двумерной политической карте перед выборами 27 октября 2026 года. Выбирайте оси: экономика, безопасность, религия и государство, гражданские свободы, суды.',
-  uk: 'Де розташовані ізраїльські партії на двовимірній політичній мапі перед виборами 27 жовтня 2026 року. Обирайте осі: економіка, безпека, релігія і держава, громадянські свободи, суди.',
-  be: 'Дзе знаходзяцца ізраільскія партыі на двухмернай палітычнай карце перад выбарамі 27 кастрычніка 2026 года. Выбірайце восі: эканоміка, бяспека, рэлігія і дзяржава, грамадзянскія свабоды, суды.',
-  he: 'היכן ממוקמות המפלגות בישראל על מפה פוליטית דו־ממדית לקראת הבחירות ב־27 באוקטובר 2026. בחרו צירים: כלכלה, ביטחון, דת ומדינה, זכויות האזרח, מערכת המשפט.',
-  eo: 'Kie la israelaj partioj troviĝas sur dudimensia politika mapo antaŭ la elekto de la 27-a de oktobro 2026. Elektu la aksojn: ekonomio, sekureco, religio kaj ŝtato, civitanaj liberecoj, juĝejoj.',
+  en: 'Where Israeli parties sit on a two-dimensional political map in the 27 October 2026 election. Choose the axes: economy, security, religion and state, civil liberties, courts.',
+  ru: 'Где находятся израильские партии на двумерной политической карте на выборах 27 октября 2026 года. Выбирайте оси: экономика, безопасность, религия и государство, гражданские свободы, суды.',
+  uk: 'Де розташовані ізраїльські партії на двовимірній політичній мапі на виборах 27 жовтня 2026 року. Обирайте осі: економіка, безпека, релігія і держава, громадянські свободи, суди.',
+  be: 'Дзе знаходзяцца ізраільскія партыі на двухмернай палітычнай карце на выбарах 27 кастрычніка 2026 года. Выбірайце восі: эканоміка, бяспека, рэлігія і дзяржава, грамадзянскія свабоды, суды.',
+  he: 'היכן ממוקמות המפלגות בישראל על מפה פוליטית דו־ממדית בבחירות ב־27 באוקטובר 2026. בחרו צירים: כלכלה, ביטחון, דת ומדינה, זכויות האזרח, מערכת המשפט.',
+  eo: 'Kie la israelaj partioj troviĝas sur dudimensia politika mapo en la elekto de la 27-a de oktobro 2026. Elektu la aksojn: ekonomio, sekureco, religio kaj ŝtato, civitanaj liberecoj, juĝejoj.',
 };
 
 const QUIZ_TITLE: Text = {

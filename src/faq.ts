@@ -56,12 +56,12 @@ const SUBTITLE: Text = {
 export const subtitle = (lang: Lang) => fill(SUBTITLE[lang], { parties: parties.length, issues: aspects.length });
 
 const INTRO: Text = {
-  en: 'On {date} Israel elects its 26th Knesset. Here are the positions of {parties} parties on {issues} key issues — from a Palestinian state and Gaza to the Haredi draft and the cost of living. Tap a party or a cell for the explanation and sources; not sure whom to vote for? <a href="{quiz}">Take the quiz</a>.',
-  ru: '{date} года Израиль выбирает 26-й Кнессет. Здесь собраны позиции {parties} партий по {issues} ключевым вопросам — от палестинского государства и Газы до призыва харедим и стоимости жизни. Нажмите на партию или ячейку, чтобы увидеть объяснение и источники; не знаете, за кого голосовать, — <a href="{quiz}">пройдите тест</a>.',
-  uk: '{date} року Ізраїль обирає 26-й Кнесет. Тут зібрано позиції {parties} партій щодо {issues} ключових питань — від палестинської держави й Гази до призову харедим і вартості життя. Натисніть на партію чи клітинку, щоб побачити пояснення та джерела; не знаєте, за кого голосувати, — <a href="{quiz}">пройдіть тест</a>.',
-  be: '{date} года Ізраіль выбірае 26-ы Кнэсет. Тут сабраны пазіцыі {parties} партый па {issues} ключавых пытаннях — ад палестынскай дзяржавы і Газы да прызыву харэдым і кошту жыцця. Націсніце на партыю або клетку, каб убачыць тлумачэнне і крыніцы; не ведаеце, за каго галасаваць, — <a href="{quiz}">прайдзіце тэст</a>.',
-  he: 'ב־{date} ייבחרו חברי הכנסת ה־26. כאן מרוכזות העמדות של {parties} מפלגות ב־{issues} נושאים מרכזיים — ממדינה פלסטינית ועזה ועד גיוס חרדים ויוקר המחיה. לחצו על מפלגה או על משבצת כדי לראות הסבר ומקורות; לא בטוחים למי להצביע? <a href="{quiz}">עשו את מבחן ההתאמה</a>.',
-  eo: 'La {date} Israelo elektas sian 26-an Kneseton. Ĉi tie estas la pozicioj de {parties} partioj pri {issues} ĉefaj temoj — de palestina ŝtato kaj Gazao ĝis la konskripcio de ĥaredoj kaj la vivkostoj. Tuŝu partion aŭ ĉelon por la klarigo kaj fontoj; ne certas, por kiu voĉdoni? <a href="{quiz}">Faru la kvizon</a>.',
+  en: 'On {date} Israel elected its 26th Knesset. Here are the positions of {parties} parties on {issues} key issues — from a Palestinian state and Gaza to the Haredi draft and the cost of living. Tap a party or a cell for the explanation and sources, or <a href="{quiz}">take the quiz</a> to see which parties are closest to your views.',
+  ru: '{date} года Израиль избрал 26-й Кнессет. Здесь собраны позиции {parties} партий по {issues} ключевым вопросам — от палестинского государства и Газы до призыва харедим и стоимости жизни. Нажмите на партию или ячейку, чтобы увидеть объяснение и источники, или <a href="{quiz}">пройдите тест</a>, чтобы узнать, какие партии ближе к вашим взглядам.',
+  uk: '{date} року Ізраїль обрав 26-й Кнесет. Тут зібрано позиції {parties} партій щодо {issues} ключових питань — від палестинської держави й Гази до призову харедим і вартості життя. Натисніть на партію чи клітинку, щоб побачити пояснення та джерела, або <a href="{quiz}">пройдіть тест</a>, щоб дізнатися, які партії ближчі до ваших поглядів.',
+  be: '{date} года Ізраіль абраў 26-ы Кнэсет. Тут сабраны пазіцыі {parties} партый па {issues} ключавых пытаннях — ад палестынскай дзяржавы і Газы да прызыву харэдым і кошту жыцця. Націсніце на партыю або клетку, каб убачыць тлумачэнне і крыніцы, або <a href="{quiz}">прайдзіце тэст</a>, каб даведацца, якія партыі бліжэйшыя да вашых поглядаў.',
+  he: 'ב־{date} נבחרה הכנסת ה־26. כאן מרוכזות העמדות של {parties} מפלגות ב־{issues} נושאים מרכזיים — ממדינה פלסטינית ועזה ועד גיוס חרדים ויוקר המחיה. לחצו על מפלגה או על משבצת כדי לראות הסבר ומקורות, או <a href="{quiz}">עשו את מבחן ההתאמה</a> כדי לגלות אילו מפלגות הכי קרובות לעמדותיכם.',
+  eo: 'La {date} Israelo elektis sian 26-an Kneseton. Ĉi tie estas la pozicioj de {parties} partioj pri {issues} ĉefaj temoj — de palestina ŝtato kaj Gazao ĝis la konskripcio de ĥaredoj kaj la vivkostoj. Tuŝu partion aŭ ĉelon por la klarigo kaj fontoj, aŭ <a href="{quiz}">faru la kvizon</a> por vidi, kiuj partioj estas plej proksimaj al viaj vidpunktoj.',
 };
 
 export const intro = (lang: Lang, quiz: string) =>
@@ -80,38 +80,20 @@ const FAQ_TITLE: Text = {
 const QA: { q: Text; a: Text; counted?: { q?: Text; a: Text } }[] = [
   {
     q: {
-      en: 'When is the Knesset election?',
-      ru: 'Когда выборы в Кнессет?',
-      uk: 'Коли вибори до Кнесету?',
-      be: 'Калі выбары ў Кнэсет?',
-      he: 'מתי הבחירות לכנסת?',
-      eo: 'Kiam okazas la Kneseta elekto?',
+      en: 'When was the Knesset election?',
+      ru: 'Когда прошли выборы в Кнессет?',
+      uk: 'Коли відбулися вибори до Кнесету?',
+      be: 'Калі адбыліся выбары ў Кнэсет?',
+      he: 'מתי התקיימו הבחירות לכנסת?',
+      eo: 'Kiam okazis la Kneseta elekto?',
     },
     a: {
-      en: 'The election to the 26th Knesset is on {date}. Election day is a public holiday.',
-      ru: 'Выборы в 26-й Кнессет пройдут {date} года. День выборов — выходной.',
-      uk: 'Вибори до 26-го Кнесету відбудуться {date} року. День виборів — вихідний.',
-      be: 'Выбары ў 26-ы Кнэсет адбудуцца {date} года. Дзень выбараў — выхадны.',
-      he: 'הבחירות לכנסת ה־26 ייערכו ב־{date}. יום הבחירות הוא יום שבתון.',
-      eo: 'La elekto de la 26-a Kneseto okazos la {date}. La balotada tago estas libertago.',
-    },
-    counted: {
-      q: {
-        en: 'When was the Knesset election?',
-        ru: 'Когда прошли выборы в Кнессет?',
-        uk: 'Коли відбулися вибори до Кнесету?',
-        be: 'Калі адбыліся выбары ў Кнэсет?',
-        he: 'מתי התקיימו הבחירות לכנסת?',
-        eo: 'Kiam okazis la Kneseta elekto?',
-      },
-      a: {
-        en: 'The election to the 26th Knesset was held on {date}.',
-        ru: 'Выборы в 26-й Кнессет прошли {date} года.',
-        uk: 'Вибори до 26-го Кнесету відбулися {date} року.',
-        be: 'Выбары ў 26-ы Кнэсет адбыліся {date} года.',
-        he: 'הבחירות לכנסת ה־26 התקיימו ב־{date}.',
-        eo: 'La elekto de la 26-a Kneseto okazis la {date}.',
-      },
+      en: 'The election to the 26th Knesset was held on {date}.',
+      ru: 'Выборы в 26-й Кнессет прошли {date} года.',
+      uk: 'Вибори до 26-го Кнесету відбулися {date} року.',
+      be: 'Выбары ў 26-ы Кнэсет адбыліся {date} года.',
+      he: 'הבחירות לכנסת ה־26 התקיימו ב־{date}.',
+      eo: 'La elekto de la 26-a Kneseto okazis la {date}.',
     },
   },
   {
