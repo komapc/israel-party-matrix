@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- Source of public/og.png. Render:
+     google-chrome --headless=new --hide-scrollbars --window-size=1200,630 --user-data-dir=$(mktemp -d) \
+       --screenshot=public/og.png "file://$PWD/scripts/og-home.html" -->
+<html lang="en"><head><meta charset="utf-8"><style>
+  * { box-sizing: border-box; }
+  body { margin: 0; width: 1200px; height: 630px; overflow: hidden; position: relative; background: #141413; color: #f0efec;
+    font-family: 'Noto Sans', 'Noto Sans Hebrew', sans-serif; }
+  .k { position: absolute; left: 72px; top: 72px; margin: 0; font-size: 21px; letter-spacing: .14em; color: #8f8e88; }
+  h1 { position: absolute; left: 72px; top: 118px; width: 620px; margin: 0; font-size: 62px; line-height: 1.14; font-weight: 800; letter-spacing: -.01em; }
+  .s { position: absolute; left: 72px; top: 358px; margin: 0; font-size: 27px; line-height: 1.4; color: #c3c2b7; }
+  .chips { position: absolute; left: 72px; top: 520px; display: flex; gap: 12px; }
+  .chips span { padding: 8px 18px; border: 1px solid #3a3a37; border-radius: 999px; font-size: 21px; color: #c3c2b7; }
+  .url { position: absolute; right: 64px; top: 529px; margin: 0; font-size: 24px; color: #8f8e88; }
+  svg { position: absolute; left: 743px; top: 75px; }
+</style></head><body>
+  <p class="k">KNESSET · 27.10.2026</p>
+  <h1>Israel Election 2026: how the parties compare</h1>
+  <p class="s">16 parties × 13 key issues, with sources.<br>Political map · Quiz · Official results</p>
+  <div class="chips"><span>EN</span><span>RU</span><span>UA</span><span>BY</span><span>עב</span><span>EO</span></div>
+  <p class="url">elections-2026.lipu.dev</p>
+  <svg width="382" height="382" stroke-width="3">
+    <rect x="1" y="1" width="380" height="380" rx="16" fill="none" stroke="#333331" stroke-width="2"/>
+    <path d="M191 1V381M1 191H381" stroke="#333331" stroke-width="2"/>
+    <ellipse cx="71" cy="91" rx="46" ry="40" fill="#8a8984" fill-opacity=".3" stroke="#8a8984"/>
+    <ellipse cx="271" cy="101" rx="80" ry="58" fill="#3987e5" fill-opacity=".2" stroke="#3987e5"/>
+    <ellipse cx="231" cy="151" rx="58" ry="46" fill="#3987e5" fill-opacity=".3" stroke="#3987e5"/>
+    <ellipse cx="141" cy="231" rx="72" ry="52" fill="#eb6834" fill-opacity=".25" stroke="#eb6834"/>
+    <ellipse cx="201" cy="211" rx="44" ry="36" fill="#eb6834" fill-opacity=".25" stroke="#eb6834"/>
+    <ellipse cx="91" cy="301" rx="56" ry="42" fill="#eb6834" fill-opacity=".25" stroke="#eb6834"/>
+  </svg>
+</body></html>
