@@ -392,6 +392,7 @@ function renderFooter(): string {
             <li><a href="${REPO}" rel="noopener">${ui.footSource[lang]}</a></li>
             <li><a href="${REPO}/issues/new" rel="noopener">${ui.footReport[lang]}</a></li>
             <li><a href="https://lipu.dev/">${ui.footMore[lang]}</a></li>
+            <li><a href="#" data-lipu-consent-open>${ui.footAnalyticsSettings[lang]}</a></li>
           </ul>
         </nav>
       </div>
