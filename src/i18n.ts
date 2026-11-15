@@ -266,12 +266,20 @@ export const ui = {
   },
   copied: { en: 'Link copied', ru: 'Ссылка скопирована', uk: 'Посилання скопійовано', be: 'Спасылка скапіявана', he: 'הקישור הועתק', eo: 'Ligilo kopiita' },
   footAnalytics: {
-    en: 'Visits are counted with Google Analytics.',
-    ru: 'Посещения считаются через Google Analytics.',
-    uk: 'Відвідування підраховуються за допомогою Google Analytics.',
-    be: 'Наведванні падлічваюцца з дапамогай Google Analytics.',
-    he: 'הביקורים נספרים באמצעות Google Analytics.',
-    eo: 'Vizitoj estas kalkulataj per Google Analytics.',
+    en: 'Visits are counted with Google Analytics (cookies). Where the law requires opt-in (EU, UK, Switzerland) it loads only after you allow it; elsewhere you can opt out at any time.',
+    ru: 'Посещения считаются через Google Analytics (cookie). Там, где закон требует согласия (ЕС, Великобритания, Швейцария), он загружается только после разрешения; в остальных странах от него можно отказаться в любой момент.',
+    uk: 'Відвідування підраховуються за допомогою Google Analytics (cookie). Там, де закон вимагає згоди (ЄС, Велика Британія, Швейцарія), він завантажується лише після вашого дозволу; деінде від нього можна відмовитися будь-коли.',
+    be: 'Наведванні падлічваюцца з дапамогай Google Analytics (cookie). Там, дзе закон патрабуе згоды (ЕС, Вялікабрытанія, Швейцарыя), ён загружаецца толькі пасля вашага дазволу; у іншых краінах ад яго можна адмовіцца ў любы момант.',
+    he: 'הביקורים נספרים באמצעות Google Analytics (עוגיות). במקומות שבהם החוק דורש הסכמה מראש (האיחוד האירופי, בריטניה, שווייץ) הוא נטען רק לאחר אישורך; בשאר המקומות אפשר לבטל בכל עת.',
+    eo: 'Vizitoj estas kalkulataj per Google Analytics (kuketoj). Kie la leĝo postulas antaŭan konsenton (EU, Britio, Svislando), ĝi ŝargiĝas nur post via permeso; aliloke vi povas malaliĝi iam ajn.',
+  },
+  footAnalyticsSettings: {
+    en: 'Analytics settings',
+    ru: 'Настройки аналитики',
+    uk: 'Налаштування аналітики',
+    be: 'Налады аналітыкі',
+    he: 'הגדרות אנליטיקה',
+    eo: 'Agordoj de analitiko',
   },
 } satisfies Record<string, Record<Lang, string | string[]>>;
 

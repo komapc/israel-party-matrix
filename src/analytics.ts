@@ -5,25 +5,24 @@ type Gtag = (...args: unknown[]) => void;
 
 declare global {
   interface Window {
-    dataLayer: unknown[];
+    /** Defined by the consent script once GA is allowed to load. */
     gtag?: Gtag;
   }
 }
 
+/**
+ * Loads the shared lipu.dev consent script, which asks for consent where the visitor's
+ * region requires opt-in, shows a one-time notice with an Opt out button elsewhere, and
+ * only then loads GA (defining window.gtag). Skipped on localhost so the prerender step
+ * never bakes a banner into the static HTML.
+ */
 export function initAnalytics(): void {
   if (!GA_ID || location.hostname === 'localhost') return;
   const script = document.createElement('script');
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  script.src = 'https://geo.lipu.dev/consent.js';
+  script.dataset.ga = GA_ID;
+  script.dataset.accent = 'var(--accent)';
   document.head.append(script);
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag() {
-    // gtag.js expects the arguments object itself, not an array
-    // eslint-disable-next-line prefer-rest-params
-    window.dataLayer.push(arguments);
-  };
-  window.gtag('js', new Date());
-  window.gtag('config', GA_ID);
 }
 
 /** Records a custom event (no-op when analytics is off). */
