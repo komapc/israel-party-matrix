@@ -169,10 +169,18 @@ export function updateHead(route: Route, lang: Lang): void {
   setMeta('property', 'og:title', title);
   setMeta('property', 'og:description', description);
   setMeta('property', 'og:url', shared);
-  setMeta('property', 'og:locale', LOCALES[lang].replace('-', '_'));
-  setMeta('property', 'og:image', route.view === 'quiz' && route.result ? `${SITE}/og/${route.result}.png` : `${SITE}/og.png`);
+  // Open Graph wants language_TERRITORY; Esperanto's is eo_EO. LOCALES.eo stays 'eo' for dates and JSON-LD.
+  setMeta('property', 'og:locale', lang === 'eo' ? 'eo_EO' : LOCALES[lang].replace('-', '_'));
+  const result = route.view === 'quiz' && route.result ? route.result : undefined;
+  setMeta('property', 'og:image', result ? `${SITE}/og/${result}.png` : `${SITE}/og.png`);
   setMeta('property', 'og:image:width', '1200');
   setMeta('property', 'og:image:height', '630');
+  // The alt describes the image, not the page: og.png shows the matrix headline, a result card the closest party.
+  setMeta(
+    'property',
+    'og:image:alt',
+    result ? RESULT_TITLE[lang].replace('{party}', partyById.get(result)!.name[lang]) : MATRIX_TITLE[lang],
+  );
   setMeta('name', 'twitter:card', 'summary_large_image');
 
   let ld = document.head.querySelector<HTMLScriptElement>('script#ld');
